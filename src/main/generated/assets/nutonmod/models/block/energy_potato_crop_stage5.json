@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cross",
+  "textures": {
+    "cross": "nutonmod:block/energy_potato_crop_stage5"
+  }
+}
