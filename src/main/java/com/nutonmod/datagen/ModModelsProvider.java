@@ -86,6 +86,8 @@ public class ModModelsProvider extends FabricModelProvider {
 
         itemModelGenerator.register(ModItems.ENERGY_BUCKET, Models.GENERATED);
 
+        itemModelGenerator.register(ModItems.ENERGY_HORSE_ARMOR, Models.GENERATED);
+
 
 
     }

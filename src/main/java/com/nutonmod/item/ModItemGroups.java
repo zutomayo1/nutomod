@@ -60,6 +60,8 @@ public class ModItemGroups {
                 entries.add(ModItems.TEST_MUSIC_DISC);
                 entries.add(ModItems.ENERGY_BUCKET);
 
+                entries.add(ModItems.ENERGY_HORSE_ARMOR);
+
 
             })
             .build()

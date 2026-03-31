@@ -66,5 +66,6 @@ public class ModZhCNLangProvider extends FabricLanguageProvider {
 
         translationBuilder.add("jukebox_song.nutonmod.test", "测试");
         translationBuilder.add("item.nutonmod.energy_bucket", "能量桶");
+        translationBuilder.add("item.nutonmod.energy_horse_armor", "能量马铠");
     }
 }

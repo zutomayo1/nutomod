@@ -102,6 +102,13 @@ public class ModItems {
     public static final Item ENERGY_BUCKET = registerItem("energy_bucket",
             new BucketItem(ModFluids.STILL_ENERGY, new Item.Settings().recipeRemainder(Items.BUCKET).maxCount(1)));
 
+    public static final Item ENERGY_HORSE_ARMOR = registerItem("energy_horse_armor",
+            new AnimalArmorItem(ModArmorMaterials.ENERGY_INGOT, AnimalArmorItem.Type.EQUESTRIAN, false, new Item.Settings().maxCount(1)));
+
+
+
+
+
     private static Item registerItem(String id, Item item) {
         return Registry.register(Registries.ITEM, Identifier.of(NutonMod.MOD_ID, id), item);
     }
