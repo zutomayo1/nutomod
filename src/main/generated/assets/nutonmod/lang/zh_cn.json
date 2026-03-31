@@ -36,5 +36,13 @@
   "item.nutonmod.holy_helmet": "光明头盔",
   "item.nutonmod.holy_leggings": "光明护腿",
   "item.nutonmod.prospector": "探矿器",
-  "itemGroup.nutonmod.nuton_group": "Noton 模组"
+  "item.nutonmod.test_music_disc": "测试音乐唱片",
+  "itemGroup.nutonmod.nuton_group": "Noton 模组",
+  "jukebox_song.nutonmod.test": "测试",
+  "sounds.nutonmod.energy_block_break": "能量方块被破坏",
+  "sounds.nutonmod.energy_block_fall": "能量方块被落下",
+  "sounds.nutonmod.energy_block_hit": "能量方块被击打",
+  "sounds.nutonmod.energy_block_place": "能量方块被放置",
+  "sounds.nutonmod.energy_block_step": "能量方块被踩",
+  "sounds.nutonmod.prospector_found_ore": "探矿器发现矿石"
 }

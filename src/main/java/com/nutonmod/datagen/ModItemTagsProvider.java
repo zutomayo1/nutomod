@@ -3,6 +3,7 @@ package com.nutonmod.datagen;
 import com.nutonmod.item.ModItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
+import net.minecraft.item.Item;
 import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.registry.tag.ItemTags;
 
@@ -52,7 +53,8 @@ public class ModItemTagsProvider extends FabricTagProvider.ItemTagProvider {
 				.add(ModItems.HOLY_LEGGINGS)
 				.add(ModItems.HOLY_BOOTS);
 
-		
-		// 其他物品标签可以在这里添加
+		getOrCreateTagBuilder(ItemTags.CREEPER_DROP_MUSIC_DISCS)
+				.add(ModItems.TEST_MUSIC_DISC);
+
 	}
 }

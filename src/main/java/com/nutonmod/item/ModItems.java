@@ -9,6 +9,7 @@ import com.nutonmod.item.custom.EnergyAppleItem;
 import com.nutonmod.item.custom.EnergyPotatoItem;
 import com.nutonmod.item.custom.HatItem;
 import com.nutonmod.item.custom.Prospector;
+import com.nutonmod.sound.ModJukeBoxSongs;
 import net.minecraft.component.type.FoodComponent;
 import net.minecraft.item.*;
 import net.minecraft.registry.Registries;
@@ -95,7 +96,8 @@ public class ModItems {
             new AliasedBlockItem(ModBlocks.CORN_CROP, new Item.Settings()));
     public static final Item CORN = registerItem("corn",
             new Item(new Item.Settings().food(ModFoodComponents.CORN)));
-
+    public static final Item TEST_MUSIC_DISC = registerItem("test_music_disc",
+            new Item(new Item.Settings().maxCount(1).rarity(Rarity.RARE).jukeboxPlayable(ModJukeBoxSongs.TEST)));
 
 
     private static Item registerItem(String id, Item item) {

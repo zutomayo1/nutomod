@@ -29,6 +29,7 @@ public class ModENUSLanProvider extends FabricLanguageProvider {
         translationBuilder.add("item.nutonmod.anthracite", "Anthracite");
         translationBuilder.add("item.nutonmod.anthracite_block", "Anthracite Block");
         translationBuilder.add("item.nutonmod.prospector", "Prospector");
+        translationBuilder.add("item.nutonmod,test_music_disc", "Test Music Disc");
 
         translationBuilder.add("block.nutonmod.energy_stairs", "Energy Stairs");
         translationBuilder.add("block.nutonmod.energy_slab", "Energy Slab");
@@ -61,7 +62,7 @@ public class ModENUSLanProvider extends FabricLanguageProvider {
         translationBuilder.add("sounds.nutonmod.energy_block_step", "Energy Block Step");
         translationBuilder.add("sounds.nutonmod.energy_block_fall", "Energy Block Fall");
 
-
+        translationBuilder.add("jukebox_song.nutonmod.test", "Test");
 
 
 

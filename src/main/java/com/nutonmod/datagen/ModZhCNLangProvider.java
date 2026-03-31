@@ -30,6 +30,7 @@ public class ModZhCNLangProvider extends FabricLanguageProvider {
         translationBuilder.add("item.nutonmod.anthracite", "无烟煤");
         translationBuilder.add("block.nutonmod.anthracite_block", "无烟煤块");
         translationBuilder.add("item.nutonmod.prospector", "探矿器");
+        translationBuilder.add("item.nutonmod.test_music_disc", "测试音乐唱片");
 
         translationBuilder.add("block.nutonmod.energy_stairs", "能量楼梯");
         translationBuilder.add("block.nutonmod.energy_slab", "能量半砖");
@@ -62,5 +63,7 @@ public class ModZhCNLangProvider extends FabricLanguageProvider {
         translationBuilder.add("sounds.nutonmod.energy_block_hit", "能量方块被击打");
         translationBuilder.add("sounds.nutonmod.energy_block_step", "能量方块被踩");
         translationBuilder.add("sounds.nutonmod.energy_block_fall", "能量方块被落下");
+
+        translationBuilder.add("jukebox_song.nutonmod.test", "测试");
     }
 }

@@ -4,6 +4,7 @@ import com.nutonmod.NutonMod;
 import com.nutonmod.block.ModBlocks;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
+import net.minecraft.registry.entry.RegistryEntry;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.util.Identifier;
@@ -24,10 +25,16 @@ public class ModSoundEvents {
             ENERGY_BLOCK_HIT,
             ENERGY_BLOCK_FALL
     );
+    public static final RegistryEntry.Reference<SoundEvent> MUSIC_DISC_TEST= registerReference("music_disc_test");
     private static SoundEvent register(String name){
         Identifier id = Identifier.of(NutonMod.MOD_ID, name);
         return Registry.register(Registries.SOUND_EVENT, id, SoundEvent.of(id));
     }
+    private static RegistryEntry.Reference<SoundEvent> registerReference(String name){
+        Identifier id = Identifier.of(NutonMod.MOD_ID, name);
+        return Registry.registerReference(Registries.SOUND_EVENT, id, SoundEvent.of(id));
+    }
+
     public static void registerModSoundEvents(){
         NutonMod.LOGGER.info("Registering Sound Events for " + NutonMod.MOD_ID);
     }

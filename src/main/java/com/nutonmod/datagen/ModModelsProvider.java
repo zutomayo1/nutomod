@@ -81,6 +81,7 @@ public class ModModelsProvider extends FabricModelProvider {
 
         itemModelGenerator.register(ModItems.CORN_SEEDS, Models.GENERATED);
 
+        itemModelGenerator.register(ModItems.TEST_MUSIC_DISC, Models.TEMPLATE_MUSIC_DISC);
 
 
 
