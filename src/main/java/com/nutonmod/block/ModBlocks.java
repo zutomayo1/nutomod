@@ -2,6 +2,7 @@ package com.nutonmod.block;
 
 import com.nutonmod.NutonMod;
 import com.nutonmod.block.custom.CornCropBlock;
+import com.nutonmod.block.custom.EnergyFluidBlock;
 import com.nutonmod.block.custom.EnergyPotatoCropBlock;
 import com.nutonmod.sound.ModSoundEvents;
 import net.minecraft.block.*;
@@ -70,6 +71,11 @@ public class ModBlocks {
     public static final Block CORN_CROP = Registry.register(Registries.BLOCK,Identifier.of(NutonMod.MOD_ID, "corn_crop"),
             new CornCropBlock(AbstractBlock.Settings.copy(Blocks.WHEAT)));
 
+    public static final Block STILL_ENERGY = Registry.register(
+            Registries.BLOCK,
+            Identifier.of(NutonMod.MOD_ID, "still_energy"),
+            new EnergyFluidBlock(ModFluids.STILL_ENERGY, AbstractBlock.Settings.copy(Blocks.WATER).luminance(state -> 10))
+    );
 
     private static <T extends Block> T register(String id, T block) {
         Identifier identifier = Identifier.of(NutonMod.MOD_ID, id);

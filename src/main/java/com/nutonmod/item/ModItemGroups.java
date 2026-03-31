@@ -58,6 +58,7 @@ public class ModItemGroups {
                 entries.add(ModItems.CORN_SEEDS);
                 entries.add(ModItems.CORN);
                 entries.add(ModItems.TEST_MUSIC_DISC);
+                entries.add(ModItems.ENERGY_BUCKET);
 
 
             })

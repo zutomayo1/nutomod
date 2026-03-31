@@ -2,9 +2,15 @@ package com.nutonmod.block;
 
 import com.google.common.collect.Maps;
 
+import com.nutonmod.NutonMod;
 import net.minecraft.block.Block;
 import net.minecraft.data.family.BlockFamily;
+import net.minecraft.fluid.Fluid;
+import net.minecraft.fluid.FluidState;
 import net.minecraft.registry.Registries;
+import net.minecraft.registry.Registry;
+import net.minecraft.util.Identifier;
+
 import java.util.Map;
 import java.util.stream.Stream;
 
@@ -41,5 +47,19 @@ public class ModBlockFamilies {
     
     public static Stream<BlockFamily> getBlockFamilies() {
         return BASE_BLOCKS_TO_FAMILIES.values().stream();
+    }
+
+    public static class ModFluids {
+        private static <T extends Fluid> T register(String id, T value) {
+            return Registry.register(Registries.FLUID, Identifier.of(NutonMod.MOD_ID, id), value);
+        }
+
+        static {
+            for (Fluid fluid : Registries.FLUID) {
+                for (FluidState fluidState : fluid.getStateManager().getStates()) {
+                    Fluid.STATE_IDS.add(fluidState);
+                }
+            }
+        }
     }
 }

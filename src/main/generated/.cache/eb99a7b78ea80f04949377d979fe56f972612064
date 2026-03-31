@@ -1,4 +1,4 @@
-// 1.21	2026-03-31T16:12:11.4378535	NutonMod/Model Definitions
+// 1.21	2026-03-31T18:16:21.4410371	NutonMod/Model Definitions
 7ec54d1bfbf8730fef6852e402dfae04693a56d3 assets\nutonmod\models\item\energy_chestplate_amethyst_trim.json
 816cea37d3e0920793a0f2b0e47be84957e66fe0 assets\nutonmod\models\item\energy_hoe.json
 c10401c0a22070e3d9033fb92610a9f7967379ee assets\nutonmod\models\item\energy_leggings_amethyst_trim.json
@@ -27,6 +27,7 @@ d8ebc22bed291f4e359573ec951cec038c2761d1 assets\nutonmod\blockstates\energy_wall
 5ff56eab2507e436dd7803b50babe87d54f225cf assets\nutonmod\models\block\energy_door_bottom_left_open.json
 33df05b7317436500c31a710ef794107c3636781 assets\nutonmod\models\block\energy_potato_crop_stage6.json
 25efd6439005486c80c9f18e9b511b78f9a0c0aa assets\nutonmod\models\item\corn.json
+b803533cb48f405fe8d3549938005d3e9a6cccb2 assets\nutonmod\models\item\energy_bucket.json
 a2dd7e878e0cce1b681eb87a1357e69a849e1833 assets\nutonmod\models\item\energy_helmet_lapis_trim.json
 238a71dacb737650a0c92c1ba4b7e555aa7f2b44 assets\nutonmod\models\block\energy_button.json
 f94e464a35625adabea73f7b4147bad43f25be4d assets\nutonmod\blockstates\energy_trapdoor.json
@@ -51,8 +52,8 @@ de548d0a045bb7a8e5e97a6df3e1747a4b7bcd75 assets\nutonmod\models\item\energy_legg
 89e6da90bb9aee8248bd077e12bffca1461d5969 assets\nutonmod\models\block\energy_potato_crop_stage2.json
 f9dae0151571f35900f174cecefbb1e622335b90 assets\nutonmod\models\item\energy_leggings_emerald_trim.json
 8d6b0c92ddb6fc17a8724ecb51afd7cd4a3d823b assets\nutonmod\models\block\energy_wall_side_tall.json
-5a81c196a347dab3e900a561ef31ccbb0c5ae276 assets\nutonmod\models\item\energy_boots_quartz_trim.json
 702c73e08aae1f24cd43150208160b4e777530c7 assets\nutonmod\models\item\anthracite.json
+5a81c196a347dab3e900a561ef31ccbb0c5ae276 assets\nutonmod\models\item\energy_boots_quartz_trim.json
 1e4b4ae25e69407f42f2b0873581255c20acb186 assets\nutonmod\models\item\energy_leggings_redstone_trim.json
 87edaf12fd7e2195ad31ef10cac608dbf5632698 assets\nutonmod\models\item\test_music_disc.json
 8b6df2c5401057727a959672d2567dd08b7d96a6 assets\nutonmod\models\block\energy_stairs.json
@@ -62,6 +63,7 @@ dd06e73347dc31880c8079d50f1795dba40b740c assets\nutonmod\models\item\energy_helm
 6fac88cf6751ab9193d187e461127bfc8fde7a0b assets\nutonmod\models\block\energy_fence_post.json
 104122d5eb8c6f27ee5cc5e9f787ffbfb06afd8b assets\nutonmod\models\item\energy_pickaxe.json
 2e05e387691658b41398212996d720cb4dcfbbd1 assets\nutonmod\models\item\energy_helmet_diamond_trim.json
+304bd3de41566b0c93ad87c00c3b95310c57910d assets\nutonmod\blockstates\still_energy.json
 4b26df7dcd1c1f43ae28c9cf0c2531eab8bbfd34 assets\nutonmod\models\item\energy_helmet_quartz_trim.json
 be10a9b5dbda7640fbf89e11fcad45d6a08fa872 assets\nutonmod\models\item\holy_leggings.json
 c342a4b51639dcd2fe919c8cd0a9b2eac6114df6 assets\nutonmod\models\block\energy_trapdoor_bottom.json
@@ -113,9 +115,9 @@ be7ad2c60a3d1083decbc5e444b4837f198dbc56 assets\nutonmod\models\item\prospector.
 fe2333f22d6ea8353a9fc9395d30596cbd15329a assets\nutonmod\models\block\energy_fence_gate_wall_open.json
 311e88867655b37e5b32a48ca64552697b88741c assets\nutonmod\blockstates\energy_block.json
 99d9771bd350ca9829e26913590a86c676d0c838 assets\nutonmod\models\item\energy_wall.json
-95a51a2a3b04eaeae76cc638910fb868c7b65311 assets\nutonmod\models\item\energy_helmet.json
 8d9c1cd6926c7a60e4cd2ce10ad0bc199fa4e6f7 assets\nutonmod\models\block\energy_pressure_plate.json
 0dd4c78c8555d0a2e0ff0e0205e387b6b3afff56 assets\nutonmod\models\block\energy_fence_inventory.json
+95a51a2a3b04eaeae76cc638910fb868c7b65311 assets\nutonmod\models\item\energy_helmet.json
 cee767a3af8df83c68d219371cfffa21aa5d0c86 assets\nutonmod\models\item\energy_helmet_iron_trim.json
 a490d522dc0dcb949409fe17772ec3c85b5a14b0 assets\nutonmod\blockstates\energy_fence_gate.json
 57c2bdc8203d08fd23f85f5a86a5627c75d6d70e assets\nutonmod\models\item\energy_potato.json

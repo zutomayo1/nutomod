@@ -51,6 +51,7 @@ public class ModModelsProvider extends FabricModelProvider {
                         )
             )
         );
+        blockStateModelGenerator.registerSimpleState(ModBlocks.STILL_ENERGY);
     }
 
     @Override
@@ -82,6 +83,8 @@ public class ModModelsProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.CORN_SEEDS, Models.GENERATED);
 
         itemModelGenerator.register(ModItems.TEST_MUSIC_DISC, Models.TEMPLATE_MUSIC_DISC);
+
+        itemModelGenerator.register(ModItems.ENERGY_BUCKET, Models.GENERATED);
 
 
 

@@ -1,6 +1,7 @@
 package com.nutonmod;
 
 import com.nutonmod.block.ModBlocks;
+import com.nutonmod.block.ModFluids;
 import com.nutonmod.entity.ModEntities;
 import com.nutonmod.item.EnergyChestplateItem;
 import com.nutonmod.item.ModItems;
@@ -30,9 +31,7 @@ public class NutonMod implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
-		// This code runs as soon as Minecraft is in a mod-load-ready state.
-		// However, some things (like resources) may still be uninitialized.
-		// Proceed with mild caution.
+
 		ModBlocks.registerModBlocks(); // 注册方块
 		ModItems.registerModItems();   // 注册物品
 		ModItemGroups.registerItemGroups(); // 注册物品组
@@ -41,6 +40,7 @@ public class NutonMod implements ModInitializer {
 		ModCustomTrades.registerModCustomTrades();
 		Modvillagers.registerVillagers(); // 注册村民及其职业
 		ModSoundEvents.registerModSoundEvents();
+		ModFluids.registerModFluids(); // 注册流体
 		
 		// 使用 Fabric API 添加熔炉燃料
 		FuelRegistry.INSTANCE.add(ModItems.ANTHRACITE, 1600); // 无烟煤：80 秒

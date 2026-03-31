@@ -1,15 +1,19 @@
 package com.nutonmod;
 
 import com.nutonmod.block.ModBlocks;
+import com.nutonmod.block.ModFluids;
 import com.nutonmod.client.render.HatArmorRenderer;
 import com.nutonmod.entity.EnergyBeingRenderer;
 import com.nutonmod.entity.ModEntities;
 import com.nutonmod.item.ModItems;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
+import net.fabricmc.fabric.api.client.render.fluid.v1.FluidRenderHandlerRegistry;
+import net.fabricmc.fabric.api.client.render.fluid.v1.SimpleFluidRenderHandler;
 import net.fabricmc.fabric.api.client.rendering.v1.ArmorRenderer;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
 import net.minecraft.client.render.RenderLayer;
+import net.minecraft.util.Identifier;
 
 public class NutonModClient implements ClientModInitializer {
     @Override
@@ -19,5 +23,13 @@ public class NutonModClient implements ClientModInitializer {
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.CORN_CROP, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.ENERGY_POTATO_CROP, RenderLayer.getCutout());
         ArmorRenderer.register(new HatArmorRenderer(), ModItems.HAT);
+
+        FluidRenderHandlerRegistry.INSTANCE.register(ModFluids.STILL_ENERGY, ModFluids.FLOWING_ENERGY,
+                new SimpleFluidRenderHandler(
+                        Identifier.of(NutonMod.MOD_ID, "block/energy_fluid_still"),
+                        Identifier.of(NutonMod.MOD_ID, "block/energy_fluid_flow"),
+                        0xFFFFFFFF
+                ));
+        BlockRenderLayerMap.INSTANCE.putFluids(RenderLayer.getTranslucent(), ModFluids.STILL_ENERGY, ModFluids.FLOWING_ENERGY);
     }
 }

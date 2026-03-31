@@ -65,5 +65,6 @@ public class ModZhCNLangProvider extends FabricLanguageProvider {
         translationBuilder.add("sounds.nutonmod.energy_block_fall", "能量方块被落下");
 
         translationBuilder.add("jukebox_song.nutonmod.test", "测试");
+        translationBuilder.add("item.nutonmod.energy_bucket", "能量桶");
     }
 }

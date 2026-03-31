@@ -4,6 +4,7 @@ import com.nutonmod.ModArmorMaterials;
 import com.nutonmod.NutonMod;
 import com.nutonmod.armor.EnergyArmor;
 import com.nutonmod.block.ModBlocks;
+import com.nutonmod.block.ModFluids;
 import com.nutonmod.entity.ModEntities;
 import com.nutonmod.item.custom.EnergyAppleItem;
 import com.nutonmod.item.custom.EnergyPotatoItem;
@@ -98,7 +99,8 @@ public class ModItems {
             new Item(new Item.Settings().food(ModFoodComponents.CORN)));
     public static final Item TEST_MUSIC_DISC = registerItem("test_music_disc",
             new Item(new Item.Settings().maxCount(1).rarity(Rarity.RARE).jukeboxPlayable(ModJukeBoxSongs.TEST)));
-
+    public static final Item ENERGY_BUCKET = registerItem("energy_bucket",
+            new BucketItem(ModFluids.STILL_ENERGY, new Item.Settings().recipeRemainder(Items.BUCKET).maxCount(1)));
 
     private static Item registerItem(String id, Item item) {
         return Registry.register(Registries.ITEM, Identifier.of(NutonMod.MOD_ID, id), item);

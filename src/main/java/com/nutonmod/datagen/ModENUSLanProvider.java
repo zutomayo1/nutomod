@@ -63,6 +63,7 @@ public class ModENUSLanProvider extends FabricLanguageProvider {
         translationBuilder.add("sounds.nutonmod.energy_block_fall", "Energy Block Fall");
 
         translationBuilder.add("jukebox_song.nutonmod.test", "Test");
+        translationBuilder.add("item.nutonmod.energy_bucket", "Energy Bucket");
 
 
 
