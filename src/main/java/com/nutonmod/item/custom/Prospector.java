@@ -1,5 +1,6 @@
 package com.nutonmod.item.custom;
 
+import com.nutonmod.sound.ModSoundEvents;
 import com.nutonmod.tags.ModBlockTags;
 import net.minecraft.block.BlockState;
 import net.minecraft.client.gui.screen.Screen;
@@ -9,6 +10,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemUsageContext;
 import net.minecraft.item.tooltip.TooltipType;
+import net.minecraft.sound.SoundCategory;
 import net.minecraft.text.Text;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Formatting;
@@ -62,7 +64,8 @@ public class Prospector extends Item {
                             
                             // ActionBar 显示简洁提示（醒目）
                             player.sendMessage(Text.literal("§e§l⚠ 发现矿藏！§r"), false);
-                            
+
+                            world.playSound(null,pos, ModSoundEvents.PROSPECTOR_FOUND_ORE, SoundCategory.BLOCKS,1.0f,1.0f);
                             foundBlock = true;
                             break;
                         }
@@ -85,7 +88,8 @@ public class Prospector extends Item {
                     
                     // ActionBar 显示提示
                     player.sendMessage(Text.literal("§b§l⬇ 正下方有矿！§r"), false);
-                    
+
+                    world.playSound(null,pos, ModSoundEvents.PROSPECTOR_FOUND_ORE, SoundCategory.BLOCKS,1.0f,1.0f);
                     foundBlock = true;
                     break;
                 }

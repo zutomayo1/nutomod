@@ -54,6 +54,13 @@ public class ModENUSLanProvider extends FabricLanguageProvider {
         translationBuilder.add("block.nutonmod.energy_potato_crop", "Energy Potato Crop");
         translationBuilder.add("block.nutonmod.corn_seeds", "Corn Seeds");
         translationBuilder.add("item.nutonmod.corn", "Corn");
+        translationBuilder.add("sounds.nutonmod.prospector_found_ore", "Prospector Found Ore");
+        translationBuilder.add("sounds.nutonmod.energy_block_break", "Energy Block Break");
+        translationBuilder.add("sounds.nutonmod.energy_block_place", "Energy Block Place");
+        translationBuilder.add("sounds.nutonmod.energy_block_hit", "Energy Block Hit");
+        translationBuilder.add("sounds.nutonmod.energy_block_step", "Energy Block Step");
+        translationBuilder.add("sounds.nutonmod.energy_block_fall", "Energy Block Fall");
+
 
 
 

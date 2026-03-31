@@ -55,5 +55,12 @@ public class ModZhCNLangProvider extends FabricLanguageProvider {
         translationBuilder.add("block.nutonmod.energy_potato_crop", "能量马铃薯作物");
         translationBuilder.add("item.nutonmod.corn_seeds", "玉米种子");
         translationBuilder.add("item.nutonmod.corn", "玉米");
+
+        translationBuilder.add("sounds.nutonmod.prospector_found_ore", "探矿器发现矿石");
+        translationBuilder.add("sounds.nutonmod.energy_block_break", "能量方块被破坏");
+        translationBuilder.add("sounds.nutonmod.energy_block_place", "能量方块被放置");
+        translationBuilder.add("sounds.nutonmod.energy_block_hit", "能量方块被击打");
+        translationBuilder.add("sounds.nutonmod.energy_block_step", "能量方块被踩");
+        translationBuilder.add("sounds.nutonmod.energy_block_fall", "能量方块被落下");
     }
 }

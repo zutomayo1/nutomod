@@ -35,5 +35,11 @@
   "item.nutonmod.holy_chestplate": "Holy Chestplate",
   "item.nutonmod.holy_helmet": "Holy Helmet",
   "item.nutonmod.holy_leggings": "Holy Leggings",
-  "item.nutonmod.prospector": "Prospector"
+  "item.nutonmod.prospector": "Prospector",
+  "sounds.nutonmod.energy_block_break": "Energy Block Break",
+  "sounds.nutonmod.energy_block_fall": "Energy Block Fall",
+  "sounds.nutonmod.energy_block_hit": "Energy Block Hit",
+  "sounds.nutonmod.energy_block_place": "Energy Block Place",
+  "sounds.nutonmod.energy_block_step": "Energy Block Step",
+  "sounds.nutonmod.prospector_found_ore": "Prospector Found Ore"
 }

@@ -1,0 +1,39 @@
+{
+  "prospector_found_ore": {
+    "subtitle": "sounds.nutonmod.prospector_found_ore",
+    "sounds": [
+      "nutonmod:prospector_found_ore"
+    ]
+  },
+  "energy_block_break": {
+    "subtitle": "sounds.nutonmod.energy_block_break",
+    "sounds": [
+      "nutonmod:energy_block_break"
+    ]
+  },
+  "energy_block_place": {
+    "subtitle": "sounds.nutonmod.energy_block_place",
+    "sounds": [
+      "nutonmod:energy_block_place"
+    ]
+  },
+  "energy_block_hit": {
+    "subtitle": "sounds.nutonmod.energy_block_hit",
+    "sounds": [
+      "nutonmod:energy_block_hit"
+    ]
+  },
+  "energy_block_step": {
+    "subtitle": "sounds.nutonmod.energy_block_step",
+    "sounds": [
+      "nutonmod:energy_block_step"
+    ]
+  },
+  "energy_block_fall": {
+    "subtitle": "sounds.nutonmod.energy_block_fall",
+    "sounds": [
+      "nutonmod:energy_block_fall"
+    ]
+  }
+
+}

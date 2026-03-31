@@ -3,6 +3,7 @@ package com.nutonmod.block;
 import com.nutonmod.NutonMod;
 import com.nutonmod.block.custom.CornCropBlock;
 import com.nutonmod.block.custom.EnergyPotatoCropBlock;
+import com.nutonmod.sound.ModSoundEvents;
 import net.minecraft.block.*;
 import net.minecraft.block.piston.PistonBehavior;
 import net.minecraft.item.BlockItem;
@@ -23,7 +24,8 @@ public class ModBlocks {
     // 能量方块
     public static final Block ENERGY_BLOCK = register("energy_block", new Block(AbstractBlock.Settings.create()
             .requiresTool()
-            .strength(3.0f, 6.0f)));
+            .strength(3.0f, 6.0f)
+            .sounds(ModSoundEvents.ENERGY_BLOCK_SOUND_GROUP)));
 
     // 无烟煤块 - 由 9 个无烟煤合成，可反向分解
     public static final Block ANTHRACITE_BLOCK = register("anthracite_block", new Block(AbstractBlock.Settings.create()
