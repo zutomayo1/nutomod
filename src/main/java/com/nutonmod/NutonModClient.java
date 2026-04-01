@@ -2,6 +2,8 @@ package com.nutonmod;
 
 import com.nutonmod.block.ModBlocks;
 import com.nutonmod.block.ModFluids;
+import com.nutonmod.block.entity.ModBlockEntities;
+import com.nutonmod.client.render.BoxBlockEntityRenderer;
 import com.nutonmod.client.render.HatArmorRenderer;
 import com.nutonmod.entity.EnergyBeingRenderer;
 import com.nutonmod.entity.ModEntities;
@@ -12,6 +14,7 @@ import net.fabricmc.fabric.api.client.render.fluid.v1.FluidRenderHandlerRegistry
 import net.fabricmc.fabric.api.client.render.fluid.v1.SimpleFluidRenderHandler;
 import net.fabricmc.fabric.api.client.rendering.v1.ArmorRenderer;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
+import net.minecraft.client.render.block.entity.BlockEntityRendererFactories;
 import net.minecraft.client.render.RenderLayer;
 import net.minecraft.util.Identifier;
 
@@ -20,6 +23,7 @@ public class NutonModClient implements ClientModInitializer {
     public void onInitializeClient() {
         // 注册能量人实体渲染器
         EntityRendererRegistry.register(ModEntities.ENERGY_BEING, EnergyBeingRenderer::new);
+        BlockEntityRendererFactories.register(ModBlockEntities.BOX, BoxBlockEntityRenderer::new);
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.CORN_CROP, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.ENERGY_POTATO_CROP, RenderLayer.getCutout());
         ArmorRenderer.register(new HatArmorRenderer(), ModItems.HAT);

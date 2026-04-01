@@ -52,6 +52,7 @@ public class ModModelsProvider extends FabricModelProvider {
             )
         );
         blockStateModelGenerator.registerSimpleState(ModBlocks.STILL_ENERGY);
+        blockStateModelGenerator.registerSimpleState(ModBlocks.BOX);
     }
 
     @Override

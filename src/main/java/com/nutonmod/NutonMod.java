@@ -2,6 +2,7 @@ package com.nutonmod;
 
 import com.nutonmod.block.ModBlocks;
 import com.nutonmod.block.ModFluids;
+import com.nutonmod.block.entity.ModBlockEntities;
 import com.nutonmod.entity.ModEntities;
 import com.nutonmod.item.EnergyChestplateItem;
 import com.nutonmod.item.ModItems;
@@ -34,6 +35,7 @@ public class NutonMod implements ModInitializer {
 
 		ModBlocks.registerModBlocks(); // 注册方块
 		ModItems.registerModItems();   // 注册物品
+		ModBlockEntities.registerModBlockEntities(); // 注册方块实体
 		ModItemGroups.registerItemGroups(); // 注册物品组
 		ModEntities.register();        // 注册实体
 		ModLootTableModifiers.modifyLootTable();

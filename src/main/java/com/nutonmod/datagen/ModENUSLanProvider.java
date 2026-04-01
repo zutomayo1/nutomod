@@ -67,5 +67,9 @@ public class ModENUSLanProvider extends FabricLanguageProvider {
 
         translationBuilder.add("item.nutonmod.energy_horse_armor", "Energy Horse Armor");
 
+        translationBuilder.add("block.nutonmod.box", "Box");
+        translationBuilder.add("item.nutonmod.box", "Box");
+        translationBuilder.add("container.box", "Box");
+
     }
 }

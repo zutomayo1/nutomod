@@ -1,6 +1,7 @@
 package com.nutonmod.block;
 
 import com.nutonmod.NutonMod;
+import com.nutonmod.block.custom.BoxBlock;
 import com.nutonmod.block.custom.CornCropBlock;
 import com.nutonmod.block.custom.EnergyFluidBlock;
 import com.nutonmod.block.custom.EnergyPotatoCropBlock;
@@ -76,6 +77,8 @@ public class ModBlocks {
             Identifier.of(NutonMod.MOD_ID, "still_energy"),
             new EnergyFluidBlock(ModFluids.STILL_ENERGY, AbstractBlock.Settings.copy(Blocks.WATER).luminance(state -> 10))
     );
+
+    public static final Block BOX = register("box", new BoxBlock(AbstractBlock.Settings.copy(Blocks.CHEST)));
 
     private static <T extends Block> T register(String id, T block) {
         Identifier identifier = Identifier.of(NutonMod.MOD_ID, id);

@@ -34,6 +34,7 @@ public class ModItemGroups {
                 entries.add(ModItems.ENERGY_POTATO);
                 entries.add(ModItems.ANTHRACITE);
                 entries.add(ModBlocks.ANTHRACITE_BLOCK);
+                entries.add(ModBlocks.BOX.asItem());
                 entries.add(ModItems.PROSPECTOR);
 
                 entries.add(ModBlocks.ENERGY_STAIRS);
