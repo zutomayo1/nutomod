@@ -7,6 +7,7 @@ import com.nutonmod.entity.ModEntities;
 import com.nutonmod.item.EnergyChestplateItem;
 import com.nutonmod.item.ModItems;
 import com.nutonmod.item.ModItemGroups;
+import com.nutonmod.recipe.ModRecipeTypes;
 import com.nutonmod.sound.ModSoundEvents;
 import com.nutonmod.util.ModCustomTrades;
 import com.nutonmod.util.ModLootTableModifiers;
@@ -43,6 +44,7 @@ public class NutonMod implements ModInitializer {
 		Modvillagers.registerVillagers(); // 注册村民及其职业
 		ModSoundEvents.registerModSoundEvents();
 		ModFluids.registerModFluids(); // 注册流体
+		ModRecipeTypes.registerRecipeTypes();
 		
 		// 使用 Fabric API 添加熔炉燃料
 		FuelRegistry.INSTANCE.add(ModItems.ANTHRACITE, 1600); // 无烟煤：80 秒
