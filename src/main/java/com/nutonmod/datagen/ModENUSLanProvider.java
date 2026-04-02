@@ -71,5 +71,8 @@ public class ModENUSLanProvider extends FabricLanguageProvider {
         translationBuilder.add("item.nutonmod.box", "Box");
         translationBuilder.add("container.box", "Box");
 
+        translationBuilder.add("block.nutonmod.polishing_machine", "Polishing Machine");
+        translationBuilder.add("container.polishing_machine", "Polishing Machine");
+
     }
 }

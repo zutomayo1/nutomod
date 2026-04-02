@@ -63,6 +63,8 @@ public class ModItemGroups {
 
                 entries.add(ModItems.ENERGY_HORSE_ARMOR);
 
+                entries.add(ModBlocks.POLISHING_MACHINE);
+
 
             })
             .build()

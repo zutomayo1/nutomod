@@ -1,10 +1,7 @@
 package com.nutonmod.block;
 
 import com.nutonmod.NutonMod;
-import com.nutonmod.block.custom.BoxBlock;
-import com.nutonmod.block.custom.CornCropBlock;
-import com.nutonmod.block.custom.EnergyFluidBlock;
-import com.nutonmod.block.custom.EnergyPotatoCropBlock;
+import com.nutonmod.block.custom.*;
 import com.nutonmod.sound.ModSoundEvents;
 import net.minecraft.block.*;
 import net.minecraft.block.piston.PistonBehavior;
@@ -79,7 +76,9 @@ public class ModBlocks {
     );
 
     public static final Block BOX = register("box", new BoxBlock(AbstractBlock.Settings.copy(Blocks.CHEST)));
-
+    public static final Block POLISHING_MACHINE = register("polishing_machine",
+            new PolishingMachine(AbstractBlock.Settings.copy(Blocks.STONE))
+    );
     private static <T extends Block> T register(String id, T block) {
         Identifier identifier = Identifier.of(NutonMod.MOD_ID, id);
         Registry.register(Registries.BLOCK, identifier, block);

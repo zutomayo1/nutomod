@@ -69,5 +69,8 @@ public class ModZhCNLangProvider extends FabricLanguageProvider {
         translationBuilder.add("item.nutonmod.energy_horse_armor", "能量马铠");
         translationBuilder.add("item.nutonmod.box", "箱子");
         translationBuilder.add("container.box", "箱子");
+
+        translationBuilder.add("item.nutonmod.polishing_machine", "抛光机");
+        translationBuilder.add("container.polishing_machine", "抛光机");
     }
 }

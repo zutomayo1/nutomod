@@ -8,12 +8,16 @@ import com.nutonmod.client.render.HatArmorRenderer;
 import com.nutonmod.entity.EnergyBeingRenderer;
 import com.nutonmod.entity.ModEntities;
 import com.nutonmod.item.ModItems;
+import com.nutonmod.screen.ModScreenHandlers;
+import com.nutonmod.screen.PolishingMachineScreen;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.client.render.fluid.v1.FluidRenderHandlerRegistry;
 import net.fabricmc.fabric.api.client.render.fluid.v1.SimpleFluidRenderHandler;
 import net.fabricmc.fabric.api.client.rendering.v1.ArmorRenderer;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
+import net.minecraft.client.gui.screen.ingame.HandledScreen;
+import net.minecraft.client.gui.screen.ingame.HandledScreens;
 import net.minecraft.client.render.block.entity.BlockEntityRendererFactories;
 import net.minecraft.client.render.RenderLayer;
 import net.minecraft.util.Identifier;
@@ -21,7 +25,6 @@ import net.minecraft.util.Identifier;
 public class NutonModClient implements ClientModInitializer {
     @Override
     public void onInitializeClient() {
-        // 注册能量人实体渲染器
         EntityRendererRegistry.register(ModEntities.ENERGY_BEING, EnergyBeingRenderer::new);
         BlockEntityRendererFactories.register(ModBlockEntities.BOX, BoxBlockEntityRenderer::new);
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.CORN_CROP, RenderLayer.getCutout());
@@ -35,5 +38,6 @@ public class NutonModClient implements ClientModInitializer {
                         0xFFFFFFFF
                 ));
         BlockRenderLayerMap.INSTANCE.putFluids(RenderLayer.getTranslucent(), ModFluids.STILL_ENERGY, ModFluids.FLOWING_ENERGY);
+        HandledScreens.register(ModScreenHandlers.POLISHING_MACHINE_SCREEN_HANDLER, PolishingMachineScreen::new);
     }
 }
