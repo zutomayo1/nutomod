@@ -3,7 +3,7 @@
 	"id": "nutonmod",
 	"version": "${version}",
 	"name": "NutonMod",
-	"description": "这是描述",
+	"description": "nuton's first mod",
 	"authors": [
 		"nuton"
 	],
@@ -23,6 +23,9 @@
 		],
 		"client": [
 			"com.nutonmod.NutonModClient"
+		],
+		"rei_client": [
+			"com.nutonmod.compat.ModREIClientPlugins"
 		]
 	},
 	"mixins": [
