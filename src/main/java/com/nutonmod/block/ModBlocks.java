@@ -77,7 +77,8 @@ public class ModBlocks {
 
     public static final Block BOX = register("box", new BoxBlock(AbstractBlock.Settings.copy(Blocks.CHEST)));
     public static final Block POLISHING_MACHINE = register("polishing_machine",
-            new PolishingMachine(AbstractBlock.Settings.copy(Blocks.STONE))
+            new PolishingMachine(AbstractBlock.Settings.copy(Blocks.STONE)
+                    .luminance(state -> state.get(PolishingMachine.WORKING) ? 10 : 0))
     );
     private static <T extends Block> T register(String id, T block) {
         Identifier identifier = Identifier.of(NutonMod.MOD_ID, id);

@@ -29,7 +29,7 @@ public class ModENUSLanProvider extends FabricLanguageProvider {
         translationBuilder.add("item.nutonmod.anthracite", "Anthracite");
         translationBuilder.add("item.nutonmod.anthracite_block", "Anthracite Block");
         translationBuilder.add("item.nutonmod.prospector", "Prospector");
-        translationBuilder.add("item.nutonmod,test_music_disc", "Test Music Disc");
+        translationBuilder.add("item.nutonmod.test_music_disc", "Test Music Disc");
 
         translationBuilder.add("block.nutonmod.energy_stairs", "Energy Stairs");
         translationBuilder.add("block.nutonmod.energy_slab", "Energy Slab");
@@ -53,7 +53,7 @@ public class ModENUSLanProvider extends FabricLanguageProvider {
         translationBuilder.add("entity.minecraft.villager.nutonmod.energy_master", "Energy Master");
 
         translationBuilder.add("block.nutonmod.energy_potato_crop", "Energy Potato Crop");
-        translationBuilder.add("block.nutonmod.corn_seeds", "Corn Seeds");
+        translationBuilder.add("item.nutonmod.corn_seeds", "Corn Seeds");
         translationBuilder.add("item.nutonmod.corn", "Corn");
         translationBuilder.add("sounds.nutonmod.prospector_found_ore", "Prospector Found Ore");
         translationBuilder.add("sounds.nutonmod.energy_block_break", "Energy Block Break");
@@ -73,6 +73,9 @@ public class ModENUSLanProvider extends FabricLanguageProvider {
 
         translationBuilder.add("block.nutonmod.polishing_machine", "Polishing Machine");
         translationBuilder.add("container.polishing_machine", "Polishing Machine");
+        translationBuilder.add("gui.nutonmod.polishing_machine.status.ready", "Ready");
+        translationBuilder.add("gui.nutonmod.polishing_machine.status.missing_material", "Missing Material");
+        translationBuilder.add("gui.nutonmod.polishing_machine.status.output_full", "Output Full");
 
     }
 }

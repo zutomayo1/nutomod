@@ -1,6 +1,5 @@
 package com.nutonmod.recipe;
 
-import com.mojang.serialization.DataResult;
 import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.minecraft.item.ItemStack;
@@ -15,27 +14,26 @@ import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.world.World;
 
-import java.util.List;
-
 public class PolishingMachineRecipe implements Recipe<SingleStackRecipeInput> {
+    public static final int DEFAULT_TIME = 72;
     private final ItemStack output;
-    private final List<Ingredient> recipeItems;
+    private final Ingredient ingredient;
+    private final int time;
 
-    public PolishingMachineRecipe(List<Ingredient> recipeItems, ItemStack output) {
+    public PolishingMachineRecipe(Ingredient ingredient, ItemStack output, int time) {
         this.output = output;
-        this.recipeItems = recipeItems;
+        this.ingredient = ingredient;
+        this.time = Math.max(1, time);
     }
 
 
     @Override
     public DefaultedList<Ingredient> getIngredients() {
-        DefaultedList<Ingredient> list = DefaultedList.ofSize(recipeItems.size());
-        list.addAll(recipeItems);
-        return list;
+        return DefaultedList.copyOf(Ingredient.EMPTY, this.ingredient);
     }
     @Override
     public boolean matches(SingleStackRecipeInput input, World world) {
-        return recipeItems.get(0).test(input.item());
+        return this.ingredient.test(input.item());
     }
 
     @Override
@@ -51,6 +49,14 @@ public class PolishingMachineRecipe implements Recipe<SingleStackRecipeInput> {
     @Override
     public ItemStack getResult(RegistryWrapper.WrapperLookup registriesLookup) {
         return this.output;
+    }
+
+    public Ingredient ingredient() {
+        return this.ingredient;
+    }
+
+    public int time() {
+        return this.time;
     }
 
     @Override
@@ -71,35 +77,24 @@ public class PolishingMachineRecipe implements Recipe<SingleStackRecipeInput> {
         public static final Serializer INSTANCE = new Serializer();
         public static final String ID = "polishing_machine";
         public static final MapCodec<PolishingMachineRecipe> CODEC = RecordCodecBuilder.mapCodec(instance -> instance.group(
-                (Ingredient.DISALLOW_EMPTY_CODEC.listOf().fieldOf("ingredients")).flatXmap(ingredients -> {
-                    Ingredient[] ingredients1 = (Ingredient[]) ingredients.stream().filter(ingredient -> !ingredient.isEmpty()).toArray(Ingredient[]::new);
-                    if(ingredients1.length == 0 ) {
-                        return DataResult.error( ()-> "No ingredients");
-                    }
-                    if(ingredients1.length > 9) {
-                        return DataResult.error( ()-> "Too many ingredients");
-                    }
-                    return DataResult.success(DefaultedList.copyOf(Ingredient.EMPTY, ingredients1));
-                },DataResult::success).forGetter(recipe->recipe.getIngredients()),
-                (ItemStack.VALIDATED_CODEC.fieldOf("output")).forGetter(recipe->recipe.output)).apply(instance, PolishingMachineRecipe::new));
+                Ingredient.DISALLOW_EMPTY_CODEC.fieldOf("ingredient").forGetter(PolishingMachineRecipe::ingredient),
+                ItemStack.VALIDATED_CODEC.fieldOf("output").forGetter(recipe -> recipe.output),
+                net.minecraft.util.dynamic.Codecs.POSITIVE_INT.optionalFieldOf("time", DEFAULT_TIME).forGetter(PolishingMachineRecipe::time)
+        ).apply(instance, PolishingMachineRecipe::new));
         public static final PacketCodec<RegistryByteBuf, PolishingMachineRecipe> PACKET_CODEC = PacketCodec.ofStatic(
             Serializer::write, Serializer::read);
 
         private static void write(RegistryByteBuf registryByteBuf, PolishingMachineRecipe polishingMachineRecipe) {
-            registryByteBuf.writeInt(polishingMachineRecipe.getIngredients().size());
-            for (Ingredient ingredient : polishingMachineRecipe.getIngredients()) {
-                Ingredient.PACKET_CODEC.encode(registryByteBuf, ingredient);
-            }
+            Ingredient.PACKET_CODEC.encode(registryByteBuf, polishingMachineRecipe.ingredient());
             ItemStack.PACKET_CODEC.encode(registryByteBuf, polishingMachineRecipe.getResult(null));
+            registryByteBuf.writeVarInt(polishingMachineRecipe.time());
         }
 
         private static PolishingMachineRecipe read(RegistryByteBuf registryByteBuf) {
-            DefaultedList<Ingredient> inputs = DefaultedList.ofSize(registryByteBuf.readInt(), Ingredient.EMPTY);
-            for (int i = 0; i < inputs.size(); i++){
-                inputs.set(i, Ingredient.PACKET_CODEC.decode(registryByteBuf));
-            }
+            Ingredient ingredient = Ingredient.PACKET_CODEC.decode(registryByteBuf);
             ItemStack output = ItemStack.PACKET_CODEC.decode(registryByteBuf);
-            return new PolishingMachineRecipe(inputs, output);
+            int time = registryByteBuf.readVarInt();
+            return new PolishingMachineRecipe(ingredient, output, time);
         }
 
         public MapCodec<PolishingMachineRecipe> codec() {

@@ -9,6 +9,8 @@ import net.minecraft.block.entity.BlockEntityTicker;
 import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.Inventory;
+import net.minecraft.state.StateManager;
+import net.minecraft.state.property.BooleanProperty;
 import net.minecraft.screen.NamedScreenHandlerFactory;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.ItemScatterer;
@@ -21,9 +23,11 @@ import org.jetbrains.annotations.Nullable;
 
 public class PolishingMachine extends BlockWithEntity implements BlockEntityProvider {
     public static final MapCodec<PolishingMachine> CODEC = createCodec(PolishingMachine::new);
+    public static final BooleanProperty WORKING = BooleanProperty.of("working");
     public static final VoxelShape SHAPE = Block.createCuboidShape(0, 0, 0, 16, 10, 16);
     public PolishingMachine(Settings settings) {
         super(settings);
+        this.setDefaultState(this.stateManager.getDefaultState().with(WORKING, false));
     }
 
     @Override
@@ -34,6 +38,11 @@ public class PolishingMachine extends BlockWithEntity implements BlockEntityProv
     @Override
     protected MapCodec<? extends BlockWithEntity> getCodec() {
         return CODEC;
+    }
+
+    @Override
+    protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
+        builder.add(WORKING);
     }
 
     @Override

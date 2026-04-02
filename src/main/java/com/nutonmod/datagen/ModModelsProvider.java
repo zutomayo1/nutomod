@@ -3,6 +3,7 @@ package com.nutonmod.datagen;
 import com.nutonmod.block.ModBlockFamilies;
 import com.nutonmod.block.ModBlocks;
 import com.nutonmod.block.custom.CornCropBlock;
+import com.nutonmod.block.custom.PolishingMachine;
 import com.nutonmod.item.ModItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
@@ -53,7 +54,12 @@ public class ModModelsProvider extends FabricModelProvider {
         );
         blockStateModelGenerator.registerSimpleState(ModBlocks.STILL_ENERGY);
         blockStateModelGenerator.registerSimpleState(ModBlocks.BOX);
-        blockStateModelGenerator.registerSimpleState(ModBlocks.POLISHING_MACHINE);
+        blockStateModelGenerator.blockStateCollector.accept(
+                VariantsBlockStateSupplier.create(ModBlocks.POLISHING_MACHINE)
+                        .coordinate(BlockStateVariantMap.create(PolishingMachine.WORKING)
+                                .register(working -> BlockStateVariant.create()
+                                        .put(VariantSettings.MODEL, Identifier.of("nutonmod", "block/polishing_machine"))))
+        );
     }
 
     @Override
