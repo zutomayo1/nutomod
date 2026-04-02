@@ -79,6 +79,13 @@ public class ModZhCNLangProvider extends FabricLanguageProvider {
         translationBuilder.add("gui.nutonmod.polishing_machine.status.missing_material", "缺材料");
         translationBuilder.add("gui.nutonmod.polishing_machine.status.output_full", "输出满");
 
+        translationBuilder.add("block.nutonmod.energy_log", "能量原木");
+        translationBuilder.add("block.nutonmod.energy_wood", "能量木");
+        translationBuilder.add("block.nutonmod.stripped_energy_log", "去皮能量原木");
+        translationBuilder.add("block.nutonmod.stripped_energy_wood", "去皮能量木");
+        translationBuilder.add("block.nutonmod.energy_planks", "能量木板");
+        translationBuilder.add("block.nutonmod.energy_leaves", "能量树叶");
+
         translationBuilder.add("itemGroup.nutonmod.nuton_group", "Noton 模组");
     }
 }

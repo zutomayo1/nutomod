@@ -60,6 +60,12 @@ public class ModModelsProvider extends FabricModelProvider {
                                 .register(working -> BlockStateVariant.create()
                                         .put(VariantSettings.MODEL, Identifier.of("nutonmod", "block/polishing_machine"))))
         );
+
+        blockStateModelGenerator.registerLog(ModBlocks.ENERGY_LOG).log(ModBlocks.ENERGY_LOG).wood(ModBlocks.ENERGY_WOOD);
+        blockStateModelGenerator.registerLog(ModBlocks.STRIPPED_ENERGY_LOG).log(ModBlocks.STRIPPED_ENERGY_LOG).wood(ModBlocks.STRIPPED_ENERGY_WOOD);
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.ENERGY_PLANKS);
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.ENERGY_LEAVES);
+
     }
 
     @Override

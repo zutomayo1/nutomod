@@ -60,9 +60,10 @@ public class ModBlocks {
             new TrapdoorBlock(BlockSetType.OAK,AbstractBlock.Settings.copy(ENERGY_BLOCK)));
 
     //能量土豆作物
-    public static final Block ENERGY_POTATO_CROP   = register("energy_potato_crop",
-            new EnergyPotatoCropBlock(AbstractBlock.Settings.copy(Blocks.POTATOES)
-            )
+    public static final Block ENERGY_POTATO_CROP = Registry.register(
+            Registries.BLOCK,
+            Identifier.of(NutonMod.MOD_ID, "energy_potato_crop"),
+            new EnergyPotatoCropBlock(AbstractBlock.Settings.copy(Blocks.POTATOES))
     );
 
     //玉米作物
@@ -80,6 +81,20 @@ public class ModBlocks {
             new PolishingMachine(AbstractBlock.Settings.copy(Blocks.STONE)
                     .luminance(state -> state.get(PolishingMachine.WORKING) ? 10 : 0))
     );
+
+    public static final Block ENERGY_LOG = register("energy_log",
+            new PillarBlock(AbstractBlock.Settings.copy(Blocks.OAK_LOG)));
+    public static final Block ENERGY_WOOD = register("energy_wood",
+            new PillarBlock(AbstractBlock.Settings.copy(Blocks.OAK_WOOD)));
+    public static final Block STRIPPED_ENERGY_LOG = register("stripped_energy_log",
+            new PillarBlock(AbstractBlock.Settings.copy(Blocks.STRIPPED_OAK_LOG)));
+    public static final Block STRIPPED_ENERGY_WOOD = register("stripped_energy_wood",
+            new PillarBlock(AbstractBlock.Settings.copy(Blocks.STRIPPED_OAK_WOOD)));
+    public static final Block ENERGY_PLANKS = register("energy_planks",
+            new Block(AbstractBlock.Settings.copy(Blocks.OAK_PLANKS)));
+    public static final Block ENERGY_LEAVES = register("energy_leaves",
+            new LeavesBlock(AbstractBlock.Settings.copy(Blocks.OAK_LEAVES)));
+
     private static <T extends Block> T register(String id, T block) {
         Identifier identifier = Identifier.of(NutonMod.MOD_ID, id);
         Registry.register(Registries.BLOCK, identifier, block);

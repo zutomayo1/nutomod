@@ -20,47 +20,54 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
     protected void configure(RegistryWrapper.WrapperLookup wrapperLookup) {
         // 注册所有可探测的矿石到 prospector_ores 标签
         getOrCreateTagBuilder(ModBlockTags.PROSPECTOR_ORES)
-            .add(Blocks.DIAMOND_ORE)
-            .add(Blocks.IRON_ORE)
-            .add(Blocks.GOLD_ORE)
-            .add(Blocks.COAL_ORE)
-            .add(Blocks.REDSTONE_ORE)
-            .add(Blocks.LAPIS_ORE)
-            .add(Blocks.EMERALD_ORE)
-            .add(Blocks.COPPER_ORE)
+                .add(Blocks.DIAMOND_ORE)
+                .add(Blocks.IRON_ORE)
+                .add(Blocks.GOLD_ORE)
+                .add(Blocks.COAL_ORE)
+                .add(Blocks.REDSTONE_ORE)
+                .add(Blocks.LAPIS_ORE)
+                .add(Blocks.EMERALD_ORE)
+                .add(Blocks.COPPER_ORE)
             
             // 深层矿石也添加进去
-            .add(Blocks.DEEPSLATE_DIAMOND_ORE)
-            .add(Blocks.DEEPSLATE_IRON_ORE)
-            .add(Blocks.DEEPSLATE_GOLD_ORE)
-            .add(Blocks.DEEPSLATE_COAL_ORE)
-            .add(Blocks.DEEPSLATE_REDSTONE_ORE)
-            .add(Blocks.DEEPSLATE_LAPIS_ORE)
-            .add(Blocks.DEEPSLATE_EMERALD_ORE)
-            .add(Blocks.DEEPSLATE_COPPER_ORE);
+                .add(Blocks.DEEPSLATE_DIAMOND_ORE)
+                .add(Blocks.DEEPSLATE_IRON_ORE)
+                .add(Blocks.DEEPSLATE_GOLD_ORE)
+                .add(Blocks.DEEPSLATE_COAL_ORE)
+                .add(Blocks.DEEPSLATE_REDSTONE_ORE)
+                .add(Blocks.DEEPSLATE_LAPIS_ORE)
+                .add(Blocks.DEEPSLATE_EMERALD_ORE)
+                .add(Blocks.DEEPSLATE_COPPER_ORE);
 
         getOrCreateTagBuilder(BlockTags.FENCES)
-            .add(ModBlocks.ENERGY_FENCE);
+                .add(ModBlocks.ENERGY_FENCE);
         getOrCreateTagBuilder(BlockTags.FENCE_GATES)
-            .add(ModBlocks.ENERGY_FENCE_GATE);
+                .add(ModBlocks.ENERGY_FENCE_GATE);
         getOrCreateTagBuilder(BlockTags.WALLS)
-            .add(ModBlocks.ENERGY_WALL);
+                .add(ModBlocks.ENERGY_WALL);
         getOrCreateTagBuilder(BlockTags.DOORS)
-            .add(ModBlocks.ENERGY_DOOR);
+                .add(ModBlocks.ENERGY_DOOR);
         getOrCreateTagBuilder(BlockTags.TRAPDOORS)
-            .add(ModBlocks.ENERGY_TRAPDOOR);
+                .add(ModBlocks.ENERGY_TRAPDOOR);
         getOrCreateTagBuilder(BlockTags.STAIRS)
-            .add(ModBlocks.ENERGY_STAIRS);
+                .add(ModBlocks.ENERGY_STAIRS);
         getOrCreateTagBuilder(BlockTags.SLABS)
-            .add(ModBlocks.ENERGY_SLAB);
+                .add(ModBlocks.ENERGY_SLAB);
+        getOrCreateTagBuilder(BlockTags.PLANKS)
+                .add(ModBlocks.ENERGY_PLANKS);
         getOrCreateTagBuilder(BlockTags.BUTTONS)
-            .add(ModBlocks.ENERGY_BUTTON);
+                .add(ModBlocks.ENERGY_BUTTON);
         getOrCreateTagBuilder(BlockTags.PRESSURE_PLATES)
-            .add(ModBlocks.ENERGY_PRESSURE_PLATE);
+                .add(ModBlocks.ENERGY_PRESSURE_PLATE);
 
         getOrCreateTagBuilder(BlockTags.CROPS)
-            .add(ModBlocks.ENERGY_POTATO_CROP);
+                .add(ModBlocks.ENERGY_POTATO_CROP);
 
+        getOrCreateTagBuilder(BlockTags.LOGS_THAT_BURN)
+                .add(ModBlocks.ENERGY_LOG)
+                .add(ModBlocks.ENERGY_WOOD)
+                .add(ModBlocks.STRIPPED_ENERGY_LOG)
+                .add(ModBlocks.STRIPPED_ENERGY_WOOD);
 
 
     }

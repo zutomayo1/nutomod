@@ -77,5 +77,12 @@ public class ModENUSLanProvider extends FabricLanguageProvider {
         translationBuilder.add("gui.nutonmod.polishing_machine.status.missing_material", "Missing Material");
         translationBuilder.add("gui.nutonmod.polishing_machine.status.output_full", "Output Full");
 
+        translationBuilder.add("block.nutonmod.energy_log", "Energy Log");
+        translationBuilder.add("block.nutonmod.energy_wood", "Energy Wood");
+        translationBuilder.add("block.nutonmod.stripped_energy_log", "Stripped Energy Log");
+        translationBuilder.add("block.nutonmod.stripped_energy_wood", "Stripped Energy Wood");
+        translationBuilder.add("block.nutonmod.energy_planks", "Energy Planks");
+        translationBuilder.add("block.nutonmod.energy_leaves", "Energy Leaves");
+
     }
 }

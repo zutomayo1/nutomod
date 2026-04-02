@@ -18,6 +18,7 @@ public class NutonModDataGenerator implements DataGeneratorEntrypoint {
 		pack.addProvider(ModENUSLanProvider::new);
 		pack.addProvider(ModZhCNLangProvider::new);
 		pack.addProvider(ModBlockTagProvider::new);
+		pack.addProvider(ModItemTagsProvider::new);
 		pack.addProvider(ModPointTagProvider::new);
 	}
 	@Override

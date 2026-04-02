@@ -109,6 +109,7 @@ public class ModItems {
 
 
 
+
     private static Item registerItem(String id, Item item) {
         return Registry.register(Registries.ITEM, Identifier.of(NutonMod.MOD_ID, id), item);
     }

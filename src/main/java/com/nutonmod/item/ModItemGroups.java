@@ -65,7 +65,12 @@ public class ModItemGroups {
 
                 entries.add(ModBlocks.POLISHING_MACHINE);
 
-
+                entries.add(ModBlocks.ENERGY_LOG);
+                entries.add(ModBlocks.ENERGY_WOOD);
+                entries.add(ModBlocks.STRIPPED_ENERGY_LOG);
+                entries.add(ModBlocks.STRIPPED_ENERGY_WOOD);
+                entries.add(ModBlocks.ENERGY_PLANKS);
+                entries.add(ModBlocks.ENERGY_LEAVES);
             })
             .build()
     );
