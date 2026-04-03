@@ -167,5 +167,59 @@ public class ModRecipesProvider extends FabricRecipeProvider {
                         200)
                 .criterion(hasItem(ModBlocks.STRIPPED_ENERGY_WOOD), conditionsFromItem(ModBlocks.STRIPPED_ENERGY_WOOD))
                 .offerTo(recipeExporter, Identifier.of(NutonMod.MOD_ID, "charcoal_from_smelting_stripped_energy_wood"));
+
+        CookingRecipeJsonBuilder.createSmelting(
+                        Ingredient.ofItems(ModBlocks.ENERGY_ORE),
+                        RecipeCategory.MISC,
+                        ModItems.ENERGY_INGOT,
+                        0.7f,
+                        200)
+                .criterion(hasItem(ModBlocks.ENERGY_ORE), conditionsFromItem(ModBlocks.ENERGY_ORE))
+                .offerTo(recipeExporter, Identifier.of(NutonMod.MOD_ID, "energy_ingot_from_smelting_energy_ore"));
+
+        CookingRecipeJsonBuilder.createSmelting(
+                        Ingredient.ofItems(ModBlocks.DEEPSLATE_ENERGY_ORE),
+                        RecipeCategory.MISC,
+                        ModItems.ENERGY_INGOT,
+                        0.7f,
+                        200)
+                .criterion(hasItem(ModBlocks.DEEPSLATE_ENERGY_ORE), conditionsFromItem(ModBlocks.DEEPSLATE_ENERGY_ORE))
+                .offerTo(recipeExporter, Identifier.of(NutonMod.MOD_ID, "energy_ingot_from_smelting_deepslate_energy_ore"));
+
+        CookingRecipeJsonBuilder.createSmelting(
+                        Ingredient.ofItems(ModItems.RAW_ENERGY),
+                        RecipeCategory.MISC,
+                        ModItems.ENERGY_INGOT,
+                        0.7f,
+                        200)
+                .criterion(hasItem(ModItems.RAW_ENERGY), conditionsFromItem(ModItems.RAW_ENERGY))
+                .offerTo(recipeExporter, Identifier.of(NutonMod.MOD_ID, "energy_ingot_from_smelting_raw_energy"));
+
+        CookingRecipeJsonBuilder.createBlasting(
+                        Ingredient.ofItems(ModBlocks.ENERGY_ORE),
+                        RecipeCategory.MISC,
+                        ModItems.ENERGY_INGOT,
+                        0.7f,
+                        100)
+                .criterion(hasItem(ModBlocks.ENERGY_ORE), conditionsFromItem(ModBlocks.ENERGY_ORE))
+                .offerTo(recipeExporter, Identifier.of(NutonMod.MOD_ID, "energy_ingot_from_blasting_energy_ore"));
+
+        CookingRecipeJsonBuilder.createBlasting(
+                        Ingredient.ofItems(ModBlocks.DEEPSLATE_ENERGY_ORE),
+                        RecipeCategory.MISC,
+                        ModItems.ENERGY_INGOT,
+                        0.7f,
+                        100)
+                .criterion(hasItem(ModBlocks.DEEPSLATE_ENERGY_ORE), conditionsFromItem(ModBlocks.DEEPSLATE_ENERGY_ORE))
+                .offerTo(recipeExporter, Identifier.of(NutonMod.MOD_ID, "energy_ingot_from_blasting_deepslate_energy_ore"));
+
+        CookingRecipeJsonBuilder.createBlasting(
+                        Ingredient.ofItems(ModItems.RAW_ENERGY),
+                        RecipeCategory.MISC,
+                        ModItems.ENERGY_INGOT,
+                        0.7f,
+                        100)
+                .criterion(hasItem(ModItems.RAW_ENERGY), conditionsFromItem(ModItems.RAW_ENERGY))
+                .offerTo(recipeExporter, Identifier.of(NutonMod.MOD_ID, "energy_ingot_from_blasting_raw_energy"));
     }
 }

@@ -49,6 +49,9 @@ public class ModZhCNLangProvider extends FabricLanguageProvider {
         translationBuilder.add("item.nutonmod.energy_shovel", "能量锹");
         translationBuilder.add("item.nutonmod.energy_hoe", "能量锄");
         translationBuilder.add("item.nutonmod.energy_ingot", "能量锭");
+        translationBuilder.add("item.nutonmod.raw_energy", "粗能量");
+        translationBuilder.add("block.nutonmod.energy_ore", "能量矿石");
+        translationBuilder.add("block.nutonmod.deepslate_energy_ore", "深板岩能量矿石");
 
         translationBuilder.add("item.nutonmod.hat", "帽子");
         translationBuilder.add("entity.minecraft.villager.energy_master", "能量大师");

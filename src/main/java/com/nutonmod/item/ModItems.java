@@ -29,6 +29,7 @@ public class ModItems {
 
     //能量锭
     public static final Item ENERGY_INGOT = registerItem("energy_ingot", new Item(new Item.Settings()));
+    public static final Item RAW_ENERGY = registerItem("raw_energy", new Item(new Item.Settings()));
 
 
     // 物品 - 能量工具（需要激活才能发挥威力）

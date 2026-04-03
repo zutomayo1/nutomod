@@ -37,7 +37,9 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(Blocks.DEEPSLATE_REDSTONE_ORE)
                 .add(Blocks.DEEPSLATE_LAPIS_ORE)
                 .add(Blocks.DEEPSLATE_EMERALD_ORE)
-                .add(Blocks.DEEPSLATE_COPPER_ORE);
+                .add(Blocks.DEEPSLATE_COPPER_ORE)
+                .add(ModBlocks.ENERGY_ORE)
+                .add(ModBlocks.DEEPSLATE_ENERGY_ORE);
 
         getOrCreateTagBuilder(BlockTags.FENCES)
                 .add(ModBlocks.ENERGY_FENCE);
@@ -59,6 +61,12 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(ModBlocks.ENERGY_BUTTON);
         getOrCreateTagBuilder(BlockTags.PRESSURE_PLATES)
                 .add(ModBlocks.ENERGY_PRESSURE_PLATE);
+        getOrCreateTagBuilder(BlockTags.PICKAXE_MINEABLE)
+                .add(ModBlocks.ENERGY_ORE)
+                .add(ModBlocks.DEEPSLATE_ENERGY_ORE);
+        getOrCreateTagBuilder(BlockTags.NEEDS_STONE_TOOL)
+                .add(ModBlocks.ENERGY_ORE)
+                .add(ModBlocks.DEEPSLATE_ENERGY_ORE);
 
         getOrCreateTagBuilder(BlockTags.CROPS)
                 .add(ModBlocks.ENERGY_POTATO_CROP);

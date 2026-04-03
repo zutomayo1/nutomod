@@ -63,6 +63,8 @@ public class ModModelsProvider extends FabricModelProvider {
 
         blockStateModelGenerator.registerLog(ModBlocks.ENERGY_LOG).log(ModBlocks.ENERGY_LOG).wood(ModBlocks.ENERGY_WOOD);
         blockStateModelGenerator.registerLog(ModBlocks.STRIPPED_ENERGY_LOG).log(ModBlocks.STRIPPED_ENERGY_LOG).wood(ModBlocks.STRIPPED_ENERGY_WOOD);
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.ENERGY_ORE);
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.DEEPSLATE_ENERGY_ORE);
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.ENERGY_PLANKS);
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.ENERGY_LEAVES);
         blockStateModelGenerator.registerTintableCross(ModBlocks.ENERGY_SAPLING, BlockStateModelGenerator.TintType.NOT_TINTED);
@@ -92,6 +94,7 @@ public class ModModelsProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.PROSPECTOR, Models.GENERATED);
 
         itemModelGenerator.register(ModItems.ENERGY_INGOT, Models.GENERATED);
+        itemModelGenerator.register(ModItems.RAW_ENERGY, Models.GENERATED);
         itemModelGenerator.register(ModItems.ENERGY_SWORD, Models.GENERATED);
         itemModelGenerator.register(ModItems.ENERGY_PICKAXE, Models.GENERATED);
         itemModelGenerator.register(ModItems.ENERGY_SHOVEL, Models.GENERATED);

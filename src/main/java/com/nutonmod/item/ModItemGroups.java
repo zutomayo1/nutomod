@@ -48,6 +48,9 @@ public class ModItemGroups {
                 entries.add(ModBlocks.ENERGY_TRAPDOOR);
 
                 entries.add(ModItems.ENERGY_INGOT);
+                entries.add(ModItems.RAW_ENERGY);
+                entries.add(ModBlocks.ENERGY_ORE);
+                entries.add(ModBlocks.DEEPSLATE_ENERGY_ORE);
                 entries.add(ModItems.ENERGY_SWORD);
                 entries.add(ModItems.ENERGY_PICKAXE);
                 entries.add(ModItems.ENERGY_AXE);

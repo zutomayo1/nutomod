@@ -1,4 +1,4 @@
-// 1.21	2026-04-03T18:02:50.5235866	NutonMod/Tags for minecraft:block
+// 1.21	2026-04-03T20:54:06.42503	NutonMod/Tags for minecraft:block
 a108f1c3593db5a144e51426723a792475ca9197 data\minecraft\tags\block\fences.json
 2aec7719f688dd528da211761ba91842aae52890 data\minecraft\tags\block\doors.json
 49554e31c794991b7437baf9a2309b92d624ef31 data\minecraft\tags\block\slabs.json
@@ -6,11 +6,13 @@ df7410b5923db1efe5b86b12213899959817341b data\minecraft\tags\block\pressure_plat
 b8157f73e10e280e967da247ab2e674d442bd33c data\minecraft\tags\block\buttons.json
 370dc09f498176d8de7a8160a14646cce69ec7f1 data\minecraft\tags\block\planks.json
 14cfde03066e3b00b27f36a88ae7ae94253cc6e1 data\minecraft\tags\block\logs_that_burn.json
+a10a0e0830630eaab6b31f93312417f784a27b52 data\minecraft\tags\block\needs_stone_tool.json
 3645727ba5e506a3c1a5044342debcfb848b8d55 data\minecraft\tags\block\crops.json
 01afbbdaf7a6fa157ecfa9bbb9833f876be7eeb0 data\minecraft\tags\block\fence_gates.json
 0c14f84f4565738ac8bcd974e6447c92522fd928 data\minecraft\tags\block\stairs.json
 d166fc5991c5df2dcbf737092565a3bece8ce0d6 data\minecraft\tags\block\walls.json
 ff26be84641a1c0ee9679a7a4068c00c8a240227 data\minecraft\tags\block\small_flowers.json
 ff26be84641a1c0ee9679a7a4068c00c8a240227 data\minecraft\tags\block\flowers.json
-41eb14503f73f81479b9c62d2d624c2fc54ad478 data\nutonmod\tags\block\prospector_ores.json
+1554af209340165e7038cc4c5af0fb26b8ca5280 data\nutonmod\tags\block\prospector_ores.json
 9b19e0914f12bbb488f4eda085ba157d377e0664 data\minecraft\tags\block\trapdoors.json
+a10a0e0830630eaab6b31f93312417f784a27b52 data\minecraft\tags\block\mineable\pickaxe.json

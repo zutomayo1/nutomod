@@ -3,7 +3,7 @@ package com.nutonmod.block;
 import com.nutonmod.NutonMod;
 import com.nutonmod.block.custom.*;
 import com.nutonmod.sound.ModSoundEvents;
-import com.nutonmod.world.trees.ModTreeGenerator;
+import com.nutonmod.world.tree.ModTreeGenerator;
 import net.minecraft.block.*;
 import net.minecraft.block.piston.PistonBehavior;
 import net.minecraft.entity.effect.StatusEffects;
@@ -27,6 +27,12 @@ public class ModBlocks {
             .requiresTool()
             .strength(3.0f, 6.0f)
             .sounds(ModSoundEvents.ENERGY_BLOCK_SOUND_GROUP)));
+    public static final Block ENERGY_ORE = register("energy_ore", new ExperienceDroppingBlock(
+            net.minecraft.util.math.intprovider.UniformIntProvider.create(2, 5),
+            AbstractBlock.Settings.copy(Blocks.IRON_ORE).requiresTool()));
+    public static final Block DEEPSLATE_ENERGY_ORE = register("deepslate_energy_ore", new ExperienceDroppingBlock(
+            net.minecraft.util.math.intprovider.UniformIntProvider.create(3, 7),
+            AbstractBlock.Settings.copy(Blocks.DEEPSLATE_IRON_ORE).requiresTool()));
 
     // 无烟煤块 - 由 9 个无烟煤合成，可反向分解
     public static final Block ANTHRACITE_BLOCK = register("anthracite_block", new Block(AbstractBlock.Settings.create()

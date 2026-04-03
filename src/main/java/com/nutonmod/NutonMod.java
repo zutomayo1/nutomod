@@ -12,7 +12,7 @@ import com.nutonmod.sound.ModSoundEvents;
 import com.nutonmod.util.ModCustomTrades;
 import com.nutonmod.util.ModLootTableModifiers;
 import com.nutonmod.villager.Modvillagers;
-import com.nutonmod.world.ModWorldGeneration;
+import com.nutonmod.world.gen.ModWorldGeneration;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
 import net.fabricmc.fabric.api.registry.FlammableBlockRegistry;

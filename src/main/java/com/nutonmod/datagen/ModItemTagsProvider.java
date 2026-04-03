@@ -5,8 +5,11 @@ import com.nutonmod.item.ModItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
 import net.minecraft.item.Item;
+import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.registry.tag.ItemTags;
+import net.minecraft.registry.tag.TagKey;
+import net.minecraft.util.Identifier;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -65,6 +68,9 @@ public class ModItemTagsProvider extends FabricTagProvider.ItemTagProvider {
 				.add(ModBlocks.ENERGY_WOOD.asItem())
 				.add(ModBlocks.STRIPPED_ENERGY_LOG.asItem())
 				.add(ModBlocks.STRIPPED_ENERGY_WOOD.asItem());
+
+		getOrCreateTagBuilder(TagKey.of(RegistryKeys.ITEM, Identifier.of("minecraft", "raw_materials")))
+				.add(ModItems.RAW_ENERGY);
 
 
 	}

@@ -29,6 +29,8 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
     public void generate() {
         addDrop(ModBlocks.ENERGY_BLOCK);
         addDrop(ModBlocks.ENERGY_CORE);
+        addDrop(ModBlocks.ENERGY_ORE, oreDrops(ModBlocks.ENERGY_ORE, ModItems.RAW_ENERGY));
+        addDrop(ModBlocks.DEEPSLATE_ENERGY_ORE, oreDrops(ModBlocks.DEEPSLATE_ENERGY_ORE, ModItems.RAW_ENERGY));
         addDrop(ModBlocks.ENERGY_FLOWER);
         addDrop(ModBlocks.POTTED_ENERGY_FLOWER, pottedPlantDrops(ModBlocks.ENERGY_FLOWER));
         

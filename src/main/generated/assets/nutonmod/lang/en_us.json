@@ -1,5 +1,6 @@
 {
   "block.nutonmod.box": "Box",
+  "block.nutonmod.deepslate_energy_ore": "Deepslate Energy Ore",
   "block.nutonmod.energy_block": "Energy Block",
   "block.nutonmod.energy_button": "Energy Button",
   "block.nutonmod.energy_door": "Energy Door",
@@ -8,6 +9,7 @@
   "block.nutonmod.energy_flower": "Energy Flower",
   "block.nutonmod.energy_leaves": "Energy Leaves",
   "block.nutonmod.energy_log": "Energy Log",
+  "block.nutonmod.energy_ore": "Energy Ore",
   "block.nutonmod.energy_planks": "Energy Planks",
   "block.nutonmod.energy_potato_crop": "Energy Potato Crop",
   "block.nutonmod.energy_pressure_plate": "Energy Pressure Plate",
@@ -55,6 +57,7 @@
   "item.nutonmod.holy_helmet": "Holy Helmet",
   "item.nutonmod.holy_leggings": "Holy Leggings",
   "item.nutonmod.prospector": "Prospector",
+  "item.nutonmod.raw_energy": "Raw Energy",
   "item.nutonmod.test_music_disc": "Test Music Disc",
   "jukebox_song.nutonmod.test": "Test",
   "sounds.nutonmod.energy_block_break": "Energy Block Break",
