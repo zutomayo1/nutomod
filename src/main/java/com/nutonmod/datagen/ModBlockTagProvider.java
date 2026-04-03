@@ -62,6 +62,10 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
 
         getOrCreateTagBuilder(BlockTags.CROPS)
                 .add(ModBlocks.ENERGY_POTATO_CROP);
+        getOrCreateTagBuilder(BlockTags.FLOWERS)
+                .add(ModBlocks.ENERGY_FLOWER);
+        getOrCreateTagBuilder(BlockTags.SMALL_FLOWERS)
+                .add(ModBlocks.ENERGY_FLOWER);
 
         getOrCreateTagBuilder(BlockTags.LOGS_THAT_BURN)
                 .add(ModBlocks.ENERGY_LOG)

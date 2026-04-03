@@ -72,6 +72,7 @@ public class ModItemGroups {
                 entries.add(ModBlocks.ENERGY_PLANKS);
                 entries.add(ModBlocks.ENERGY_LEAVES);
                 entries.add(ModBlocks.ENERGY_SAPLING);
+                entries.add(ModBlocks.ENERGY_FLOWER);
             })
             .build()
     );

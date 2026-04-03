@@ -1,4 +1,4 @@
-// 1.21	2026-04-03T17:41:48.0823613	NutonMod/Tags for minecraft:block
+// 1.21	2026-04-03T18:02:50.5235866	NutonMod/Tags for minecraft:block
 a108f1c3593db5a144e51426723a792475ca9197 data\minecraft\tags\block\fences.json
 2aec7719f688dd528da211761ba91842aae52890 data\minecraft\tags\block\doors.json
 49554e31c794991b7437baf9a2309b92d624ef31 data\minecraft\tags\block\slabs.json
@@ -10,5 +10,7 @@ b8157f73e10e280e967da247ab2e674d442bd33c data\minecraft\tags\block\buttons.json
 01afbbdaf7a6fa157ecfa9bbb9833f876be7eeb0 data\minecraft\tags\block\fence_gates.json
 0c14f84f4565738ac8bcd974e6447c92522fd928 data\minecraft\tags\block\stairs.json
 d166fc5991c5df2dcbf737092565a3bece8ce0d6 data\minecraft\tags\block\walls.json
+ff26be84641a1c0ee9679a7a4068c00c8a240227 data\minecraft\tags\block\small_flowers.json
+ff26be84641a1c0ee9679a7a4068c00c8a240227 data\minecraft\tags\block\flowers.json
 41eb14503f73f81479b9c62d2d624c2fc54ad478 data\nutonmod\tags\block\prospector_ores.json
 9b19e0914f12bbb488f4eda085ba157d377e0664 data\minecraft\tags\block\trapdoors.json

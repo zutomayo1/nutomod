@@ -29,6 +29,8 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
     public void generate() {
         addDrop(ModBlocks.ENERGY_BLOCK);
         addDrop(ModBlocks.ENERGY_CORE);
+        addDrop(ModBlocks.ENERGY_FLOWER);
+        addDrop(ModBlocks.POTTED_ENERGY_FLOWER, pottedPlantDrops(ModBlocks.ENERGY_FLOWER));
         
         // 能量马铃薯作物战利品表
         addDrop(ModBlocks.ENERGY_POTATO_CROP, (block) -> 

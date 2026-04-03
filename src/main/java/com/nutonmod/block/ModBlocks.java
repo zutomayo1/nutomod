@@ -6,6 +6,7 @@ import com.nutonmod.sound.ModSoundEvents;
 import com.nutonmod.world.trees.ModTreeGenerator;
 import net.minecraft.block.*;
 import net.minecraft.block.piston.PistonBehavior;
+import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.registry.Registries;
@@ -98,11 +99,22 @@ public class ModBlocks {
 
     public static final Block ENERGY_SAPLING = register("energy_sapling",
             new SaplingBlock(ModTreeGenerator.ENERGY_TREE, AbstractBlock.Settings.copy(Blocks.OAK_SAPLING)));
+    public static final Block ENERGY_FLOWER = register("energy_flower",
+            new FlowerBlock(StatusEffects.GLOWING, 8,
+                    AbstractBlock.Settings.copy(Blocks.DANDELION).nonOpaque().noCollision().breakInstantly()));
+    public static final Block POTTED_ENERGY_FLOWER = registerBlockOnly("potted_energy_flower",
+            new FlowerPotBlock(ENERGY_FLOWER, AbstractBlock.Settings.copy(Blocks.POTTED_DANDELION).nonOpaque()));
 
     private static <T extends Block> T register(String id, T block) {
         Identifier identifier = Identifier.of(NutonMod.MOD_ID, id);
         Registry.register(Registries.BLOCK, identifier, block);
         Registry.register(Registries.ITEM, identifier, new BlockItem(block, new Item.Settings()));
+        return block;
+    }
+
+    private static <T extends Block> T registerBlockOnly(String id, T block) {
+        Identifier identifier = Identifier.of(NutonMod.MOD_ID, id);
+        Registry.register(Registries.BLOCK, identifier, block);
         return block;
     }
     

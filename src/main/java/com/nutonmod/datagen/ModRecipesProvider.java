@@ -5,10 +5,13 @@ import com.nutonmod.block.ModBlocks;
 import com.nutonmod.item.ModItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
+import net.minecraft.data.server.recipe.CookingRecipeJsonBuilder;
 import net.minecraft.data.server.recipe.RecipeExporter;
 import net.minecraft.data.server.recipe.ShapedRecipeJsonBuilder;
 import net.minecraft.data.server.recipe.ShapelessRecipeJsonBuilder;
-import net.minecraft.recipe.ShapelessRecipe;
+import net.minecraft.item.Items;
+import net.minecraft.recipe.Ingredient;
+import net.minecraft.recipe.RecipeSerializer;
 import net.minecraft.recipe.book.RecipeCategory;
 import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.util.Identifier;
@@ -22,16 +25,147 @@ public class ModRecipesProvider extends FabricRecipeProvider {
 
     @Override
     public void generate(RecipeExporter recipeExporter) {
-        // 9 个能量方块 (物品) -> 1 个能量核心 (方块)
-        offerReversibleCompactingRecipes(recipeExporter, 
-            RecipeCategory.MISC, ModItems.ENERGY_BLOCK,           // 9 个能量方块
-            RecipeCategory.BUILDING_BLOCKS, ModBlocks.ENERGY_CORE);  // 1 个能量核心
-        
-        // 9 个无烟煤 -> 1 个无烟煤块（可逆合成）
-        offerReversibleCompactingRecipes(recipeExporter,
-            RecipeCategory.MISC, ModItems.ANTHRACITE,             // 9 个无烟煤
-            RecipeCategory.BUILDING_BLOCKS, ModBlocks.ANTHRACITE_BLOCK);  // 1 个无烟煤块
-        
+        offerReversibleCompactingRecipes(
+                recipeExporter,
+                RecipeCategory.MISC,
+                ModItems.ENERGY_BLOCK,
+                RecipeCategory.BUILDING_BLOCKS,
+                ModBlocks.ENERGY_CORE
+        );
 
+        offerReversibleCompactingRecipes(
+                recipeExporter,
+                RecipeCategory.MISC,
+                ModItems.ANTHRACITE,
+                RecipeCategory.BUILDING_BLOCKS,
+                ModBlocks.ANTHRACITE_BLOCK
+        );
+
+        // Energy wood line
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, ModBlocks.ENERGY_PLANKS, 4)
+                .input(ModBlocks.ENERGY_LOG)
+                .criterion(hasItem(ModBlocks.ENERGY_LOG), conditionsFromItem(ModBlocks.ENERGY_LOG))
+                .offerTo(recipeExporter);
+
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, ModBlocks.ENERGY_PLANKS, 4)
+                .input(ModBlocks.ENERGY_WOOD)
+                .criterion(hasItem(ModBlocks.ENERGY_WOOD), conditionsFromItem(ModBlocks.ENERGY_WOOD))
+                .offerTo(recipeExporter, Identifier.of(NutonMod.MOD_ID, "energy_planks_from_energy_wood"));
+
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, ModBlocks.ENERGY_PLANKS, 4)
+                .input(ModBlocks.STRIPPED_ENERGY_LOG)
+                .criterion(hasItem(ModBlocks.STRIPPED_ENERGY_LOG), conditionsFromItem(ModBlocks.STRIPPED_ENERGY_LOG))
+                .offerTo(recipeExporter, Identifier.of(NutonMod.MOD_ID, "energy_planks_from_stripped_energy_log"));
+
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, ModBlocks.ENERGY_PLANKS, 4)
+                .input(ModBlocks.STRIPPED_ENERGY_WOOD)
+                .criterion(hasItem(ModBlocks.STRIPPED_ENERGY_WOOD), conditionsFromItem(ModBlocks.STRIPPED_ENERGY_WOOD))
+                .offerTo(recipeExporter, Identifier.of(NutonMod.MOD_ID, "energy_planks_from_stripped_energy_wood"));
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, ModBlocks.ENERGY_WOOD, 3)
+                .pattern("##")
+                .pattern("##")
+                .input('#', ModBlocks.ENERGY_LOG)
+                .criterion(hasItem(ModBlocks.ENERGY_LOG), conditionsFromItem(ModBlocks.ENERGY_LOG))
+                .offerTo(recipeExporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, ModBlocks.STRIPPED_ENERGY_WOOD, 3)
+                .pattern("##")
+                .pattern("##")
+                .input('#', ModBlocks.STRIPPED_ENERGY_LOG)
+                .criterion(hasItem(ModBlocks.STRIPPED_ENERGY_LOG), conditionsFromItem(ModBlocks.STRIPPED_ENERGY_LOG))
+                .offerTo(recipeExporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, ModBlocks.ENERGY_STAIRS, 4)
+                .pattern("#  ")
+                .pattern("## ")
+                .pattern("###")
+                .input('#', ModBlocks.ENERGY_PLANKS)
+                .criterion(hasItem(ModBlocks.ENERGY_PLANKS), conditionsFromItem(ModBlocks.ENERGY_PLANKS))
+                .offerTo(recipeExporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, ModBlocks.ENERGY_SLAB, 6)
+                .pattern("###")
+                .input('#', ModBlocks.ENERGY_PLANKS)
+                .criterion(hasItem(ModBlocks.ENERGY_PLANKS), conditionsFromItem(ModBlocks.ENERGY_PLANKS))
+                .offerTo(recipeExporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModBlocks.ENERGY_FENCE, 3)
+                .pattern("#S#")
+                .pattern("#S#")
+                .input('#', ModBlocks.ENERGY_PLANKS)
+                .input('S', Items.STICK)
+                .criterion(hasItem(ModBlocks.ENERGY_PLANKS), conditionsFromItem(ModBlocks.ENERGY_PLANKS))
+                .offerTo(recipeExporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.REDSTONE, ModBlocks.ENERGY_FENCE_GATE)
+                .pattern("S#S")
+                .pattern("S#S")
+                .input('#', ModBlocks.ENERGY_PLANKS)
+                .input('S', Items.STICK)
+                .criterion(hasItem(ModBlocks.ENERGY_PLANKS), conditionsFromItem(ModBlocks.ENERGY_PLANKS))
+                .offerTo(recipeExporter);
+
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.REDSTONE, ModBlocks.ENERGY_BUTTON)
+                .input(ModBlocks.ENERGY_PLANKS)
+                .criterion(hasItem(ModBlocks.ENERGY_PLANKS), conditionsFromItem(ModBlocks.ENERGY_PLANKS))
+                .offerTo(recipeExporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.REDSTONE, ModBlocks.ENERGY_PRESSURE_PLATE)
+                .pattern("##")
+                .input('#', ModBlocks.ENERGY_PLANKS)
+                .criterion(hasItem(ModBlocks.ENERGY_PLANKS), conditionsFromItem(ModBlocks.ENERGY_PLANKS))
+                .offerTo(recipeExporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.REDSTONE, ModBlocks.ENERGY_DOOR, 3)
+                .pattern("##")
+                .pattern("##")
+                .pattern("##")
+                .input('#', ModBlocks.ENERGY_PLANKS)
+                .criterion(hasItem(ModBlocks.ENERGY_PLANKS), conditionsFromItem(ModBlocks.ENERGY_PLANKS))
+                .offerTo(recipeExporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.REDSTONE, ModBlocks.ENERGY_TRAPDOOR, 2)
+                .pattern("###")
+                .pattern("###")
+                .input('#', ModBlocks.ENERGY_PLANKS)
+                .criterion(hasItem(ModBlocks.ENERGY_PLANKS), conditionsFromItem(ModBlocks.ENERGY_PLANKS))
+                .offerTo(recipeExporter);
+
+        CookingRecipeJsonBuilder.createSmelting(
+                        Ingredient.ofItems(ModBlocks.ENERGY_LOG),
+                        RecipeCategory.MISC,
+                        Items.CHARCOAL,
+                        0.1f,
+                        200)
+                .criterion(hasItem(ModBlocks.ENERGY_LOG), conditionsFromItem(ModBlocks.ENERGY_LOG))
+                .offerTo(recipeExporter, Identifier.of(NutonMod.MOD_ID, "charcoal_from_smelting_energy_log"));
+
+        CookingRecipeJsonBuilder.createSmelting(
+                        Ingredient.ofItems(ModBlocks.STRIPPED_ENERGY_LOG),
+                        RecipeCategory.MISC,
+                        Items.CHARCOAL,
+                        0.1f,
+                        200)
+                .criterion(hasItem(ModBlocks.STRIPPED_ENERGY_LOG), conditionsFromItem(ModBlocks.STRIPPED_ENERGY_LOG))
+                .offerTo(recipeExporter, Identifier.of(NutonMod.MOD_ID, "charcoal_from_smelting_stripped_energy_log"));
+
+        CookingRecipeJsonBuilder.createSmelting(
+                        Ingredient.ofItems(ModBlocks.ENERGY_WOOD),
+                        RecipeCategory.MISC,
+                        Items.CHARCOAL,
+                        0.1f,
+                        200)
+                .criterion(hasItem(ModBlocks.ENERGY_WOOD), conditionsFromItem(ModBlocks.ENERGY_WOOD))
+                .offerTo(recipeExporter, Identifier.of(NutonMod.MOD_ID, "charcoal_from_smelting_energy_wood"));
+
+        CookingRecipeJsonBuilder.createSmelting(
+                        Ingredient.ofItems(ModBlocks.STRIPPED_ENERGY_WOOD),
+                        RecipeCategory.MISC,
+                        Items.CHARCOAL,
+                        0.1f,
+                        200)
+                .criterion(hasItem(ModBlocks.STRIPPED_ENERGY_WOOD), conditionsFromItem(ModBlocks.STRIPPED_ENERGY_WOOD))
+                .offerTo(recipeExporter, Identifier.of(NutonMod.MOD_ID, "charcoal_from_smelting_stripped_energy_wood"));
     }
 }
