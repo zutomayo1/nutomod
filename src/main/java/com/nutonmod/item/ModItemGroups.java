@@ -71,6 +71,7 @@ public class ModItemGroups {
                 entries.add(ModBlocks.STRIPPED_ENERGY_WOOD);
                 entries.add(ModBlocks.ENERGY_PLANKS);
                 entries.add(ModBlocks.ENERGY_LEAVES);
+                entries.add(ModBlocks.ENERGY_SAPLING);
             })
             .build()
     );

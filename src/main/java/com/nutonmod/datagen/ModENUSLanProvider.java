@@ -83,6 +83,7 @@ public class ModENUSLanProvider extends FabricLanguageProvider {
         translationBuilder.add("block.nutonmod.stripped_energy_wood", "Stripped Energy Wood");
         translationBuilder.add("block.nutonmod.energy_planks", "Energy Planks");
         translationBuilder.add("block.nutonmod.energy_leaves", "Energy Leaves");
+        translationBuilder.add("block.nutonmod.energy_sapling", "Energy Sapling");
 
     }
 }

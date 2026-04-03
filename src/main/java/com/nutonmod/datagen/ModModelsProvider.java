@@ -65,7 +65,7 @@ public class ModModelsProvider extends FabricModelProvider {
         blockStateModelGenerator.registerLog(ModBlocks.STRIPPED_ENERGY_LOG).log(ModBlocks.STRIPPED_ENERGY_LOG).wood(ModBlocks.STRIPPED_ENERGY_WOOD);
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.ENERGY_PLANKS);
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.ENERGY_LEAVES);
-
+        blockStateModelGenerator.registerTintableCross(ModBlocks.ENERGY_SAPLING, BlockStateModelGenerator.TintType.NOT_TINTED);
     }
 
     @Override

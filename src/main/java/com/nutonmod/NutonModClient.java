@@ -30,6 +30,7 @@ public class NutonModClient implements ClientModInitializer {
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.CORN_CROP, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.ENERGY_POTATO_CROP, RenderLayer.getCutout());
         ArmorRenderer.register(new HatArmorRenderer(), ModItems.HAT);
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.ENERGY_SAPLING, RenderLayer.getCutout());
 
         FluidRenderHandlerRegistry.INSTANCE.register(ModFluids.STILL_ENERGY, ModFluids.FLOWING_ENERGY,
                 new SimpleFluidRenderHandler(

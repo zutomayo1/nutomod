@@ -3,6 +3,7 @@ package com.nutonmod.block;
 import com.nutonmod.NutonMod;
 import com.nutonmod.block.custom.*;
 import com.nutonmod.sound.ModSoundEvents;
+import com.nutonmod.world.trees.ModTreeGenerator;
 import net.minecraft.block.*;
 import net.minecraft.block.piston.PistonBehavior;
 import net.minecraft.item.BlockItem;
@@ -94,6 +95,9 @@ public class ModBlocks {
             new Block(AbstractBlock.Settings.copy(Blocks.OAK_PLANKS)));
     public static final Block ENERGY_LEAVES = register("energy_leaves",
             new LeavesBlock(AbstractBlock.Settings.copy(Blocks.OAK_LEAVES)));
+
+    public static final Block ENERGY_SAPLING = register("energy_sapling",
+            new SaplingBlock(ModTreeGenerator.ENERGY_TREE, AbstractBlock.Settings.copy(Blocks.OAK_SAPLING)));
 
     private static <T extends Block> T register(String id, T block) {
         Identifier identifier = Identifier.of(NutonMod.MOD_ID, id);
