@@ -26,6 +26,7 @@ repositories {
 	// See https://docs.gradle.org/current/userguide/declaring_repositories.html
 	// for more information about repositories.
 	maven { url "https://maven.shedaniel.me" }
+	maven { url "https://dl.cloudsmith.io/public/geckolib3/geckolib/maven/" }
 }
 
 fabricApi {
@@ -45,6 +46,7 @@ dependencies {
 
 	modCompileOnly "me.shedaniel:RoughlyEnoughItems-api-fabric:16.0.744"
 	modImplementation "me.shedaniel:RoughlyEnoughItems-fabric:16.0.744"
+	modImplementation "software.bernie.geckolib:geckolib-fabric-1.21:${project.geckolib_version}"
 	
 }
 

@@ -52,6 +52,7 @@ public class ModENUSLanProvider extends FabricLanguageProvider {
         translationBuilder.add("block.nutonmod.deepslate_energy_ore", "Deepslate Energy Ore");
 
         translationBuilder.add("item.nutonmod.hat", "Hat");
+        translationBuilder.add("entity.nutonmod.energy_being", "Energy Being");
         translationBuilder.add("entity.minecraft.villager.energy_master", "Energy Master");
         translationBuilder.add("entity.minecraft.villager.nutonmod.energy_master", "Energy Master");
 

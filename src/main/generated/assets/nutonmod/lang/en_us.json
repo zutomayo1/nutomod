@@ -27,6 +27,7 @@
   "container.polishing_machine": "Polishing Machine",
   "entity.minecraft.villager.energy_master": "Energy Master",
   "entity.minecraft.villager.nutonmod.energy_master": "Energy Master",
+  "entity.nutonmod.energy_being": "Energy Being",
   "gui.nutonmod.polishing_machine.status.missing_material": "Missing Material",
   "gui.nutonmod.polishing_machine.status.output_full": "Output Full",
   "gui.nutonmod.polishing_machine.status.ready": "Ready",

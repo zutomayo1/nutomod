@@ -29,6 +29,7 @@
   "container.polishing_machine": "抛光机",
   "entity.minecraft.villager.energy_master": "能量大师",
   "entity.minecraft.villager.nutonmod.energy_master": "能量大师",
+  "entity.nutonmod.energy_being": "能量生物",
   "gui.nutonmod.polishing_machine.status.missing_material": "缺材料",
   "gui.nutonmod.polishing_machine.status.output_full": "输出满",
   "gui.nutonmod.polishing_machine.status.ready": "可加工",

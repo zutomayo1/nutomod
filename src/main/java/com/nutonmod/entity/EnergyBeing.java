@@ -1,97 +1,143 @@
 package com.nutonmod.entity;
 
 import net.minecraft.entity.EntityType;
-import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.ai.goal.*;
+import net.minecraft.entity.ai.goal.ActiveTargetGoal;
+import net.minecraft.entity.ai.goal.LookAroundGoal;
+import net.minecraft.entity.ai.goal.LookAtEntityGoal;
+import net.minecraft.entity.ai.goal.MeleeAttackGoal;
+import net.minecraft.entity.ai.goal.RevengeGoal;
+import net.minecraft.entity.ai.goal.SwimGoal;
+import net.minecraft.entity.ai.goal.WanderAroundFarGoal;
 import net.minecraft.entity.attribute.DefaultAttributeContainer;
 import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.entity.damage.DamageSource;
-import net.minecraft.entity.mob.MobEntity;
+import net.minecraft.entity.mob.HostileEntity;
+import net.minecraft.entity.passive.IronGolemEntity;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.particle.ParticleTypes;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.world.World;
+import software.bernie.geckolib.animatable.GeoEntity;
+import software.bernie.geckolib.animatable.instance.AnimatableInstanceCache;
+import software.bernie.geckolib.animation.AnimatableManager;
+import software.bernie.geckolib.animation.AnimationController;
+import software.bernie.geckolib.animation.AnimationState;
+import software.bernie.geckolib.animation.PlayState;
+import software.bernie.geckolib.animation.RawAnimation;
+import software.bernie.geckolib.util.GeckoLibUtil;
 
-public class EnergyBeing extends MobEntity {
-    
-    public EnergyBeing(EntityType<? extends MobEntity> entityType, World world) {
+public class EnergyBeing extends HostileEntity implements GeoEntity {
+    private static final RawAnimation IDLE_ANIMATION = RawAnimation.begin().thenLoop("animation.energy_being.idle");
+    private static final RawAnimation WALK_ANIMATION = RawAnimation.begin().thenLoop("animation.energy_being.walk");
+    private static final RawAnimation ATTACK_ANIMATION = RawAnimation.begin().thenPlay("animation.energy_being.attack");
+
+    private final AnimatableInstanceCache animatableInstanceCache = GeckoLibUtil.createInstanceCache(this);
+
+    public EnergyBeing(EntityType<? extends HostileEntity> entityType, World world) {
         super(entityType, world);
+        this.experiencePoints = 8;
     }
 
-    /**
-     * 初始化目标
-     *
-     */
     @Override
     protected void initGoals() {
         this.goalSelector.add(0, new SwimGoal(this));
-        this.goalSelector.add(2, new LookAtEntityGoal(this, LivingEntity.class, 8.0F));
-        this.targetSelector.add(1, new ActiveTargetGoal<>(this, LivingEntity.class, true));
-    }
-    
-    public static DefaultAttributeContainer.Builder createMobAttributes() {
-        return MobEntity.createMobAttributes()
-                .add(EntityAttributes.GENERIC_MAX_HEALTH, 20.0)
-                .add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.25)
-                .add(EntityAttributes.GENERIC_ATTACK_DAMAGE, 4.0)
-                .add(EntityAttributes.GENERIC_FOLLOW_RANGE, 32.0)
-                .add(EntityAttributes.GENERIC_ATTACK_KNOCKBACK, 0.5);
+        this.goalSelector.add(2, new MeleeAttackGoal(this, 1.15D, false));
+        this.goalSelector.add(5, new WanderAroundFarGoal(this, 1.0D));
+        this.goalSelector.add(6, new LookAtEntityGoal(this, PlayerEntity.class, 8.0F));
+        this.goalSelector.add(7, new LookAroundGoal(this));
+
+        this.targetSelector.add(1, new RevengeGoal(this));
+        this.targetSelector.add(2, new ActiveTargetGoal<>(this, PlayerEntity.class, true));
+        this.targetSelector.add(3, new ActiveTargetGoal<>(this, IronGolemEntity.class, true));
     }
 
-    /**
-     * 损害
-     *
-     * @param source 源
-     * @param amount 量
-     * @return boolean
-     */
+    public static DefaultAttributeContainer.Builder createMobAttributes() {
+        return HostileEntity.createHostileAttributes()
+                .add(EntityAttributes.GENERIC_MAX_HEALTH, 28.0)
+                .add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.30)
+                .add(EntityAttributes.GENERIC_ATTACK_DAMAGE, 6.0)
+                .add(EntityAttributes.GENERIC_ARMOR, 2.0)
+                .add(EntityAttributes.GENERIC_FOLLOW_RANGE, 32.0)
+                .add(EntityAttributes.GENERIC_ATTACK_KNOCKBACK, 0.4);
+    }
+
+    @Override
+    public void tick() {
+        super.tick();
+        if (this.getWorld().isClient && this.random.nextFloat() < 0.2F) {
+            this.getWorld().addParticle(
+                    ParticleTypes.END_ROD,
+                    this.getX() + (this.random.nextDouble() - 0.5D) * this.getWidth(),
+                    this.getBodyY(0.6D),
+                    this.getZ() + (this.random.nextDouble() - 0.5D) * this.getWidth(),
+                    0.0D,
+                    0.02D,
+                    0.0D
+            );
+        }
+    }
+
     @Override
     public boolean damage(DamageSource source, float amount) {
-        // 能量人被攻击时产生粒子效果
-        if (!this.getWorld().isClient) {
-            for (int i = 0; i < 10; i++) {
-                ((net.minecraft.server.world.ServerWorld)this.getWorld()).spawnParticles(
+        if (!this.getWorld().isClient && this.getWorld() instanceof net.minecraft.server.world.ServerWorld serverWorld) {
+            serverWorld.spawnParticles(
                     ParticleTypes.END_ROD,
                     this.getX(),
-                    this.getY() + this.getHeight() / 2.0,
+                    this.getBodyY(0.5D),
                     this.getZ(),
-                    1,
-                    0.3,
-                    0.3,
-                    0.3,
-                    0.0
-                );
-            }
+                    10,
+                    0.35D,
+                    0.35D,
+                    0.35D,
+                    0.0D
+            );
         }
         return super.damage(source, amount);
     }
 
-    /**
-     * 获取环境声音
-     *
-     * @return {@link SoundEvent}
-     */
     @Override
     protected SoundEvent getAmbientSound() {
-        return SoundEvents.BLOCK_END_PORTAL_SPAWN;
+        return SoundEvents.BLOCK_RESPAWN_ANCHOR_AMBIENT;
     }
 
-    /**
-     * 受伤声
-     *
-     * @param source 源
-     * @return {@link SoundEvent}
-     */
     @Override
-    protected SoundEvent getHurtSound(DamageSource source) {return SoundEvents.ENTITY_GENERIC_HURT; }
+    protected SoundEvent getHurtSound(DamageSource source) {
+        return SoundEvents.ENTITY_ZOMBIE_HURT;
+    }
 
-    /**
-     * 得到死亡的声音
-     *
-     * @return {@link SoundEvent}
-     */
     @Override
     protected SoundEvent getDeathSound() {
-        return SoundEvents.ENTITY_GENERIC_DEATH;
+        return SoundEvents.ENTITY_ZOMBIE_DEATH;
+    }
+
+    @Override
+    protected void playStepSound(net.minecraft.util.math.BlockPos pos, net.minecraft.block.BlockState state) {
+        this.playSound(SoundEvents.BLOCK_AMETHYST_BLOCK_STEP, 0.15F, 1.1F);
+    }
+
+    @Override
+    public void registerControllers(AnimatableManager.ControllerRegistrar controllers) {
+        controllers.add(new AnimationController<>(this, "main_controller", 5, this::animationPredicate));
+    }
+
+    private PlayState animationPredicate(AnimationState<EnergyBeing> state) {
+        if (this.handSwinging) {
+            state.setAnimation(ATTACK_ANIMATION);
+            return PlayState.CONTINUE;
+        }
+
+        if (state.isMoving()) {
+            state.setAnimation(WALK_ANIMATION);
+            return PlayState.CONTINUE;
+        }
+
+        state.setAnimation(IDLE_ANIMATION);
+        return PlayState.CONTINUE;
+    }
+
+    @Override
+    public AnimatableInstanceCache getAnimatableInstanceCache() {
+        return this.animatableInstanceCache;
     }
 }

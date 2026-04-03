@@ -5,8 +5,8 @@ import com.nutonmod.block.ModFluids;
 import com.nutonmod.block.entity.ModBlockEntities;
 import com.nutonmod.entity.ModEntities;
 import com.nutonmod.item.EnergyChestplateItem;
-import com.nutonmod.item.ModItems;
 import com.nutonmod.item.ModItemGroups;
+import com.nutonmod.item.ModItems;
 import com.nutonmod.recipe.ModRecipeTypes;
 import com.nutonmod.sound.ModSoundEvents;
 import com.nutonmod.util.ModCustomTrades;
@@ -19,65 +19,54 @@ import net.fabricmc.fabric.api.registry.FlammableBlockRegistry;
 import net.fabricmc.fabric.api.registry.FuelRegistry;
 import net.fabricmc.fabric.api.registry.StrippableBlockRegistry;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.ArmorItem;
 import net.minecraft.item.ItemStack;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 public class NutonMod implements ModInitializer {
+    public static final String MOD_ID = "nutonmod";
+    public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
 
-	// This logger is used to write text to the console and the log file.
-	// It is considered best practice to use your mod id as the logger's name.
-	// That way, it's clear which mod wrote info, warnings, and errors.
+    @Override
+    public void onInitialize() {
+        ModBlocks.registerModBlocks();
+        ModItems.registerModItems();
+        ModBlockEntities.registerModBlockEntities();
+        ModItemGroups.registerItemGroups();
+        ModEntities.register();
+        ModLootTableModifiers.modifyLootTable();
+        ModCustomTrades.registerModCustomTrades();
+        Modvillagers.registerVillagers();
+        ModSoundEvents.registerModSoundEvents();
+        ModFluids.registerModFluids();
+        ModRecipeTypes.registerRecipeTypes();
+        ModWorldGeneration.generateModWorldGen();
 
-	public static final String MOD_ID = "nutonmod";
-	public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
+        StrippableBlockRegistry.register(ModBlocks.ENERGY_LOG, ModBlocks.STRIPPED_ENERGY_LOG);
+        StrippableBlockRegistry.register(ModBlocks.ENERGY_WOOD, ModBlocks.STRIPPED_ENERGY_WOOD);
 
-	@Override
-	public void onInitialize() {
+        FlammableBlockRegistry.getDefaultInstance().add(ModBlocks.ENERGY_LOG, 5, 5);
+        FlammableBlockRegistry.getDefaultInstance().add(ModBlocks.ENERGY_WOOD, 5, 5);
+        FlammableBlockRegistry.getDefaultInstance().add(ModBlocks.ENERGY_PLANKS, 5, 20);
+        FlammableBlockRegistry.getDefaultInstance().add(ModBlocks.ENERGY_STAIRS, 5, 20);
+        FlammableBlockRegistry.getDefaultInstance().add(ModBlocks.ENERGY_SLAB, 5, 20);
+        FlammableBlockRegistry.getDefaultInstance().add(ModBlocks.ENERGY_LEAVES, 30, 60);
 
-		ModBlocks.registerModBlocks(); // 注册方块
-		ModItems.registerModItems();   // 注册物品
-		ModBlockEntities.registerModBlockEntities(); // 注册方块实体
-		ModItemGroups.registerItemGroups(); // 注册物品组
-		ModEntities.register();        // 注册实体
-		ModLootTableModifiers.modifyLootTable();
-		ModCustomTrades.registerModCustomTrades();
-		Modvillagers.registerVillagers(); // 注册村民及其职业
-		ModSoundEvents.registerModSoundEvents();
-		ModFluids.registerModFluids(); // 注册流体
-		ModRecipeTypes.registerRecipeTypes();
-		ModWorldGeneration.generateModWorldGen();
+        FuelRegistry.INSTANCE.add(ModItems.ANTHRACITE, 1600);
+        FuelRegistry.INSTANCE.add(ModBlocks.ANTHRACITE_BLOCK.asItem(), 14400);
 
-		StrippableBlockRegistry.register(ModBlocks.ENERGY_LOG, ModBlocks.STRIPPED_ENERGY_LOG);
-		StrippableBlockRegistry.register(ModBlocks.ENERGY_WOOD, ModBlocks.STRIPPED_ENERGY_WOOD);
+        ServerTickEvents.END_SERVER_TICK.register(server -> {
+            for (PlayerEntity player : server.getPlayerManager().getPlayerList()) {
+                if (player == null || player.getWorld().isClient) {
+                    continue;
+                }
+                ItemStack chestplate = player.getEquippedStack(net.minecraft.entity.EquipmentSlot.CHEST);
+                if (chestplate.getItem() instanceof EnergyChestplateItem energyChestplateItem) {
+                    energyChestplateItem.clientTick(chestplate, player);
+                }
+            }
+        });
 
-		FlammableBlockRegistry.getDefaultInstance().add(ModBlocks.ENERGY_LOG, 5, 5);
-		FlammableBlockRegistry.getDefaultInstance().add(ModBlocks.ENERGY_WOOD, 5, 5);
-		FlammableBlockRegistry.getDefaultInstance().add(ModBlocks.ENERGY_PLANKS, 5, 20);
-		FlammableBlockRegistry.getDefaultInstance().add(ModBlocks.ENERGY_STAIRS, 5, 20);
-		FlammableBlockRegistry.getDefaultInstance().add(ModBlocks.ENERGY_SLAB, 5, 20);
-		FlammableBlockRegistry.getDefaultInstance().add(ModBlocks.ENERGY_LEAVES, 30, 60);
-
-		
-		// 使用 Fabric API 添加熔炉燃料
-		FuelRegistry.INSTANCE.add(ModItems.ANTHRACITE, 1600); // 无烟煤：80 秒
-		FuelRegistry.INSTANCE.add(ModBlocks.ANTHRACITE_BLOCK.asItem(), 14400); // 无烟煤块：720 秒（9 倍）
-
-		// 注册服务器 tick 事件，用于处理能量胸甲的效果
-		ServerTickEvents.END_SERVER_TICK.register(server -> {
-			for (PlayerEntity player : server.getPlayerManager().getPlayerList()) {
-				if (player != null && !player.getWorld().isClient) {
-					// 检查玩家是否穿着能量胸甲
-					ItemStack chestplate = player.getEquippedStack(net.minecraft.entity.EquipmentSlot.CHEST);
-					if (chestplate.getItem() instanceof EnergyChestplateItem) {
-						((EnergyChestplateItem) chestplate.getItem()).clientTick(chestplate, player);
-					}
-				}
-			}
-		});
-		
-		LOGGER.info("Hello Fabric world!");
-	}
+        LOGGER.info("Hello Fabric world!");
+    }
 }
