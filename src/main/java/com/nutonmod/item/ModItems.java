@@ -5,7 +5,6 @@ import com.nutonmod.NutonMod;
 import com.nutonmod.armor.EnergyArmor;
 import com.nutonmod.block.ModBlocks;
 import com.nutonmod.block.ModFluids;
-import com.nutonmod.entity.ModEntities;
 import com.nutonmod.item.custom.EnergyAppleItem;
 import com.nutonmod.item.custom.EnergyPotatoItem;
 import com.nutonmod.item.custom.HatItem;
@@ -30,6 +29,8 @@ public class ModItems {
     //能量锭
     public static final Item ENERGY_INGOT = registerItem("energy_ingot", new Item(new Item.Settings()));
     public static final Item RAW_ENERGY = registerItem("raw_energy", new Item(new Item.Settings()));
+    public static final Item ALTAR_SHARD = registerItem("altar_shard", new Item(new Item.Settings().maxCount(64).rarity(Rarity.UNCOMMON)));
+    public static final Item CORE_STABILIZER = registerItem("core_stabilizer", new Item(new Item.Settings().maxCount(16).rarity(Rarity.RARE)));
 
 
     // 物品 - 能量工具（需要激活才能发挥威力）

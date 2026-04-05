@@ -12,14 +12,20 @@ import com.nutonmod.sound.ModSoundEvents;
 import com.nutonmod.util.ModCustomTrades;
 import com.nutonmod.util.ModLootTableModifiers;
 import com.nutonmod.villager.Modvillagers;
+import com.nutonmod.world.dimension.ModDimensions;
+import com.nutonmod.world.dimension.ModPortals;
+import com.nutonmod.world.feature.ModFeatures;
 import com.nutonmod.world.gen.ModWorldGeneration;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
 import net.fabricmc.fabric.api.registry.FlammableBlockRegistry;
 import net.fabricmc.fabric.api.registry.FuelRegistry;
 import net.fabricmc.fabric.api.registry.StrippableBlockRegistry;
+import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.entity.effect.StatusEffectInstance;
+import net.minecraft.entity.effect.StatusEffects;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -39,8 +45,10 @@ public class NutonMod implements ModInitializer {
         Modvillagers.registerVillagers();
         ModSoundEvents.registerModSoundEvents();
         ModFluids.registerModFluids();
+        ModFeatures.register();
         ModRecipeTypes.registerRecipeTypes();
         ModWorldGeneration.generateModWorldGen();
+        ModPortals.registerPortals();
 
         StrippableBlockRegistry.register(ModBlocks.ENERGY_LOG, ModBlocks.STRIPPED_ENERGY_LOG);
         StrippableBlockRegistry.register(ModBlocks.ENERGY_WOOD, ModBlocks.STRIPPED_ENERGY_WOOD);
@@ -60,13 +68,40 @@ public class NutonMod implements ModInitializer {
                 if (player == null || player.getWorld().isClient) {
                     continue;
                 }
-                ItemStack chestplate = player.getEquippedStack(net.minecraft.entity.EquipmentSlot.CHEST);
+                ItemStack chestplate = player.getEquippedStack(EquipmentSlot.CHEST);
                 if (chestplate.getItem() instanceof EnergyChestplateItem energyChestplateItem) {
                     energyChestplateItem.clientTick(chestplate, player);
                 }
+                applyEnergyRealmPressure(player);
             }
         });
 
         LOGGER.info("Hello Fabric world!");
+    }
+
+    private static void applyEnergyRealmPressure(PlayerEntity player) {
+        if (!player.getWorld().getRegistryKey().equals(ModDimensions.ENERGY_REALM_WORLD_KEY)) {
+            return;
+        }
+        if (player.age % 40 != 0) {
+            return;
+        }
+
+        boolean hasStabilizer = player.getMainHandStack().isOf(ModItems.CORE_STABILIZER)
+                || player.getOffHandStack().isOf(ModItems.CORE_STABILIZER);
+        boolean fullEnergyArmor = player.getEquippedStack(EquipmentSlot.HEAD).isOf(ModItems.ENERGY_HELMET)
+                && player.getEquippedStack(EquipmentSlot.CHEST).isOf(ModItems.ENERGY_CHESTPLATE)
+                && player.getEquippedStack(EquipmentSlot.LEGS).isOf(ModItems.ENERGY_LEGGINGS)
+                && player.getEquippedStack(EquipmentSlot.FEET).isOf(ModItems.ENERGY_BOOTS);
+
+        if (hasStabilizer || fullEnergyArmor) {
+            player.addStatusEffect(new StatusEffectInstance(StatusEffects.RESISTANCE, 120, 0, true, false, true));
+            player.addStatusEffect(new StatusEffectInstance(StatusEffects.HASTE, 120, 0, true, false, true));
+            return;
+        }
+
+        player.addStatusEffect(new StatusEffectInstance(StatusEffects.WEAKNESS, 120, 0, true, true, true));
+        player.addStatusEffect(new StatusEffectInstance(StatusEffects.MINING_FATIGUE, 120, 0, true, true, true));
+        player.addStatusEffect(new StatusEffectInstance(StatusEffects.NAUSEA, 80, 0, true, true, true));
     }
 }
