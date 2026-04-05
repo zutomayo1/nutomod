@@ -23,6 +23,9 @@ import java.util.List;
 
 public class EnergyChestplateItem extends BaseElementArmor{
 
+    private static final int COOLDOWN_TICKS = 20; // 1秒冷却时间
+    private static final int EFFECT_INTERVAL = 100; // 5秒效果间隔
+
     /**
      * 能量胸板
      *
@@ -36,36 +39,42 @@ public class EnergyChestplateItem extends BaseElementArmor{
     
     // 当玩家穿着胸甲时，每 tick 检测一次附近是否有激活的能量核心
     public void clientTick(ItemStack stack, PlayerEntity player) {
-        if (!player.getWorld().isClient) {
+        if (player.getWorld().isClient) {  // 修正：只在客户端执行
             // 只有穿着全套能量盔甲时才激活效果
             if (hasFullSet(player)) {
-                // 检查附近是否有激活的能量核心（10 格范围）
-                if (isNearActivatedCore(player.getWorld(), player.getBlockPos())) {
-                    // 激活状态：提供强大增益效果（每 5 秒一次）
-                    if (player.age % 100 == 0) {
-                        // 1. 生命恢复 II
-                        player.addStatusEffect(new StatusEffectInstance(
-                            StatusEffects.REGENERATION, 
-                            100, // 持续 5 秒
-                            1,   // 等级 II
-                            false, false, true
-                        ));
-                        
-                        // 2. 防火效果
-                        player.addStatusEffect(new StatusEffectInstance(
-                            StatusEffects.FIRE_RESISTANCE, 
-                            220, // 持续 11 秒
-                            0, 
-                            false, false, true
-                        ));
-                        
-                        // 3. 速度提升 I
-                        player.addStatusEffect(new StatusEffectInstance(
-                            StatusEffects.SPEED, 
-                            220, // 持续 11 秒
-                            0,   // 等级 I
-                            false, false, true
-                        ));
+                // 添加冷却时间，避免每 tick 都检测
+                if (player.age % COOLDOWN_TICKS == 0) {
+                    // 检查附近是否有激活的能量核心（10 格范围）
+                    if (isNearActivatedCore(player.getWorld(), player.getBlockPos())) {
+                        // 激活状态：提供强大增益效果（每 5 秒一次）
+                        if (player.age % EFFECT_INTERVAL == 0) {
+                            // 在客户端添加粒子效果，在服务端添加状态效果
+                            if (!player.getWorld().isClient) {
+                                // 1. 生命恢复 II
+                                player.addStatusEffect(new StatusEffectInstance(
+                                    StatusEffects.REGENERATION, 
+                                    100, // 持续 5 秒
+                                    1,   // 等级 II
+                                    false, false, true
+                                ));
+                                
+                                // 2. 防火效果
+                                player.addStatusEffect(new StatusEffectInstance(
+                                    StatusEffects.FIRE_RESISTANCE, 
+                                    220, // 持续 11 秒
+                                    0, 
+                                    false, false, true
+                                ));
+                                
+                                // 3. 速度提升 I
+                                player.addStatusEffect(new StatusEffectInstance(
+                                    StatusEffects.SPEED, 
+                                    220, // 持续 11 秒
+                                    0,   // 等级 I
+                                    false, false, true
+                                ));
+                            }
+                        }
                     }
                 }
             }
@@ -104,11 +113,13 @@ public class EnergyChestplateItem extends BaseElementArmor{
     
     /**
      * 检查附近是否有激活的能量核心
+     * 优化版本：减少检测范围，提前退出循环
      */
     private boolean isNearActivatedCore(World world, BlockPos pos) {
-        for (int x = -10; x <= 10; x++) {
-            for (int y = -10; y <= 10; y++) {
-                for (int z = -10; z <= 10; z++) {
+        // 只检测水平方向 6 格，垂直方向 5 格，减少检测数量
+        for (int x = -6; x <= 6; x++) {
+            for (int y = -5; y <= 5; y++) {
+                for (int z = -6; z <= 6; z++) {
                     BlockPos checkPos = pos.add(x, y, z);
                     if (world.getBlockState(checkPos).getBlock() == ModBlocks.ENERGY_CORE) {
                         if (world.getBlockState(checkPos).get(EnergyCoreBlock.ACTIVATED)) {

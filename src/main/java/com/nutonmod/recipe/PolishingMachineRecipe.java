@@ -29,7 +29,9 @@ public class PolishingMachineRecipe implements Recipe<SingleStackRecipeInput> {
 
     @Override
     public DefaultedList<Ingredient> getIngredients() {
-        return DefaultedList.copyOf(Ingredient.EMPTY, this.ingredient);
+        DefaultedList<Ingredient> ingredients = DefaultedList.of();
+        ingredients.add(this.ingredient);
+        return ingredients;
     }
     @Override
     public boolean matches(SingleStackRecipeInput input, World world) {

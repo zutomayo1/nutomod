@@ -5,6 +5,7 @@ import com.nutonmod.block.ModBlocks;
 import com.nutonmod.item.ModItems;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.minecraft.item.ItemGroup;
+import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
@@ -17,8 +18,10 @@ public class ModItemGroups {
         Registries.ITEM_GROUP,
         Identifier.of(NutonMod.MOD_ID, "nuton_group"),
         FabricItemGroup.builder()
-            .displayName(Text.literal("\u00a7bNoton \u6a21\u7ec4"))
-            .icon(() -> ModItems.ENERGY_CORE.getDefaultStack())
+            .displayName(Text.literal("\u00a7bNuton \u6a21\u7ec4"))
+            .icon(() -> ModItems.ENERGY_CORE != null
+                ? ModItems.ENERGY_CORE.getDefaultStack()
+                : new ItemStack(Items.DIAMOND))
             .entries((context, entries) -> {
                 entries.add(ModItems.ENERGY_CORE);
                 entries.add(ModItems.ENERGY_CHESTPLATE);

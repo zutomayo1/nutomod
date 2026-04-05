@@ -42,8 +42,7 @@ public class ModPlacedFeatures {
                 registerEntryLookup.getOrThrow(ModConfiguredFeatures.ENERGY_FLOWER_KEY),
                 CountPlacementModifier.of(4),
                 SquarePlacementModifier.of(),
-                PlacedFeatures.MOTION_BLOCKING_HEIGHTMAP,
-                BiomePlacementModifier.of()
+                PlacedFeatures.MOTION_BLOCKING_HEIGHTMAP
         );
 
         PlacedFeatures.register(
@@ -52,8 +51,7 @@ public class ModPlacedFeatures {
                 registerEntryLookup.getOrThrow(ModConfiguredFeatures.ENERGY_ORE_KEY),
                 CountPlacementModifier.of(8),
                 SquarePlacementModifier.of(),
-                HeightRangePlacementModifier.trapezoid(YOffset.fixed(-64), YOffset.fixed(32)),
-                BiomePlacementModifier.of()
+                HeightRangePlacementModifier.trapezoid(YOffset.fixed(-64), YOffset.fixed(32))
         );
     }
 

@@ -92,7 +92,8 @@ public class ModZhCNLangProvider extends FabricLanguageProvider {
         translationBuilder.add("block.nutonmod.energy_sapling", "能量树苗");
         translationBuilder.add("block.nutonmod.energy_flower", "能量花");
         translationBuilder.add("block.nutonmod.potted_energy_flower", "盆栽能量花");
+        translationBuilder.add("biome.nutonmod.energy_biome", "能量群系");
 
-        translationBuilder.add("itemGroup.nutonmod.nuton_group", "Noton 模组");
+        translationBuilder.add("itemGroup.nutonmod.nuton_group", "Nuton 模组");
     }
 }

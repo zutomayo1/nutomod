@@ -1,4 +1,5 @@
 {
+  "biome.nutonmod.energy_biome": "能量群系",
   "block.nutonmod.anthracite_block": "无烟煤块",
   "block.nutonmod.box": "箱子",
   "block.nutonmod.deepslate_energy_ore": "深板岩能量矿石",
@@ -63,7 +64,7 @@
   "item.nutonmod.prospector": "探矿器",
   "item.nutonmod.raw_energy": "粗能量",
   "item.nutonmod.test_music_disc": "测试音乐唱片",
-  "itemGroup.nutonmod.nuton_group": "Noton 模组",
+  "itemGroup.nutonmod.nuton_group": "Nuton 模组",
   "jukebox_song.nutonmod.test": "测试",
   "sounds.nutonmod.energy_block_break": "能量方块破坏",
   "sounds.nutonmod.energy_block_fall": "能量方块落地",

@@ -1,8 +1,6 @@
 package com.nutonmod.entity;
 
 import com.nutonmod.NutonMod;
-import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
-import net.fabricmc.fabric.api.biome.v1.BiomeSelectors;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricEntityTypeBuilder;
 import net.minecraft.entity.EntityType;
@@ -27,13 +25,5 @@ public class ModEntities {
         NutonMod.LOGGER.info("Registering entities for {}", NutonMod.MOD_ID);
 
         FabricDefaultAttributeRegistry.register(ENERGY_BEING, EnergyBeing.createMobAttributes());
-        BiomeModifications.addSpawn(
-                BiomeSelectors.foundInOverworld(),
-                SpawnGroup.MONSTER,
-                ENERGY_BEING,
-                18,
-                1,
-                2
-        );
     }
 }
