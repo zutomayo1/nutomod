@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "active=false": {
+      "model": "nutonmod:block/stabilizer_beacon_off"
+    },
+    "active=true": {
+      "model": "nutonmod:block/stabilizer_beacon_on"
+    }
+  }
+}

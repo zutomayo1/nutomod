@@ -1,0 +1,26 @@
+﻿{
+  "name": "裂隙潜猎者档案",
+  "category": "nutonmod:entities_boss",
+  "icon": "nutonmod:rift_stalker_spawn_egg",
+  "sortnum": 1,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "基础属性：$(li)生命 28$(li)攻击 6$(li)护甲 4$(li)高机动追猎型。主要威胁来自突进与远程裂隙电束。"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "技能机制：$(li)突进：短暂蓄力后直线冲刺，碰撞造成伤害与击退$(li)裂隙电束：中距离蓄力命中，附带缓慢并增加压力值$(li)近战命中也会给玩家加压"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "高压联动：当玩家压力 >=70 时，潜猎者近战会触发额外伤害与减速。$(br2)对策：保持横移、利用掩体打断视线、优先维持信标覆盖。"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "掉落：风暴碎片、祭坛碎片（概率），风暴中有小概率掉落晶体矩阵。"
+    }
+  ]
+}
+
+

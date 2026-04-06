@@ -1,0 +1,27 @@
+{
+  "parent": "nutonmod:energy_realm/sanctum_access",
+  "display": {
+    "icon": {
+      "id": "nutonmod:sanctum_gate"
+    },
+    "title": "守卫倒下",
+    "description": "在圣殿之门精英战中存活并获胜",
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "killed_energy_being_again": {
+      "trigger": "minecraft:player_killed_entity",
+      "conditions": {
+        "entity": {
+          "type": "nutonmod:energy_being"
+        }
+      }
+    }
+  },
+  "rewards": {
+    "experience": 300
+  }
+}

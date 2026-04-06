@@ -1,0 +1,77 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+    "animation.energy_being.idle": {
+      "loop": true,
+      "bones": {
+        "body": {
+          "rotation": {
+            "0.0": [0, 0, 0],
+            "1.0": [0, 2, 0],
+            "2.0": [0, 0, 0]
+          }
+        },
+        "head": {
+          "rotation": {
+            "0.0": [0, -2, 0],
+            "1.0": [0, 2, 0],
+            "2.0": [0, -2, 0]
+          }
+        }
+      }
+    },
+    "animation.energy_being.walk": {
+      "loop": true,
+      "bones": {
+        "right_leg": {
+          "rotation": {
+            "0.0": [30, 0, 0],
+            "0.5": [-30, 0, 0],
+            "1.0": [30, 0, 0]
+          }
+        },
+        "left_leg": {
+          "rotation": {
+            "0.0": [-30, 0, 0],
+            "0.5": [30, 0, 0],
+            "1.0": [-30, 0, 0]
+          }
+        },
+        "right_arm": {
+          "rotation": {
+            "0.0": [-25, 0, 0],
+            "0.5": [25, 0, 0],
+            "1.0": [-25, 0, 0]
+          }
+        },
+        "left_arm": {
+          "rotation": {
+            "0.0": [25, 0, 0],
+            "0.5": [-25, 0, 0],
+            "1.0": [25, 0, 0]
+          }
+        }
+      }
+    },
+    "animation.energy_being.attack": {
+      "loop": false,
+      "animation_length": 0.4,
+      "bones": {
+        "right_arm": {
+          "rotation": {
+            "0.0": [0, 0, 0],
+            "0.2": [-95, 0, 0],
+            "0.4": [0, 0, 0]
+          }
+        },
+        "body": {
+          "rotation": {
+            "0.0": [0, 0, 0],
+            "0.2": [0, 12, 0],
+            "0.4": [0, 0, 0]
+          }
+        }
+      }
+    }
+  }
+}

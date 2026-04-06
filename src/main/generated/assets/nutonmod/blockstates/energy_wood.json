@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "nutonmod:block/energy_wood",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "nutonmod:block/energy_wood"
+    },
+    "axis=z": {
+      "model": "nutonmod:block/energy_wood",
+      "x": 90
+    }
+  }
+}

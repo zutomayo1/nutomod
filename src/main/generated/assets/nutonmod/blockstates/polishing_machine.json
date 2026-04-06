@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "working=false": {
+      "model": "nutonmod:block/polishing_machine"
+    },
+    "working=true": {
+      "model": "nutonmod:block/polishing_machine"
+    }
+  }
+}

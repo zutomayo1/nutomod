@@ -1,0 +1,27 @@
+{
+  "parent": "nutonmod:energy_realm/stabilized",
+  "display": {
+    "icon": {
+      "id": "nutonmod:energy_being_spawn_egg"
+    },
+    "title": "圣殿猎手",
+    "description": "在能量维度击败一只能量生物",
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "killed_energy_being": {
+      "trigger": "minecraft:player_killed_entity",
+      "conditions": {
+        "entity": {
+          "type": "nutonmod:energy_being"
+        }
+      }
+    }
+  },
+  "rewards": {
+    "experience": 150
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "parent": "nutonmod:energy_realm/storm_surge",
+  "display": {
+    "icon": {
+      "id": "nutonmod:annihilation_eye"
+    },
+    "title": "Annihilation Summon",
+    "description": "Obtain an Eye of Annihilation",
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "has_annihilation_eye": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "nutonmod:annihilation_eye"
+          }
+        ]
+      }
+    }
+  },
+  "rewards": {
+    "experience": 50
+  }
+}

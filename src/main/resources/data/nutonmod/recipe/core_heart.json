@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "AMA",
+    "MKM",
+    "AMA"
+  ],
+  "key": {
+    "A": {
+      "item": "nutonmod:storm_alloy"
+    },
+    "M": {
+      "item": "nutonmod:crystal_matrix"
+    },
+    "K": {
+      "item": "nutonmod:sanctum_key"
+    }
+  },
+  "result": {
+    "count": 1,
+    "id": "nutonmod:core_heart"
+  }
+}

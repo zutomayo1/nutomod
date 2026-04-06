@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_energy_planks": {
+      "conditions": {
+        "items": [
+          {
+            "items": "nutonmod:energy_planks"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "nutonmod:energy_stairs"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_energy_planks"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "nutonmod:energy_stairs"
+    ]
+  }
+}

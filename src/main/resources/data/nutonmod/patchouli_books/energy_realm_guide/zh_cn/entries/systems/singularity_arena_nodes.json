@@ -1,0 +1,23 @@
+﻿{
+  "name": "奇点召唤与竞技场节点",
+  "category": "nutonmod:systems",
+  "icon": "nutonmod:annihilation_eye",
+  "sortnum": 6,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "召唤条件：$(li)必须在能量维度核心荒原（core_wastes）群系$(li)对核心使用 $(item)湮灭之眼$()$(li)附近 96 格内不能已有存活的奇点首领"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "召唤后自动生成湮灭竞技场：$(li)半径 15 的圆形场地与围墙$(li)8 根能量柱$(li)4 个可交互节点$(li)首领死亡后延迟清理并恢复原地形"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "节点效果（冷却 120 秒）：$(li)红：力量 II，15 秒$(li)蓝：速度 II，15 秒$(li)黄：瞬间回复 40 生命值$(li)紫：吸收 X，15 秒（约 20 心护盾）"
+    }
+  ]
+}
+
+
+

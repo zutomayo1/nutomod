@@ -1,0 +1,32 @@
+{
+  "parent": "nutonmod:energy_realm/sanctum_hunter",
+  "display": {
+    "icon": {
+      "id": "nutonmod:storm_fragment"
+    },
+    "title": "Storm Surge",
+    "description": "Collect at least 8 storm fragments from empowered encounters",
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "storm_fragment_stockpile": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "nutonmod:storm_fragment",
+            "count": {
+              "min": 8
+            }
+          }
+        ]
+      }
+    }
+  },
+  "rewards": {
+    "experience": 180
+  }
+}

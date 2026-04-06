@@ -1,0 +1,6 @@
+{
+  "name": "生物与首领",
+  "description": "普通敌对生物、精英怪与奇点首领的战斗情报。",
+  "icon": "nutonmod:singularity_spawn_egg",
+  "sortnum": 5
+}

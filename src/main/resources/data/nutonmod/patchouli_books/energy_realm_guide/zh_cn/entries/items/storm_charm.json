@@ -1,0 +1,30 @@
+{
+  "name": "风暴护符（专页）",
+  "category": "nutonmod:items",
+  "icon": "nutonmod:storm_charm",
+  "sortnum": 4,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "nutonmod:storm_charm",
+      "text": "定位：高危战斗保命道具。主要用于风暴窗口和高压突发局面。"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "nutonmod:storm_charm",
+      "text": "配方消耗偏中后期，建议常备 2-4 个用于首领或精英推进。"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)核心效果$(/l)$(br2)仅在能量维度生效：$(li)清除多种负面状态$(li)给予抗性 II、速度、急迫（持续约 20 秒）$(li)自身冷却约 30 秒"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)使用时机$(/l)$(br2)$(li)风暴活跃期被多怪围攻$(li)压力快速上升即将断节奏$(li)圣域门开战前 3-5 秒预开，争取开局优势"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)注意事项$(/l)$(br2)$(li)非创造模式使用会消耗 1 个$(li)优先留给前排或被点名目标$(li)可与信标保护圈叠加，显著提升生存稳定性"
+    }
+  ]
+}

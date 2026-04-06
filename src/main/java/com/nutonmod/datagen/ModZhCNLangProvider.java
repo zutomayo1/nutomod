@@ -14,6 +14,7 @@ public class ModZhCNLangProvider extends FabricLanguageProvider {
     @Override
     public void generateTranslations(RegistryWrapper.WrapperLookup wrapperLookup, TranslationBuilder b) {
         b.add("item.nutonmod.energy_core", "\u80fd\u91cf\u6838\u5fc3");
+        b.add("block.nutonmod.energy_core", "\u80fd\u91cf\u6838\u5fc3");
         b.add("item.nutonmod.energy_helmet", "\u80fd\u91cf\u5934\u76d4");
         b.add("item.nutonmod.energy_leggings", "\u80fd\u91cf\u62a4\u817f");
         b.add("item.nutonmod.energy_boots", "\u80fd\u91cf\u9774\u5b50");
@@ -28,6 +29,7 @@ public class ModZhCNLangProvider extends FabricLanguageProvider {
         b.add("item.nutonmod.energy_potato", "\u80fd\u91cf\u571f\u8c46");
         b.add("item.nutonmod.anthracite", "\u65e0\u70df\u7164");
         b.add("item.nutonmod.anthracite_block", "\u65e0\u70df\u7164\u5757");
+        b.add("block.nutonmod.anthracite_block", "\u65e0\u70df\u7164\u5757");
         b.add("item.nutonmod.prospector", "\u63a2\u77ff\u5668");
         b.add("item.nutonmod.test_music_disc", "\u6d4b\u8bd5\u97f3\u4e50\u5531\u7247");
 
@@ -62,6 +64,7 @@ public class ModZhCNLangProvider extends FabricLanguageProvider {
         b.add("item.nutonmod.singularity_shard", "\u5947\u70b9\u788e\u7247");
         b.add("item.nutonmod.energy_essence", "\u80fd\u91cf\u7cbe\u534e");
         b.add("item.nutonmod.storm_charm", "\u98ce\u66b4\u62a4\u7b26");
+        b.add("item.nutonmod.annihilation_blade", "\u6e6e\u706d\u4e4b\u5203");
         b.add("block.nutonmod.energy_ore", "\u80fd\u91cf\u77ff\u77f3");
         b.add("block.nutonmod.deepslate_energy_ore", "\u6df1\u677f\u5ca9\u80fd\u91cf\u77ff\u77f3");
 
@@ -127,6 +130,7 @@ public class ModZhCNLangProvider extends FabricLanguageProvider {
         b.add("block.nutonmod.energy_sapling", "\u80fd\u91cf\u6811\u82d7");
         b.add("block.nutonmod.energy_flower", "\u80fd\u91cf\u82b1");
         b.add("block.nutonmod.potted_energy_flower", "\u76c6\u683d\u80fd\u91cf\u82b1");
+        b.add("block.nutonmod.still_energy", "\u80fd\u91cf\u6d41\u4f53");
         b.add("biome.nutonmod.energy_biome", "\u80fd\u91cf\u7fa4\u7cfb");
         b.add("biome.nutonmod.charged_forest", "\u5145\u80fd\u68ee\u6797");
         b.add("biome.nutonmod.crystal_plains", "\u6676\u4f53\u5e73\u539f");

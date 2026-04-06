@@ -1,0 +1,22 @@
+{
+  "parent": "nutonmod:energy_realm/defeat_singularity",
+  "display": {
+    "icon": {
+      "id": "nutonmod:singularity_shard"
+    },
+    "title": "Singularity Conqueror",
+    "description": "Defeat the Singularity of Annihilation 5 times",
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "internal": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "rewards": {
+    "experience": 150
+  }
+}

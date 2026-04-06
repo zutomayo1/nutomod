@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "opened=false": {
+      "model": "nutonmod:block/sanctum_gate"
+    },
+    "opened=true": {
+      "model": "nutonmod:block/sanctum_gate_open"
+    }
+  }
+}

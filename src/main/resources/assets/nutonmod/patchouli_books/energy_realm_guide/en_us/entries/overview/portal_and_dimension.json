@@ -1,0 +1,25 @@
+﻿{
+  "name": "传送门与维度参数",
+  "category": "nutonmod:overview",
+  "icon": "nutonmod:raw_energy",
+  "read_by_default": true,
+  "sortnum": 1,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "nutonmod:raw_energy",
+      "text": "传送门框架方块是 $(item)能量方块$()，使用 $(item)粗能量$() 点亮。回程默认返回主世界。"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "能量维度参数：$(li)固定时间：18000（夜晚氛围）$(li)最低 Y：-64，世界高度 384$(li)可用重生锚，床不可用$(li)基础光照偏暗（环境光照=0.15）"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "维度包含 6 个主要生物群系：$(li)充能森林（charged_forest）$(li)晶体平原（crystal_plains）$(li)风暴原野（storm_fields）$(li)裂隙峡谷（fracture_canyons）$(li)核心荒原（core_wastes）$(li)能量群系（energy_biome，兼容/过渡群系）"
+    }
+  ]
+}
+
+
+

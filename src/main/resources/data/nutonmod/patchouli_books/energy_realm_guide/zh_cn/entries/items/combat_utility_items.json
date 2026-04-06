@@ -1,0 +1,33 @@
+﻿{
+  "name": "战斗与功能道具",
+  "category": "nutonmod:items",
+  "icon": "nutonmod:energy_sword",
+  "sortnum": 1,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "$(l)能量工具组$(/l)$(br2)包含剑/镐/斧/锹/锄。材质参数：耐久 4023、挖掘速度 10、附魔能力 50，定位为高耐久高效率后期工具。"
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "nutonmod:storm_charm",
+      "text": "$(item)风暴护符$() 已拆分为独立词条，详见 $(l:nutonmod:items/storm_charm)《风暴护符（专页）》$()。"
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "nutonmod:prospector",
+      "text": "$(item)探矿器$() 右键方块向下探测 64 格矿物。普通模式是 3x3，潜行是 1x1 精确探测，会有音效与提示。"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "其他功能物品：$(li)$(item)帽子$()：外观装备位$(li)$(item)能量马铠$()：坐骑防护$(li)$(item)能量生物刷怪蛋$() / $(item)裂隙潜猎者刷怪蛋$() / $(item)能量奇点·湮灭者刷怪蛋$()：测试与调试用途"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)终局武器索引$(/l)$(br2)$(item)湮灭之刃$()：终局近战主武器，主打“起手爆发 + 叠层处决”。详见 $(l:nutonmod:items/annihilation_blade)《湮灭之刃（专页）》$()。"
+    }
+  ]
+}
+
+
+

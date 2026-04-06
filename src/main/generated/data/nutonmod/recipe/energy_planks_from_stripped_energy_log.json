@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "nutonmod:stripped_energy_log"
+    }
+  ],
+  "result": {
+    "count": 4,
+    "id": "nutonmod:energy_planks"
+  }
+}

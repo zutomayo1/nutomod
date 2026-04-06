@@ -1,0 +1,30 @@
+﻿{
+  "name": "湮灭奇点机制",
+  "category": "nutonmod:entities_boss",
+  "icon": "nutonmod:singularity_spawn_egg",
+  "sortnum": 2,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "基础属性：$(li)生命值 = 600 x 参战玩家数$(li)护甲 12$(li)击退抗性 100%$(li)悬浮作战 + 动态选目标 + 战术闪现"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "三阶段：$(li)阶段一（100%-60%）：弹幕、牵引、环扫、召唤$(li)阶段二（60%-30%）：激光、重力井、镜像分身$(li)阶段三（30%-0%）：黑洞、湮灭新星、狂怒冲撞"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "关键技能数值：$(li)弹幕单次 8 伤害$(li)牵引周期伤害 2$(li)环扫 6$(li)激光脉冲 10$(li)重力井每秒约 4$(li)黑洞每秒约 5$(li)新星未躲避 20$(li)冲撞单次 10"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "新星生存规则：首领会生成 3 个临时护盾点，每个护盾最多有效保护 1 名玩家；多人必须分散占点。"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "战术建议：$(li)至少 1 人专职拉怪与报技能$(li)黄/紫节点留给被点名目标$(li)三阶段保留机动技能用于黑洞与冲撞规避"
+    }
+  ]
+}
+
+

@@ -1,0 +1,6 @@
+{
+  "name": "Items",
+  "description": "Materials, equipment, utility tools, and key recipes.",
+  "icon": "nutonmod:energy_ingot",
+  "sortnum": 3
+}

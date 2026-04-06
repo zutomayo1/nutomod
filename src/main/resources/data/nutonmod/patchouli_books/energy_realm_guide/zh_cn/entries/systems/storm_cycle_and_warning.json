@@ -1,0 +1,23 @@
+﻿{
+  "name": "风暴循环与预警",
+  "category": "nutonmod:systems",
+  "icon": "nutonmod:storm_fragment",
+  "sortnum": 1,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "风暴周期固定：6 分钟一轮，前 2 分钟为活跃风暴。$(br2)风暴活跃时玩家会周期性获得失明/缓慢；靠近风暴方尖碑时还会叠加更强虚弱与疲劳。"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "客户端预警窗口为风暴前 20 秒：$(li)屏幕边缘出现黄色警戒层$(li)倒计时跨过 20 秒/10 秒/5 秒时播放提示音$(li)此阶段应快速补给、回信标或清怪"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "风暴生态：$(li)周边能量生物/裂隙潜猎者周期强化$(li)可能刷新“风暴化能量生物”与风暴潜猎者$(li)风暴结束后会在玩家附近掉落 $(item)晶体矩阵$() 残留物"
+    }
+  ]
+}
+
+
+

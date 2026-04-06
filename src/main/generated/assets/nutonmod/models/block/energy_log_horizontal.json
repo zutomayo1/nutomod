@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column_horizontal",
+  "textures": {
+    "end": "nutonmod:block/energy_log_top",
+    "side": "nutonmod:block/energy_log"
+  }
+}

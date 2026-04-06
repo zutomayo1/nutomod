@@ -1,0 +1,26 @@
+﻿{
+  "name": "完整推进路线",
+  "category": "nutonmod:progression",
+  "icon": "nutonmod:sanctum_key",
+  "sortnum": 0,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "$(l)阶段 1：入门站稳$(/l)$(br2)$(li)建门进维度$(li)激活祭坛拿首批祭坛碎片$(li)优先制作核心稳定器抗压"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)阶段 2：风暴资源化$(/l)$(br2)$(li)风暴窗口刷风暴碎片$(li)合成风暴合金与晶体矩阵$(li)布置稳定信标形成安全区"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)阶段 3：圣域与精英$(/l)$(br2)$(li)制作圣域钥匙$(li)开启圣域门刷精英$(li)补齐核心之心相关材料"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)阶段 4：终局首领$(/l)$(br2)$(li)合成湮灭之眼（annihilation_eye）$(li)前往核心荒原（core_wastes）召唤奇点$(li)利用竞技场节点完成三阶段击杀"
+    }
+  ]
+}
+
+

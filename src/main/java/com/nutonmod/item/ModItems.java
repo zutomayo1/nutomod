@@ -9,6 +9,7 @@ import com.nutonmod.item.custom.EnergyAppleItem;
 import com.nutonmod.item.custom.EnergyPotatoItem;
 import com.nutonmod.item.custom.HatItem;
 import com.nutonmod.item.custom.Prospector;
+import com.nutonmod.item.custom.AnnihilationBladeItem;
 import com.nutonmod.item.custom.StormCharmItem;
 import com.nutonmod.sound.ModJukeBoxSongs;
 import net.minecraft.component.type.FoodComponent;
@@ -42,6 +43,9 @@ public class ModItems {
     public static final Item SINGULARITY_SHARD = registerItem("singularity_shard", new Item(new Item.Settings().maxCount(64).rarity(Rarity.RARE)));
     public static final Item ENERGY_ESSENCE = registerItem("energy_essence", new Item(new Item.Settings().maxCount(64).rarity(Rarity.UNCOMMON)));
     public static final Item STORM_CHARM = registerItem("storm_charm", new StormCharmItem(new Item.Settings().maxCount(16).rarity(Rarity.RARE)));
+    public static final Item ANNIHILATION_BLADE = registerItem("annihilation_blade", new AnnihilationBladeItem(ModToolMaterials.ENERGY_INGOT,
+            new Item.Settings().fireproof().rarity(Rarity.EPIC)
+                    .attributeModifiers(SwordItem.createAttributeModifiers(ModToolMaterials.ENERGY_INGOT, 8, -2.3F))));
 
 
     // 物品 - 能量工具（需要激活才能发挥威力）

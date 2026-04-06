@@ -1,0 +1,27 @@
+﻿{
+  "name": "圣域之门",
+  "category": "nutonmod:sanctum",
+  "icon": "nutonmod:sanctum_gate",
+  "sortnum": 0,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "圣域门主要出现在后期群系，例如核心荒原与裂隙峡谷。"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "在能量维度对圣域门使用 $(item)圣域钥匙$()，可开启并触发精英遭遇。"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "圣域门有冷却时间。风暴活跃期冷却更短，奖励也更高。"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "若地形压力过高，建议先在门附近布置 $(item)稳定信标$() 再开门。"
+    }
+  ]
+}
+
+
+

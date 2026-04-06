@@ -1,0 +1,22 @@
+{
+  "parent": "nutonmod:energy_realm/root",
+  "display": {
+    "icon": {
+      "id": "nutonmod:raw_energy"
+    },
+    "title": "能量裂隙",
+    "description": "首次进入能量维度",
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "entered_energy_realm": {
+      "trigger": "minecraft:changed_dimension",
+      "conditions": {
+        "to": "nutonmod:energy_realm"
+      }
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "SES",
+    "SCS",
+    " B "
+  ],
+  "key": {
+    "S": {
+      "item": "nutonmod:singularity_shard"
+    },
+    "E": {
+      "item": "nutonmod:energy_essence"
+    },
+    "C": {
+      "item": "nutonmod:annihilation_core"
+    },
+    "B": {
+      "item": "nutonmod:energy_sword"
+    }
+  },
+  "result": {
+    "id": "nutonmod:annihilation_blade",
+    "count": 1
+  }
+}

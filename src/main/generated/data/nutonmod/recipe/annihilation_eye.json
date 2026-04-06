@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "C": {
+      "item": "nutonmod:core_heart"
+    },
+    "E": {
+      "item": "nutonmod:energy_ingot"
+    },
+    "S": {
+      "item": "nutonmod:storm_alloy"
+    }
+  },
+  "pattern": [
+    " S ",
+    "ECE",
+    " S "
+  ],
+  "result": {
+    "count": 1,
+    "id": "nutonmod:annihilation_eye"
+  }
+}

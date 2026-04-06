@@ -1,0 +1,29 @@
+{
+  "parent": "nutonmod:energy_realm/stabilized",
+  "display": {
+    "icon": {
+      "id": "nutonmod:stabilizer_beacon"
+    },
+    "title": "Beacon Online",
+    "description": "Craft a Stabilizer Beacon to create a safe pocket in the realm",
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "has_stabilizer_beacon": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "nutonmod:stabilizer_beacon"
+          }
+        ]
+      }
+    }
+  },
+  "rewards": {
+    "experience": 120
+  }
+}

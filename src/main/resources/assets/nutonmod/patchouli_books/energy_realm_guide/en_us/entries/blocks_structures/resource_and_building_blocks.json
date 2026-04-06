@@ -1,0 +1,23 @@
+﻿{
+  "name": "资源与建材方块",
+  "category": "nutonmod:blocks_structures",
+  "icon": "nutonmod:energy_block",
+  "sortnum": 1,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "$(l)矿产线$(/l)$(br2)$(li)$(item)能量矿石$()$(li)$(item)深板岩能量矿石$()$(li)冶炼为 $(item)能量锭$()，用于大部分核心配方"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)核心建材线$(/l)$(br2)$(li)$(item)能量方块$()$(li)$(item)能量楼梯$() / $(item)能量台阶$()$(li)$(item)能量按钮$() / $(item)能量压力板$()$(li)$(item)能量栅栏$() / $(item)能量栅栏门$() / $(item)能量墙$()$(li)$(item)能量门$() / $(item)能量活板门$()"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)其他建材$(/l)$(br2)$(li)$(item)无烟煤块$()：独立黑色建材$(li)祭坛、方尖碑、竞技场结构都大量依赖 $(item)能量方块$() 体系，建议长期囤积。"
+    }
+  ]
+}
+
+
+

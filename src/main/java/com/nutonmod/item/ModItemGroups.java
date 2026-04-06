@@ -69,6 +69,7 @@ public class ModItemGroups {
                 entries.add(ModItems.SINGULARITY_SHARD);
                 entries.add(ModItems.ENERGY_ESSENCE);
                 entries.add(ModItems.STORM_CHARM);
+                entries.add(ModItems.ANNIHILATION_BLADE);
                 entries.add(ModItems.SINGULARITY_SPAWN_EGG);
                 entries.add(ModBlocks.ENERGY_ORE);
                 entries.add(ModBlocks.DEEPSLATE_ENERGY_ORE);

@@ -1,0 +1,22 @@
+﻿{
+  "name": "能量生物档案",
+  "category": "nutonmod:entities_boss",
+  "icon": "nutonmod:energy_being_spawn_egg",
+  "sortnum": 0,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "基础属性：$(li)生命 28$(li)攻击 6$(li)护甲 2$(li)近战追击型。风暴期间会周期获得速度/力量强化。"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "掉落：基础战利品为祭坛碎片；风暴中被玩家击杀还会额外掉落风暴碎片，风暴化个体有概率额外掉落风暴合金。"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "对策：$(li)避免在风暴+无信标状态硬拼$(li)优先清理靠近方尖碑的强化个体$(li)需要碎片时可在风暴窗口集中刷怪"
+    }
+  ]
+}
+
+

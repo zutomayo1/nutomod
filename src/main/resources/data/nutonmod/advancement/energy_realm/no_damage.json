@@ -1,0 +1,22 @@
+{
+  "parent": "nutonmod:energy_realm/defeat_singularity",
+  "display": {
+    "icon": {
+      "id": "nutonmod:core_heart"
+    },
+    "title": "Perfect Annihilation",
+    "description": "Defeat the Singularity without taking damage from it",
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": true
+  },
+  "criteria": {
+    "internal": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "rewards": {
+    "experience": 200
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    " S ",
+    "SCS",
+    " S "
+  ],
+  "key": {
+    "S": {
+      "item": "nutonmod:altar_shard"
+    },
+    "C": {
+      "item": "nutonmod:energy_core"
+    }
+  },
+  "result": {
+    "count": 1,
+    "id": "nutonmod:core_stabilizer"
+  }
+}

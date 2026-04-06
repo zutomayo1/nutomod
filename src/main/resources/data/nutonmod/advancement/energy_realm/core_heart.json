@@ -1,0 +1,29 @@
+{
+  "parent": "nutonmod:energy_realm/sanctum_access",
+  "display": {
+    "icon": {
+      "id": "nutonmod:core_heart"
+    },
+    "title": "Core Resonance",
+    "description": "Craft the Core Heart from sanctum-grade materials",
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "has_core_heart": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "nutonmod:core_heart"
+          }
+        ]
+      }
+    }
+  },
+  "rewards": {
+    "experience": 280
+  }
+}

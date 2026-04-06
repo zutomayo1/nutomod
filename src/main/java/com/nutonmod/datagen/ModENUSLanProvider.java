@@ -14,6 +14,7 @@ public class ModENUSLanProvider extends FabricLanguageProvider {
     @Override
     public void generateTranslations(RegistryWrapper.WrapperLookup wrapperLookup, TranslationBuilder translationBuilder) {
         translationBuilder.add("item.nutonmod.energy_core", "Energy Core");
+        translationBuilder.add("block.nutonmod.energy_core", "Energy Core");
         translationBuilder.add("item.nutonmod.energy_helmet", "Energy Helmet");
         translationBuilder.add("item.nutonmod.energy_leggings", "Energy Leggings");
         translationBuilder.add("item.nutonmod.energy_boots", "Energy Boots");
@@ -28,6 +29,7 @@ public class ModENUSLanProvider extends FabricLanguageProvider {
         translationBuilder.add("item.nutonmod.energy_potato", "Energy Potato");
         translationBuilder.add("item.nutonmod.anthracite", "Anthracite");
         translationBuilder.add("item.nutonmod.anthracite_block", "Anthracite Block");
+        translationBuilder.add("block.nutonmod.anthracite_block", "Anthracite Block");
         translationBuilder.add("item.nutonmod.prospector", "Prospector");
         translationBuilder.add("item.nutonmod.test_music_disc", "Test Music Disc");
 
@@ -61,6 +63,7 @@ public class ModENUSLanProvider extends FabricLanguageProvider {
         translationBuilder.add("item.nutonmod.singularity_shard", "Singularity Shard");
         translationBuilder.add("item.nutonmod.energy_essence", "Energy Essence");
         translationBuilder.add("item.nutonmod.storm_charm", "Storm Charm");
+        translationBuilder.add("item.nutonmod.annihilation_blade", "Annihilation Blade");
         translationBuilder.add("block.nutonmod.energy_ore", "Energy Ore");
         translationBuilder.add("block.nutonmod.deepslate_energy_ore", "Deepslate Energy Ore");
 
@@ -127,6 +130,7 @@ public class ModENUSLanProvider extends FabricLanguageProvider {
         translationBuilder.add("block.nutonmod.energy_sapling", "Energy Sapling");
         translationBuilder.add("block.nutonmod.energy_flower", "Energy Flower");
         translationBuilder.add("block.nutonmod.potted_energy_flower", "Potted Energy Flower");
+        translationBuilder.add("block.nutonmod.still_energy", "Still Energy");
         translationBuilder.add("biome.nutonmod.energy_biome", "Energy Biome");
 
     }

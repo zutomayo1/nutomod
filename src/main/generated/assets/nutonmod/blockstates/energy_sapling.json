@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "nutonmod:block/energy_sapling"
+    }
+  }
+}

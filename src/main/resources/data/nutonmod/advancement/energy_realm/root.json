@@ -1,0 +1,26 @@
+{
+  "display": {
+    "icon": {
+      "id": "nutonmod:energy_core"
+    },
+    "title": "能量维度",
+    "description": "踏入不稳定的能量世界",
+    "background": "minecraft:textures/gui/advancements/backgrounds/adventure.png",
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "criteria": {
+    "has_energy_core": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "nutonmod:energy_core"
+          }
+        ]
+      }
+    }
+  }
+}

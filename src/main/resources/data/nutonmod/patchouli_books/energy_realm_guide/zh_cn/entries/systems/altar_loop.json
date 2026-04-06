@@ -1,0 +1,28 @@
+﻿{
+  "name": "祭坛循环",
+  "category": "nutonmod:systems",
+  "icon": "nutonmod:energy_core",
+  "sortnum": 2,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "nutonmod:energy_core",
+      "text": "祭坛核心是 $(item)能量核心$()。在能量维度中，满足祭坛结构并右键核心可触发循环。"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "激活要求：$(li)脚下 3x3 均为 $(item)能量方块$()$(li)核心上方十字四向也为 $(item)能量方块$()$(li)主手持有至少 4 个 $(item)粗能量$()"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "激活结果：$(li)消耗粗能量 x4$(li)奖励 $(item)能量锭$() x2（风暴期 x3）$(li)奖励 $(item)祭坛碎片$() x1（风暴额外给风暴碎片）$(li)启动一轮守卫怪潮并进入冷却"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "冷却与难度：$(li)基础冷却 5 分钟（风暴期减半）$(li)同祭坛触发次数越高，怪潮等级越高$(li)建议轮换多个祭坛点位刷材料效率更高"
+    }
+  ]
+}
+
+
+

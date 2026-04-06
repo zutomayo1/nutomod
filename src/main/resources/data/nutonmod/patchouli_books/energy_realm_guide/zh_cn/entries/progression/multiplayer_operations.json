@@ -1,0 +1,22 @@
+﻿{
+  "name": "多人协作作战",
+  "category": "nutonmod:progression",
+  "icon": "nutonmod:stabilizer_beacon",
+  "sortnum": 2,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "推荐分工：$(li)侦察/引怪：负责探路、开图、报风暴时间$(li)据点/后勤：布置信标、管理箱子补给$(li)输出/收割：处理精英与首领关键技能"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "资源流水线：$(li)祭坛组持续产祭坛碎片$(li)风暴组产风暴碎片$(li)合成组集中做风暴合金、晶体矩阵、圣域钥匙$(li)终局组准备核心之心与湮灭之眼"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "奇点战沟通口令建议：$(li)“黑洞”=全员预留位移$(li)“新星占点”=立即分散找护盾$(li)“紫节点给主坦”=吸收层优先给被点名目标$(li)“撤回信标圈”=压力或技能失误后的统一回收"
+    }
+  ]
+}
+
+

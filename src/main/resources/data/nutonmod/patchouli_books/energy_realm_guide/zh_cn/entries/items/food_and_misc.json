@@ -1,0 +1,27 @@
+﻿{
+  "name": "食物与杂项",
+  "category": "nutonmod:items",
+  "icon": "nutonmod:energy_apple",
+  "sortnum": 3,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "$(item)能量苹果$()：高质量战斗补给。食用后可提供生命恢复、抗性，并附带吸收与速度等增益，且可在饱食状态下食用。"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(item)能量土豆$()：既可食用也可种植。右键耕地可直接种成 $(item)能量土豆作物$()；食用后给速度、急迫、跳跃相关增益。"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(item)玉米种子$() / $(item)玉米$()：基础农业线补给。$(br)$(item)测试音乐唱片$()：可放入唱片机播放模组曲目。$(br)$(item)能量桶$()：搬运与部署能量流体。"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "提示：部分物品（如刷怪蛋、测试唱片）更偏开发/测试向；生存主线优先级仍是稳定器、信标、圣域钥匙与奇点召唤链。"
+    }
+  ]
+}
+
+
+

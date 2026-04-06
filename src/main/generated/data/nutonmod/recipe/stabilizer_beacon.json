@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "redstone",
+  "key": {
+    "A": {
+      "item": "nutonmod:altar_shard"
+    },
+    "B": {
+      "item": "nutonmod:energy_block"
+    },
+    "C": {
+      "item": "nutonmod:core_stabilizer"
+    },
+    "M": {
+      "item": "nutonmod:crystal_matrix"
+    },
+    "S": {
+      "item": "nutonmod:storm_alloy"
+    }
+  },
+  "pattern": [
+    " A ",
+    "SCS",
+    "BMB"
+  ],
+  "result": {
+    "count": 1,
+    "id": "nutonmod:stabilizer_beacon"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "parent": "nutonmod:energy_realm/summon_singularity",
+  "display": {
+    "icon": {
+      "id": "nutonmod:annihilation_core"
+    },
+    "title": "Annihilation Ended",
+    "description": "Defeat the Singularity of Annihilation",
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "kill_singularity": {
+      "trigger": "minecraft:player_killed_entity",
+      "conditions": {
+        "entity": {
+          "type": "nutonmod:singularity"
+        }
+      }
+    }
+  },
+  "rewards": {
+    "experience": 100
+  }
+}

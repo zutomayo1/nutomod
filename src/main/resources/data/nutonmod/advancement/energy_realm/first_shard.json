@@ -1,0 +1,26 @@
+{
+  "parent": "nutonmod:energy_realm/enter_realm",
+  "display": {
+    "icon": {
+      "id": "nutonmod:altar_shard"
+    },
+    "title": "碎片收集者",
+    "description": "获得你的第一个祭坛碎片",
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "has_altar_shard": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "nutonmod:altar_shard"
+          }
+        ]
+      }
+    }
+  }
+}

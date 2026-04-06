@@ -1,0 +1,29 @@
+{
+  "parent": "nutonmod:energy_realm/storm_surge",
+  "display": {
+    "icon": {
+      "id": "nutonmod:storm_alloy"
+    },
+    "title": "Alloy Smith",
+    "description": "Forge your first Storm Alloy",
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "has_storm_alloy": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "nutonmod:storm_alloy"
+          }
+        ]
+      }
+    }
+  },
+  "rewards": {
+    "experience": 100
+  }
+}

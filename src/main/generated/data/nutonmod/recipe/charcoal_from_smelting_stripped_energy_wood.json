@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "cookingtime": 200,
+  "experience": 0.1,
+  "ingredient": {
+    "item": "nutonmod:stripped_energy_wood"
+  },
+  "result": {
+    "id": "minecraft:charcoal"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "nutonmod:block/stripped_energy_log_horizontal",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "nutonmod:block/stripped_energy_log"
+    },
+    "axis=z": {
+      "model": "nutonmod:block/stripped_energy_log_horizontal",
+      "x": 90
+    }
+  }
+}

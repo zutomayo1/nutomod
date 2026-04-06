@@ -1,0 +1,27 @@
+﻿{
+  "name": "流体与机器",
+  "category": "nutonmod:blocks_structures",
+  "icon": "nutonmod:energy_bucket",
+  "sortnum": 2,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "$(l)能量流体$(/l)$(br2)流体较粘稠，会强力减速实体并提供轻微浮力；实体落入时坠落伤害会被压制。"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "结晶规则：$(li)与水/岩浆接触时会转化为 $(item)能量方块$()$(li)从上方或侧向接触会立即结晶$(li)可用 $(item)能量桶$() 回收与部署"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)抛光机$(/l)$(br2)$(item)抛光机$() 采用“输入 1 槽 + 输出 1 槽”的加工结构，默认加工时长 72 tick。当前代码已接入配方类型，但默认资源包中暂无抛光机成品配方。"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)箱子方块$(/l)$(br2)$(item)箱子$() 为 27 格容器，支持开合动画与红石比较器读数，可作为维度前线补给箱。"
+    }
+  ]
+}
+
+
+

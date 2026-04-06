@@ -1,0 +1,29 @@
+{
+  "parent": "nutonmod:energy_realm/storm_surge",
+  "display": {
+    "icon": {
+      "id": "nutonmod:sanctum_key"
+    },
+    "title": "圣殿通行",
+    "description": "用风暴与祭坛材料合成圣殿钥匙",
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "has_sanctum_key": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "nutonmod:sanctum_key"
+          }
+        ]
+      }
+    }
+  },
+  "rewards": {
+    "experience": 250
+  }
+}

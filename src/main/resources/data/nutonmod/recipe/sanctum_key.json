@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    " S ",
+    "FCF",
+    " S "
+  ],
+  "key": {
+    "S": {
+      "item": "nutonmod:storm_alloy"
+    },
+    "F": {
+      "item": "nutonmod:altar_shard"
+    },
+    "C": {
+      "item": "nutonmod:core_stabilizer"
+    }
+  },
+  "result": {
+    "count": 1,
+    "id": "nutonmod:sanctum_key"
+  }
+}

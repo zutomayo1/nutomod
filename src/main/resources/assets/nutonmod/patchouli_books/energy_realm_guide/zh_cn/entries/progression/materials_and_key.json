@@ -1,0 +1,34 @@
+﻿{
+  "name": "材料线与圣域钥匙",
+  "category": "nutonmod:progression",
+  "icon": "nutonmod:sanctum_key",
+  "sortnum": 1,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "核心材料会逐步分化为 $(item)风暴合金$()、$(item)晶体矩阵$()，以及后期关键的 $(item)核心之心$()。"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "nutonmod:sanctum_key",
+      "text": "制作 $(item)圣域钥匙$()，用于开启圣域门事件。"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "nutonmod:storm_charm",
+      "text": "$(item)风暴护符$() 是消耗型保命道具：清除压力类负面，并提供短时战斗增益。"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "nutonmod:stabilizer_beacon",
+      "text": "$(item)稳定信标$() 以方块形式放置。用 $(item)祭坛碎片$() 右键可建立临时安全区。"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "风暴碎片与风暴合金主要来自方尖碑防守和圣域精英内容。"
+    }
+  ]
+}
+
+
+

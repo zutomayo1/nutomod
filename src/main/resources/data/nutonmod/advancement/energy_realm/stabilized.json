@@ -1,0 +1,26 @@
+{
+  "parent": "nutonmod:energy_realm/first_shard",
+  "display": {
+    "icon": {
+      "id": "nutonmod:core_stabilizer"
+    },
+    "title": "稳定化",
+    "description": "制作核心稳定器来抵抗维度侵蚀",
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "has_core_stabilizer": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "nutonmod:core_stabilizer"
+          }
+        ]
+      }
+    }
+  }
+}

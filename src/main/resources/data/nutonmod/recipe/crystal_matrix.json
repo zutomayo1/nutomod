@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "ASA",
+    "SCS",
+    "ASA"
+  ],
+  "key": {
+    "A": {
+      "item": "nutonmod:altar_shard"
+    },
+    "S": {
+      "item": "nutonmod:storm_fragment"
+    },
+    "C": {
+      "item": "nutonmod:core_stabilizer"
+    }
+  },
+  "result": {
+    "count": 1,
+    "id": "nutonmod:crystal_matrix"
+  }
+}

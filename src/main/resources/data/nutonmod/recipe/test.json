@@ -1,0 +1,11 @@
+{
+  "type": "nutonmod:polishing_machine",
+  "ingredient": {
+    "item": "nutonmod:energy_block"
+  },
+  "output": {
+    "count": 3,
+    "id": "nutonmod:energy_ingot"
+  },
+  "time": 72
+}

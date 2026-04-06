@@ -1,0 +1,24 @@
+﻿{
+  "name": "传送门与首次进入",
+  "category": "nutonmod:getting_started",
+  "icon": "nutonmod:raw_energy",
+  "read_by_default": true,
+  "sortnum": 0,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "使用 $(item)能量方块$() 搭建主世界传送门框架。标准下界门形状可以稳定生效。"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "对门框使用 $(item)粗能量$() 点火，进入后可抵达能量维度。"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "首次进入优先准备机动、食物与撤离方块；在稳定器与信标成型前，不要在高压区域久留。"
+    }
+  ]
+}
+
+
+

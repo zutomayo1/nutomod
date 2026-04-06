@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_core_stabilizer": {
+      "conditions": {
+        "items": [
+          {
+            "items": "nutonmod:core_stabilizer"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "nutonmod:stabilizer_beacon"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_core_stabilizer"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "nutonmod:stabilizer_beacon"
+    ]
+  }
+}
