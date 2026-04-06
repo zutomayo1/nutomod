@@ -57,6 +57,10 @@ public class ModZhCNLangProvider extends FabricLanguageProvider {
         b.add("item.nutonmod.crystal_matrix", "\u6676\u4f53\u77e9\u9635");
         b.add("item.nutonmod.sanctum_key", "\u5723\u57df\u94a5\u5319");
         b.add("item.nutonmod.core_heart", "\u6838\u5fc3\u4e4b\u5fc3");
+        b.add("item.nutonmod.annihilation_eye", "\u6e6e\u706d\u4e4b\u773c");
+        b.add("item.nutonmod.annihilation_core", "\u6e6e\u706d\u6838\u5fc3");
+        b.add("item.nutonmod.singularity_shard", "\u5947\u70b9\u788e\u7247");
+        b.add("item.nutonmod.energy_essence", "\u80fd\u91cf\u7cbe\u534e");
         b.add("item.nutonmod.storm_charm", "\u98ce\u66b4\u62a4\u7b26");
         b.add("block.nutonmod.energy_ore", "\u80fd\u91cf\u77ff\u77f3");
         b.add("block.nutonmod.deepslate_energy_ore", "\u6df1\u677f\u5ca9\u80fd\u91cf\u77ff\u77f3");
@@ -66,6 +70,7 @@ public class ModZhCNLangProvider extends FabricLanguageProvider {
         b.add("entity.nutonmod.energy_being.stormborn", "\u98ce\u66b4\u5316\u80fd\u91cf\u751f\u7269");
         b.add("entity.nutonmod.rift_stalker", "\u88c2\u9699\u6f5c\u730e\u8005");
         b.add("entity.nutonmod.rift_stalker.storm", "\u98ce\u66b4\u88c2\u9699\u6f5c\u730e\u8005");
+        b.add("entity.nutonmod.singularity", "\u80fd\u91cf\u5947\u70b9\u00b7\u6e6e\u706d\u8005");
         b.add("entity.minecraft.villager.energy_master", "\u80fd\u91cf\u5927\u5e08");
         b.add("entity.minecraft.villager.nutonmod.energy_master", "\u80fd\u91cf\u5927\u5e08");
 
@@ -83,6 +88,7 @@ public class ModZhCNLangProvider extends FabricLanguageProvider {
         b.add("item.nutonmod.energy_bucket", "\u80fd\u91cf\u6876");
         b.add("item.nutonmod.energy_horse_armor", "\u80fd\u91cf\u9a6c\u94e0");
         b.add("item.nutonmod.rift_stalker_spawn_egg", "\u88c2\u9699\u6f5c\u730e\u8005\u5237\u602a\u86cb");
+        b.add("item.nutonmod.singularity_spawn_egg", "\u6e6e\u706d\u5947\u70b9\u5237\u602a\u86cb");
 
         b.add("block.nutonmod.box", "\u7bb1\u5b50");
         b.add("item.nutonmod.box", "\u7bb1\u5b50");

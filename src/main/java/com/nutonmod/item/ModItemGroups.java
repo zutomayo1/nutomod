@@ -64,7 +64,12 @@ public class ModItemGroups {
                 entries.add(ModItems.CRYSTAL_MATRIX);
                 entries.add(ModItems.SANCTUM_KEY);
                 entries.add(ModItems.CORE_HEART);
+                entries.add(ModItems.ANNIHILATION_EYE);
+                entries.add(ModItems.ANNIHILATION_CORE);
+                entries.add(ModItems.SINGULARITY_SHARD);
+                entries.add(ModItems.ENERGY_ESSENCE);
                 entries.add(ModItems.STORM_CHARM);
+                entries.add(ModItems.SINGULARITY_SPAWN_EGG);
                 entries.add(ModBlocks.ENERGY_ORE);
                 entries.add(ModBlocks.DEEPSLATE_ENERGY_ORE);
                 entries.add(ModItems.ENERGY_SWORD);

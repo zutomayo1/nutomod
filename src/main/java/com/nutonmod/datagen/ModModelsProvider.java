@@ -104,6 +104,10 @@ public class ModModelsProvider extends FabricModelProvider {
 
         itemModelGenerator.register(ModItems.ENERGY_INGOT, Models.GENERATED);
         itemModelGenerator.register(ModItems.RAW_ENERGY, Models.GENERATED);
+        itemModelGenerator.register(ModItems.ANNIHILATION_EYE, Models.GENERATED);
+        itemModelGenerator.register(ModItems.ANNIHILATION_CORE, Models.GENERATED);
+        itemModelGenerator.register(ModItems.SINGULARITY_SHARD, Models.GENERATED);
+        itemModelGenerator.register(ModItems.ENERGY_ESSENCE, Models.GENERATED);
         itemModelGenerator.register(ModItems.ENERGY_SWORD, Models.GENERATED);
         itemModelGenerator.register(ModItems.ENERGY_PICKAXE, Models.GENERATED);
         itemModelGenerator.register(ModItems.ENERGY_SHOVEL, Models.GENERATED);

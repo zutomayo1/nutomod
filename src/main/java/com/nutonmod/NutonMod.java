@@ -17,6 +17,7 @@ import com.nutonmod.world.dimension.ModPortals;
 import com.nutonmod.world.feature.ModFeatures;
 import com.nutonmod.world.system.EnergyRealmPressureSystem;
 import com.nutonmod.world.system.EnergyRealmStormSystem;
+import com.nutonmod.world.system.SingularityArenaSystem;
 import com.nutonmod.world.system.StabilizerBeaconSystem;
 import com.nutonmod.world.system.StormObeliskEventSystem;
 import net.fabricmc.api.ModInitializer;
@@ -70,6 +71,7 @@ public class NutonMod implements ModInitializer {
         FuelRegistry.INSTANCE.add(ModBlocks.ANTHRACITE_BLOCK.asItem(), 14400);
 
         ServerTickEvents.END_SERVER_TICK.register(server -> {
+            SingularityArenaSystem.tick(server);
             var energyRealmWorld = server.getWorld(ModDimensions.ENERGY_REALM_WORLD_KEY);
             if (energyRealmWorld != null) {
                 StormObeliskEventSystem.tick(energyRealmWorld);

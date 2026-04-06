@@ -9,6 +9,7 @@ import com.nutonmod.client.render.HatArmorRenderer;
 import com.nutonmod.entity.EnergyBeingRenderer;
 import com.nutonmod.entity.ModEntities;
 import com.nutonmod.entity.RiftStalkerRenderer;
+import com.nutonmod.entity.SingularityRenderer;
 import com.nutonmod.item.ModItems;
 import com.nutonmod.screen.ModScreenHandlers;
 import com.nutonmod.screen.PolishingMachineScreen;
@@ -30,6 +31,8 @@ public class NutonModClient implements ClientModInitializer {
     public void onInitializeClient() {
         EntityRendererRegistry.register(ModEntities.ENERGY_BEING, EnergyBeingRenderer::new);
         EntityRendererRegistry.register(ModEntities.RIFT_STALKER, RiftStalkerRenderer::new);
+        EntityRendererRegistry.register(ModEntities.SINGULARITY, SingularityRenderer::new);
+
         BlockEntityRendererFactories.register(ModBlockEntities.BOX, BoxBlockEntityRenderer::new);
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.CORN_CROP, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.ENERGY_POTATO_CROP, RenderLayer.getCutout());

@@ -37,6 +37,10 @@ public class ModItems {
     public static final Item CRYSTAL_MATRIX = registerItem("crystal_matrix", new Item(new Item.Settings().maxCount(32).rarity(Rarity.RARE)));
     public static final Item SANCTUM_KEY = registerItem("sanctum_key", new Item(new Item.Settings().maxCount(16).rarity(Rarity.RARE)));
     public static final Item CORE_HEART = registerItem("core_heart", new Item(new Item.Settings().maxCount(16).rarity(Rarity.EPIC)));
+    public static final Item ANNIHILATION_EYE = registerItem("annihilation_eye", new Item(new Item.Settings().maxCount(16).rarity(Rarity.EPIC)));
+    public static final Item ANNIHILATION_CORE = registerItem("annihilation_core", new Item(new Item.Settings().maxCount(16).rarity(Rarity.EPIC)));
+    public static final Item SINGULARITY_SHARD = registerItem("singularity_shard", new Item(new Item.Settings().maxCount(64).rarity(Rarity.RARE)));
+    public static final Item ENERGY_ESSENCE = registerItem("energy_essence", new Item(new Item.Settings().maxCount(64).rarity(Rarity.UNCOMMON)));
     public static final Item STORM_CHARM = registerItem("storm_charm", new StormCharmItem(new Item.Settings().maxCount(16).rarity(Rarity.RARE)));
 
 
@@ -102,6 +106,14 @@ public class ModItems {
                     0x2D4C56,
                     0x89F0FF,
                     new Item.Settings()
+            )
+    );
+    public static final Item SINGULARITY_SPAWN_EGG = registerItem("singularity_spawn_egg",
+            new SpawnEggItem(
+                    ModEntities.SINGULARITY,
+                    0x17151B,
+                    0xF08C48,
+                    new Item.Settings().rarity(Rarity.EPIC)
             )
     );
 

@@ -53,6 +53,16 @@ public class ModRecipesProvider extends FabricRecipeProvider {
                 .criterion(hasItem(ModItems.CORE_STABILIZER), conditionsFromItem(ModItems.CORE_STABILIZER))
                 .offerTo(recipeExporter, Identifier.of(NutonMod.MOD_ID, "stabilizer_beacon"));
 
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.ANNIHILATION_EYE)
+                .pattern(" S ")
+                .pattern("ECE")
+                .pattern(" S ")
+                .input('S', ModItems.STORM_ALLOY)
+                .input('E', ModItems.ENERGY_INGOT)
+                .input('C', ModItems.CORE_HEART)
+                .criterion(hasItem(ModItems.CORE_HEART), conditionsFromItem(ModItems.CORE_HEART))
+                .offerTo(recipeExporter, Identifier.of(NutonMod.MOD_ID, "annihilation_eye"));
+
         // Energy wood line
         ShapelessRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, ModBlocks.ENERGY_PLANKS, 4)
                 .input(ModBlocks.ENERGY_LOG)

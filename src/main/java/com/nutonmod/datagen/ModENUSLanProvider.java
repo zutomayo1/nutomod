@@ -56,6 +56,10 @@ public class ModENUSLanProvider extends FabricLanguageProvider {
         translationBuilder.add("item.nutonmod.crystal_matrix", "Crystal Matrix");
         translationBuilder.add("item.nutonmod.sanctum_key", "Sanctum Key");
         translationBuilder.add("item.nutonmod.core_heart", "Core Heart");
+        translationBuilder.add("item.nutonmod.annihilation_eye", "Eye of Annihilation");
+        translationBuilder.add("item.nutonmod.annihilation_core", "Annihilation Core");
+        translationBuilder.add("item.nutonmod.singularity_shard", "Singularity Shard");
+        translationBuilder.add("item.nutonmod.energy_essence", "Energy Essence");
         translationBuilder.add("item.nutonmod.storm_charm", "Storm Charm");
         translationBuilder.add("block.nutonmod.energy_ore", "Energy Ore");
         translationBuilder.add("block.nutonmod.deepslate_energy_ore", "Deepslate Energy Ore");
@@ -65,6 +69,7 @@ public class ModENUSLanProvider extends FabricLanguageProvider {
         translationBuilder.add("entity.nutonmod.energy_being.stormborn", "Stormborn Energy Being");
         translationBuilder.add("entity.nutonmod.rift_stalker", "Rift Stalker");
         translationBuilder.add("entity.nutonmod.rift_stalker.storm", "Storm Rift Stalker");
+        translationBuilder.add("entity.nutonmod.singularity", "Singularity of Annihilation");
         translationBuilder.add("entity.minecraft.villager.energy_master", "Energy Master");
         translationBuilder.add("entity.minecraft.villager.nutonmod.energy_master", "Energy Master");
 
@@ -83,6 +88,7 @@ public class ModENUSLanProvider extends FabricLanguageProvider {
 
         translationBuilder.add("item.nutonmod.energy_horse_armor", "Energy Horse Armor");
         translationBuilder.add("item.nutonmod.rift_stalker_spawn_egg", "Rift Stalker Spawn Egg");
+        translationBuilder.add("item.nutonmod.singularity_spawn_egg", "Singularity Spawn Egg");
 
         translationBuilder.add("block.nutonmod.box", "Box");
         translationBuilder.add("item.nutonmod.box", "Box");

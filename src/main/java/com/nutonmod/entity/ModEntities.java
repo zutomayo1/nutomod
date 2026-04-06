@@ -30,11 +30,21 @@ public class ModEntities {
                     .trackedUpdateRate(2)
                     .build()
     );
+    public static final EntityType<SingularityEntity> SINGULARITY = Registry.register(
+            Registries.ENTITY_TYPE,
+            Identifier.of(NutonMod.MOD_ID, "singularity"),
+            FabricEntityTypeBuilder.create(SpawnGroup.MONSTER, SingularityEntity::new)
+                    .dimensions(EntityDimensions.changing(2.5F, 2.5F))
+                    .trackRangeBlocks(16)
+                    .trackedUpdateRate(1)
+                    .build()
+    );
 
     public static void register() {
         NutonMod.LOGGER.info("Registering entities for {}", NutonMod.MOD_ID);
 
         FabricDefaultAttributeRegistry.register(ENERGY_BEING, EnergyBeing.createMobAttributes());
         FabricDefaultAttributeRegistry.register(RIFT_STALKER, RiftStalker.createMobAttributes());
+        FabricDefaultAttributeRegistry.register(SINGULARITY, SingularityEntity.createMobAttributes());
     }
 }
