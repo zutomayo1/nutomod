@@ -3,6 +3,8 @@ package com.nutonmod.block;
 import com.nutonmod.entity.ModEntities;
 import com.nutonmod.item.ModItems;
 import com.nutonmod.world.dimension.ModDimensions;
+import com.nutonmod.world.system.EnergyRealmStormSystem;
+import com.nutonmod.world.system.StormObeliskEventSystem;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.mob.MobEntity;
@@ -43,6 +45,10 @@ public class EnergyCoreBlock extends Block {
         if (world.isClient) {
             return ActionResult.SUCCESS;
         }
+        if (world instanceof ServerWorld serverWorld
+                && EnergyRealmStormSystem.isStormObeliskCore(serverWorld, pos)) {
+            return StormObeliskEventSystem.handleCoreUse(serverWorld, pos, player);
+        }
 
         boolean isActivated = state.get(ACTIVATED);
         if (!isActivated && tryActivateAltar(state, world, pos, player)) {
@@ -59,6 +65,8 @@ public class EnergyCoreBlock extends Block {
         if (!world.getRegistryKey().equals(ModDimensions.ENERGY_REALM_WORLD_KEY)) {
             return false;
         }
+        boolean stormActive = world instanceof ServerWorld serverWorld
+                && EnergyRealmStormSystem.isEnergyStormActive(serverWorld);
         if (!isAltarShape(world, pos)) {
             player.sendMessage(Text.literal("Incomplete altar structure"), true);
             return true;
@@ -66,7 +74,8 @@ public class EnergyCoreBlock extends Block {
         String altarKey = world.getRegistryKey().getValue() + ":" + pos.toShortString();
         long currentTime = world.getTime();
         long lastTrigger = SANCTUM_LAST_TRIGGER.getOrDefault(altarKey, Long.MIN_VALUE / 4L);
-        long remaining = SANCTUM_COOLDOWN_TICKS - (currentTime - lastTrigger);
+        long cooldown = stormActive ? SANCTUM_COOLDOWN_TICKS / 2L : SANCTUM_COOLDOWN_TICKS;
+        long remaining = cooldown - (currentTime - lastTrigger);
         if (remaining > 0) {
             long seconds = Math.max(1L, remaining / 20L);
             player.sendMessage(Text.literal("Sanctum cooling down: " + seconds + "s"), true);
@@ -82,14 +91,18 @@ public class EnergyCoreBlock extends Block {
         stack.decrement(4);
         world.setBlockState(pos, state.with(ACTIVATED, true));
         world.playSound(null, pos, SoundEvents.BLOCK_BEACON_ACTIVATE, SoundCategory.BLOCKS, 1.0f, 1.1f);
-        player.giveItemStack(new ItemStack(ModItems.ENERGY_INGOT, 2));
+        int ingotReward = stormActive ? 3 : 2;
+        player.giveItemStack(new ItemStack(ModItems.ENERGY_INGOT, ingotReward));
         player.giveItemStack(new ItemStack(ModItems.ALTAR_SHARD, 1));
+        if (stormActive) {
+            player.giveItemStack(new ItemStack(ModItems.STORM_FRAGMENT, 1));
+        }
         player.addExperience(12);
         int triggerCount = SANCTUM_TRIGGER_COUNT.getOrDefault(altarKey, 0) + 1;
         SANCTUM_TRIGGER_COUNT.put(altarKey, triggerCount);
         SANCTUM_LAST_TRIGGER.put(altarKey, currentTime);
-        triggerSanctumEvent(world, pos, player, triggerCount);
-        player.sendMessage(Text.literal("Altar activated: reward energy_ingot x2"), true);
+        triggerSanctumEvent(world, pos, player, triggerCount, stormActive);
+        player.sendMessage(Text.literal("Altar activated: reward energy_ingot x" + ingotReward), true);
         return true;
     }
 
@@ -115,13 +128,13 @@ public class EnergyCoreBlock extends Block {
         return true;
     }
 
-    private void triggerSanctumEvent(World world, BlockPos pos, PlayerEntity activator, int triggerCount) {
+    private void triggerSanctumEvent(World world, BlockPos pos, PlayerEntity activator, int triggerCount, boolean stormActive) {
         if (!(world instanceof ServerWorld serverWorld)) {
             return;
         }
 
-        int tier = Math.min(3, 1 + ((triggerCount - 1) / 2));
-        int extraMobs = Math.min(4, triggerCount / 2);
+        int tier = Math.min(4, 1 + ((triggerCount - 1) / 2) + (stormActive ? 1 : 0));
+        int extraMobs = Math.min(5, (triggerCount / 2) + (stormActive ? 1 : 0));
         int totalSpawns = 4 + extraMobs;
         BlockPos[] ring = new BlockPos[] {
                 pos.add(4, 1, 0),
@@ -139,10 +152,11 @@ public class EnergyCoreBlock extends Block {
 
         if (tier >= 2) {
             activator.giveItemStack(new ItemStack(ModItems.CORE_STABILIZER, 1));
-            activator.giveItemStack(new ItemStack(ModItems.STORM_FRAGMENT, tier));
+            activator.giveItemStack(new ItemStack(ModItems.STORM_FRAGMENT, tier + (stormActive ? 1 : 0)));
         }
 
-        activator.sendMessage(Text.literal("Sanctum wave tier " + tier + " started"), false);
+        String suffix = stormActive ? " (storm surge)" : "";
+        activator.sendMessage(Text.literal("Sanctum wave tier " + tier + " started" + suffix), false);
     }
 
     private void spawnMob(ServerWorld world, BlockPos pos, int tier) {

@@ -4,6 +4,7 @@ import com.nutonmod.block.ModBlockFamilies;
 import com.nutonmod.block.ModBlocks;
 import com.nutonmod.block.custom.CornCropBlock;
 import com.nutonmod.block.custom.PolishingMachine;
+import com.nutonmod.block.custom.StabilizerBeaconBlock;
 import com.nutonmod.item.ModItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
@@ -59,6 +60,14 @@ public class ModModelsProvider extends FabricModelProvider {
                         .coordinate(BlockStateVariantMap.create(PolishingMachine.WORKING)
                                 .register(working -> BlockStateVariant.create()
                                         .put(VariantSettings.MODEL, Identifier.of("nutonmod", "block/polishing_machine"))))
+        );
+        blockStateModelGenerator.blockStateCollector.accept(
+                VariantsBlockStateSupplier.create(ModBlocks.STABILIZER_BEACON)
+                        .coordinate(BlockStateVariantMap.create(StabilizerBeaconBlock.ACTIVE)
+                                .register(false, BlockStateVariant.create()
+                                        .put(VariantSettings.MODEL, Identifier.of("nutonmod", "block/stabilizer_beacon_off")))
+                                .register(true, BlockStateVariant.create()
+                                        .put(VariantSettings.MODEL, Identifier.of("nutonmod", "block/stabilizer_beacon_on"))))
         );
 
         blockStateModelGenerator.registerLog(ModBlocks.ENERGY_LOG).log(ModBlocks.ENERGY_LOG).wood(ModBlocks.ENERGY_WOOD);

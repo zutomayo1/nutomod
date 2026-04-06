@@ -41,6 +41,18 @@ public class ModRecipesProvider extends FabricRecipeProvider {
                 ModBlocks.ANTHRACITE_BLOCK
         );
 
+        ShapedRecipeJsonBuilder.create(RecipeCategory.REDSTONE, ModBlocks.STABILIZER_BEACON)
+                .pattern(" A ")
+                .pattern("SCS")
+                .pattern("BMB")
+                .input('A', ModItems.ALTAR_SHARD)
+                .input('S', ModItems.STORM_ALLOY)
+                .input('C', ModItems.CORE_STABILIZER)
+                .input('B', ModBlocks.ENERGY_BLOCK)
+                .input('M', ModItems.CRYSTAL_MATRIX)
+                .criterion(hasItem(ModItems.CORE_STABILIZER), conditionsFromItem(ModItems.CORE_STABILIZER))
+                .offerTo(recipeExporter, Identifier.of(NutonMod.MOD_ID, "stabilizer_beacon"));
+
         // Energy wood line
         ShapelessRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, ModBlocks.ENERGY_PLANKS, 4)
                 .input(ModBlocks.ENERGY_LOG)

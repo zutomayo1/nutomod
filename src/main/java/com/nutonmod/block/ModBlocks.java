@@ -15,6 +15,10 @@ import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 
 public class ModBlocks {
+    public static final Block STABILIZER_BEACON = register("stabilizer_beacon",
+            new StabilizerBeaconBlock(Block.Settings.create().requiresTool().strength(3.5f, 6.0f)
+                    .luminance(state -> state.get(StabilizerBeaconBlock.ACTIVE) ? 13 : 2)));
+
     public static final Block SANCTUM_GATE = register("sanctum_gate",
             new SanctumGateBlock(Block.Settings.create().requiresTool().strength(4.0f, 8.0f)
                     .luminance(state -> state.get(SanctumGateBlock.OPENED) ? 12 : 4)));

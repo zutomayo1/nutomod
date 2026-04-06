@@ -57,8 +57,13 @@ public class ModItemGroups {
                 entries.add(ModItems.RAW_ENERGY);
                 entries.add(ModItems.ALTAR_SHARD);
                 entries.add(ModItems.CORE_STABILIZER);
+                entries.add(ModBlocks.STABILIZER_BEACON);
                 entries.add(ModItems.STORM_FRAGMENT);
+                entries.add(ModItems.STORM_ALLOY);
+                entries.add(ModItems.CRYSTAL_MATRIX);
                 entries.add(ModItems.SANCTUM_KEY);
+                entries.add(ModItems.CORE_HEART);
+                entries.add(ModItems.STORM_CHARM);
                 entries.add(ModBlocks.ENERGY_ORE);
                 entries.add(ModBlocks.DEEPSLATE_ENERGY_ORE);
                 entries.add(ModItems.ENERGY_SWORD);

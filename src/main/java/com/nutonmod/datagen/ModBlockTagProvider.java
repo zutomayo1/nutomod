@@ -62,9 +62,11 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
         getOrCreateTagBuilder(BlockTags.PRESSURE_PLATES)
                 .add(ModBlocks.ENERGY_PRESSURE_PLATE);
         getOrCreateTagBuilder(BlockTags.PICKAXE_MINEABLE)
+                .add(ModBlocks.STABILIZER_BEACON)
                 .add(ModBlocks.ENERGY_ORE)
                 .add(ModBlocks.DEEPSLATE_ENERGY_ORE);
         getOrCreateTagBuilder(BlockTags.NEEDS_STONE_TOOL)
+                .add(ModBlocks.STABILIZER_BEACON)
                 .add(ModBlocks.ENERGY_ORE)
                 .add(ModBlocks.DEEPSLATE_ENERGY_ORE);
 

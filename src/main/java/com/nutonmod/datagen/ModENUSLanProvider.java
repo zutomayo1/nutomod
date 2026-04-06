@@ -35,6 +35,7 @@ public class ModENUSLanProvider extends FabricLanguageProvider {
         translationBuilder.add("block.nutonmod.energy_slab", "Energy Slab");
         translationBuilder.add("block.nutonmod.energy_button", "Energy Button");
         translationBuilder.add("block.nutonmod.energy_pressure_plate", "Energy Pressure Plate");
+        translationBuilder.add("block.nutonmod.stabilizer_beacon", "Stabilizer Beacon");
         translationBuilder.add("block.nutonmod.energy_fence", "Energy Fence");
         translationBuilder.add("block.nutonmod.energy_fence_gate", "Energy Fence Gate");
         translationBuilder.add("block.nutonmod.energy_wall", "Energy Wall");
@@ -48,11 +49,20 @@ public class ModENUSLanProvider extends FabricLanguageProvider {
         translationBuilder.add("item.nutonmod.energy_hoe", "Energy Hoe");
         translationBuilder.add("item.nutonmod.energy_ingot", "Energy Ingot");
         translationBuilder.add("item.nutonmod.raw_energy", "Raw Energy");
+        translationBuilder.add("item.nutonmod.altar_shard", "Altar Shard");
+        translationBuilder.add("item.nutonmod.core_stabilizer", "Core Stabilizer");
+        translationBuilder.add("item.nutonmod.storm_fragment", "Storm Fragment");
+        translationBuilder.add("item.nutonmod.storm_alloy", "Storm Alloy");
+        translationBuilder.add("item.nutonmod.crystal_matrix", "Crystal Matrix");
+        translationBuilder.add("item.nutonmod.sanctum_key", "Sanctum Key");
+        translationBuilder.add("item.nutonmod.core_heart", "Core Heart");
+        translationBuilder.add("item.nutonmod.storm_charm", "Storm Charm");
         translationBuilder.add("block.nutonmod.energy_ore", "Energy Ore");
         translationBuilder.add("block.nutonmod.deepslate_energy_ore", "Deepslate Energy Ore");
 
         translationBuilder.add("item.nutonmod.hat", "Hat");
         translationBuilder.add("entity.nutonmod.energy_being", "Energy Being");
+        translationBuilder.add("entity.nutonmod.energy_being.stormborn", "Stormborn Energy Being");
         translationBuilder.add("entity.minecraft.villager.energy_master", "Energy Master");
         translationBuilder.add("entity.minecraft.villager.nutonmod.energy_master", "Energy Master");
 

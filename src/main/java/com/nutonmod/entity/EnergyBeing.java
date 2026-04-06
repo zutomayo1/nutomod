@@ -1,5 +1,7 @@
 package com.nutonmod.entity;
 
+import com.nutonmod.item.ModItems;
+import com.nutonmod.world.system.EnergyRealmStormSystem;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.ai.goal.ActiveTargetGoal;
 import net.minecraft.entity.ai.goal.LookAroundGoal;
@@ -11,12 +13,15 @@ import net.minecraft.entity.ai.goal.WanderAroundFarGoal;
 import net.minecraft.entity.attribute.DefaultAttributeContainer;
 import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.entity.damage.DamageSource;
+import net.minecraft.entity.effect.StatusEffectInstance;
+import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.mob.HostileEntity;
 import net.minecraft.entity.passive.IronGolemEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.particle.ParticleTypes;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.sound.SoundEvents;
+import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 import software.bernie.geckolib.animatable.GeoEntity;
 import software.bernie.geckolib.animatable.instance.AnimatableInstanceCache;
@@ -76,6 +81,14 @@ public class EnergyBeing extends HostileEntity implements GeoEntity {
                     0.0D
             );
         }
+
+        if (!this.getWorld().isClient
+                && this.age % 40 == 0
+                && this.getWorld() instanceof net.minecraft.server.world.ServerWorld serverWorld
+                && EnergyRealmStormSystem.isEnergyStormActive(serverWorld)) {
+            this.addStatusEffect(new StatusEffectInstance(StatusEffects.SPEED, 120, 0, true, false, true));
+            this.addStatusEffect(new StatusEffectInstance(StatusEffects.STRENGTH, 120, 0, true, false, true));
+        }
     }
 
     @Override
@@ -109,6 +122,29 @@ public class EnergyBeing extends HostileEntity implements GeoEntity {
     @Override
     protected SoundEvent getDeathSound() {
         return SoundEvents.ENTITY_ZOMBIE_DEATH;
+    }
+
+    @Override
+    public void onDeath(DamageSource damageSource) {
+        super.onDeath(damageSource);
+        if (this.getWorld().isClient || !(this.getWorld() instanceof net.minecraft.server.world.ServerWorld serverWorld)) {
+            return;
+        }
+        if (!(damageSource.getAttacker() instanceof PlayerEntity player)) {
+            return;
+        }
+        if (!EnergyRealmStormSystem.isEnergyStormActive(serverWorld)) {
+            return;
+        }
+
+        int bonusCount = EnergyRealmStormSystem.isNearStormObelisk(player) ? 2 : 1;
+        this.dropStack(new ItemStack(ModItems.STORM_FRAGMENT, bonusCount));
+        if (EnergyRealmStormSystem.isStormborn(this)) {
+            this.dropStack(new ItemStack(ModItems.STORM_FRAGMENT, 2));
+            if (this.random.nextFloat() < 0.35F) {
+                this.dropStack(new ItemStack(ModItems.STORM_ALLOY, 1));
+            }
+        }
     }
 
     @Override

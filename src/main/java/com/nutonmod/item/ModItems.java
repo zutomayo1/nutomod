@@ -9,6 +9,7 @@ import com.nutonmod.item.custom.EnergyAppleItem;
 import com.nutonmod.item.custom.EnergyPotatoItem;
 import com.nutonmod.item.custom.HatItem;
 import com.nutonmod.item.custom.Prospector;
+import com.nutonmod.item.custom.StormCharmItem;
 import com.nutonmod.sound.ModJukeBoxSongs;
 import net.minecraft.component.type.FoodComponent;
 import net.minecraft.item.*;
@@ -32,7 +33,11 @@ public class ModItems {
     public static final Item ALTAR_SHARD = registerItem("altar_shard", new Item(new Item.Settings().maxCount(64).rarity(Rarity.UNCOMMON)));
     public static final Item CORE_STABILIZER = registerItem("core_stabilizer", new Item(new Item.Settings().maxCount(16).rarity(Rarity.RARE)));
     public static final Item STORM_FRAGMENT = registerItem("storm_fragment", new Item(new Item.Settings().maxCount(64).rarity(Rarity.UNCOMMON)));
+    public static final Item STORM_ALLOY = registerItem("storm_alloy", new Item(new Item.Settings().maxCount(64).rarity(Rarity.RARE)));
+    public static final Item CRYSTAL_MATRIX = registerItem("crystal_matrix", new Item(new Item.Settings().maxCount(32).rarity(Rarity.RARE)));
     public static final Item SANCTUM_KEY = registerItem("sanctum_key", new Item(new Item.Settings().maxCount(16).rarity(Rarity.RARE)));
+    public static final Item CORE_HEART = registerItem("core_heart", new Item(new Item.Settings().maxCount(16).rarity(Rarity.EPIC)));
+    public static final Item STORM_CHARM = registerItem("storm_charm", new StormCharmItem(new Item.Settings().maxCount(16).rarity(Rarity.RARE)));
 
 
     // 物品 - 能量工具（需要激活才能发挥威力）

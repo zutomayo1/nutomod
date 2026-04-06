@@ -3,6 +3,7 @@ package com.nutonmod;
 import com.nutonmod.block.ModBlocks;
 import com.nutonmod.block.ModFluids;
 import com.nutonmod.block.entity.ModBlockEntities;
+import com.nutonmod.client.StormWarningClientSystem;
 import com.nutonmod.client.render.BoxBlockEntityRenderer;
 import com.nutonmod.client.render.HatArmorRenderer;
 import com.nutonmod.entity.EnergyBeingRenderer;
@@ -12,11 +13,12 @@ import com.nutonmod.screen.ModScreenHandlers;
 import com.nutonmod.screen.PolishingMachineScreen;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
+import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
 import net.fabricmc.fabric.api.client.render.fluid.v1.FluidRenderHandlerRegistry;
 import net.fabricmc.fabric.api.client.render.fluid.v1.SimpleFluidRenderHandler;
 import net.fabricmc.fabric.api.client.rendering.v1.ArmorRenderer;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
-import net.minecraft.client.gui.screen.ingame.HandledScreen;
+import net.fabricmc.fabric.api.client.rendering.v1.HudRenderCallback;
 import net.minecraft.client.gui.screen.ingame.HandledScreens;
 import net.minecraft.client.render.block.entity.BlockEntityRendererFactories;
 import net.minecraft.client.render.RenderLayer;
@@ -42,5 +44,8 @@ public class NutonModClient implements ClientModInitializer {
                 ));
         BlockRenderLayerMap.INSTANCE.putFluids(RenderLayer.getTranslucent(), ModFluids.STILL_ENERGY, ModFluids.FLOWING_ENERGY);
         HandledScreens.register(ModScreenHandlers.POLISHING_MACHINE_SCREEN_HANDLER, PolishingMachineScreen::new);
+        ClientTickEvents.END_CLIENT_TICK.register(StormWarningClientSystem::tick);
+        HudRenderCallback.EVENT.register((drawContext, renderTickCounter) ->
+                StormWarningClientSystem.render(drawContext, 0.0F));
     }
 }
