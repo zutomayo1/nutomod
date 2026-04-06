@@ -15,6 +15,9 @@ import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 
 public class ModBlocks {
+    public static final Block SANCTUM_GATE = register("sanctum_gate",
+            new SanctumGateBlock(Block.Settings.create().requiresTool().strength(4.0f, 8.0f)
+                    .luminance(state -> state.get(SanctumGateBlock.OPENED) ? 12 : 4)));
     
     // 能量核心方块 - 可以放置，右键切换激活状态，激活时发光等级 15
     public static final Block ENERGY_CORE = register("energy_core", 

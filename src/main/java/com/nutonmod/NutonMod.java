@@ -17,6 +17,7 @@ import com.nutonmod.world.dimension.ModPortals;
 import com.nutonmod.world.feature.ModFeatures;
 import com.nutonmod.world.gen.ModWorldGeneration;
 import net.fabricmc.api.ModInitializer;
+import net.fabricmc.fabric.api.networking.v1.ServerPlayConnectionEvents;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
 import net.fabricmc.fabric.api.registry.FlammableBlockRegistry;
 import net.fabricmc.fabric.api.registry.FuelRegistry;
@@ -24,10 +25,12 @@ import net.fabricmc.fabric.api.registry.StrippableBlockRegistry;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.Identifier;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import vazkii.patchouli.api.PatchouliAPI;
 
 public class NutonMod implements ModInitializer {
     public static final String MOD_ID = "nutonmod";
@@ -47,7 +50,9 @@ public class NutonMod implements ModInitializer {
         ModFluids.registerModFluids();
         ModFeatures.register();
         ModRecipeTypes.registerRecipeTypes();
-        ModWorldGeneration.generateModWorldGen();
+        // Worldgen features are already declared in biome JSON/datagen.
+        // Disable runtime biome injections to avoid feature order cycles.
+        // ModWorldGeneration.generateModWorldGen();
         ModPortals.registerPortals();
 
         StrippableBlockRegistry.register(ModBlocks.ENERGY_LOG, ModBlocks.STRIPPED_ENERGY_LOG);
@@ -73,6 +78,24 @@ public class NutonMod implements ModInitializer {
                     energyChestplateItem.clientTick(chestplate, player);
                 }
                 applyEnergyRealmPressure(player);
+            }
+        });
+
+        ServerPlayConnectionEvents.JOIN.register((handler, sender, server) -> {
+            PlayerEntity player = handler.getPlayer();
+            if (player == null || player.getWorld().isClient) {
+                return;
+            }
+
+            final String tag = "nutonmod_received_patchouli_guide";
+            if (player.getCommandTags().contains(tag)) {
+                return;
+            }
+
+            ItemStack guide = PatchouliAPI.get().getBookStack(Identifier.of(MOD_ID, "energy_realm_guide"));
+            if (!guide.isEmpty()) {
+                player.giveItemStack(guide);
+                player.addCommandTag(tag);
             }
         });
 

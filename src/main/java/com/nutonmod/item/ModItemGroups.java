@@ -3,6 +3,7 @@ package com.nutonmod.item;
 import com.nutonmod.NutonMod;
 import com.nutonmod.block.ModBlocks;
 import com.nutonmod.item.ModItems;
+import net.fabricmc.loader.api.FabricLoader;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
@@ -11,6 +12,7 @@ import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
+import vazkii.patchouli.api.PatchouliAPI;
 
 public class ModItemGroups {
     
@@ -55,6 +57,8 @@ public class ModItemGroups {
                 entries.add(ModItems.RAW_ENERGY);
                 entries.add(ModItems.ALTAR_SHARD);
                 entries.add(ModItems.CORE_STABILIZER);
+                entries.add(ModItems.STORM_FRAGMENT);
+                entries.add(ModItems.SANCTUM_KEY);
                 entries.add(ModBlocks.ENERGY_ORE);
                 entries.add(ModBlocks.DEEPSLATE_ENERGY_ORE);
                 entries.add(ModItems.ENERGY_SWORD);
@@ -82,6 +86,14 @@ public class ModItemGroups {
                 entries.add(ModBlocks.ENERGY_LEAVES);
                 entries.add(ModBlocks.ENERGY_SAPLING);
                 entries.add(ModBlocks.ENERGY_FLOWER);
+                entries.add(ModBlocks.SANCTUM_GATE);
+
+                if (FabricLoader.getInstance().isModLoaded("patchouli")) {
+                    ItemStack guideBook = PatchouliAPI.get().getBookStack(Identifier.of(NutonMod.MOD_ID, "energy_realm_guide"));
+                    if (!guideBook.isEmpty()) {
+                        entries.add(guideBook);
+                    }
+                }
             })
             .build()
     );

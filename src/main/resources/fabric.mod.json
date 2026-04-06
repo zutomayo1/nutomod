@@ -42,6 +42,9 @@
 		"terrablender": "*",
 		"customportalapi": "*"
 	},
+	"suggests": {
+		"patchouli": "*"
+	},
 	"custom": {
 		"fabric-api": {
 			"disable-resource-pack-validation": true

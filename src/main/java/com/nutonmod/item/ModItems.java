@@ -31,6 +31,8 @@ public class ModItems {
     public static final Item RAW_ENERGY = registerItem("raw_energy", new Item(new Item.Settings()));
     public static final Item ALTAR_SHARD = registerItem("altar_shard", new Item(new Item.Settings().maxCount(64).rarity(Rarity.UNCOMMON)));
     public static final Item CORE_STABILIZER = registerItem("core_stabilizer", new Item(new Item.Settings().maxCount(16).rarity(Rarity.RARE)));
+    public static final Item STORM_FRAGMENT = registerItem("storm_fragment", new Item(new Item.Settings().maxCount(64).rarity(Rarity.UNCOMMON)));
+    public static final Item SANCTUM_KEY = registerItem("sanctum_key", new Item(new Item.Settings().maxCount(16).rarity(Rarity.RARE)));
 
 
     // 物品 - 能量工具（需要激活才能发挥威力）

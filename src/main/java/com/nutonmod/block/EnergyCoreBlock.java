@@ -139,6 +139,7 @@ public class EnergyCoreBlock extends Block {
 
         if (tier >= 2) {
             activator.giveItemStack(new ItemStack(ModItems.CORE_STABILIZER, 1));
+            activator.giveItemStack(new ItemStack(ModItems.STORM_FRAGMENT, tier));
         }
 
         activator.sendMessage(Text.literal("Sanctum wave tier " + tier + " started"), false);
