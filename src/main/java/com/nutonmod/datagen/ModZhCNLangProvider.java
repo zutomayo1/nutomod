@@ -71,6 +71,24 @@ public class ModZhCNLangProvider extends FabricLanguageProvider {
         b.add("entity.nutonmod.rift_stalker", "\u88c2\u9699\u6f5c\u730e\u8005");
         b.add("entity.nutonmod.rift_stalker.storm", "\u98ce\u66b4\u88c2\u9699\u6f5c\u730e\u8005");
         b.add("entity.nutonmod.singularity", "\u80fd\u91cf\u5947\u70b9\u00b7\u6e6e\u706d\u8005");
+        b.add("boss.nutonmod.singularity.need_core_wastes", "\u5fc5\u987b\u5728\u201c\u6838\u5fc3\u8352\u539f\u201d\u751f\u7269\u7fa4\u7cfb\u53ec\u5524");
+        b.add("boss.nutonmod.singularity.already_active", "\u9644\u8fd1\u5df2\u6709\u6e6e\u706d\u5947\u70b9\u6fc0\u6d3b");
+        b.add("boss.nutonmod.singularity.awakened", "\u80fd\u91cf\u5947\u70b9\u00b7\u6e6e\u706d\u8005\u5df2\u89c9\u9192\uff01");
+        b.add("boss.nutonmod.singularity.phase_2", "\u6838\u5fc3\u5d29\u574f\u5f00\u59cb\uff01");
+        b.add("boss.nutonmod.singularity.phase_3", "\u6e6e\u706d\u964d\u4e34\uff01");
+        b.add("boss.nutonmod.singularity.black_hole_warning", "\u7a7a\u95f4\u6b63\u5728\u584c\u7f29\uff0c\u5fae\u578b\u9ed1\u6d1e\u5373\u5c06\u51fa\u73b0\uff01");
+        b.add("boss.nutonmod.singularity.nova_warning", "\u6e6e\u706d\u65b0\u661f\u84c4\u529b\u4e2d\uff0c\u7acb\u5373\u524d\u5f80\u80fd\u91cf\u62a4\u76fe\u70b9\uff01");
+        b.add("boss.nutonmod.singularity.rampage_warning", "\u6e6e\u706d\u8005\u5373\u5c06\u53d1\u52a8\u72c2\u6012\u51b2\u649e\uff01");
+        b.add("boss.nutonmod.singularity.mirror_warning", "\u6838\u5fc3\u5f00\u59cb\u5206\u88c2\uff0c\u627e\u51fa\u771f\u8eab\uff01");
+        b.add("boss.nutonmod.singularity.decoy_name", "\u6e6e\u706d\u5e7b\u5f71");
+        b.add("boss.nutonmod.singularity.bar.phase_1", "\u80fd\u91cf\u5947\u70b9\u00b7\u6e6e\u706d\u8005 - \u5f15\u529b\u89c9\u9192");
+        b.add("boss.nutonmod.singularity.bar.phase_2", "\u80fd\u91cf\u5947\u70b9\u00b7\u6e6e\u706d\u8005 - \u6838\u5fc3\u5d29\u574f");
+        b.add("boss.nutonmod.singularity.bar.phase_3", "\u80fd\u91cf\u5947\u70b9\u00b7\u6e6e\u706d\u8005 - \u6e6e\u706d\u964d\u4e34");
+        b.add("boss.nutonmod.singularity.node_cooldown", "\u80fd\u91cf\u8282\u70b9\u51b7\u5374\u4e2d\uff1a%s \u79d2");
+        b.add("boss.nutonmod.singularity.node_red", "\u7ea2\u8282\u70b9\u6fc0\u6d3b\uff1a\u653b\u51fb\u5927\u5e45\u63d0\u5347");
+        b.add("boss.nutonmod.singularity.node_blue", "\u84dd\u8282\u70b9\u6fc0\u6d3b\uff1a\u79fb\u52a8\u901f\u5ea6\u5927\u5e45\u63d0\u5347");
+        b.add("boss.nutonmod.singularity.node_yellow", "\u9ec4\u8282\u70b9\u6fc0\u6d3b\uff1a\u56de\u590d20\u9897\u5fc3");
+        b.add("boss.nutonmod.singularity.node_purple", "\u7d2b\u8282\u70b9\u6fc0\u6d3b\uff1a\u83b7\u5f9720\u9897\u5fc3\u5438\u6536\u76fe");
         b.add("entity.minecraft.villager.energy_master", "\u80fd\u91cf\u5927\u5e08");
         b.add("entity.minecraft.villager.nutonmod.energy_master", "\u80fd\u91cf\u5927\u5e08");
 
@@ -88,7 +106,7 @@ public class ModZhCNLangProvider extends FabricLanguageProvider {
         b.add("item.nutonmod.energy_bucket", "\u80fd\u91cf\u6876");
         b.add("item.nutonmod.energy_horse_armor", "\u80fd\u91cf\u9a6c\u94e0");
         b.add("item.nutonmod.rift_stalker_spawn_egg", "\u88c2\u9699\u6f5c\u730e\u8005\u5237\u602a\u86cb");
-        b.add("item.nutonmod.singularity_spawn_egg", "\u6e6e\u706d\u5947\u70b9\u5237\u602a\u86cb");
+        b.add("item.nutonmod.singularity_spawn_egg", "\u80fd\u91cf\u5947\u70b9\u00b7\u6e6e\u706d\u8005\u5237\u602a\u86cb");
 
         b.add("block.nutonmod.box", "\u7bb1\u5b50");
         b.add("item.nutonmod.box", "\u7bb1\u5b50");
@@ -116,5 +134,7 @@ public class ModZhCNLangProvider extends FabricLanguageProvider {
         b.add("biome.nutonmod.fracture_canyons", "\u88c2\u9699\u5ce1\u8c37");
         b.add("biome.nutonmod.core_wastes", "\u6838\u5fc3\u8352\u539f");
         b.add("itemGroup.nutonmod.nuton_group", "Nuton \u6a21\u7ec4");
+
+
     }
 }

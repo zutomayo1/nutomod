@@ -70,6 +70,24 @@ public class ModENUSLanProvider extends FabricLanguageProvider {
         translationBuilder.add("entity.nutonmod.rift_stalker", "Rift Stalker");
         translationBuilder.add("entity.nutonmod.rift_stalker.storm", "Storm Rift Stalker");
         translationBuilder.add("entity.nutonmod.singularity", "Singularity of Annihilation");
+        translationBuilder.add("boss.nutonmod.singularity.need_core_wastes", "Need to summon in Core Wastes biome");
+        translationBuilder.add("boss.nutonmod.singularity.already_active", "A Singularity is already active nearby");
+        translationBuilder.add("boss.nutonmod.singularity.awakened", "Singularity of Annihilation has awakened!");
+        translationBuilder.add("boss.nutonmod.singularity.phase_2", "Core collapse begins!");
+        translationBuilder.add("boss.nutonmod.singularity.phase_3", "Annihilation descends!");
+        translationBuilder.add("boss.nutonmod.singularity.black_hole_warning", "Space is collapsing into a black hole!");
+        translationBuilder.add("boss.nutonmod.singularity.nova_warning", "Annihilation nova is charging - find a shield anchor!");
+        translationBuilder.add("boss.nutonmod.singularity.rampage_warning", "The Singularity is entering rampage charge!");
+        translationBuilder.add("boss.nutonmod.singularity.mirror_warning", "The core splits - find the true Singularity!");
+        translationBuilder.add("boss.nutonmod.singularity.decoy_name", "Singularity Phantom");
+        translationBuilder.add("boss.nutonmod.singularity.bar.phase_1", "Singularity of Annihilation - Gravity Awakening");
+        translationBuilder.add("boss.nutonmod.singularity.bar.phase_2", "Singularity of Annihilation - Core Collapse");
+        translationBuilder.add("boss.nutonmod.singularity.bar.phase_3", "Singularity of Annihilation - Annihilation Descent");
+        translationBuilder.add("boss.nutonmod.singularity.node_cooldown", "Energy node cooling down: %s s");
+        translationBuilder.add("boss.nutonmod.singularity.node_red", "Red node activated: +50% attack power");
+        translationBuilder.add("boss.nutonmod.singularity.node_blue", "Blue node activated: +50% movement speed");
+        translationBuilder.add("boss.nutonmod.singularity.node_yellow", "Yellow node activated: +20 hearts healed");
+        translationBuilder.add("boss.nutonmod.singularity.node_purple", "Purple node activated: +20 hearts absorption");
         translationBuilder.add("entity.minecraft.villager.energy_master", "Energy Master");
         translationBuilder.add("entity.minecraft.villager.nutonmod.energy_master", "Energy Master");
 

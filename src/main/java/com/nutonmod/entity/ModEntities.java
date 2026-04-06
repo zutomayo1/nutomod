@@ -34,7 +34,7 @@ public class ModEntities {
             Registries.ENTITY_TYPE,
             Identifier.of(NutonMod.MOD_ID, "singularity"),
             FabricEntityTypeBuilder.create(SpawnGroup.MONSTER, SingularityEntity::new)
-                    .dimensions(EntityDimensions.changing(2.5F, 2.5F))
+                    .dimensions(EntityDimensions.changing(3.5F, 4.5F))
                     .trackRangeBlocks(16)
                     .trackedUpdateRate(1)
                     .build()

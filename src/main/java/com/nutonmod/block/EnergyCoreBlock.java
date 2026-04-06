@@ -4,6 +4,7 @@ import com.nutonmod.entity.ModEntities;
 import com.nutonmod.item.ModItems;
 import com.nutonmod.world.dimension.ModDimensions;
 import com.nutonmod.world.system.EnergyRealmStormSystem;
+import com.nutonmod.world.system.SingularityArenaSystem;
 import com.nutonmod.world.system.SingularitySummonSystem;
 import com.nutonmod.world.system.StormObeliskEventSystem;
 import net.minecraft.block.Block;
@@ -44,6 +45,10 @@ public class EnergyCoreBlock extends Block {
     @Override
     protected ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, BlockHitResult hit) {
         if (world.isClient) {
+            return ActionResult.SUCCESS;
+        }
+        if (world instanceof ServerWorld serverWorld
+                && SingularityArenaSystem.tryActivateNode(serverWorld, pos, player)) {
             return ActionResult.SUCCESS;
         }
         if (world instanceof ServerWorld serverWorld
