@@ -160,14 +160,15 @@ public class EnergyCoreBlock extends Block {
     }
 
     private void spawnMob(ServerWorld world, BlockPos pos, int tier) {
-        var entity = ModEntities.ENERGY_BEING.create(world);
+        boolean spawnRiftStalker = tier >= 3 && world.random.nextFloat() < 0.40F;
+        var entity = spawnRiftStalker ? ModEntities.RIFT_STALKER.create(world) : ModEntities.ENERGY_BEING.create(world);
         if (entity == null) {
             return;
         }
         entity.refreshPositionAndAngles(pos, world.random.nextFloat() * 360.0F, 0.0F);
         if (entity instanceof MobEntity mob) {
             mob.setHealth(mob.getMaxHealth() * (1.2F + (tier * 0.25F)));
-            mob.setCustomName(Text.literal("Energy Guard T" + tier));
+            mob.setCustomName(Text.literal((spawnRiftStalker ? "Rift Stalker T" : "Energy Guard T") + tier));
             mob.setCustomNameVisible(tier >= 2);
         }
         world.spawnEntity(entity);

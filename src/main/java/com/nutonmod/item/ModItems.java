@@ -96,6 +96,15 @@ public class ModItems {
         )
     );
 
+    public static final Item RIFT_STALKER_SPAWN_EGG = registerItem("rift_stalker_spawn_egg",
+            new SpawnEggItem(
+                    ModEntities.RIFT_STALKER,
+                    0x2D4C56,
+                    0x89F0FF,
+                    new Item.Settings()
+            )
+    );
+
     public static final Item PROSPECTOR = registerItem("prospector",
             new Prospector(new Item.Settings().maxDamage(127)));
     //帽子

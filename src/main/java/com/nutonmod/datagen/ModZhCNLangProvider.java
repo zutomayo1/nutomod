@@ -64,6 +64,8 @@ public class ModZhCNLangProvider extends FabricLanguageProvider {
         b.add("item.nutonmod.hat", "\u5e3d\u5b50");
         b.add("entity.nutonmod.energy_being", "\u80fd\u91cf\u751f\u7269");
         b.add("entity.nutonmod.energy_being.stormborn", "\u98ce\u66b4\u5316\u80fd\u91cf\u751f\u7269");
+        b.add("entity.nutonmod.rift_stalker", "\u88c2\u9699\u6f5c\u730e\u8005");
+        b.add("entity.nutonmod.rift_stalker.storm", "\u98ce\u66b4\u88c2\u9699\u6f5c\u730e\u8005");
         b.add("entity.minecraft.villager.energy_master", "\u80fd\u91cf\u5927\u5e08");
         b.add("entity.minecraft.villager.nutonmod.energy_master", "\u80fd\u91cf\u5927\u5e08");
 
@@ -80,6 +82,7 @@ public class ModZhCNLangProvider extends FabricLanguageProvider {
         b.add("jukebox_song.nutonmod.test", "\u6d4b\u8bd5");
         b.add("item.nutonmod.energy_bucket", "\u80fd\u91cf\u6876");
         b.add("item.nutonmod.energy_horse_armor", "\u80fd\u91cf\u9a6c\u94e0");
+        b.add("item.nutonmod.rift_stalker_spawn_egg", "\u88c2\u9699\u6f5c\u730e\u8005\u5237\u602a\u86cb");
 
         b.add("block.nutonmod.box", "\u7bb1\u5b50");
         b.add("item.nutonmod.box", "\u7bb1\u5b50");

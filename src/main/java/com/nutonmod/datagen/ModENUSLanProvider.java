@@ -63,6 +63,8 @@ public class ModENUSLanProvider extends FabricLanguageProvider {
         translationBuilder.add("item.nutonmod.hat", "Hat");
         translationBuilder.add("entity.nutonmod.energy_being", "Energy Being");
         translationBuilder.add("entity.nutonmod.energy_being.stormborn", "Stormborn Energy Being");
+        translationBuilder.add("entity.nutonmod.rift_stalker", "Rift Stalker");
+        translationBuilder.add("entity.nutonmod.rift_stalker.storm", "Storm Rift Stalker");
         translationBuilder.add("entity.minecraft.villager.energy_master", "Energy Master");
         translationBuilder.add("entity.minecraft.villager.nutonmod.energy_master", "Energy Master");
 
@@ -80,6 +82,7 @@ public class ModENUSLanProvider extends FabricLanguageProvider {
         translationBuilder.add("item.nutonmod.energy_bucket", "Energy Bucket");
 
         translationBuilder.add("item.nutonmod.energy_horse_armor", "Energy Horse Armor");
+        translationBuilder.add("item.nutonmod.rift_stalker_spawn_egg", "Rift Stalker Spawn Egg");
 
         translationBuilder.add("block.nutonmod.box", "Box");
         translationBuilder.add("item.nutonmod.box", "Box");
