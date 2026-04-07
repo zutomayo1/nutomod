@@ -3,15 +3,18 @@ package com.nutonmod;
 import com.nutonmod.block.ModBlocks;
 import com.nutonmod.block.ModFluids;
 import com.nutonmod.block.entity.ModBlockEntities;
+import com.nutonmod.client.EnergyHudClientSystem;
 import com.nutonmod.client.StormWarningClientSystem;
 import com.nutonmod.client.render.BoxBlockEntityRenderer;
 import com.nutonmod.client.render.HatArmorRenderer;
+import com.nutonmod.client.render.ThunderSpearProjectileRenderer;
 import com.nutonmod.entity.EnergyBeingRenderer;
 import com.nutonmod.entity.ModEntities;
 import com.nutonmod.entity.RiftStalkerRenderer;
 import com.nutonmod.entity.SingularityRenderer;
 import com.nutonmod.entity.StormArbiterRenderer;
 import com.nutonmod.item.ModItems;
+import com.nutonmod.network.EnergySyncPayload;
 import com.nutonmod.screen.ModScreenHandlers;
 import com.nutonmod.screen.PolishingMachineScreen;
 import net.fabricmc.api.ClientModInitializer;
@@ -22,18 +25,26 @@ import net.fabricmc.fabric.api.client.render.fluid.v1.SimpleFluidRenderHandler;
 import net.fabricmc.fabric.api.client.rendering.v1.ArmorRenderer;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.HudRenderCallback;
+import net.fabricmc.fabric.api.client.networking.v1.ClientPlayNetworking;
 import net.minecraft.client.gui.screen.ingame.HandledScreens;
 import net.minecraft.client.render.block.entity.BlockEntityRendererFactories;
+import net.minecraft.client.render.entity.ArrowEntityRenderer;
 import net.minecraft.client.render.RenderLayer;
 import net.minecraft.util.Identifier;
 
 public class NutonModClient implements ClientModInitializer {
     @Override
     public void onInitializeClient() {
+        ClientPlayNetworking.registerGlobalReceiver(EnergySyncPayload.ID, (payload, context) ->
+                context.client().execute(() ->
+                        EnergyHudClientSystem.updateFromServer(payload.energy(), payload.maxEnergy(), payload.overloaded())));
+
         EntityRendererRegistry.register(ModEntities.ENERGY_BEING, EnergyBeingRenderer::new);
         EntityRendererRegistry.register(ModEntities.RIFT_STALKER, RiftStalkerRenderer::new);
         EntityRendererRegistry.register(ModEntities.SINGULARITY, SingularityRenderer::new);
         EntityRendererRegistry.register(ModEntities.STORM_ARBITER, StormArbiterRenderer::new);
+        EntityRendererRegistry.register(ModEntities.VOID_PIERCING_ARROW, ArrowEntityRenderer::new);
+        EntityRendererRegistry.register(ModEntities.THUNDER_SPEAR_PROJECTILE, ThunderSpearProjectileRenderer::new);
 
         BlockEntityRendererFactories.register(ModBlockEntities.BOX, BoxBlockEntityRenderer::new);
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.CORN_CROP, RenderLayer.getCutout());
@@ -51,8 +62,13 @@ public class NutonModClient implements ClientModInitializer {
                 ));
         BlockRenderLayerMap.INSTANCE.putFluids(RenderLayer.getTranslucent(), ModFluids.STILL_ENERGY, ModFluids.FLOWING_ENERGY);
         HandledScreens.register(ModScreenHandlers.POLISHING_MACHINE_SCREEN_HANDLER, PolishingMachineScreen::new);
-        ClientTickEvents.END_CLIENT_TICK.register(StormWarningClientSystem::tick);
-        HudRenderCallback.EVENT.register((drawContext, renderTickCounter) ->
-                StormWarningClientSystem.render(drawContext, 0.0F));
+        ClientTickEvents.END_CLIENT_TICK.register(client -> {
+            StormWarningClientSystem.tick(client);
+            EnergyHudClientSystem.tick(client);
+        });
+        HudRenderCallback.EVENT.register((drawContext, renderTickCounter) -> {
+            StormWarningClientSystem.render(drawContext, 0.0F);
+            EnergyHudClientSystem.render(drawContext, 0.0F);
+        });
     }
 }

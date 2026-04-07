@@ -48,6 +48,24 @@ public class ModEntities {
                     .trackedUpdateRate(1)
                     .build()
     );
+    public static final EntityType<VoidPiercingArrowEntity> VOID_PIERCING_ARROW = Registry.register(
+            Registries.ENTITY_TYPE,
+            Identifier.of(NutonMod.MOD_ID, "void_piercing_arrow"),
+            FabricEntityTypeBuilder.<VoidPiercingArrowEntity>create(SpawnGroup.MISC, VoidPiercingArrowEntity::new)
+                    .dimensions(EntityDimensions.fixed(0.5F, 0.5F))
+                    .trackRangeBlocks(6)
+                    .trackedUpdateRate(10)
+                    .build()
+    );
+    public static final EntityType<ThunderSpearProjectileEntity> THUNDER_SPEAR_PROJECTILE = Registry.register(
+            Registries.ENTITY_TYPE,
+            Identifier.of(NutonMod.MOD_ID, "thunder_spear_projectile"),
+            FabricEntityTypeBuilder.<ThunderSpearProjectileEntity>create(SpawnGroup.MISC, ThunderSpearProjectileEntity::new)
+                    .dimensions(EntityDimensions.fixed(0.5F, 0.5F))
+                    .trackRangeBlocks(8)
+                    .trackedUpdateRate(10)
+                    .build()
+    );
 
     public static void register() {
         NutonMod.LOGGER.info("Registering entities for {}", NutonMod.MOD_ID);

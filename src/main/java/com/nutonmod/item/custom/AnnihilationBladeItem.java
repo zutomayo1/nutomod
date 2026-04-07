@@ -3,14 +3,17 @@ package com.nutonmod.item.custom;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Item.TooltipContext;
 import net.minecraft.item.SwordItem;
 import net.minecraft.item.ToolMaterial;
+import net.minecraft.item.tooltip.TooltipType;
 import net.minecraft.particle.ParticleTypes;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.text.Text;
 import net.minecraft.util.Hand;
+import net.minecraft.util.Formatting;
 import net.minecraft.util.TypedActionResult;
 import net.minecraft.util.math.Box;
 import net.minecraft.util.math.Vec3d;
@@ -190,5 +193,12 @@ public class AnnihilationBladeItem extends SwordItem {
             sw.spawnParticles(ParticleTypes.SONIC_BOOM,
                     center.x, center.y + 0.8, center.z, 4, 0.0, 0.0, 0.0, 0.0);
         }
+    }
+
+    @Override
+    public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip, TooltipType type) {
+        tooltip.add(Text.translatable("tooltip.nutonmod.annihilation_blade.line1").formatted(Formatting.DARK_PURPLE));
+        tooltip.add(Text.translatable("tooltip.nutonmod.annihilation_blade.line2").formatted(Formatting.GRAY));
+        tooltip.add(Text.translatable("tooltip.nutonmod.annihilation_blade.line3").formatted(Formatting.GRAY));
     }
 }

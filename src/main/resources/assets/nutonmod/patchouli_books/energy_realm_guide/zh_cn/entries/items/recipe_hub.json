@@ -1,4 +1,4 @@
-﻿{
+{
   "name": "关键配方总览",
   "category": "nutonmod:items",
   "icon": "nutonmod:storm_alloy",
@@ -12,12 +12,12 @@
     {
       "type": "patchouli:crafting",
       "recipe": "nutonmod:core_stabilizer",
-      "text": "核心稳定器：抗压体系的基本件。"
+      "text": "核心稳定器：抗压体系的基础部件。"
     },
     {
       "type": "patchouli:crafting",
       "recipe": "nutonmod:crystal_matrix",
-      "text": "晶体矩阵：信标、护符、终局配方的通用中枢。"
+      "text": "晶体矩阵：信标、护符与终局配方的通用中枢。"
     },
     {
       "type": "patchouli:crafting",
@@ -26,29 +26,27 @@
     },
     {
       "type": "patchouli:crafting",
-      "recipe": "nutonmod:core_heart",
-      "text": "核心之心：终局配方桥梁。"
-    },
-    {
-      "type": "patchouli:crafting",
-      "recipe": "nutonmod:annihilation_eye",
-      "text": "湮灭之眼：奇点首领召唤物。"
-    },
-    {
-      "type": "patchouli:crafting",
-      "recipe": "nutonmod:storm_charm",
-      "text": "风暴护符：高危战斗保命道具。详细机制见 $(l:nutonmod:items/storm_charm)专页$()。"
-    },
-    {
-      "type": "patchouli:crafting",
       "recipe": "nutonmod:annihilation_blade",
-      "text": "湮灭之刃：终局近战主武器，依赖奇点掉落链完成升级。详细机制见 $(l:nutonmod:items/annihilation_blade)专页$()。"
+      "text": "湮灭之刃：近战终局武器。详见 $(l:nutonmod:items/annihilation_blade)专页$()。"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "nutonmod:thunder_spear",
+      "text": "雷神之矛：雷铸路线核心武器。详见 $(l:nutonmod:items/thunder_spear)专页$()。"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "nutonmod:void_calamity",
+      "text": "虚空灾厄：叠层远程爆发武器。详见 $(l:nutonmod:items/void_calamity)专页$()。"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "nutonmod:storm_scepter",
+      "text": "雷暴权杖：能量驱动群体压制法杖。详见 $(l:nutonmod:items/storm_scepter)专页$()。"
     },
     {
       "type": "patchouli:text",
-      "text": "说明：当前代码中并非所有战斗装备都提供了正式工作台配方（尤其部分工具/防具）。该页仅列出主线必须配方。"
+      "text": "说明：手册优先收录主线与战斗关键配方；非核心工具与装饰配方可能在后续补全。"
     }
   ]
 }
-
-

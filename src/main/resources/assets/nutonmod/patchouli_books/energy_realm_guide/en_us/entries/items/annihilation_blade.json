@@ -7,24 +7,24 @@
     {
       "type": "patchouli:spotlight",
       "item": "nutonmod:annihilation_blade",
-      "text": "Role: endgame melee weapon. Core loop: opener slash -> stack hits -> execute finish."
+      "text": "Role: endgame melee finisher. Core loop: right-click opener -> basic-hit mark stacking -> execute pulse finish."
     },
     {
       "type": "patchouli:crafting",
       "recipe": "nutonmod:annihilation_blade",
-      "text": "Craft path: Singularity line drops and realm-grade materials."
+      "text": "Crafted from Singularity progression drops plus high-tier realm materials."
     },
     {
       "type": "patchouli:text",
-      "text": "$(l)Active: Annihilation Slash$(/l)$(br2)Right click to release a forward wave for burst engage and spacing control."
+      "text": "$(l)Active: Annihilation Slash$(/l)$(br2)Right click releases a forward cone slash that deals heavy burst and knockback."
     },
     {
       "type": "patchouli:text",
-      "text": "$(l)Passive: Mark Loop$(/l)$(br2)Basic hits stack marks. At max stacks, trigger a heavy execute pulse around the target."
+      "text": "$(l)Passive: Mark Loop$(/l)$(br2)Basic hits stack marks. At max stacks, trigger an execute pulse around the target, with lethal effect on low-health enemies."
     },
     {
       "type": "patchouli:text",
-      "text": "$(l)Tips$(/l)$(br2)$(li)Open with right click$(li)Keep close for stack uptime$(li)Use execute timing to snowball sustain"
+      "text": "$(l)Tips$(/l)$(br2)$(li)Open fights with right-click burst$(li)Stay close to maintain stack uptime$(li)Detonate marks when enemies enter execute range"
     }
   ]
 }

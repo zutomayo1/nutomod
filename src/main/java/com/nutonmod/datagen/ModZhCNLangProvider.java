@@ -70,6 +70,24 @@ public class ModZhCNLangProvider extends FabricLanguageProvider {
         b.add("item.nutonmod.lightning_essence", "\u96f7\u7535\u7cbe\u534e");
         b.add("item.nutonmod.arbiter_trophy", "\u4ef2\u88c1\u8005\u5956\u676f");
         b.add("item.nutonmod.thunder_spear", "\u96f7\u795e\u4e4b\u77db");
+        b.add("item.nutonmod.void_calamity", "\u865a\u7a7a\u707e\u5384");
+        b.add("item.nutonmod.storm_scepter", "\u96f7\u66b4\u6743\u6756");
+        b.add("tooltip.nutonmod.annihilation_blade.line1", "\u4e3b\u52a8\uff1a\u53f3\u952e\u91ca\u653e\u6e6e\u706d\u65a9\u51fb");
+        b.add("tooltip.nutonmod.annihilation_blade.line2", "\u88ab\u52a8\uff1a\u8fde\u51fb\u53e0\u5370\u8bb0\uff0c\u6ee1\u5c42\u89e6\u53d1\u5904\u51b3\u8109\u51b2");
+        b.add("tooltip.nutonmod.annihilation_blade.line3", "\u51fb\u6740\u76ee\u6807\u540e\u56de\u590d\u751f\u547d");
+        b.add("tooltip.nutonmod.thunder_spear.line1", "\u53f3\u952e\uff1a\u6295\u63b7\u5e76\u56de\u5f52\u7684\u96f7\u77db");
+        b.add("tooltip.nutonmod.thunder_spear.line2", "\u547d\u4e2d\uff1a\u8303\u56f4\u7535\u7206 + \u77ed\u94fe\u95ea\u7535");
+        b.add("tooltip.nutonmod.thunder_spear.line3", "\u51fb\u6740\u76ee\u6807\u540e\u83b7\u5f975\u79d2\u529b\u91cf");
+        b.add("tooltip.nutonmod.void_calamity.line1", "\u5f13\u7cfb\uff1a\u865a\u7a7a\u5145\u80fd + \u6e6e\u706d\u5c04\u51fb");
+        b.add("tooltip.nutonmod.void_calamity.line2", "\u6f5c\u884c+\u53f3\u952e\uff1a\u6d88\u80173\u5c42\u5145\u80fd\u751f\u6210\u5fae\u578b\u9ed1\u6d1e");
+        b.add("tooltip.nutonmod.void_calamity.line3", "\u51fb\u6740\u589e\u5145\u80fd\uff08\u4e0a\u96505\u5c42\uff09\uff0c\u7bad\u77e2\u5177\u6709\u771f\u5b9e\u7a7f\u900f");
+        b.add("tooltip.nutonmod.storm_scepter.line1", "\u53f3\u952e\uff1a\u65bd\u653e\u8fde\u9501\u95ea\u7535\uff08\u6d88\u8017\u80fd\u91cf\uff09");
+        b.add("tooltip.nutonmod.storm_scepter.line2", "\u6f5c\u884c+\u53f3\u952e\uff1a\u98ce\u66b4\u4e4b\u773c\u533a\u57df\u538b\u5236");
+        b.add("tooltip.nutonmod.storm_scepter.line3", "\u98ce\u66b4\u8fc7\u8f7d\uff1a\u514d\u6d88\u8017\u5e76\u63d0\u5347\u4f24\u5bb3");
+        b.add("weapon.nutonmod.void_calamity.need_charge", "\u81f3\u5c11\u9700\u89813\u5c42\u865a\u7a7a\u5145\u80fd");
+        b.add("weapon.nutonmod.void_calamity.charge", "\u865a\u7a7a\u5145\u80fd\uff1a%s/%s");
+        b.add("weapon.nutonmod.storm_scepter.need_energy_cast", "\u80fd\u91cf\u4e0d\u8db3\uff1a\u9700\u898115\u70b9");
+        b.add("weapon.nutonmod.storm_scepter.need_energy_eye", "\u80fd\u91cf\u4e0d\u8db3\uff1a\u9700\u898140\u70b9");
         b.add("block.nutonmod.energy_ore", "\u80fd\u91cf\u77ff\u77f3");
         b.add("block.nutonmod.deepslate_energy_ore", "\u6df1\u677f\u5ca9\u80fd\u91cf\u77ff\u77f3");
 

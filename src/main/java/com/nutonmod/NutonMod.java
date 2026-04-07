@@ -8,6 +8,7 @@ import com.nutonmod.entity.ModEntities;
 import com.nutonmod.item.EnergyChestplateItem;
 import com.nutonmod.item.ModItemGroups;
 import com.nutonmod.item.ModItems;
+import com.nutonmod.network.EnergySyncPayload;
 import com.nutonmod.recipe.ModRecipeTypes;
 import com.nutonmod.sound.ModSoundEvents;
 import com.nutonmod.util.ModCustomTrades;
@@ -18,11 +19,14 @@ import com.nutonmod.world.dimension.ModPortals;
 import com.nutonmod.world.feature.ModFeatures;
 import com.nutonmod.world.system.EnergyRealmPressureSystem;
 import com.nutonmod.world.system.EnergyRealmStormSystem;
+import com.nutonmod.world.system.PlayerEnergySystem;
 import com.nutonmod.world.system.SingularityArenaSystem;
 import com.nutonmod.world.system.StormArbiterArenaSystem;
 import com.nutonmod.world.system.StabilizerBeaconSystem;
 import com.nutonmod.world.system.StormObeliskEventSystem;
+import com.nutonmod.world.system.WeaponEffectSystem;
 import net.fabricmc.api.ModInitializer;
+import net.fabricmc.fabric.api.networking.v1.PayloadTypeRegistry;
 import net.fabricmc.fabric.api.networking.v1.ServerPlayConnectionEvents;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
 import net.fabricmc.fabric.api.event.player.UseBlockCallback;
@@ -58,6 +62,7 @@ public class NutonMod implements ModInitializer {
         ModFluids.registerModFluids();
         ModFeatures.register();
         ModRecipeTypes.registerRecipeTypes();
+        PayloadTypeRegistry.playS2C().register(EnergySyncPayload.ID, EnergySyncPayload.CODEC);
         // Worldgen features are already declared in biome JSON/datagen.
         // Disable runtime biome injections to avoid feature order cycles.
         // ModWorldGeneration.generateModWorldGen();
@@ -96,6 +101,8 @@ public class NutonMod implements ModInitializer {
                 EnergyRealmPressureSystem.applyPerTick(player);
                 EnergyRealmStormSystem.applyPerTick(player);
             }
+            PlayerEnergySystem.tick(server);
+            WeaponEffectSystem.tick(server);
         });
 
         ServerPlayConnectionEvents.JOIN.register((handler, sender, server) -> {

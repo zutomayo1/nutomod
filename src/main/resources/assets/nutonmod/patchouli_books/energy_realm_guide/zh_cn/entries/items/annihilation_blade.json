@@ -1,5 +1,5 @@
 {
-  "name": "湮灭之刃（专页）",
+  "name": "湮灭之刃（详解）",
   "category": "nutonmod:items",
   "icon": "nutonmod:annihilation_blade",
   "sortnum": 5,
@@ -7,24 +7,24 @@
     {
       "type": "patchouli:spotlight",
       "item": "nutonmod:annihilation_blade",
-      "text": "定位：终局近战武器。核心节奏是“起手斩击 -> 普攻叠层 -> 处决收尾”。"
+      "text": "定位：终局近战武器。核心循环是“右键起手爆发 -> 平A叠印记 -> 满层处决收割”。"
     },
     {
       "type": "patchouli:crafting",
       "recipe": "nutonmod:annihilation_blade",
-      "text": "合成来源：奇点线掉落与高阶维度材料。"
+      "text": "配方来源：湮灭巨像掉落链 + 维度高阶材料。"
     },
     {
       "type": "patchouli:text",
-      "text": "$(l)主动：湮灭斩$(/l)$(br2)右键释放前方冲击波，用于开战爆发与拉扯站位。"
+      "text": "$(l)主动：湮灭斩击$(/l)$(br2)右键释放前方冲击斩，对锥形区域造成高额伤害并附带击退，可用于开战抢节奏。"
     },
     {
       "type": "patchouli:text",
-      "text": "$(l)被动：印记循环$(/l)$(br2)普攻可叠加印记，满层触发强力处决脉冲。"
+      "text": "$(l)被动：湮灭印记$(/l)$(br2)连续命中叠层，达到上限触发处决脉冲。脉冲会对周围目标造成重击，并对低血目标进行斩杀。"
     },
     {
       "type": "patchouli:text",
-      "text": "$(l)实战建议$(/l)$(br2)$(li)优先右键起手$(li)贴身维持叠层效率$(li)把握处决时机滚雪球"
+      "text": "$(l)实战建议$(/l)$(br2)$(li)优先右键起手压血线$(li)贴身维持印记不断档$(li)等敌方进入斩杀线再打满层脉冲"
     }
   ]
 }

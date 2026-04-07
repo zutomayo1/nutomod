@@ -1,5 +1,5 @@
-﻿{
-  "name": "关键配方总览",
+{
+  "name": "Key Recipe Hub",
   "category": "nutonmod:items",
   "icon": "nutonmod:storm_alloy",
   "sortnum": 4,
@@ -7,48 +7,46 @@
     {
       "type": "patchouli:crafting",
       "recipe": "nutonmod:storm_alloy",
-      "text": "风暴合金：风暴碎片向中期材料线转换的第一步。"
+      "text": "Storm Alloy: first conversion step from storm fragments into the midgame material line."
     },
     {
       "type": "patchouli:crafting",
       "recipe": "nutonmod:core_stabilizer",
-      "text": "核心稳定器：抗压体系的基本件。"
+      "text": "Core Stabilizer: baseline part for pressure resistance builds."
     },
     {
       "type": "patchouli:crafting",
       "recipe": "nutonmod:crystal_matrix",
-      "text": "晶体矩阵：信标、护符、终局配方的通用中枢。"
+      "text": "Crystal Matrix: shared core for beacon, charm and endgame recipes."
     },
     {
       "type": "patchouli:crafting",
       "recipe": "nutonmod:sanctum_key",
-      "text": "圣域钥匙：开启圣域门精英事件。"
-    },
-    {
-      "type": "patchouli:crafting",
-      "recipe": "nutonmod:core_heart",
-      "text": "核心之心：终局配方桥梁。"
-    },
-    {
-      "type": "patchouli:crafting",
-      "recipe": "nutonmod:annihilation_eye",
-      "text": "湮灭之眼：奇点首领召唤物。"
-    },
-    {
-      "type": "patchouli:crafting",
-      "recipe": "nutonmod:storm_charm",
-      "text": "风暴护符：高危战斗保命道具。详细机制见 $(l:nutonmod:items/storm_charm)专页$()。"
+      "text": "Sanctum Key: required to start the Sanctum Gate elite event."
     },
     {
       "type": "patchouli:crafting",
       "recipe": "nutonmod:annihilation_blade",
-      "text": "湮灭之刃：终局近战主武器，依赖奇点掉落链完成升级。详细机制见 $(l:nutonmod:items/annihilation_blade)专页$()。"
+      "text": "Annihilation Blade: endgame melee finisher. See $(l:nutonmod:items/annihilation_blade)detail page$()."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "nutonmod:thunder_spear",
+      "text": "Thunder Spear: core weapon in the Arbiter progression line. See $(l:nutonmod:items/thunder_spear)detail page$()."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "nutonmod:void_calamity",
+      "text": "Void Calamity: charge-based ranged burst bow. See $(l:nutonmod:items/void_calamity)detail page$()."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "nutonmod:storm_scepter",
+      "text": "Storm Scepter: energy-based area control caster. See $(l:nutonmod:items/storm_scepter)detail page$()."
     },
     {
       "type": "patchouli:text",
-      "text": "说明：当前代码中并非所有战斗装备都提供了正式工作台配方（尤其部分工具/防具）。该页仅列出主线必须配方。"
+      "text": "Note: this page focuses on progression-critical combat recipes first; auxiliary utility recipes may be expanded later."
     }
   ]
 }
-
-

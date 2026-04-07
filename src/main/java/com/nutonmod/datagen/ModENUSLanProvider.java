@@ -69,6 +69,24 @@ public class ModENUSLanProvider extends FabricLanguageProvider {
         translationBuilder.add("item.nutonmod.lightning_essence", "Lightning Essence");
         translationBuilder.add("item.nutonmod.arbiter_trophy", "Arbiter Trophy");
         translationBuilder.add("item.nutonmod.thunder_spear", "Thunder Spear");
+        translationBuilder.add("item.nutonmod.void_calamity", "Void Calamity");
+        translationBuilder.add("item.nutonmod.storm_scepter", "Storm Scepter");
+        translationBuilder.add("tooltip.nutonmod.annihilation_blade.line1", "Active: Right click releases Annihilation Slash");
+        translationBuilder.add("tooltip.nutonmod.annihilation_blade.line2", "Passive: hits stack marks, max stacks trigger execute pulse");
+        translationBuilder.add("tooltip.nutonmod.annihilation_blade.line3", "On kill: restores health");
+        translationBuilder.add("tooltip.nutonmod.thunder_spear.line1", "Right click: throw and return lightning spear");
+        translationBuilder.add("tooltip.nutonmod.thunder_spear.line2", "Impact: splash shock + short chain lightning");
+        translationBuilder.add("tooltip.nutonmod.thunder_spear.line3", "On kill: grants short Strength");
+        translationBuilder.add("tooltip.nutonmod.void_calamity.line1", "Bow with Void Charge and Annihilation Shot");
+        translationBuilder.add("tooltip.nutonmod.void_calamity.line2", "Sneak + right click: consume 3 charges to create mini black hole");
+        translationBuilder.add("tooltip.nutonmod.void_calamity.line3", "Kills grant charges (up to 5), arrows can truly pierce");
+        translationBuilder.add("tooltip.nutonmod.storm_scepter.line1", "Right click: chain lightning (costs energy)");
+        translationBuilder.add("tooltip.nutonmod.storm_scepter.line2", "Sneak + right click: Storm Eye area control");
+        translationBuilder.add("tooltip.nutonmod.storm_scepter.line3", "Overload in storms: no energy cost and bonus damage");
+        translationBuilder.add("weapon.nutonmod.void_calamity.need_charge", "Need at least 3 Void Charges");
+        translationBuilder.add("weapon.nutonmod.void_calamity.charge", "Void Charge: %s/%s");
+        translationBuilder.add("weapon.nutonmod.storm_scepter.need_energy_cast", "Not enough energy: need 15");
+        translationBuilder.add("weapon.nutonmod.storm_scepter.need_energy_eye", "Not enough energy: need 40");
         translationBuilder.add("block.nutonmod.energy_ore", "Energy Ore");
         translationBuilder.add("block.nutonmod.deepslate_energy_ore", "Deepslate Energy Ore");
 

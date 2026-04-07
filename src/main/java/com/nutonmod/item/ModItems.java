@@ -10,8 +10,10 @@ import com.nutonmod.item.custom.EnergyPotatoItem;
 import com.nutonmod.item.custom.HatItem;
 import com.nutonmod.item.custom.Prospector;
 import com.nutonmod.item.custom.AnnihilationBladeItem;
+import com.nutonmod.item.custom.StormScepterItem;
 import com.nutonmod.item.custom.StormCharmItem;
 import com.nutonmod.item.custom.ThunderSpearItem;
+import com.nutonmod.item.custom.VoidCalamityBowItem;
 import com.nutonmod.sound.ModJukeBoxSongs;
 import net.minecraft.component.type.FoodComponent;
 import net.minecraft.item.*;
@@ -54,6 +56,10 @@ public class ModItems {
     public static final Item THUNDER_SPEAR = registerItem("thunder_spear", new ThunderSpearItem(ModToolMaterials.ENERGY_INGOT,
             new Item.Settings().maxCount(1).maxDamage(600).fireproof().rarity(Rarity.EPIC)
                     .attributeModifiers(SwordItem.createAttributeModifiers(ModToolMaterials.ENERGY_INGOT, 10, -2.2F))));
+    public static final Item VOID_CALAMITY = registerItem("void_calamity", new VoidCalamityBowItem(
+            new Item.Settings().maxCount(1).maxDamage(1200).fireproof().rarity(Rarity.EPIC)));
+    public static final Item STORM_SCEPTER = registerItem("storm_scepter", new StormScepterItem(
+            new Item.Settings().maxCount(1).maxDamage(800).fireproof().rarity(Rarity.EPIC)));
 
 
     // 物品 - 能量工具（需要激活才能发挥威力）

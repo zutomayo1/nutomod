@@ -76,6 +76,8 @@ public class ModItemGroups {
                 entries.add(ModItems.LIGHTNING_ESSENCE);
                 entries.add(ModItems.ARBITER_TROPHY);
                 entries.add(ModItems.THUNDER_SPEAR);
+                entries.add(ModItems.VOID_CALAMITY);
+                entries.add(ModItems.STORM_SCEPTER);
                 entries.add(ModItems.STORM_ARBITER_SPAWN_EGG);
                 entries.add(ModBlocks.ENERGY_ORE);
                 entries.add(ModBlocks.DEEPSLATE_ENERGY_ORE);
