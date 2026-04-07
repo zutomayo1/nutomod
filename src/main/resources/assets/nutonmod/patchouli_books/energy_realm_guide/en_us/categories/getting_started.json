@@ -1,6 +1,6 @@
 {
-  "name": "入门指南",
-  "description": "传送门搭建、首次进入与基础生存。",
+  "name": "Getting Started",
+  "description": "Portal setup, first entry, and survival basics.",
   "icon": "nutonmod:raw_energy",
   "sortnum": 1
 }

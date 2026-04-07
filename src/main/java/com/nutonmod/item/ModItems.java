@@ -11,6 +11,7 @@ import com.nutonmod.item.custom.HatItem;
 import com.nutonmod.item.custom.Prospector;
 import com.nutonmod.item.custom.AnnihilationBladeItem;
 import com.nutonmod.item.custom.StormCharmItem;
+import com.nutonmod.item.custom.ThunderSpearItem;
 import com.nutonmod.sound.ModJukeBoxSongs;
 import net.minecraft.component.type.FoodComponent;
 import net.minecraft.item.*;
@@ -46,6 +47,13 @@ public class ModItems {
     public static final Item ANNIHILATION_BLADE = registerItem("annihilation_blade", new AnnihilationBladeItem(ModToolMaterials.ENERGY_INGOT,
             new Item.Settings().fireproof().rarity(Rarity.EPIC)
                     .attributeModifiers(SwordItem.createAttributeModifiers(ModToolMaterials.ENERGY_INGOT, 8, -2.3F))));
+    public static final Item ARBITER_SIGIL = registerItem("arbiter_sigil", new Item(new Item.Settings().maxCount(16).rarity(Rarity.EPIC)));
+    public static final Item THUNDERFORGED_CORE = registerItem("thunderforged_core", new Item(new Item.Settings().maxCount(16).rarity(Rarity.EPIC)));
+    public static final Item LIGHTNING_ESSENCE = registerItem("lightning_essence", new Item(new Item.Settings().maxCount(64).rarity(Rarity.UNCOMMON)));
+    public static final Item ARBITER_TROPHY = registerItem("arbiter_trophy", new Item(new Item.Settings().maxCount(16).rarity(Rarity.EPIC)));
+    public static final Item THUNDER_SPEAR = registerItem("thunder_spear", new ThunderSpearItem(ModToolMaterials.ENERGY_INGOT,
+            new Item.Settings().maxCount(1).maxDamage(600).fireproof().rarity(Rarity.EPIC)
+                    .attributeModifiers(SwordItem.createAttributeModifiers(ModToolMaterials.ENERGY_INGOT, 10, -2.2F))));
 
 
     // 物品 - 能量工具（需要激活才能发挥威力）
@@ -94,7 +102,6 @@ public class ModItems {
     public static final Item ANTHRACITE_BLOCK = registerBlockItem("anthracite_block",
             ModBlocks.ANTHRACITE_BLOCK);
 
-    // 能量人生成蛋
     public static final Item ENERGY_BEING_SPAWN_EGG = registerItem("energy_being_spawn_egg", 
         new SpawnEggItem(
             ModEntities.ENERGY_BEING,
@@ -117,6 +124,14 @@ public class ModItems {
                     ModEntities.SINGULARITY,
                     0x17151B,
                     0xF08C48,
+                    new Item.Settings().rarity(Rarity.EPIC)
+            )
+    );
+    public static final Item STORM_ARBITER_SPAWN_EGG = registerItem("storm_arbiter_spawn_egg",
+            new SpawnEggItem(
+                    ModEntities.STORM_ARBITER,
+                    0x0E2E6B,
+                    0xB5D5FF,
                     new Item.Settings().rarity(Rarity.EPIC)
             )
     );

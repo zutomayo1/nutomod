@@ -64,6 +64,11 @@ public class ModENUSLanProvider extends FabricLanguageProvider {
         translationBuilder.add("item.nutonmod.energy_essence", "Energy Essence");
         translationBuilder.add("item.nutonmod.storm_charm", "Storm Charm");
         translationBuilder.add("item.nutonmod.annihilation_blade", "Annihilation Blade");
+        translationBuilder.add("item.nutonmod.arbiter_sigil", "Arbiter Sigil");
+        translationBuilder.add("item.nutonmod.thunderforged_core", "Thunderforged Core");
+        translationBuilder.add("item.nutonmod.lightning_essence", "Lightning Essence");
+        translationBuilder.add("item.nutonmod.arbiter_trophy", "Arbiter Trophy");
+        translationBuilder.add("item.nutonmod.thunder_spear", "Thunder Spear");
         translationBuilder.add("block.nutonmod.energy_ore", "Energy Ore");
         translationBuilder.add("block.nutonmod.deepslate_energy_ore", "Deepslate Energy Ore");
 
@@ -73,6 +78,8 @@ public class ModENUSLanProvider extends FabricLanguageProvider {
         translationBuilder.add("entity.nutonmod.rift_stalker", "Rift Stalker");
         translationBuilder.add("entity.nutonmod.rift_stalker.storm", "Storm Rift Stalker");
         translationBuilder.add("entity.nutonmod.singularity", "Singularity of Annihilation");
+        translationBuilder.add("entity.nutonmod.storm_arbiter", "Storm Arbiter, the Bolt-Forged");
+        translationBuilder.add("entity.nutonmod.storm_guard", "Storm Guard");
         translationBuilder.add("boss.nutonmod.singularity.need_core_wastes", "Need to summon in Core Wastes biome");
         translationBuilder.add("boss.nutonmod.singularity.already_active", "A Singularity is already active nearby");
         translationBuilder.add("boss.nutonmod.singularity.awakened", "Singularity of Annihilation has awakened!");
@@ -91,6 +98,18 @@ public class ModENUSLanProvider extends FabricLanguageProvider {
         translationBuilder.add("boss.nutonmod.singularity.node_blue", "Blue node activated: +50% movement speed");
         translationBuilder.add("boss.nutonmod.singularity.node_yellow", "Yellow node activated: +20 hearts healed");
         translationBuilder.add("boss.nutonmod.singularity.node_purple", "Purple node activated: +20 hearts absorption");
+        translationBuilder.add("boss.nutonmod.storm_arbiter.awakened", "Storm Arbiter, the Bolt-Forged has descended!");
+        translationBuilder.add("boss.nutonmod.storm_arbiter.need_storm_fields", "Must summon in Storm Fields biome");
+        translationBuilder.add("boss.nutonmod.storm_arbiter.need_thunder", "Thunderstorm weather is required");
+        translationBuilder.add("boss.nutonmod.storm_arbiter.already_active", "A Storm Arbiter is already active nearby");
+        translationBuilder.add("boss.nutonmod.storm_arbiter.phase_2", "Bolt-Forged Wrath - Phase Two!");
+        translationBuilder.add("boss.nutonmod.storm_arbiter.phase_3", "Avatar of Storm - Final Phase!");
+        translationBuilder.add("boss.nutonmod.storm_arbiter.final_judgement", "Final Judgement: unavoidable strike in 5 seconds!");
+        translationBuilder.add("boss.nutonmod.storm_arbiter.judgement_survived", "You endured the Final Judgement through sanctuary protection!");
+        translationBuilder.add("boss.nutonmod.storm_arbiter.rod_cd", "Lightning rod pillar cooling down: %s s");
+        translationBuilder.add("boss.nutonmod.storm_arbiter.bar.phase_1", "Storm Arbiter - Thunder Judgement");
+        translationBuilder.add("boss.nutonmod.storm_arbiter.bar.phase_2", "Storm Arbiter - Bolt-Forged Wrath");
+        translationBuilder.add("boss.nutonmod.storm_arbiter.bar.phase_3", "Storm Arbiter - Avatar of Storm");
         translationBuilder.add("entity.minecraft.villager.energy_master", "Energy Master");
         translationBuilder.add("entity.minecraft.villager.nutonmod.energy_master", "Energy Master");
 
@@ -103,6 +122,14 @@ public class ModENUSLanProvider extends FabricLanguageProvider {
         translationBuilder.add("sounds.nutonmod.energy_block_hit", "Energy Block Hit");
         translationBuilder.add("sounds.nutonmod.energy_block_step", "Energy Block Step");
         translationBuilder.add("sounds.nutonmod.energy_block_fall", "Energy Block Fall");
+        translationBuilder.add("sounds.nutonmod.storm_arbiter_summon", "Storm Arbiter Summon");
+        translationBuilder.add("sounds.nutonmod.storm_arbiter_lightning_chain", "Storm Arbiter Lightning Chain");
+        translationBuilder.add("sounds.nutonmod.storm_arbiter_spear_throw", "Storm Arbiter Spear Throw");
+        translationBuilder.add("sounds.nutonmod.storm_arbiter_storm_cloud", "Storm Arbiter Storm Cloud");
+        translationBuilder.add("sounds.nutonmod.storm_arbiter_blade_storm", "Storm Arbiter Blade Storm");
+        translationBuilder.add("sounds.nutonmod.storm_arbiter_thunderfall", "Storm Arbiter Thunderfall");
+        translationBuilder.add("sounds.nutonmod.storm_arbiter_final_judgement", "Storm Arbiter Final Judgement");
+        translationBuilder.add("sounds.nutonmod.storm_arbiter_death", "Storm Arbiter Death");
 
         translationBuilder.add("jukebox_song.nutonmod.test", "Test");
         translationBuilder.add("item.nutonmod.energy_bucket", "Energy Bucket");
@@ -110,6 +137,7 @@ public class ModENUSLanProvider extends FabricLanguageProvider {
         translationBuilder.add("item.nutonmod.energy_horse_armor", "Energy Horse Armor");
         translationBuilder.add("item.nutonmod.rift_stalker_spawn_egg", "Rift Stalker Spawn Egg");
         translationBuilder.add("item.nutonmod.singularity_spawn_egg", "Singularity Spawn Egg");
+        translationBuilder.add("item.nutonmod.storm_arbiter_spawn_egg", "Storm Arbiter Spawn Egg");
 
         translationBuilder.add("block.nutonmod.box", "Box");
         translationBuilder.add("item.nutonmod.box", "Box");

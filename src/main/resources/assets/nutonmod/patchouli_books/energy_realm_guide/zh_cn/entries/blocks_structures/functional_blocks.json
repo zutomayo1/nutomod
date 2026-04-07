@@ -21,7 +21,7 @@
     },
     {
       "type": "patchouli:text",
-      "text": "其他功能方块：$(li)$(item)箱子$()：27 格容器，支持比较器输出$(li)$(item)抛光机$()：双槽加工机框架$(li)$(item)nutonmod:still_energy$()：能量流体方块（与水/岩浆接触会结晶）"
+      "text": "其他功能方块：$(li)$(item)箱子$()：27 格容器，支持比较器输出$(li)$(item)抛光机$()：双槽加工机框架$(li)still_energy $(item)$()：能量流体方块（与水/岩浆会结晶）"
     }
   ]
 }

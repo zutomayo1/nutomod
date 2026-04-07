@@ -2,13 +2,16 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "pattern": [
-    " A ",
+    "ALA",
     "MCM",
-    " A "
+    "ALA"
   ],
   "key": {
     "A": {
       "item": "nutonmod:storm_alloy"
+    },
+    "L": {
+      "item": "nutonmod:lightning_essence"
     },
     "M": {
       "item": "nutonmod:crystal_matrix"

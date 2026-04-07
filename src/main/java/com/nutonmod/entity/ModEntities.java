@@ -39,6 +39,15 @@ public class ModEntities {
                     .trackedUpdateRate(1)
                     .build()
     );
+    public static final EntityType<StormArbiterEntity> STORM_ARBITER = Registry.register(
+            Registries.ENTITY_TYPE,
+            Identifier.of(NutonMod.MOD_ID, "storm_arbiter"),
+            FabricEntityTypeBuilder.create(SpawnGroup.MONSTER, StormArbiterEntity::new)
+                    .dimensions(EntityDimensions.changing(1.45F, 3.8F))
+                    .trackRangeBlocks(16)
+                    .trackedUpdateRate(1)
+                    .build()
+    );
 
     public static void register() {
         NutonMod.LOGGER.info("Registering entities for {}", NutonMod.MOD_ID);
@@ -46,5 +55,6 @@ public class ModEntities {
         FabricDefaultAttributeRegistry.register(ENERGY_BEING, EnergyBeing.createMobAttributes());
         FabricDefaultAttributeRegistry.register(RIFT_STALKER, RiftStalker.createMobAttributes());
         FabricDefaultAttributeRegistry.register(SINGULARITY, SingularityEntity.createMobAttributes());
+        FabricDefaultAttributeRegistry.register(STORM_ARBITER, StormArbiterEntity.createMobAttributes());
     }
 }

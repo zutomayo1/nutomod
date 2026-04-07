@@ -17,6 +17,14 @@ public class ModSoundEvents {
     public static final SoundEvent ENERGY_BLOCK_HIT = register("energy_block_hit");
     public static final SoundEvent ENERGY_BLOCK_FALL = register("energy_block_fall");
     public static final SoundEvent ENERGY_BLOCK_STEP = register("energy_block_step");
+    public static final SoundEvent STORM_ARBITER_SUMMON = register("storm_arbiter_summon");
+    public static final SoundEvent STORM_ARBITER_LIGHTNING_CHAIN = register("storm_arbiter_lightning_chain");
+    public static final SoundEvent STORM_ARBITER_SPEAR_THROW = register("storm_arbiter_spear_throw");
+    public static final SoundEvent STORM_ARBITER_STORM_CLOUD = register("storm_arbiter_storm_cloud");
+    public static final SoundEvent STORM_ARBITER_BLADE_STORM = register("storm_arbiter_blade_storm");
+    public static final SoundEvent STORM_ARBITER_THUNDERFALL = register("storm_arbiter_thunderfall");
+    public static final SoundEvent STORM_ARBITER_FINAL_JUDGEMENT = register("storm_arbiter_final_judgement");
+    public static final SoundEvent STORM_ARBITER_DEATH = register("storm_arbiter_death");
 
     public static final BlockSoundGroup ENERGY_BLOCK_SOUND_GROUP = new BlockSoundGroup(1.0f, 1.0f,
             ENERGY_BLOCK_BREAK,

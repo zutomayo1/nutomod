@@ -35,6 +35,54 @@
       "nutonmod:energy_block_fall"
     ]
   },
+  "storm_arbiter_summon": {
+    "subtitle": "sounds.nutonmod.storm_arbiter_summon",
+    "sounds": [
+      "nutonmod:storm_arbiter_summon"
+    ]
+  },
+  "storm_arbiter_lightning_chain": {
+    "subtitle": "sounds.nutonmod.storm_arbiter_lightning_chain",
+    "sounds": [
+      "nutonmod:storm_arbiter_lightning_chain"
+    ]
+  },
+  "storm_arbiter_spear_throw": {
+    "subtitle": "sounds.nutonmod.storm_arbiter_spear_throw",
+    "sounds": [
+      "nutonmod:storm_arbiter_spear_throw"
+    ]
+  },
+  "storm_arbiter_storm_cloud": {
+    "subtitle": "sounds.nutonmod.storm_arbiter_storm_cloud",
+    "sounds": [
+      "nutonmod:storm_arbiter_storm_cloud"
+    ]
+  },
+  "storm_arbiter_blade_storm": {
+    "subtitle": "sounds.nutonmod.storm_arbiter_blade_storm",
+    "sounds": [
+      "nutonmod:storm_arbiter_blade_storm"
+    ]
+  },
+  "storm_arbiter_thunderfall": {
+    "subtitle": "sounds.nutonmod.storm_arbiter_thunderfall",
+    "sounds": [
+      "nutonmod:storm_arbiter_thunderfall"
+    ]
+  },
+  "storm_arbiter_final_judgement": {
+    "subtitle": "sounds.nutonmod.storm_arbiter_final_judgement",
+    "sounds": [
+      "nutonmod:storm_arbiter_final_judgement"
+    ]
+  },
+  "storm_arbiter_death": {
+    "subtitle": "sounds.nutonmod.storm_arbiter_death",
+    "sounds": [
+      "nutonmod:storm_arbiter_death"
+    ]
+  },
   "music_disc_test": {
     "subtitle": "sounds.nutonmod.music_disc_test",
     "sounds": [

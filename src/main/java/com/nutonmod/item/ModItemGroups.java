@@ -71,6 +71,12 @@ public class ModItemGroups {
                 entries.add(ModItems.STORM_CHARM);
                 entries.add(ModItems.ANNIHILATION_BLADE);
                 entries.add(ModItems.SINGULARITY_SPAWN_EGG);
+                entries.add(ModItems.ARBITER_SIGIL);
+                entries.add(ModItems.THUNDERFORGED_CORE);
+                entries.add(ModItems.LIGHTNING_ESSENCE);
+                entries.add(ModItems.ARBITER_TROPHY);
+                entries.add(ModItems.THUNDER_SPEAR);
+                entries.add(ModItems.STORM_ARBITER_SPAWN_EGG);
                 entries.add(ModBlocks.ENERGY_ORE);
                 entries.add(ModBlocks.DEEPSLATE_ENERGY_ORE);
                 entries.add(ModItems.ENERGY_SWORD);

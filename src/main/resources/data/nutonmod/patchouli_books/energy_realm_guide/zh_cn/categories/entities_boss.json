@@ -1,6 +1,0 @@
-{
-  "name": "Entities & Bosses",
-  "description": "Combat intel for mobs, elites, and the Singularity boss.",
-  "icon": "nutonmod:singularity_spawn_egg",
-  "sortnum": 5
-}

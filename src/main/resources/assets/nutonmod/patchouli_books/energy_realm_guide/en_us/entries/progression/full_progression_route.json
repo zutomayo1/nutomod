@@ -19,6 +19,10 @@
     {
       "type": "patchouli:text",
       "text": "$(l)阶段 4：终局首领$(/l)$(br2)$(li)合成湮灭之眼（annihilation_eye）$(li)前往核心荒原（core_wastes）召唤奇点$(li)利用竞技场节点完成三阶段击杀"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)阶段 5：风暴仲裁者$(/l)$(br2)$(li)合成仲裁者徽记（arbiter_sigil）$(li)在 storm_fields + 雷暴环境召唤$(li)利用避雷柱、雷能池和裂缝机制完成三阶段击杀$(li)产出雷铸核心并解锁雷神之矛线"
     }
   ]
 }

@@ -28,7 +28,6 @@ public class ModArmorMaterials {
         map.put(ArmorItem.Type.BODY, 11);
     }), 15, SoundEvents.ITEM_ARMOR_EQUIP_NETHERITE, 3.0F, 0.1F, () -> Ingredient.ofItems(ModItems.ENERGY_INGOT));
 
-
     private static RegistryEntry<ArmorMaterial> register(
             String id,
             EnumMap<ArmorItem.Type, Integer> defense,

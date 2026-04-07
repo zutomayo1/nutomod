@@ -1,6 +1,6 @@
 {
-  "name": "系统机制",
-  "description": "压力、风暴、祭坛、信标、圣所与竞技场机制。",
+  "name": "Systems",
+  "description": "Pressure, storms, altar, beacon, gate, and arena systems.",
   "icon": "nutonmod:core_stabilizer",
   "sortnum": 2
 }
