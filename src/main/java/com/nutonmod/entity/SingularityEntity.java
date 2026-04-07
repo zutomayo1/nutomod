@@ -1222,13 +1222,85 @@ public class SingularityEntity extends HostileEntity implements GeoEntity {
         return this.animatableInstanceCache;
     }
 
-    private enum Phase {
+    public Phase getPhase() {
+        return this.phase;
+    }
+
+    public AttackMode getAttackMode() {
+        return this.attackMode;
+    }
+
+    public int debugGetCooldown() {
+        return this.attackCooldown;
+    }
+
+    public int debugGetStateTicks() {
+        return this.stateTicks;
+    }
+
+    public int debugGetWaveTick() {
+        return this.waveTick;
+    }
+
+    public LivingEntity getCurrentTarget() {
+        return this.getTarget();
+    }
+
+    public boolean isSkillBusy() {
+        return this.attackMode != AttackMode.IDLE;
+    }
+
+    public void debugSetCooldown(int ticks) {
+        this.attackCooldown = Math.max(0, ticks);
+    }
+
+    public void debugStopSkill() {
+        this.attackMode = AttackMode.IDLE;
+        this.stateTicks = 0;
+        this.waveTick = 0;
+        this.ringHit.clear();
+        this.rampageHit.clear();
+        this.blackHoleCenter = null;
+        this.rampageTicksLeft = 0;
+        this.rampageChargesDone = 0;
+        this.nextRampageTick = 0;
+        this.novaShieldAnchors.clear();
+        this.lastAttack = AttackMode.IDLE;
+        this.sameAttackChain = 0;
+        if (this.getWorld() instanceof ServerWorld world) {
+            clearShieldClouds(world);
+        }
+    }
+
+    public void debugForcePhase(Phase phase) {
+        float max = Math.max(this.getMaxHealth(), 1.0F);
+        switch (phase) {
+            case PHASE_1 -> this.setHealth(max * 0.95F);
+            case PHASE_2 -> this.setHealth(max * 0.55F);
+            case PHASE_3 -> this.setHealth(max * 0.25F);
+        }
+    }
+
+    public boolean debugStartSkill(AttackMode mode) {
+        if (mode == null || mode == AttackMode.IDLE || this.isSkillBusy()) {
+            return false;
+        }
+        this.attackMode = mode;
+        this.stateTicks = attackDuration(mode);
+        this.waveTick = 0;
+        this.attackCooldown = Math.max(this.attackCooldown, 14);
+        this.ringHit.clear();
+        this.rampageHit.clear();
+        return true;
+    }
+
+    public enum Phase {
         PHASE_1,
         PHASE_2,
         PHASE_3
     }
 
-    private enum AttackMode {
+    public enum AttackMode {
         IDLE,
         BARRAGE,
         PULL,
