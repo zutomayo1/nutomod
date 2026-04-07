@@ -13,6 +13,7 @@ import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.text.Text;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 
 import java.util.HashMap;
@@ -61,6 +62,7 @@ public final class SingularityArenaSystem {
             }
 
             if (!arena.cleanupScheduled) {
+                enforceArenaBounds(world, arena);
                 continue;
             }
 
@@ -142,6 +144,48 @@ public final class SingularityArenaSystem {
     private static void restoreArena(ServerWorld world, ActiveArena arena) {
         for (Map.Entry<BlockPos, BlockState> e : arena.replaced.entrySet()) {
             world.setBlockState(e.getKey(), e.getValue(), 3);
+        }
+    }
+
+    private static void enforceArenaBounds(ServerWorld world, ActiveArena arena) {
+        Vec3d center = Vec3d.ofCenter(arena.center);
+        double softRadius = ARENA_RADIUS + 1.2D;
+        double hardRadius = ARENA_RADIUS + 4.5D;
+        double softRadiusSq = softRadius * softRadius;
+        double hardRadiusSq = hardRadius * hardRadius;
+
+        for (PlayerEntity player : world.getPlayers(p -> p.isAlive() && p.squaredDistanceTo(center) <= 80 * 80)) {
+            if (player.getY() < arena.center.getY() - 8.0D) {
+                player.requestTeleport(center.x, arena.center.getY() + 2.0D, center.z);
+                player.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOW_FALLING, 80, 0, true, true, true));
+                player.addStatusEffect(new StatusEffectInstance(StatusEffects.RESISTANCE, 40, 1, true, true, true));
+                world.spawnParticles(ParticleTypes.REVERSE_PORTAL, center.x, center.y + 1.0D, center.z, 32, 0.45, 0.45, 0.45, 0.03);
+                world.playSound(null, player.getBlockPos(), SoundEvents.ENTITY_ENDERMAN_TELEPORT, SoundCategory.PLAYERS, 0.8F, 0.8F);
+                continue;
+            }
+
+            Vec3d playerPos = player.getPos();
+            Vec3d delta = playerPos.subtract(center);
+            Vec3d flat = new Vec3d(delta.x, 0.0D, delta.z);
+            double distSq = flat.lengthSquared();
+            if (distSq <= softRadiusSq || distSq < 1.0E-6D) {
+                continue;
+            }
+
+            Vec3d inward = flat.normalize().multiply(-0.22D);
+            player.setVelocity(player.getVelocity().add(inward.x, 0.04D, inward.z));
+            player.velocityModified = true;
+            player.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOWNESS, 20, 0, true, true, true));
+
+            if (world.getTime() % 8L == 0L) {
+                world.spawnParticles(ParticleTypes.ELECTRIC_SPARK, player.getX(), player.getBodyY(0.4D), player.getZ(), 8, 0.25, 0.2, 0.25, 0.03);
+                world.spawnParticles(ParticleTypes.REVERSE_PORTAL, player.getX(), player.getBodyY(0.4D), player.getZ(), 5, 0.18, 0.18, 0.18, 0.02);
+            }
+
+            if (distSq >= hardRadiusSq && world.getTime() % 20L == 0L) {
+                player.damage(world.getDamageSources().magic(), 2.0F);
+                player.sendMessage(Text.translatable("boss.nutonmod.singularity.boundary_warning"), true);
+            }
         }
     }
 

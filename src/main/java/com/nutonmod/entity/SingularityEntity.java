@@ -82,6 +82,7 @@ public class SingularityEntity extends HostileEntity implements GeoEntity {
     private int tacticalBlinkCooldown = 0;
     private AttackMode lastAttack = AttackMode.IDLE;
     private int sameAttackChain = 0;
+    private int phase3MajorLockTicks = 0;
     private final ServerBossBar bossBar = new ServerBossBar(
             Text.translatable("boss.nutonmod.singularity.bar.phase_1"),
             BossBar.Color.BLUE,
@@ -167,6 +168,9 @@ public class SingularityEntity extends HostileEntity implements GeoEntity {
         }
         if (this.tacticalBlinkCooldown > 0) {
             this.tacticalBlinkCooldown--;
+        }
+        if (this.phase3MajorLockTicks > 0) {
+            this.phase3MajorLockTicks--;
         }
 
         if (this.decoy) {
@@ -394,11 +398,14 @@ public class SingularityEntity extends HostileEntity implements GeoEntity {
 
         if (this.stateTicks <= 0) {
             this.attackMode = AttackMode.IDLE;
-            this.attackCooldown = switch (this.phase) {
+            int baseCooldown = switch (this.phase) {
                 case PHASE_1 -> 40 + this.random.nextInt(25);
                 case PHASE_2 -> 30 + this.random.nextInt(20);
                 case PHASE_3 -> 22 + this.random.nextInt(15);
             };
+            int players = getNearbyPlayerCount(52.0D);
+            int phase3Extra = this.phase == Phase.PHASE_3 ? Math.min(14, players * 3) : 0;
+            this.attackCooldown = baseCooldown + phase3Extra;
             this.novaShieldAnchors.clear();
             this.blackHoleCenter = null;
             this.rampageTicksLeft = 0;
@@ -464,20 +471,27 @@ public class SingularityEntity extends HostileEntity implements GeoEntity {
                 }
             }
             case PHASE_3 -> {
-                if (clusteredPlayers >= 2 && this.random.nextFloat() < 0.50F) {
+                boolean majorLocked = this.phase3MajorLockTicks > 0;
+                if (!majorLocked && clusteredPlayers >= 2 && this.random.nextFloat() < 0.50F) {
                     planned = AttackMode.NOVA;
-                } else if ((!targetVisible && targetDistance > 10.0D) || farPlayers >= 1) {
+                } else if (!majorLocked && ((!targetVisible && targetDistance > 10.0D) || farPlayers >= 1)) {
                     planned = this.random.nextFloat() < 0.58F ? AttackMode.BLACK_HOLE : AttackMode.LASER;
-                } else if (targetDistance < 7.5D) {
+                } else if (!majorLocked && targetDistance < 7.5D) {
                     planned = AttackMode.RAMPAGE;
                 } else {
                     int roll = this.random.nextInt(100);
-                    planned = roll < 20 ? AttackMode.NOVA
-                            : roll < 38 ? AttackMode.BLACK_HOLE
-                            : roll < 58 ? AttackMode.RAMPAGE
-                            : roll < 76 ? AttackMode.LASER
-                            : roll < 90 ? AttackMode.GRAVITY_WELL
-                            : AttackMode.BARRAGE;
+                    if (!majorLocked) {
+                        planned = roll < 20 ? AttackMode.NOVA
+                                : roll < 38 ? AttackMode.BLACK_HOLE
+                                : roll < 58 ? AttackMode.RAMPAGE
+                                : roll < 76 ? AttackMode.LASER
+                                : roll < 90 ? AttackMode.GRAVITY_WELL
+                                : AttackMode.BARRAGE;
+                    } else {
+                        planned = roll < 45 ? AttackMode.LASER
+                                : roll < 72 ? AttackMode.GRAVITY_WELL
+                                : AttackMode.BARRAGE;
+                    }
                 }
             }
             default -> planned = AttackMode.BARRAGE;
@@ -494,6 +508,10 @@ public class SingularityEntity extends HostileEntity implements GeoEntity {
         this.lastAttack = planned;
         this.attackMode = planned;
         this.stateTicks = attackDuration(planned);
+        if (this.phase == Phase.PHASE_3 && isMajorPhase3Attack(planned)) {
+            int nearbyPlayers = getNearbyPlayerCount(52.0D);
+            this.phase3MajorLockTicks = 40 + nearbyPlayers * 8;
+        }
     }
 
     private AttackMode chooseFallbackAttack() {
@@ -757,10 +775,14 @@ public class SingularityEntity extends HostileEntity implements GeoEntity {
         if (this.blackHoleCenter == null) {
             this.blackHoleCenter = Vec3d.ofCenter(this.arenaCenter).add(0.0D, 0.2D, 0.0D);
             broadcastAround(world, Text.translatable("boss.nutonmod.singularity.black_hole_warning"));
+            this.playSound(SoundEvents.BLOCK_RESPAWN_ANCHOR_DEPLETE.value(), 1.2F, 0.55F);
         }
         if (this.waveTick <= 60) {
             if (this.waveTick % 4 == 0) {
                 world.spawnParticles(ParticleTypes.REVERSE_PORTAL, this.blackHoleCenter.x, this.blackHoleCenter.y, this.blackHoleCenter.z, 20, 1.5, 0.3, 1.5, 0.02);
+            }
+            if (this.waveTick % 8 == 0) {
+                spawnGroundRing(world, this.blackHoleCenter, 3.0D + this.waveTick * 0.055D, 56, ParticleTypes.ELECTRIC_SPARK);
             }
             return;
         }
@@ -768,6 +790,9 @@ public class SingularityEntity extends HostileEntity implements GeoEntity {
         if (this.waveTick % 2 == 0) {
             world.spawnParticles(ParticleTypes.PORTAL, this.blackHoleCenter.x, this.blackHoleCenter.y, this.blackHoleCenter.z, 16, 0.9, 0.2, 0.9, 0.01);
             world.spawnParticles(ParticleTypes.REVERSE_PORTAL, this.blackHoleCenter.x, this.blackHoleCenter.y, this.blackHoleCenter.z, 10, 0.5, 0.2, 0.5, 0.01);
+            if (this.waveTick % 6 == 0) {
+                spawnGroundRing(world, this.blackHoleCenter, 5.8D, 68, ParticleTypes.DRAGON_BREATH);
+            }
         }
         for (PlayerEntity player : world.getPlayers(p -> p.isAlive() && p.squaredDistanceTo(this.blackHoleCenter) <= 28 * 28)) {
             Vec3d pull = this.blackHoleCenter.subtract(player.getPos());
@@ -775,7 +800,7 @@ public class SingularityEntity extends HostileEntity implements GeoEntity {
             player.setVelocity(player.getVelocity().add(direction.multiply(0.15D)));
             player.velocityModified = true;
             if (this.waveTick % 20 == 0) {
-                dealBossDamage(player, 5.0F);
+                dealBossDamage(player, scaledPhase3Damage(world, 5.0F));
             }
         }
     }
@@ -790,6 +815,7 @@ public class SingularityEntity extends HostileEntity implements GeoEntity {
             for (Vec3d shield : this.novaShieldAnchors) {
                 world.spawnParticles(ParticleTypes.END_ROD, shield.x, shield.y + 0.7D, shield.z, 12, 0.35, 0.35, 0.35, 0.02);
                 world.spawnParticles(ParticleTypes.ELECTRIC_SPARK, shield.x, shield.y + 0.3D, shield.z, 10, 0.45, 0.25, 0.45, 0.02);
+                drawLine(world, this.getPos().add(0.0D, this.getHeight() * 0.64D, 0.0D), shield.add(0.0D, 0.8D, 0.0D), ParticleTypes.END_ROD);
             }
         }
         if (this.stateTicks == 1) {
@@ -813,6 +839,7 @@ public class SingularityEntity extends HostileEntity implements GeoEntity {
             if (this.waveTick % 2 == 0) {
                 world.spawnParticles(ParticleTypes.FLAME, this.getX(), this.getBodyY(0.35), this.getZ(), 8, 0.3, 0.2, 0.3, 0.01);
                 world.spawnParticles(ParticleTypes.SMOKE, this.getX(), this.getBodyY(0.35), this.getZ(), 5, 0.2, 0.2, 0.2, 0.01);
+                world.spawnParticles(ParticleTypes.REVERSE_PORTAL, this.getX(), this.getBodyY(0.35), this.getZ(), 4, 0.2, 0.12, 0.2, 0.01);
             }
             BlockPos firePos = this.getBlockPos();
             if (world.getBlockState(firePos).isAir() && world.getBlockState(firePos.down()).isOpaqueFullCube(world, firePos.down())) {
@@ -823,7 +850,7 @@ public class SingularityEntity extends HostileEntity implements GeoEntity {
                     continue;
                 }
                 this.rampageHit.add(player.getUuid());
-                dealBossDamage(player, 10.0F);
+                dealBossDamage(player, scaledPhase3Damage(world, 10.0F));
                 player.setOnFireFor(2);
             }
 
@@ -858,6 +885,7 @@ public class SingularityEntity extends HostileEntity implements GeoEntity {
         this.rampageTicksLeft = 8;
         this.rampageChargesDone++;
         this.nextRampageTick = this.waveTick + 22;
+        spawnGroundRing(world, this.getPos(), 2.6D, 36, ParticleTypes.FLAME);
         this.playSound(SoundEvents.ENTITY_RAVAGER_ROAR, 1.1F, 0.9F + this.random.nextFloat() * 0.15F);
     }
 
@@ -922,13 +950,15 @@ public class SingularityEntity extends HostileEntity implements GeoEntity {
 
         world.spawnParticles(ParticleTypes.EXPLOSION_EMITTER, this.getX(), this.getBodyY(0.35), this.getZ(), 8, 0.4, 0.3, 0.4, 0.03);
         world.spawnParticles(ParticleTypes.FLASH, this.getX(), this.getBodyY(0.35), this.getZ(), 2, 0.1, 0.1, 0.1, 0.0);
+        spawnGroundRing(world, this.getPos(), 4.0D, 54, ParticleTypes.FLASH);
+        spawnGroundRing(world, this.getPos(), 8.0D, 72, ParticleTypes.ELECTRIC_SPARK);
 
         for (PlayerEntity player : world.getPlayers(p -> p.isAlive() && p.squaredDistanceTo(this) <= 40 * 40)) {
             if (protectedPlayers.contains(player.getUuid())) {
                 player.addStatusEffect(new StatusEffectInstance(StatusEffects.RESISTANCE, 50, 4, true, true, true));
                 world.spawnParticles(ParticleTypes.HAPPY_VILLAGER, player.getX(), player.getBodyY(0.5), player.getZ(), 8, 0.2, 0.2, 0.2, 0.02);
             } else {
-                dealBossDamage(player, 20.0F);
+                dealBossDamage(player, scaledPhase3Damage(world, 20.0F));
             }
         }
         this.playSound(SoundEvents.ENTITY_GENERIC_EXPLODE.value(), 1.2F, 0.75F);
@@ -949,6 +979,9 @@ public class SingularityEntity extends HostileEntity implements GeoEntity {
 
             if (well.age % 4 == 0) {
                 world.spawnParticles(ParticleTypes.REVERSE_PORTAL, well.center.x, well.center.y + 0.1D, well.center.z, 10, 0.55, 0.05, 0.55, 0.01);
+                if (well.age % 8 == 0) {
+                    spawnGroundRing(world, well.center, 1.1D, 26, ParticleTypes.PORTAL);
+                }
             }
             for (PlayerEntity player : world.getPlayers(p -> p.isAlive() && p.squaredDistanceTo(well.center) <= 2.2D * 2.2D)) {
                 player.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOWNESS, 30, 1, true, true, true));
@@ -1013,6 +1046,41 @@ public class SingularityEntity extends HostileEntity implements GeoEntity {
                     this.getWorld().addParticle(ParticleTypes.REVERSE_PORTAL, px, py, pz, 0.0D, 0.01D, 0.0D);
                 }
             }
+        }
+        if (this.attackMode == AttackMode.BLACK_HOLE || this.attackMode == AttackMode.NOVA) {
+            this.getWorld().addParticle(ParticleTypes.FLASH, this.getX(), this.getBodyY(0.45D), this.getZ(), 0.0D, 0.0D, 0.0D);
+        } else if (this.attackMode == AttackMode.RAMPAGE) {
+            this.getWorld().addParticle(ParticleTypes.SMOKE, this.getX(), this.getBodyY(0.2D), this.getZ(), 0.0D, 0.02D, 0.0D);
+        }
+    }
+
+    private int getNearbyPlayerCount(double range) {
+        if (!(this.getWorld() instanceof ServerWorld world)) {
+            return 1;
+        }
+        return Math.max(1, world.getPlayers(p -> p.isAlive() && p.squaredDistanceTo(this) <= range * range).size());
+    }
+
+    private float scaledPhase3Damage(ServerWorld world, float baseDamage) {
+        if (this.phase != Phase.PHASE_3) {
+            return baseDamage;
+        }
+        int players = Math.max(1, world.getPlayers(p -> p.isAlive() && p.squaredDistanceTo(this) <= 52 * 52).size());
+        float multiplier = players <= 1 ? 1.0F : (players == 2 ? 0.92F : players == 3 ? 0.84F : 0.76F);
+        return Math.max(2.0F, baseDamage * multiplier);
+    }
+
+    private static boolean isMajorPhase3Attack(AttackMode mode) {
+        return mode == AttackMode.NOVA || mode == AttackMode.BLACK_HOLE || mode == AttackMode.RAMPAGE;
+    }
+
+    private void spawnGroundRing(ServerWorld world, Vec3d center, double radius, int points, net.minecraft.particle.ParticleEffect particle) {
+        double y = center.y + 0.08D;
+        for (int i = 0; i < points; i++) {
+            double a = (Math.PI * 2.0D) * (i / (double) points);
+            double x = center.x + Math.cos(a) * radius;
+            double z = center.z + Math.sin(a) * radius;
+            world.spawnParticles(particle, x, y, z, 1, 0.02D, 0.01D, 0.02D, 0.0D);
         }
     }
 

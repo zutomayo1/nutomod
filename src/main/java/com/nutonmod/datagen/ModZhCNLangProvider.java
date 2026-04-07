@@ -99,6 +99,7 @@ public class ModZhCNLangProvider extends FabricLanguageProvider {
         b.add("boss.nutonmod.singularity.node_blue", "\u84dd\u8282\u70b9\u6fc0\u6d3b\uff1a\u79fb\u52a8\u901f\u5ea6\u5927\u5e45\u63d0\u5347");
         b.add("boss.nutonmod.singularity.node_yellow", "\u9ec4\u8282\u70b9\u6fc0\u6d3b\uff1a\u56de\u590d20\u9897\u5fc3");
         b.add("boss.nutonmod.singularity.node_purple", "\u7d2b\u8282\u70b9\u6fc0\u6d3b\uff1a\u83b7\u5f9720\u9897\u5fc3\u5438\u6536\u76fe");
+        b.add("boss.nutonmod.singularity.boundary_warning", "\u7ade\u6280\u573a\u8fb9\u754c\u6b63\u5728\u6392\u65a5\u4f60\uff0c\u7acb\u5373\u8fd4\u56de\u4e2d\u5fc3\uff01");
         b.add("boss.nutonmod.storm_arbiter.awakened", "\u98ce\u66b4\u4ef2\u88c1\u8005\u00b7\u96f7\u94f8\u4e4b\u7075\u5df2\u964d\u4e34\uff01");
         b.add("boss.nutonmod.storm_arbiter.need_storm_fields", "\u5fc5\u987b\u5728\u201c\u98ce\u66b4\u539f\u91ce\u201d\u7fa4\u7cfb\u53ec\u5524");
         b.add("boss.nutonmod.storm_arbiter.need_thunder", "\u9700\u8981\u96f7\u66b4\u5929\u6c14\u624d\u80fd\u53ec\u5524");

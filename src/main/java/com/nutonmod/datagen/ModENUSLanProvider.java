@@ -98,6 +98,7 @@ public class ModENUSLanProvider extends FabricLanguageProvider {
         translationBuilder.add("boss.nutonmod.singularity.node_blue", "Blue node activated: +50% movement speed");
         translationBuilder.add("boss.nutonmod.singularity.node_yellow", "Yellow node activated: +20 hearts healed");
         translationBuilder.add("boss.nutonmod.singularity.node_purple", "Purple node activated: +20 hearts absorption");
+        translationBuilder.add("boss.nutonmod.singularity.boundary_warning", "The arena edge rejects you - return to the center!");
         translationBuilder.add("boss.nutonmod.storm_arbiter.awakened", "Storm Arbiter, the Bolt-Forged has descended!");
         translationBuilder.add("boss.nutonmod.storm_arbiter.need_storm_fields", "Must summon in Storm Fields biome");
         translationBuilder.add("boss.nutonmod.storm_arbiter.need_thunder", "Thunderstorm weather is required");
