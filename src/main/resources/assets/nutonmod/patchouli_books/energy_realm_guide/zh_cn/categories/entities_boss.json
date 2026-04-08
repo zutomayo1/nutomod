@@ -1,6 +1,6 @@
 {
   "name": "生物与首领",
-  "description": "普通怪、精英敌人与首领战的作战情报。",
-  "icon": "nutonmod:singularity_spawn_egg",
+  "description": "普通怪、精英与三大首领的作战情报。",
+  "icon": "nutonmod:void_archon_spawn_egg",
   "sortnum": 5
 }

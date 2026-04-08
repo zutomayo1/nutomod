@@ -15,11 +15,7 @@ public class ModZhCNLangProvider extends FabricLanguageProvider {
     public void generateTranslations(RegistryWrapper.WrapperLookup wrapperLookup, TranslationBuilder b) {
         b.add("item.nutonmod.energy_core", "\u80fd\u91cf\u6838\u5fc3");
         b.add("block.nutonmod.energy_core", "\u80fd\u91cf\u6838\u5fc3");
-        b.add("item.nutonmod.energy_helmet", "\u80fd\u91cf\u5934\u76d4");
-        b.add("item.nutonmod.energy_leggings", "\u80fd\u91cf\u62a4\u817f");
-        b.add("item.nutonmod.energy_boots", "\u80fd\u91cf\u9774\u5b50");
         b.add("block.nutonmod.energy_block", "\u80fd\u91cf\u65b9\u5757");
-        b.add("item.nutonmod.energy_chestplate", "\u80fd\u91cf\u80f8\u7532");
         b.add("item.nutonmod.energy_being_spawn_egg", "\u80fd\u91cf\u751f\u7269\u5237\u602a\u86cb");
         b.add("item.nutonmod.holy_helmet", "\u795e\u5723\u5934\u76d4");
         b.add("item.nutonmod.holy_chestplate", "\u795e\u5723\u80f8\u7532");
@@ -72,6 +68,12 @@ public class ModZhCNLangProvider extends FabricLanguageProvider {
         b.add("item.nutonmod.thunder_spear", "\u96f7\u795e\u4e4b\u77db");
         b.add("item.nutonmod.void_calamity", "\u865a\u7a7a\u707e\u5384");
         b.add("item.nutonmod.storm_scepter", "\u96f7\u66b4\u6743\u6756");
+        b.add("item.nutonmod.archon_mark", "\u6267\u653f\u5b98\u5370\u8bb0");
+        b.add("item.nutonmod.end_heart", "\u7ec8\u7109\u4e4b\u5fc3");
+        b.add("item.nutonmod.void_fragment", "\u865a\u7a7a\u788e\u7247");
+        b.add("item.nutonmod.end_tome", "\u7ec8\u7109\u5b9d\u5178");
+        b.add("item.nutonmod.void_wings", "\u865a\u7a7a\u4e4b\u7ffc");
+        b.add("item.nutonmod.end_judicator", "\u7ec8\u7109\u88c1\u51b3\u8005");
         b.add("tooltip.nutonmod.annihilation_blade.line1", "\u4e3b\u52a8\uff1a\u53f3\u952e\u91ca\u653e\u6e6e\u706d\u65a9\u51fb");
         b.add("tooltip.nutonmod.annihilation_blade.line2", "\u88ab\u52a8\uff1a\u8fde\u51fb\u53e0\u5370\u8bb0\uff0c\u6ee1\u5c42\u89e6\u53d1\u5904\u51b3\u8109\u51b2");
         b.add("tooltip.nutonmod.annihilation_blade.line3", "\u51fb\u6740\u76ee\u6807\u540e\u56de\u590d\u751f\u547d");
@@ -84,6 +86,21 @@ public class ModZhCNLangProvider extends FabricLanguageProvider {
         b.add("tooltip.nutonmod.storm_scepter.line1", "\u53f3\u952e\uff1a\u65bd\u653e\u8fde\u9501\u95ea\u7535\uff08\u6d88\u8017\u80fd\u91cf\uff09");
         b.add("tooltip.nutonmod.storm_scepter.line2", "\u6f5c\u884c+\u53f3\u952e\uff1a\u98ce\u66b4\u4e4b\u773c\u533a\u57df\u538b\u5236");
         b.add("tooltip.nutonmod.storm_scepter.line3", "\u98ce\u66b4\u8fc7\u8f7d\uff1a\u514d\u6d88\u8017\u5e76\u63d0\u5347\u4f24\u5bb3");
+        b.add("tooltip.nutonmod.end_judicator.line1", "\u6f5c\u884c+\u53f3\u952e\uff1a\u5207\u6362\u5f62\u6001");
+        b.add("tooltip.nutonmod.end_judicator.line2", "\u529b\u91cf\u5f62\u6001\uff1a\u8fd1\u8eab\u8303\u56f4\u91cd\u51fb");
+        b.add("tooltip.nutonmod.end_judicator.line3", "\u654f\u6377\u5f62\u6001\uff1a\u8fdc\u8ddd\u865a\u7a7a\u65a9\u51fb");
+        b.add("item.nutonmod.end_judicator.mode_power", "\u5df2\u5207\u6362\u81f3\u529b\u91cf\u5f62\u6001");
+        b.add("item.nutonmod.end_judicator.mode_agile", "\u5df2\u5207\u6362\u81f3\u654f\u6377\u5f62\u6001");
+        b.add("item.nutonmod.end_judicator.current_power", "\u5f53\u524d\u5f62\u6001\uff1a\u529b\u91cf");
+        b.add("item.nutonmod.end_judicator.current_agile", "\u5f53\u524d\u5f62\u6001\uff1a\u654f\u6377");
+        b.add("item.nutonmod.end_tome.unlocked", "\u5df2\u89e3\u9501\u7ec8\u7109\u9690\u85cf\u914d\u65b9");
+        b.add("item.nutonmod.end_tome.unlocked_list", "\u5df2\u89e3\u9501\uff1a\u7ec8\u7109\u88c1\u51b3\u8005");
+        b.add("weapon.nutonmod.end_judicator.need_energy", "\u80fd\u91cf\u4e0d\u8db3\uff1a\u9700\u8981%s\u70b9");
+        b.add("item.nutonmod.void_wings.need_wear", "\u8bf7\u5148\u5c06\u865a\u7a7a\u4e4b\u7ffc\u7a7f\u5728\u80f8\u7532\u680f");
+        b.add("item.nutonmod.void_wings.dimension_only", "\u53ea\u80fd\u5728\u80fd\u91cf\u7ef4\u5ea6\u6fc0\u6d3b");
+        b.add("item.nutonmod.void_wings.flight_ready", "\u865a\u7a7a\u4e4b\u7ffc\u5df2\u6fc0\u6d3b\uff1a5\u79d2\u77ed\u98de");
+        b.add("item.nutonmod.void_wings.flight_cd", "\u865a\u7a7a\u4e4b\u7ffc\u51b7\u5374\u4e2d\uff1a%s \u79d2");
+        b.add("item.nutonmod.void_wings.rescue_triggered", "\u865a\u7a7a\u884c\u8d70\u89e6\u53d1\uff1a\u5df2\u62b5\u6d88\u81f4\u547d\u4f24\u5bb3");
         b.add("weapon.nutonmod.void_calamity.need_charge", "\u81f3\u5c11\u9700\u89813\u5c42\u865a\u7a7a\u5145\u80fd");
         b.add("weapon.nutonmod.void_calamity.charge", "\u865a\u7a7a\u5145\u80fd\uff1a%s/%s");
         b.add("weapon.nutonmod.storm_scepter.need_energy_cast", "\u80fd\u91cf\u4e0d\u8db3\uff1a\u9700\u898115\u70b9");
@@ -98,6 +115,7 @@ public class ModZhCNLangProvider extends FabricLanguageProvider {
         b.add("entity.nutonmod.rift_stalker.storm", "\u98ce\u66b4\u88c2\u9699\u6f5c\u730e\u8005");
         b.add("entity.nutonmod.singularity", "\u80fd\u91cf\u5947\u70b9\u00b7\u6e6e\u706d\u8005");
         b.add("entity.nutonmod.storm_arbiter", "\u98ce\u66b4\u4ef2\u88c1\u8005\u00b7\u96f7\u94f8\u4e4b\u7075");
+        b.add("entity.nutonmod.void_archon", "\u865a\u7a7a\u6267\u653f\u5b98\u00b7\u7ec8\u7109\u4f7f\u8005");
         b.add("entity.nutonmod.storm_guard", "\u96f7\u5149\u5b88\u536b");
         b.add("boss.nutonmod.singularity.need_core_wastes", "\u5fc5\u987b\u5728\u201c\u6838\u5fc3\u8352\u539f\u201d\u751f\u7269\u7fa4\u7cfb\u53ec\u5524");
         b.add("boss.nutonmod.singularity.already_active", "\u9644\u8fd1\u5df2\u6709\u6e6e\u706d\u5947\u70b9\u6fc0\u6d3b");
@@ -130,6 +148,21 @@ public class ModZhCNLangProvider extends FabricLanguageProvider {
         b.add("boss.nutonmod.storm_arbiter.bar.phase_1", "\u98ce\u66b4\u4ef2\u88c1\u8005\u00b7\u96f7\u94f8\u4e4b\u7075 - \u96f7\u9706\u5ba1\u5224");
         b.add("boss.nutonmod.storm_arbiter.bar.phase_2", "\u98ce\u66b4\u4ef2\u88c1\u8005\u00b7\u96f7\u94f8\u4e4b\u7075 - \u96f7\u94f8\u4e4b\u6012");
         b.add("boss.nutonmod.storm_arbiter.bar.phase_3", "\u98ce\u66b4\u4ef2\u88c1\u8005\u00b7\u96f7\u94f8\u4e4b\u7075 - \u98ce\u66b4\u5316\u8eab");
+        b.add("boss.nutonmod.void_archon.need_core_wastes", "\u5fc5\u987b\u5728\u6838\u5fc3\u8352\u539f\u53ec\u5524");
+        b.add("boss.nutonmod.void_archon.need_prereq", "\u9700\u5148\u51fb\u8d25\u5947\u70b9\u4e0e\u98ce\u66b4\u4ef2\u88c1\u8005");
+        b.add("boss.nutonmod.void_archon.already_active", "\u9644\u8fd1\u5df2\u6709\u865a\u7a7a\u6267\u653f\u5b98");
+        b.add("boss.nutonmod.void_archon.awakened", "\u865a\u7a7a\u6267\u653f\u5b98\u00b7\u7ec8\u7109\u4f7f\u8005\u5df2\u964d\u4e34\uff01");
+        b.add("boss.nutonmod.void_archon.phase_2", "\u7b2c\u4e8c\u9636\u6bb5\uff1a\u529b\u91cf\u5f62\u6001");
+        b.add("boss.nutonmod.void_archon.phase_3", "\u7b2c\u4e09\u9636\u6bb5\uff1a\u654f\u6377\u5f62\u6001");
+        b.add("boss.nutonmod.void_archon.phase_4", "\u7ec8\u9636\uff1a\u7ec8\u7109\u5f62\u6001");
+        b.add("boss.nutonmod.void_archon.final_judgement", "\u7ec8\u7109\u5ba1\u5224\u6b63\u5728\u84c4\u529b\uff01");
+        b.add("boss.nutonmod.void_archon.decoy_name", "\u865a\u7a7a\u6267\u653f\u5b98\u955c\u50cf");
+        b.add("boss.nutonmod.void_archon.fragment_power", "\u63a5\u89e6\u80fd\u91cf\u788e\u7247\uff1a\u653b\u51fb\u63d0\u5347");
+        b.add("boss.nutonmod.void_archon.fragment_speed", "\u63a5\u89e6\u80fd\u91cf\u788e\u7247\uff1a\u79fb\u901f\u63d0\u5347");
+        b.add("boss.nutonmod.void_archon.bar.phase_1", "\u865a\u7a7a\u6267\u653f\u5b98 - \u5747\u8861\u5f62\u6001");
+        b.add("boss.nutonmod.void_archon.bar.phase_2", "\u865a\u7a7a\u6267\u653f\u5b98 - \u529b\u91cf\u5f62\u6001");
+        b.add("boss.nutonmod.void_archon.bar.phase_3", "\u865a\u7a7a\u6267\u653f\u5b98 - \u654f\u6377\u5f62\u6001");
+        b.add("boss.nutonmod.void_archon.bar.phase_4", "\u865a\u7a7a\u6267\u653f\u5b98 - \u7ec8\u7109\u5f62\u6001");
         b.add("entity.minecraft.villager.energy_master", "\u80fd\u91cf\u5927\u5e08");
         b.add("entity.minecraft.villager.nutonmod.energy_master", "\u80fd\u91cf\u5927\u5e08");
 
@@ -172,6 +205,7 @@ public class ModZhCNLangProvider extends FabricLanguageProvider {
         b.add("item.nutonmod.rift_stalker_spawn_egg", "\u88c2\u9699\u6f5c\u730e\u8005\u5237\u602a\u86cb");
         b.add("item.nutonmod.singularity_spawn_egg", "\u80fd\u91cf\u5947\u70b9\u00b7\u6e6e\u706d\u8005\u5237\u602a\u86cb");
         b.add("item.nutonmod.storm_arbiter_spawn_egg", "\u98ce\u66b4\u4ef2\u88c1\u8005\u5237\u602a\u86cb");
+        b.add("item.nutonmod.void_archon_spawn_egg", "\u865a\u7a7a\u6267\u653f\u5b98\u5237\u602a\u86cb");
 
         b.add("block.nutonmod.box", "\u7bb1\u5b50");
         b.add("item.nutonmod.box", "\u7bb1\u5b50");

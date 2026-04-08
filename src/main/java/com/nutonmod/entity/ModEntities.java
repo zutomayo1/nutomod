@@ -48,6 +48,15 @@ public class ModEntities {
                     .trackedUpdateRate(1)
                     .build()
     );
+    public static final EntityType<VoidArchonEntity> VOID_ARCHON = Registry.register(
+            Registries.ENTITY_TYPE,
+            Identifier.of(NutonMod.MOD_ID, "void_archon"),
+            FabricEntityTypeBuilder.create(SpawnGroup.MONSTER, VoidArchonEntity::new)
+                    .dimensions(EntityDimensions.changing(2.0F, 4.0F))
+                    .trackRangeBlocks(16)
+                    .trackedUpdateRate(1)
+                    .build()
+    );
     public static final EntityType<VoidPiercingArrowEntity> VOID_PIERCING_ARROW = Registry.register(
             Registries.ENTITY_TYPE,
             Identifier.of(NutonMod.MOD_ID, "void_piercing_arrow"),
@@ -66,6 +75,15 @@ public class ModEntities {
                     .trackedUpdateRate(10)
                     .build()
     );
+    public static final EntityType<EndJudicatorSlashEntity> END_JUDICATOR_SLASH = Registry.register(
+            Registries.ENTITY_TYPE,
+            Identifier.of(NutonMod.MOD_ID, "end_judicator_slash"),
+            FabricEntityTypeBuilder.<EndJudicatorSlashEntity>create(SpawnGroup.MISC, EndJudicatorSlashEntity::new)
+                    .dimensions(EntityDimensions.fixed(0.5F, 0.5F))
+                    .trackRangeBlocks(8)
+                    .trackedUpdateRate(10)
+                    .build()
+    );
 
     public static void register() {
         NutonMod.LOGGER.info("Registering entities for {}", NutonMod.MOD_ID);
@@ -74,5 +92,6 @@ public class ModEntities {
         FabricDefaultAttributeRegistry.register(RIFT_STALKER, RiftStalker.createMobAttributes());
         FabricDefaultAttributeRegistry.register(SINGULARITY, SingularityEntity.createMobAttributes());
         FabricDefaultAttributeRegistry.register(STORM_ARBITER, StormArbiterEntity.createMobAttributes());
+        FabricDefaultAttributeRegistry.register(VOID_ARCHON, VoidArchonEntity.createMobAttributes());
     }
 }

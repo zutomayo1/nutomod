@@ -15,11 +15,7 @@ public class ModENUSLanProvider extends FabricLanguageProvider {
     public void generateTranslations(RegistryWrapper.WrapperLookup wrapperLookup, TranslationBuilder translationBuilder) {
         translationBuilder.add("item.nutonmod.energy_core", "Energy Core");
         translationBuilder.add("block.nutonmod.energy_core", "Energy Core");
-        translationBuilder.add("item.nutonmod.energy_helmet", "Energy Helmet");
-        translationBuilder.add("item.nutonmod.energy_leggings", "Energy Leggings");
-        translationBuilder.add("item.nutonmod.energy_boots", "Energy Boots");
         translationBuilder.add("block.nutonmod.energy_block", "Energy Block");
-        translationBuilder.add("item.nutonmod.energy_chestplate", "Energy Chestplate");
         translationBuilder.add("item.nutonmod.energy_being_spawn_egg", "Energy Being Spawn Egg");
         translationBuilder.add("item.nutonmod.holy_helmet", "Holy Helmet");
         translationBuilder.add("item.nutonmod.holy_chestplate", "Holy Chestplate");
@@ -71,6 +67,12 @@ public class ModENUSLanProvider extends FabricLanguageProvider {
         translationBuilder.add("item.nutonmod.thunder_spear", "Thunder Spear");
         translationBuilder.add("item.nutonmod.void_calamity", "Void Calamity");
         translationBuilder.add("item.nutonmod.storm_scepter", "Storm Scepter");
+        translationBuilder.add("item.nutonmod.archon_mark", "Archon Mark");
+        translationBuilder.add("item.nutonmod.end_heart", "Heart of End");
+        translationBuilder.add("item.nutonmod.void_fragment", "Void Fragment");
+        translationBuilder.add("item.nutonmod.end_tome", "Codex of End");
+        translationBuilder.add("item.nutonmod.void_wings", "Void Wings");
+        translationBuilder.add("item.nutonmod.end_judicator", "End Judicator");
         translationBuilder.add("tooltip.nutonmod.annihilation_blade.line1", "Active: Right click releases Annihilation Slash");
         translationBuilder.add("tooltip.nutonmod.annihilation_blade.line2", "Passive: hits stack marks, max stacks trigger execute pulse");
         translationBuilder.add("tooltip.nutonmod.annihilation_blade.line3", "On kill: restores health");
@@ -83,6 +85,21 @@ public class ModENUSLanProvider extends FabricLanguageProvider {
         translationBuilder.add("tooltip.nutonmod.storm_scepter.line1", "Right click: chain lightning (costs energy)");
         translationBuilder.add("tooltip.nutonmod.storm_scepter.line2", "Sneak + right click: Storm Eye area control");
         translationBuilder.add("tooltip.nutonmod.storm_scepter.line3", "Overload in storms: no energy cost and bonus damage");
+        translationBuilder.add("tooltip.nutonmod.end_judicator.line1", "Sneak + right click: switch form");
+        translationBuilder.add("tooltip.nutonmod.end_judicator.line2", "Power Form: close-range annihilation blast");
+        translationBuilder.add("tooltip.nutonmod.end_judicator.line3", "Agile Form: long-range void slash");
+        translationBuilder.add("item.nutonmod.end_judicator.mode_power", "Switched to Power Form");
+        translationBuilder.add("item.nutonmod.end_judicator.mode_agile", "Switched to Agile Form");
+        translationBuilder.add("item.nutonmod.end_judicator.current_power", "Current Form: Power");
+        translationBuilder.add("item.nutonmod.end_judicator.current_agile", "Current Form: Agile");
+        translationBuilder.add("item.nutonmod.end_tome.unlocked", "Hidden end recipes unlocked");
+        translationBuilder.add("item.nutonmod.end_tome.unlocked_list", "Unlocked: End Judicator");
+        translationBuilder.add("weapon.nutonmod.end_judicator.need_energy", "Not enough energy: need %s");
+        translationBuilder.add("item.nutonmod.void_wings.need_wear", "Equip Void Wings in chest slot first");
+        translationBuilder.add("item.nutonmod.void_wings.dimension_only", "Can only activate in the Energy Realm");
+        translationBuilder.add("item.nutonmod.void_wings.flight_ready", "Void Wings activated: 5s flight");
+        translationBuilder.add("item.nutonmod.void_wings.flight_cd", "Void Wings cooling down: %s s");
+        translationBuilder.add("item.nutonmod.void_wings.rescue_triggered", "Void Walk triggered: lethal damage negated");
         translationBuilder.add("weapon.nutonmod.void_calamity.need_charge", "Need at least 3 Void Charges");
         translationBuilder.add("weapon.nutonmod.void_calamity.charge", "Void Charge: %s/%s");
         translationBuilder.add("weapon.nutonmod.storm_scepter.need_energy_cast", "Not enough energy: need 15");
@@ -97,6 +114,7 @@ public class ModENUSLanProvider extends FabricLanguageProvider {
         translationBuilder.add("entity.nutonmod.rift_stalker.storm", "Storm Rift Stalker");
         translationBuilder.add("entity.nutonmod.singularity", "Singularity of Annihilation");
         translationBuilder.add("entity.nutonmod.storm_arbiter", "Storm Arbiter, the Bolt-Forged");
+        translationBuilder.add("entity.nutonmod.void_archon", "Void Archon, the Emissary of End");
         translationBuilder.add("entity.nutonmod.storm_guard", "Storm Guard");
         translationBuilder.add("boss.nutonmod.singularity.need_core_wastes", "Need to summon in Core Wastes biome");
         translationBuilder.add("boss.nutonmod.singularity.already_active", "A Singularity is already active nearby");
@@ -129,6 +147,21 @@ public class ModENUSLanProvider extends FabricLanguageProvider {
         translationBuilder.add("boss.nutonmod.storm_arbiter.bar.phase_1", "Storm Arbiter - Thunder Judgement");
         translationBuilder.add("boss.nutonmod.storm_arbiter.bar.phase_2", "Storm Arbiter - Bolt-Forged Wrath");
         translationBuilder.add("boss.nutonmod.storm_arbiter.bar.phase_3", "Storm Arbiter - Avatar of Storm");
+        translationBuilder.add("boss.nutonmod.void_archon.need_core_wastes", "Must summon in Core Wastes biome");
+        translationBuilder.add("boss.nutonmod.void_archon.need_prereq", "Defeat Singularity and Storm Arbiter first");
+        translationBuilder.add("boss.nutonmod.void_archon.already_active", "A Void Archon is already active nearby");
+        translationBuilder.add("boss.nutonmod.void_archon.awakened", "Void Archon, the Emissary of End has descended!");
+        translationBuilder.add("boss.nutonmod.void_archon.phase_2", "Phase Shift: Cataclysm Claw!");
+        translationBuilder.add("boss.nutonmod.void_archon.phase_3", "Phase Shift: Agile Void Form!");
+        translationBuilder.add("boss.nutonmod.void_archon.phase_4", "Phase Shift: Endfall Manifest!");
+        translationBuilder.add("boss.nutonmod.void_archon.final_judgement", "Final Judgement is charging!");
+        translationBuilder.add("boss.nutonmod.void_archon.decoy_name", "Void Archon Mirror");
+        translationBuilder.add("boss.nutonmod.void_archon.fragment_power", "Absorbed fragment: +Power");
+        translationBuilder.add("boss.nutonmod.void_archon.fragment_speed", "Absorbed fragment: +Speed");
+        translationBuilder.add("boss.nutonmod.void_archon.bar.phase_1", "Void Archon - Balanced Form");
+        translationBuilder.add("boss.nutonmod.void_archon.bar.phase_2", "Void Archon - Power Form");
+        translationBuilder.add("boss.nutonmod.void_archon.bar.phase_3", "Void Archon - Agile Form");
+        translationBuilder.add("boss.nutonmod.void_archon.bar.phase_4", "Void Archon - End Form");
         translationBuilder.add("entity.minecraft.villager.energy_master", "Energy Master");
         translationBuilder.add("entity.minecraft.villager.nutonmod.energy_master", "Energy Master");
 
@@ -172,6 +205,7 @@ public class ModENUSLanProvider extends FabricLanguageProvider {
         translationBuilder.add("item.nutonmod.rift_stalker_spawn_egg", "Rift Stalker Spawn Egg");
         translationBuilder.add("item.nutonmod.singularity_spawn_egg", "Singularity Spawn Egg");
         translationBuilder.add("item.nutonmod.storm_arbiter_spawn_egg", "Storm Arbiter Spawn Egg");
+        translationBuilder.add("item.nutonmod.void_archon_spawn_egg", "Void Archon Spawn Egg");
 
         translationBuilder.add("block.nutonmod.box", "Box");
         translationBuilder.add("item.nutonmod.box", "Box");

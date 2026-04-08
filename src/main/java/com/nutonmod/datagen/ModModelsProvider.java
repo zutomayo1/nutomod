@@ -14,7 +14,6 @@ import net.minecraft.block.Blocks;
 import net.minecraft.block.CropBlock;
 import net.minecraft.data.client.*;
 import net.minecraft.data.family.BlockFamily;
-import net.minecraft.item.ArmorItem;
 import net.minecraft.util.Identifier;
 
 public class ModModelsProvider extends FabricModelProvider {
@@ -86,12 +85,6 @@ public class ModModelsProvider extends FabricModelProvider {
 
     @Override
     public void generateItemModels(ItemModelGenerator itemModelGenerator) {
-
-        itemModelGenerator.registerArmor((ArmorItem) ModItems.ENERGY_HELMET);
-        itemModelGenerator.registerArmor((ArmorItem) ModItems.ENERGY_CHESTPLATE);
-        itemModelGenerator.registerArmor((ArmorItem) ModItems.ENERGY_LEGGINGS);
-        itemModelGenerator.registerArmor((ArmorItem) ModItems.ENERGY_BOOTS);
-
 
         itemModelGenerator.register(ModItems.HOLY_HELMET, Models.GENERATED);
         itemModelGenerator.register(ModItems.HOLY_CHESTPLATE, Models.GENERATED);

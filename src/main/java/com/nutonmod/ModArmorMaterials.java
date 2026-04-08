@@ -3,8 +3,6 @@ package com.nutonmod;
 import com.nutonmod.item.ModItems;
 import net.minecraft.item.ArmorItem;
 import net.minecraft.item.ArmorMaterial;
-import net.minecraft.item.Items;
-import net.minecraft.item.MinecartItem;
 import net.minecraft.recipe.Ingredient;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;

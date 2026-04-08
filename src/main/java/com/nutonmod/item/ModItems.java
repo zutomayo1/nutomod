@@ -2,7 +2,6 @@ package com.nutonmod.item;
 
 import com.nutonmod.ModArmorMaterials;
 import com.nutonmod.NutonMod;
-import com.nutonmod.armor.EnergyArmor;
 import com.nutonmod.block.ModBlocks;
 import com.nutonmod.block.ModFluids;
 import com.nutonmod.item.custom.EnergyAppleItem;
@@ -14,6 +13,9 @@ import com.nutonmod.item.custom.StormScepterItem;
 import com.nutonmod.item.custom.StormCharmItem;
 import com.nutonmod.item.custom.ThunderSpearItem;
 import com.nutonmod.item.custom.VoidCalamityBowItem;
+import com.nutonmod.item.custom.EndJudicatorItem;
+import com.nutonmod.item.custom.EndTomeItem;
+import com.nutonmod.item.custom.VoidWingsItem;
 import com.nutonmod.sound.ModJukeBoxSongs;
 import net.minecraft.component.type.FoodComponent;
 import net.minecraft.item.*;
@@ -60,6 +62,14 @@ public class ModItems {
             new Item.Settings().maxCount(1).maxDamage(1200).fireproof().rarity(Rarity.EPIC)));
     public static final Item STORM_SCEPTER = registerItem("storm_scepter", new StormScepterItem(
             new Item.Settings().maxCount(1).maxDamage(800).fireproof().rarity(Rarity.EPIC)));
+    public static final Item ARCHON_MARK = registerItem("archon_mark", new Item(new Item.Settings().maxCount(16).rarity(Rarity.EPIC)));
+    public static final Item END_HEART = registerItem("end_heart", new Item(new Item.Settings().maxCount(8).rarity(Rarity.EPIC)));
+    public static final Item VOID_FRAGMENT = registerItem("void_fragment", new Item(new Item.Settings().maxCount(64).rarity(Rarity.RARE)));
+    public static final Item END_TOME = registerItem("end_tome", new EndTomeItem(new Item.Settings().maxCount(16).rarity(Rarity.EPIC)));
+    public static final Item VOID_WINGS = registerItem("void_wings", new VoidWingsItem(new Item.Settings().maxDamage(432).maxCount(1).rarity(Rarity.EPIC).fireproof()));
+    public static final Item END_JUDICATOR = registerItem("end_judicator", new EndJudicatorItem(ModToolMaterials.ENERGY_INGOT,
+            new Item.Settings().maxCount(1).maxDamage(1600).fireproof().rarity(Rarity.EPIC)
+                    .attributeModifiers(SwordItem.createAttributeModifiers(ModToolMaterials.ENERGY_INGOT, 15, -2.3F))));
 
 
     // 物品 - 能量工具（需要激活才能发挥威力）
@@ -78,13 +88,9 @@ public class ModItems {
     /**
      * 能源chestplate
      */// 能量胸甲（需要激活才能发挥全部效果）
-    public static final Item ENERGY_CHESTPLATE = registerItem("energy_chestplate", EnergyArmor.createChestplate());
     // 能量头盔（需要激活才能发挥全部效果）
-    public static final Item ENERGY_HELMET = registerItem("energy_helmet", EnergyArmor.createHelmet());
     // 能量裤子
-    public static final Item ENERGY_LEGGINGS = registerItem("energy_leggings", EnergyArmor.createLeggings());
     // 能量鞋子
-    public static final Item ENERGY_BOOTS = registerItem("energy_boots", EnergyArmor.createBoots());
 
     // 光明套装 - 神圣能量
     public static final Item HOLY_HELMET = registerItem("holy_helmet",
@@ -141,6 +147,14 @@ public class ModItems {
                     new Item.Settings().rarity(Rarity.EPIC)
             )
     );
+    public static final Item VOID_ARCHON_SPAWN_EGG = registerItem("void_archon_spawn_egg",
+            new SpawnEggItem(
+                    ModEntities.VOID_ARCHON,
+                    0x160A1C,
+                    0xF2F2F2,
+                    new Item.Settings().rarity(Rarity.EPIC)
+            )
+    );
 
     public static final Item PROSPECTOR = registerItem("prospector",
             new Prospector(new Item.Settings().maxDamage(127)));
@@ -177,6 +191,6 @@ public class ModItems {
     
     public static void registerModItems() {
          NutonMod.LOGGER.info("Registering Mod Items for " + NutonMod.MOD_ID);
-         NutonMod.LOGGER.info("Registered: energy_core (block), energy_block (block), energy_sword, energy_chestplate, energy_helmet, energy_leggings, energy_boots, holy_helmet, holy_chestplate, holy_leggings, holy_boots, energy_being_spawn_egg");
+         NutonMod.LOGGER.info("Registered: energy_core (block), energy_block (block), energy_sword, holy_helmet, holy_chestplate, holy_leggings, holy_boots, energy_being_spawn_egg");
     }
 }

@@ -1,11 +1,11 @@
-// 1.21	2026-04-08T18:48:09.3189426	NutonMod/Tags for minecraft:item
+// 1.21	2026-04-08T21:39:23.174937	NutonMod/Tags for minecraft:item
 7bb728f45da1c09116b6ac9c5263443008670bde data\minecraft\tags\item\swords.json
-7434d0de769becc74585179d5dffc0334bd78d22 data\minecraft\tags\item\head_armor.json
-84dc6540b205fc9b5a72a33850b326543e29f244 data\minecraft\tags\item\leg_armor.json
+e32213eb2853c139330d185f3cd866fea674f2da data\minecraft\tags\item\head_armor.json
+d0ab2ae7a264d8fcd9fe86abeeb0a793f765ccbc data\minecraft\tags\item\leg_armor.json
 14cfde03066e3b00b27f36a88ae7ae94253cc6e1 data\minecraft\tags\item\logs_that_burn.json
-8460d4cbc0751e7f4953b0b971e717715bc9c042 data\minecraft\tags\item\chest_armor.json
+125dcef2ecefbd3609abbce2761ac956438575ef data\minecraft\tags\item\chest_armor.json
 db62bc8b0e20116771892cce36b11cfb01db1721 data\minecraft\tags\item\raw_materials.json
-c0dc816ad4739dce17aad67308bd2fd5b5ab94c4 data\minecraft\tags\item\trimmable_armor.json
-7817ce0d612aa87c17fbca8b2129d5ec821d5ac4 data\minecraft\tags\item\foot_armor.json
-370dc09f498176d8de7a8160a14646cce69ec7f1 data\minecraft\tags\item\planks.json
+72f75cee99a4bacea7b7e72fdbd3f72414db2c94 data\minecraft\tags\item\trimmable_armor.json
 8624b03dd35c0fbb9170aadb8d3e79b27b01fcb7 data\minecraft\tags\item\creeper_drop_music_discs.json
+370dc09f498176d8de7a8160a14646cce69ec7f1 data\minecraft\tags\item\planks.json
+05fa383578ed14d56ed370c4ea64a56c6aee0367 data\minecraft\tags\item\foot_armor.json

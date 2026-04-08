@@ -51,13 +51,18 @@ public class ModItemGroups {
                 entries.add(ModItems.ARBITER_SIGIL);
                 entries.add(ModItems.THUNDERFORGED_CORE);
                 entries.add(ModItems.LIGHTNING_ESSENCE);
-                entries.add(ModItems.ARBITER_TROPHY);
+                entries.add(ModItems.ARCHON_MARK);
+                entries.add(ModItems.END_HEART);
+                entries.add(ModItems.VOID_FRAGMENT);
+                entries.add(ModItems.END_TOME);
+                entries.add(ModItems.VOID_WINGS);
 
                 // Weapons and combat tools
                 entries.add(ModItems.ANNIHILATION_BLADE);
                 entries.add(ModItems.THUNDER_SPEAR);
                 entries.add(ModItems.VOID_CALAMITY);
                 entries.add(ModItems.STORM_SCEPTER);
+                entries.add(ModItems.END_JUDICATOR);
                 entries.add(ModItems.ENERGY_SWORD);
                 entries.add(ModItems.ENERGY_PICKAXE);
                 entries.add(ModItems.ENERGY_AXE);
@@ -66,10 +71,6 @@ public class ModItemGroups {
                 entries.add(ModItems.PROSPECTOR);
 
                 // Armor and wearable gear
-                entries.add(ModItems.ENERGY_CHESTPLATE);
-                entries.add(ModItems.ENERGY_HELMET);
-                entries.add(ModItems.ENERGY_LEGGINGS);
-                entries.add(ModItems.ENERGY_BOOTS);
                 entries.add(ModItems.HOLY_HELMET);
                 entries.add(ModItems.HOLY_CHESTPLATE);
                 entries.add(ModItems.HOLY_LEGGINGS);
@@ -90,6 +91,7 @@ public class ModItemGroups {
                 entries.add(ModItems.RIFT_STALKER_SPAWN_EGG);
                 entries.add(ModItems.SINGULARITY_SPAWN_EGG);
                 entries.add(ModItems.STORM_ARBITER_SPAWN_EGG);
+                entries.add(ModItems.VOID_ARCHON_SPAWN_EGG);
 
                 // Functional blocks and machines
                 entries.add(ModBlocks.STABILIZER_BEACON);

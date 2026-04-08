@@ -7,7 +7,7 @@
     {
       "type": "patchouli:crafting",
       "recipe": "nutonmod:storm_alloy",
-      "text": "风暴合金：风暴碎片向中期材料线转换的第一步。"
+      "text": "风暴合金：从风暴碎片过渡到中后期材料线的第一步。"
     },
     {
       "type": "patchouli:crafting",
@@ -42,11 +42,21 @@
     {
       "type": "patchouli:crafting",
       "recipe": "nutonmod:storm_scepter",
-      "text": "雷暴权杖：能量驱动的范围压制法杖。详见 $(l:nutonmod:items/storm_scepter)专页$()。"
+      "text": "风暴权杖：能量驱动的范围压制法杖。详见 $(l:nutonmod:items/storm_scepter)专页$()。"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "nutonmod:archon_mark",
+      "text": "执政官印记：终极首领召唤核心，需前两位首领路线材料。"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "nutonmod:end_judicator",
+      "text": "终焉裁决者：最终形态切换武器。详见 $(l:nutonmod:items/end_judicator)专页$()。"
     },
     {
       "type": "patchouli:text",
-      "text": "说明：本页优先收录主线推进和战斗关键配方；辅助工具配方会在后续补全。"
+      "text": "说明：本页优先收录主线推进与战斗关键配方；辅助配方会在后续补全。"
     }
   ]
 }

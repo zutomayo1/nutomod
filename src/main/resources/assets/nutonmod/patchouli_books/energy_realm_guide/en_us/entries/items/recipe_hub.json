@@ -45,6 +45,16 @@
       "text": "Storm Scepter: energy-based area control caster. See $(l:nutonmod:items/storm_scepter)detail page$()."
     },
     {
+      "type": "patchouli:crafting",
+      "recipe": "nutonmod:archon_mark",
+      "text": "Archon Mark: key summon item for the final boss. Requires both prior boss progression lines."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "nutonmod:end_judicator",
+      "text": "End Judicator: final form-switch weapon. See $(l:nutonmod:items/end_judicator)detail page$()."
+    },
+    {
       "type": "patchouli:text",
       "text": "Note: this page focuses on progression-critical combat recipes first; auxiliary utility recipes may be expanded later."
     }

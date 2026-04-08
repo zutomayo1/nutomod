@@ -5,7 +5,6 @@ import com.nutonmod.block.ModFluids;
 import com.nutonmod.block.entity.ModBlockEntities;
 import com.nutonmod.command.StormArbiterDebugCommands;
 import com.nutonmod.entity.ModEntities;
-import com.nutonmod.item.EnergyChestplateItem;
 import com.nutonmod.item.ModItemGroups;
 import com.nutonmod.item.ModItems;
 import com.nutonmod.network.EnergySyncPayload;
@@ -24,6 +23,8 @@ import com.nutonmod.world.system.SingularityArenaSystem;
 import com.nutonmod.world.system.StormArbiterArenaSystem;
 import com.nutonmod.world.system.StabilizerBeaconSystem;
 import com.nutonmod.world.system.StormObeliskEventSystem;
+import com.nutonmod.world.system.VoidArchonArenaSystem;
+import com.nutonmod.world.system.VoidWingsSystem;
 import com.nutonmod.world.system.WeaponEffectSystem;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.networking.v1.PayloadTypeRegistry;
@@ -34,7 +35,6 @@ import net.fabricmc.fabric.api.registry.FlammableBlockRegistry;
 import net.fabricmc.fabric.api.registry.FuelRegistry;
 import net.fabricmc.fabric.api.registry.StrippableBlockRegistry;
 import net.minecraft.block.Blocks;
-import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.server.world.ServerWorld;
@@ -67,6 +67,7 @@ public class NutonMod implements ModInitializer {
         // Disable runtime biome injections to avoid feature order cycles.
         // ModWorldGeneration.generateModWorldGen();
         ModPortals.registerPortals();
+        VoidWingsSystem.register();
 
         StrippableBlockRegistry.register(ModBlocks.ENERGY_LOG, ModBlocks.STRIPPED_ENERGY_LOG);
         StrippableBlockRegistry.register(ModBlocks.ENERGY_WOOD, ModBlocks.STRIPPED_ENERGY_WOOD);
@@ -84,6 +85,7 @@ public class NutonMod implements ModInitializer {
         ServerTickEvents.END_SERVER_TICK.register(server -> {
             SingularityArenaSystem.tick(server);
             StormArbiterArenaSystem.tick(server);
+            VoidArchonArenaSystem.tick(server);
             var energyRealmWorld = server.getWorld(ModDimensions.ENERGY_REALM_WORLD_KEY);
             if (energyRealmWorld != null) {
                 StormObeliskEventSystem.tick(energyRealmWorld);
@@ -93,10 +95,6 @@ public class NutonMod implements ModInitializer {
             for (PlayerEntity player : server.getPlayerManager().getPlayerList()) {
                 if (player == null || player.getWorld().isClient) {
                     continue;
-                }
-                ItemStack chestplate = player.getEquippedStack(EquipmentSlot.CHEST);
-                if (chestplate.getItem() instanceof EnergyChestplateItem energyChestplateItem) {
-                    energyChestplateItem.clientTick(chestplate, player);
                 }
                 EnergyRealmPressureSystem.applyPerTick(player);
                 EnergyRealmStormSystem.applyPerTick(player);

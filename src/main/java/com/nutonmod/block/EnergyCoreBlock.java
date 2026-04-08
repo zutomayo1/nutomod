@@ -8,6 +8,7 @@ import com.nutonmod.world.system.StormArbiterSummonSystem;
 import com.nutonmod.world.system.SingularityArenaSystem;
 import com.nutonmod.world.system.SingularitySummonSystem;
 import com.nutonmod.world.system.StormObeliskEventSystem;
+import com.nutonmod.world.system.VoidArchonSummonSystem;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.mob.MobEntity;
@@ -58,6 +59,10 @@ public class EnergyCoreBlock extends Block {
         }
         if (world instanceof ServerWorld serverWorld
                 && SingularitySummonSystem.trySummon(serverWorld, pos, player)) {
+            return ActionResult.SUCCESS;
+        }
+        if (world instanceof ServerWorld serverWorld
+                && VoidArchonSummonSystem.trySummon(serverWorld, pos, player)) {
             return ActionResult.SUCCESS;
         }
         if (world instanceof ServerWorld serverWorld

@@ -2,7 +2,6 @@ package com.nutonmod.world.system;
 
 import com.nutonmod.item.ModItems;
 import com.nutonmod.world.dimension.ModDimensions;
-import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.player.PlayerEntity;
@@ -40,10 +39,6 @@ public final class EnergyRealmPressureSystem {
 
         boolean hasStabilizer = player.getMainHandStack().isOf(ModItems.CORE_STABILIZER)
                 || player.getOffHandStack().isOf(ModItems.CORE_STABILIZER);
-        boolean fullEnergyArmor = player.getEquippedStack(EquipmentSlot.HEAD).isOf(ModItems.ENERGY_HELMET)
-                && player.getEquippedStack(EquipmentSlot.CHEST).isOf(ModItems.ENERGY_CHESTPLATE)
-                && player.getEquippedStack(EquipmentSlot.LEGS).isOf(ModItems.ENERGY_LEGGINGS)
-                && player.getEquippedStack(EquipmentSlot.FEET).isOf(ModItems.ENERGY_BOOTS);
         boolean beaconProtected = StabilizerBeaconSystem.isProtected(player);
         boolean stormActive = player.getWorld() instanceof net.minecraft.server.world.ServerWorld serverWorld
                 && EnergyRealmStormSystem.isEnergyStormActive(serverWorld);
@@ -53,7 +48,7 @@ public final class EnergyRealmPressureSystem {
             pressureDelta += 1;
         }
 
-        if (hasStabilizer || fullEnergyArmor) {
+        if (hasStabilizer) {
             addPressure(player, -4);
             player.addStatusEffect(new StatusEffectInstance(StatusEffects.RESISTANCE, 120, 0, true, false, true));
             player.addStatusEffect(new StatusEffectInstance(StatusEffects.HASTE, 120, 0, true, false, true));
