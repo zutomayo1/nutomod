@@ -1,5 +1,6 @@
 package com.nutonmod.entity;
 
+import com.nutonmod.sound.ModSoundEvents;
 import com.nutonmod.world.system.SingularityArenaSystem;
 import net.minecraft.entity.AreaEffectCloudEntity;
 import net.minecraft.entity.EntityType;
@@ -349,7 +350,7 @@ public class SingularityEntity extends HostileEntity implements GeoEntity {
         this.phase = next;
         world.spawnParticles(ParticleTypes.EXPLOSION_EMITTER, this.getX(), this.getBodyY(0.5), this.getZ(), 2, 0.3, 0.3, 0.3, 0.0);
         world.spawnParticles(ParticleTypes.END_ROD, this.getX(), this.getBodyY(0.5), this.getZ(), 50, 0.9, 0.9, 0.9, 0.06);
-        this.playSound(SoundEvents.ENTITY_WITHER_BREAK_BLOCK, 1.2F, 0.7F + this.phase.ordinal() * 0.15F);
+        this.playSound(ModSoundEvents.SINGULARITY_PHASE_SHIFT, 1.2F, 0.7F + this.phase.ordinal() * 0.15F);
         Text phaseMsg = switch (this.phase) {
             case PHASE_2 -> Text.translatable("boss.nutonmod.singularity.phase_2");
             case PHASE_3 -> Text.translatable("boss.nutonmod.singularity.phase_3");
@@ -688,7 +689,7 @@ public class SingularityEntity extends HostileEntity implements GeoEntity {
             PlayerEntity target = players.get(i);
             fireBoltLine(world, target, 8.0F, StatusEffects.SLOWNESS, 40);
         }
-        this.playSound(SoundEvents.ENTITY_BLAZE_SHOOT, 0.8F, 0.75F);
+        this.playSound(ModSoundEvents.SINGULARITY_BARRAGE, 0.8F, 0.75F);
     }
 
     private void tickPull(ServerWorld world) {
@@ -767,7 +768,7 @@ public class SingularityEntity extends HostileEntity implements GeoEntity {
             this.activeWells.add(new GravityWell(clamped, 100));
         }
         if (placeCount > 0) {
-            this.playSound(SoundEvents.BLOCK_RESPAWN_ANCHOR_DEPLETE.value(), 1.0F, 0.7F);
+            this.playSound(ModSoundEvents.SINGULARITY_GRAVITY_WELL, 1.0F, 0.7F);
         }
     }
 
@@ -775,7 +776,7 @@ public class SingularityEntity extends HostileEntity implements GeoEntity {
         if (this.blackHoleCenter == null) {
             this.blackHoleCenter = Vec3d.ofCenter(this.arenaCenter).add(0.0D, 0.2D, 0.0D);
             broadcastAround(world, Text.translatable("boss.nutonmod.singularity.black_hole_warning"));
-            this.playSound(SoundEvents.BLOCK_RESPAWN_ANCHOR_DEPLETE.value(), 1.2F, 0.55F);
+            this.playSound(ModSoundEvents.SINGULARITY_BLACK_HOLE, 1.2F, 0.55F);
         }
         if (this.waveTick <= 60) {
             if (this.waveTick % 4 == 0) {
@@ -886,7 +887,7 @@ public class SingularityEntity extends HostileEntity implements GeoEntity {
         this.rampageChargesDone++;
         this.nextRampageTick = this.waveTick + 22;
         spawnGroundRing(world, this.getPos(), 2.6D, 36, ParticleTypes.FLAME);
-        this.playSound(SoundEvents.ENTITY_RAVAGER_ROAR, 1.1F, 0.9F + this.random.nextFloat() * 0.15F);
+        this.playSound(ModSoundEvents.SINGULARITY_RAMPAGE, 1.1F, 0.9F + this.random.nextFloat() * 0.15F);
     }
 
     private void prepareNovaShields(ServerWorld world) {
@@ -961,7 +962,7 @@ public class SingularityEntity extends HostileEntity implements GeoEntity {
                 dealBossDamage(player, scaledPhase3Damage(world, 20.0F));
             }
         }
-        this.playSound(SoundEvents.ENTITY_GENERIC_EXPLODE.value(), 1.2F, 0.75F);
+        this.playSound(ModSoundEvents.SINGULARITY_NOVA, 1.2F, 0.75F);
     }
 
     private void tickPersistentHazards(ServerWorld world) {
@@ -1115,6 +1116,7 @@ public class SingularityEntity extends HostileEntity implements GeoEntity {
         if (!(this.getWorld() instanceof ServerWorld serverWorld)) {
             return;
         }
+        this.playSound(ModSoundEvents.SINGULARITY_DEATH, 1.25F, 0.9F);
         this.bossBar.clearPlayers();
         if (this.decoy) {
             return;

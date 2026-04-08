@@ -3,6 +3,7 @@ package com.nutonmod.world.system;
 import com.nutonmod.entity.ModEntities;
 import com.nutonmod.entity.SingularityEntity;
 import com.nutonmod.item.ModItems;
+import com.nutonmod.sound.ModSoundEvents;
 import com.nutonmod.world.dimension.ModDimensions;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
@@ -10,7 +11,6 @@ import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundCategory;
-import net.minecraft.sound.SoundEvents;
 import net.minecraft.text.Text;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3d;
@@ -61,7 +61,7 @@ public final class SingularitySummonSystem {
 
         SingularityArenaSystem.createArena(world, boss.getUuid(), center);
         world.spawnEntity(boss);
-        world.playSound(null, center, SoundEvents.ENTITY_WITHER_SPAWN, SoundCategory.HOSTILE, 1.4F, 0.8F);
+        world.playSound(null, center, ModSoundEvents.SINGULARITY_SUMMON, SoundCategory.HOSTILE, 1.4F, 0.8F);
         world.spawnParticles(net.minecraft.particle.ParticleTypes.END_ROD,
                 center.getX() + 0.5D, center.getY() + 1.0D, center.getZ() + 0.5D,
                 140, 1.2D, 1.2D, 1.2D, 0.08D);

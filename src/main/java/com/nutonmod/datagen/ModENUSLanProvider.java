@@ -149,6 +149,21 @@ public class ModENUSLanProvider extends FabricLanguageProvider {
         translationBuilder.add("sounds.nutonmod.storm_arbiter_thunderfall", "Storm Arbiter Thunderfall");
         translationBuilder.add("sounds.nutonmod.storm_arbiter_final_judgement", "Storm Arbiter Final Judgement");
         translationBuilder.add("sounds.nutonmod.storm_arbiter_death", "Storm Arbiter Death");
+        translationBuilder.add("sounds.nutonmod.singularity_summon", "Singularity Summon");
+        translationBuilder.add("sounds.nutonmod.singularity_phase_shift", "Singularity Phase Shift");
+        translationBuilder.add("sounds.nutonmod.singularity_barrage", "Singularity Barrage");
+        translationBuilder.add("sounds.nutonmod.singularity_gravity_well", "Singularity Gravity Well");
+        translationBuilder.add("sounds.nutonmod.singularity_black_hole", "Singularity Black Hole");
+        translationBuilder.add("sounds.nutonmod.singularity_rampage", "Singularity Rampage");
+        translationBuilder.add("sounds.nutonmod.singularity_nova", "Singularity Nova");
+        translationBuilder.add("sounds.nutonmod.singularity_death", "Singularity Death");
+        translationBuilder.add("sounds.nutonmod.void_calamity_shot", "Void Calamity Shot");
+        translationBuilder.add("sounds.nutonmod.void_calamity_annihilation", "Void Calamity Annihilation");
+        translationBuilder.add("sounds.nutonmod.void_calamity_charge_full", "Void Calamity Charge Full");
+        translationBuilder.add("sounds.nutonmod.storm_scepter_cast", "Storm Scepter Cast");
+        translationBuilder.add("sounds.nutonmod.storm_scepter_eye", "Storm Scepter Eye");
+        translationBuilder.add("sounds.nutonmod.thunder_spear_throw", "Thunder Spear Throw");
+        translationBuilder.add("sounds.nutonmod.thunder_spear_return", "Thunder Spear Return");
 
         translationBuilder.add("jukebox_song.nutonmod.test", "Test");
         translationBuilder.add("item.nutonmod.energy_bucket", "Energy Bucket");

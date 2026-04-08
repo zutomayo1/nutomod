@@ -83,6 +83,96 @@
       "nutonmod:storm_arbiter_death"
     ]
   },
+  "singularity_summon": {
+    "subtitle": "sounds.nutonmod.singularity_summon",
+    "sounds": [
+      "nutonmod:singularity_summon"
+    ]
+  },
+  "singularity_phase_shift": {
+    "subtitle": "sounds.nutonmod.singularity_phase_shift",
+    "sounds": [
+      "nutonmod:singularity_phase_shift"
+    ]
+  },
+  "singularity_barrage": {
+    "subtitle": "sounds.nutonmod.singularity_barrage",
+    "sounds": [
+      "nutonmod:singularity_barrage"
+    ]
+  },
+  "singularity_gravity_well": {
+    "subtitle": "sounds.nutonmod.singularity_gravity_well",
+    "sounds": [
+      "nutonmod:singularity_gravity_well"
+    ]
+  },
+  "singularity_black_hole": {
+    "subtitle": "sounds.nutonmod.singularity_black_hole",
+    "sounds": [
+      "nutonmod:singularity_black_hole"
+    ]
+  },
+  "singularity_rampage": {
+    "subtitle": "sounds.nutonmod.singularity_rampage",
+    "sounds": [
+      "nutonmod:singularity_rampage"
+    ]
+  },
+  "singularity_nova": {
+    "subtitle": "sounds.nutonmod.singularity_nova",
+    "sounds": [
+      "nutonmod:singularity_nova"
+    ]
+  },
+  "singularity_death": {
+    "subtitle": "sounds.nutonmod.singularity_death",
+    "sounds": [
+      "nutonmod:singularity_death"
+    ]
+  },
+  "void_calamity_shot": {
+    "subtitle": "sounds.nutonmod.void_calamity_shot",
+    "sounds": [
+      "nutonmod:void_calamity_shot"
+    ]
+  },
+  "void_calamity_annihilation": {
+    "subtitle": "sounds.nutonmod.void_calamity_annihilation",
+    "sounds": [
+      "nutonmod:void_calamity_annihilation"
+    ]
+  },
+  "void_calamity_charge_full": {
+    "subtitle": "sounds.nutonmod.void_calamity_charge_full",
+    "sounds": [
+      "nutonmod:void_calamity_charge_full"
+    ]
+  },
+  "storm_scepter_cast": {
+    "subtitle": "sounds.nutonmod.storm_scepter_cast",
+    "sounds": [
+      "nutonmod:storm_scepter_cast"
+    ]
+  },
+  "storm_scepter_eye": {
+    "subtitle": "sounds.nutonmod.storm_scepter_eye",
+    "sounds": [
+      "nutonmod:storm_scepter_eye"
+    ]
+  },
+  "thunder_spear_throw": {
+    "subtitle": "sounds.nutonmod.thunder_spear_throw",
+    "sounds": [
+      "nutonmod:thunder_spear_throw"
+    ]
+  },
+  "thunder_spear_return": {
+    "subtitle": "sounds.nutonmod.thunder_spear_return",
+    "sounds": [
+      "nutonmod:thunder_spear_return"
+    ]
+  },
   "music_disc_test": {
     "subtitle": "sounds.nutonmod.music_disc_test",
     "sounds": [

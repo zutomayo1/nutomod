@@ -25,6 +25,21 @@ public class ModSoundEvents {
     public static final SoundEvent STORM_ARBITER_THUNDERFALL = register("storm_arbiter_thunderfall");
     public static final SoundEvent STORM_ARBITER_FINAL_JUDGEMENT = register("storm_arbiter_final_judgement");
     public static final SoundEvent STORM_ARBITER_DEATH = register("storm_arbiter_death");
+    public static final SoundEvent SINGULARITY_SUMMON = register("singularity_summon");
+    public static final SoundEvent SINGULARITY_PHASE_SHIFT = register("singularity_phase_shift");
+    public static final SoundEvent SINGULARITY_BARRAGE = register("singularity_barrage");
+    public static final SoundEvent SINGULARITY_GRAVITY_WELL = register("singularity_gravity_well");
+    public static final SoundEvent SINGULARITY_BLACK_HOLE = register("singularity_black_hole");
+    public static final SoundEvent SINGULARITY_RAMPAGE = register("singularity_rampage");
+    public static final SoundEvent SINGULARITY_NOVA = register("singularity_nova");
+    public static final SoundEvent SINGULARITY_DEATH = register("singularity_death");
+    public static final SoundEvent VOID_CALAMITY_SHOT = register("void_calamity_shot");
+    public static final SoundEvent VOID_CALAMITY_ANNIHILATION = register("void_calamity_annihilation");
+    public static final SoundEvent VOID_CALAMITY_CHARGE_FULL = register("void_calamity_charge_full");
+    public static final SoundEvent STORM_SCEPTER_CAST = register("storm_scepter_cast");
+    public static final SoundEvent STORM_SCEPTER_EYE = register("storm_scepter_eye");
+    public static final SoundEvent THUNDER_SPEAR_THROW = register("thunder_spear_throw");
+    public static final SoundEvent THUNDER_SPEAR_RETURN = register("thunder_spear_return");
 
     public static final BlockSoundGroup ENERGY_BLOCK_SOUND_GROUP = new BlockSoundGroup(1.0f, 1.0f,
             ENERGY_BLOCK_BREAK,

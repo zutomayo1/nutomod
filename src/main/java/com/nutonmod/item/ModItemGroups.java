@@ -78,6 +78,7 @@ public class ModItemGroups {
                 entries.add(ModItems.THUNDER_SPEAR);
                 entries.add(ModItems.VOID_CALAMITY);
                 entries.add(ModItems.STORM_SCEPTER);
+                entries.add(Items.LIGHTNING_ROD);
                 entries.add(ModItems.STORM_ARBITER_SPAWN_EGG);
                 entries.add(ModBlocks.ENERGY_ORE);
                 entries.add(ModBlocks.DEEPSLATE_ENERGY_ORE);

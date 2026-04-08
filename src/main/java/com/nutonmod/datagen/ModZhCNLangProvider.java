@@ -150,6 +150,21 @@ public class ModZhCNLangProvider extends FabricLanguageProvider {
         b.add("sounds.nutonmod.storm_arbiter_thunderfall", "\u98ce\u66b4\u4ef2\u88c1\u8005\u5343\u96f7");
         b.add("sounds.nutonmod.storm_arbiter_final_judgement", "\u98ce\u66b4\u4ef2\u88c1\u8005\u6700\u7ec8\u5ba1\u5224");
         b.add("sounds.nutonmod.storm_arbiter_death", "\u98ce\u66b4\u4ef2\u88c1\u8005\u6b7b\u4ea1");
+        b.add("sounds.nutonmod.singularity_summon", "\u6e6e\u706d\u5947\u70b9\u53ec\u5524");
+        b.add("sounds.nutonmod.singularity_phase_shift", "\u6e6e\u706d\u5947\u70b9\u9636\u6bb5\u8f6c\u6362");
+        b.add("sounds.nutonmod.singularity_barrage", "\u6e6e\u706d\u5947\u70b9\u5f39\u5e55");
+        b.add("sounds.nutonmod.singularity_gravity_well", "\u6e6e\u706d\u5947\u70b9\u5f15\u529b\u4e95");
+        b.add("sounds.nutonmod.singularity_black_hole", "\u6e6e\u706d\u5947\u70b9\u9ed1\u6d1e");
+        b.add("sounds.nutonmod.singularity_rampage", "\u6e6e\u706d\u5947\u70b9\u72c2\u66b4\u51b2\u649e");
+        b.add("sounds.nutonmod.singularity_nova", "\u6e6e\u706d\u5947\u70b9\u65b0\u661f\u7206\u53d1");
+        b.add("sounds.nutonmod.singularity_death", "\u6e6e\u706d\u5947\u70b9\u6b7b\u4ea1");
+        b.add("sounds.nutonmod.void_calamity_shot", "\u865a\u7a7a\u707e\u5384\u5c04\u51fb");
+        b.add("sounds.nutonmod.void_calamity_annihilation", "\u865a\u7a7a\u707e\u5384\u6e6e\u706d\u5c04\u51fb");
+        b.add("sounds.nutonmod.void_calamity_charge_full", "\u865a\u7a7a\u707e\u5384\u5145\u80fd\u6ee1\u5c42");
+        b.add("sounds.nutonmod.storm_scepter_cast", "\u96f7\u66b4\u6743\u6756\u65bd\u6cd5");
+        b.add("sounds.nutonmod.storm_scepter_eye", "\u96f7\u66b4\u6743\u6756\u98ce\u66b4\u4e4b\u773c");
+        b.add("sounds.nutonmod.thunder_spear_throw", "\u96f7\u795e\u4e4b\u77db\u6295\u63b7");
+        b.add("sounds.nutonmod.thunder_spear_return", "\u96f7\u795e\u4e4b\u77db\u56de\u5f52");
 
         b.add("jukebox_song.nutonmod.test", "\u6d4b\u8bd5");
         b.add("item.nutonmod.energy_bucket", "\u80fd\u91cf\u6876");
