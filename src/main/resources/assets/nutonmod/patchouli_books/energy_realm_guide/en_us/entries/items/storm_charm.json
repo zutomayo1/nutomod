@@ -2,7 +2,7 @@
   "name": "Storm Charm (Detail)",
   "category": "nutonmod:items",
   "icon": "nutonmod:storm_charm",
-  "sortnum": 4,
+  "sortnum": 6,
   "pages": [
     {
       "type": "patchouli:spotlight",

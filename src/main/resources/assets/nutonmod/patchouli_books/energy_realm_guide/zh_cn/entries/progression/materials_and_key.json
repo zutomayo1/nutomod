@@ -2,7 +2,7 @@
   "name": "材料线与圣域钥匙",
   "category": "nutonmod:progression",
   "icon": "nutonmod:sanctum_key",
-  "sortnum": 1,
+  "sortnum": 2,
   "pages": [
     {
       "type": "patchouli:text",

@@ -2,7 +2,7 @@
   "name": "进度树对照表",
   "category": "nutonmod:progression",
   "icon": "nutonmod:core_heart",
-  "sortnum": 1,
+  "sortnum": 0,
   "pages": [
     {
       "type": "patchouli:text",

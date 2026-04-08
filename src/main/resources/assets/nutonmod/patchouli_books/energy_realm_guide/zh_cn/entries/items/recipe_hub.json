@@ -22,31 +22,31 @@
     {
       "type": "patchouli:crafting",
       "recipe": "nutonmod:sanctum_key",
-      "text": "圣域钥匙：开启圣域门精英事件。"
+      "text": "圣域钥匙：开启圣域门精英事件的必要道具。"
     },
     {
       "type": "patchouli:crafting",
       "recipe": "nutonmod:annihilation_blade",
-      "text": "湮灭之刃：近战终局武器。详见 $(l:nutonmod:items/annihilation_blade)专页$()。"
+      "text": "湮灭之刃：终局近战斩杀武器。详见 $(l:nutonmod:items/annihilation_blade)专页$()。"
     },
     {
       "type": "patchouli:crafting",
       "recipe": "nutonmod:thunder_spear",
-      "text": "雷神之矛：雷铸路线核心武器。详见 $(l:nutonmod:items/thunder_spear)专页$()。"
+      "text": "雷神之矛：风暴仲裁者路线核心武器。详见 $(l:nutonmod:items/thunder_spear)专页$()。"
     },
     {
       "type": "patchouli:crafting",
       "recipe": "nutonmod:void_calamity",
-      "text": "虚空灾厄：叠层远程爆发武器。详见 $(l:nutonmod:items/void_calamity)专页$()。"
+      "text": "虚空灾厄：叠层远程爆发弓。详见 $(l:nutonmod:items/void_calamity)专页$()。"
     },
     {
       "type": "patchouli:crafting",
       "recipe": "nutonmod:storm_scepter",
-      "text": "雷暴权杖：能量驱动群体压制法杖。详见 $(l:nutonmod:items/storm_scepter)专页$()。"
+      "text": "雷暴权杖：能量驱动的范围压制法杖。详见 $(l:nutonmod:items/storm_scepter)专页$()。"
     },
     {
       "type": "patchouli:text",
-      "text": "说明：手册优先收录主线与战斗关键配方；非核心工具与装饰配方可能在后续补全。"
+      "text": "说明：本页优先收录主线推进和战斗关键配方；辅助工具配方会在后续补全。"
     }
   ]
 }

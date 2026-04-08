@@ -2,7 +2,7 @@
   "name": "祭坛循环",
   "category": "nutonmod:progression",
   "icon": "nutonmod:energy_core",
-  "sortnum": 0,
+  "sortnum": 4,
   "pages": [
     {
       "type": "patchouli:text",

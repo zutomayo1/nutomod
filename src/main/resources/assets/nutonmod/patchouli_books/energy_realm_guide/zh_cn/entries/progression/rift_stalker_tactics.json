@@ -2,7 +2,7 @@
   "name": "裂隙潜猎者对策",
   "category": "nutonmod:progression",
   "icon": "nutonmod:rift_stalker_spawn_egg",
-  "sortnum": 3,
+  "sortnum": 5,
   "pages": [
     {
       "type": "patchouli:text",
