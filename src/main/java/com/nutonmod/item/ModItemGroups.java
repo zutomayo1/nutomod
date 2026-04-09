@@ -48,6 +48,18 @@ public class ModItemGroups {
                 entries.add(ModItems.ANNIHILATION_EYE);
                 entries.add(ModItems.ANNIHILATION_CORE);
                 entries.add(ModItems.SINGULARITY_SHARD);
+                entries.add(ModItems.ENERGY_CRYSTAL);
+                entries.add(ModItems.SPRITE_DUST);
+                entries.add(ModItems.CRYSTAL_SHARD);
+                entries.add(ModItems.SNAIL_SHELL);
+                entries.add(ModItems.CRYSTAL_SNAIL_CAPSULE);
+                entries.add(ModItems.STORM_FEATHER);
+                entries.add(ModItems.STORM_SEED);
+                entries.add(ModItems.WARDEN_CORE);
+                entries.add(ModItems.VOID_SILK);
+                entries.add(ModItems.VOID_SLIME_BALL);
+                entries.add(ModItems.STORM_ESSENCE);
+                entries.add(ModItems.STORM_CORE);
                 entries.add(ModItems.ARBITER_SIGIL);
                 entries.add(ModItems.THUNDERFORGED_CORE);
                 entries.add(ModItems.LIGHTNING_ESSENCE);
@@ -75,6 +87,7 @@ public class ModItemGroups {
                 entries.add(ModItems.HOLY_CHESTPLATE);
                 entries.add(ModItems.HOLY_LEGGINGS);
                 entries.add(ModItems.HOLY_BOOTS);
+                entries.add(ModItems.CRYSTAL_HELMET);
                 entries.add(ModItems.ENERGY_HORSE_ARMOR);
                 entries.add(ModItems.HAT);
 
@@ -92,6 +105,12 @@ public class ModItemGroups {
                 entries.add(ModItems.SINGULARITY_SPAWN_EGG);
                 entries.add(ModItems.STORM_ARBITER_SPAWN_EGG);
                 entries.add(ModItems.VOID_ARCHON_SPAWN_EGG);
+                entries.add(ModItems.ENERGY_SPRITE_SPAWN_EGG);
+                entries.add(ModItems.CRYSTAL_SNAIL_SPAWN_EGG);
+                entries.add(ModItems.STORM_FINCH_SPAWN_EGG);
+                entries.add(ModItems.ENERGY_WARDEN_SPAWN_EGG);
+                entries.add(ModItems.VOID_CRAWLER_SPAWN_EGG);
+                entries.add(ModItems.STORM_ELEMENTAL_SPAWN_EGG);
 
                 // Functional blocks and machines
                 entries.add(ModBlocks.STABILIZER_BEACON);

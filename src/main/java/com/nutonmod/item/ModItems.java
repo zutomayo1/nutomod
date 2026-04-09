@@ -9,6 +9,7 @@ import com.nutonmod.item.custom.EnergyPotatoItem;
 import com.nutonmod.item.custom.HatItem;
 import com.nutonmod.item.custom.Prospector;
 import com.nutonmod.item.custom.AnnihilationBladeItem;
+import com.nutonmod.item.custom.CrystalSnailCapsuleItem;
 import com.nutonmod.item.custom.StormScepterItem;
 import com.nutonmod.item.custom.StormCharmItem;
 import com.nutonmod.item.custom.ThunderSpearItem;
@@ -16,6 +17,14 @@ import com.nutonmod.item.custom.VoidCalamityBowItem;
 import com.nutonmod.item.custom.EndJudicatorItem;
 import com.nutonmod.item.custom.EndTomeItem;
 import com.nutonmod.item.custom.VoidWingsItem;
+import com.nutonmod.item.custom.SpriteDustItem;
+import com.nutonmod.item.custom.StormSeedItem;
+import com.nutonmod.item.custom.WardenCoreItem;
+import com.nutonmod.item.custom.VoidSilkItem;
+import com.nutonmod.item.custom.VoidSlimeBallItem;
+import com.nutonmod.item.custom.StormEssenceItem;
+import com.nutonmod.item.custom.StormCoreItem;
+import com.nutonmod.item.custom.CrystalHelmetItem;
 import com.nutonmod.sound.ModJukeBoxSongs;
 import net.minecraft.component.type.FoodComponent;
 import net.minecraft.item.*;
@@ -47,6 +56,18 @@ public class ModItems {
     public static final Item ANNIHILATION_CORE = registerItem("annihilation_core", new Item(new Item.Settings().maxCount(16).rarity(Rarity.EPIC)));
     public static final Item SINGULARITY_SHARD = registerItem("singularity_shard", new Item(new Item.Settings().maxCount(64).rarity(Rarity.RARE)));
     public static final Item ENERGY_ESSENCE = registerItem("energy_essence", new Item(new Item.Settings().maxCount(64).rarity(Rarity.UNCOMMON)));
+    public static final Item ENERGY_CRYSTAL = registerItem("energy_crystal", new Item(new Item.Settings().maxCount(64).rarity(Rarity.UNCOMMON)));
+    public static final Item SPRITE_DUST = registerItem("sprite_dust", new SpriteDustItem(new Item.Settings().maxCount(64).rarity(Rarity.UNCOMMON)));
+    public static final Item CRYSTAL_SHARD = registerItem("crystal_shard", new Item(new Item.Settings().maxCount(64).rarity(Rarity.UNCOMMON)));
+    public static final Item SNAIL_SHELL = registerItem("snail_shell", new Item(new Item.Settings().maxCount(64).rarity(Rarity.UNCOMMON)));
+    public static final Item CRYSTAL_SNAIL_CAPSULE = registerItem("crystal_snail_capsule", new CrystalSnailCapsuleItem(new Item.Settings().maxCount(16).rarity(Rarity.UNCOMMON)));
+    public static final Item STORM_FEATHER = registerItem("storm_feather", new Item(new Item.Settings().maxCount(64).rarity(Rarity.UNCOMMON)));
+    public static final Item STORM_SEED = registerItem("storm_seed", new StormSeedItem(new Item.Settings().maxCount(64).rarity(Rarity.UNCOMMON)));
+    public static final Item WARDEN_CORE = registerItem("warden_core", new WardenCoreItem(new Item.Settings().maxCount(16).rarity(Rarity.RARE)));
+    public static final Item VOID_SILK = registerItem("void_silk", new VoidSilkItem(new Item.Settings().maxCount(64).rarity(Rarity.UNCOMMON)));
+    public static final Item VOID_SLIME_BALL = registerItem("void_slime_ball", new VoidSlimeBallItem(new Item.Settings().maxCount(64).rarity(Rarity.UNCOMMON)));
+    public static final Item STORM_ESSENCE = registerItem("storm_essence", new StormEssenceItem(new Item.Settings().maxCount(64).rarity(Rarity.UNCOMMON)));
+    public static final Item STORM_CORE = registerItem("storm_core", new StormCoreItem(new Item.Settings().maxCount(16).rarity(Rarity.RARE)));
     public static final Item STORM_CHARM = registerItem("storm_charm", new StormCharmItem(new Item.Settings().maxCount(16).rarity(Rarity.RARE)));
     public static final Item ANNIHILATION_BLADE = registerItem("annihilation_blade", new AnnihilationBladeItem(ModToolMaterials.ENERGY_INGOT,
             new Item.Settings().fireproof().rarity(Rarity.EPIC)
@@ -101,6 +122,8 @@ public class ModItems {
             new HolyLeggingsItem());
     public static final Item HOLY_BOOTS = registerItem("holy_boots",
             new HolyBootsItem());
+    public static final Item CRYSTAL_HELMET = registerItem("crystal_helmet",
+            new CrystalHelmetItem(ModArmorMaterials.ENERGY_INGOT, ArmorItem.Type.HELMET, new Item.Settings().rarity(Rarity.RARE)));
 
     //食物物品
     public static final Item ENERGY_APPLE = registerItem("energy_apple",
@@ -153,6 +176,54 @@ public class ModItems {
                     0x160A1C,
                     0xF2F2F2,
                     new Item.Settings().rarity(Rarity.EPIC)
+            )
+    );
+    public static final Item ENERGY_SPRITE_SPAWN_EGG = registerItem("energy_sprite_spawn_egg",
+            new SpawnEggItem(
+                    ModEntities.ENERGY_SPRITE,
+                    0x4DBAFF,
+                    0xD9F3FF,
+                    new Item.Settings().rarity(Rarity.UNCOMMON)
+            )
+    );
+    public static final Item CRYSTAL_SNAIL_SPAWN_EGG = registerItem("crystal_snail_spawn_egg",
+            new SpawnEggItem(
+                    ModEntities.CRYSTAL_SNAIL,
+                    0x5E3B87,
+                    0xCBA5FF,
+                    new Item.Settings().rarity(Rarity.UNCOMMON)
+            )
+    );
+    public static final Item STORM_FINCH_SPAWN_EGG = registerItem("storm_finch_spawn_egg",
+            new SpawnEggItem(
+                    ModEntities.STORM_FINCH,
+                    0x2D7BFF,
+                    0x8FD4FF,
+                    new Item.Settings().rarity(Rarity.UNCOMMON)
+            )
+    );
+    public static final Item ENERGY_WARDEN_SPAWN_EGG = registerItem("energy_warden_spawn_egg",
+            new SpawnEggItem(
+                    ModEntities.ENERGY_WARDEN,
+                    0x2E86FF,
+                    0xBFD9FF,
+                    new Item.Settings().rarity(Rarity.RARE)
+            )
+    );
+    public static final Item VOID_CRAWLER_SPAWN_EGG = registerItem("void_crawler_spawn_egg",
+            new SpawnEggItem(
+                    ModEntities.VOID_CRAWLER,
+                    0x10091F,
+                    0xEFEFFF,
+                    new Item.Settings().rarity(Rarity.UNCOMMON)
+            )
+    );
+    public static final Item STORM_ELEMENTAL_SPAWN_EGG = registerItem("storm_elemental_spawn_egg",
+            new SpawnEggItem(
+                    ModEntities.STORM_ELEMENTAL,
+                    0x1B5EE0,
+                    0xA9D9FF,
+                    new Item.Settings().rarity(Rarity.RARE)
             )
     );
 

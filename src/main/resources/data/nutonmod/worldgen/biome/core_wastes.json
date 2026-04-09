@@ -67,9 +67,23 @@
   "has_precipitation": false,
   "spawn_costs": {},
   "spawners": {
-    "ambient": [],
+    "ambient": [
+      {
+        "type": "nutonmod:energy_sprite",
+        "maxCount": 1,
+        "minCount": 1,
+        "weight": 2
+      }
+    ],
     "axolotls": [],
-    "creature": [],
+    "creature": [
+      {
+        "type": "nutonmod:crystal_snail",
+        "maxCount": 2,
+        "minCount": 1,
+        "weight": 5
+      }
+    ],
     "misc": [],
     "monster": [
       {
@@ -101,6 +115,18 @@
         "maxCount": 3,
         "minCount": 1,
         "weight": 35
+      },
+      {
+        "type": "nutonmod:energy_warden",
+        "maxCount": 2,
+        "minCount": 1,
+        "weight": 10
+      },
+      {
+        "type": "nutonmod:void_crawler",
+        "maxCount": 3,
+        "minCount": 1,
+        "weight": 14
       }
     ],
     "underground_water_creature": [],

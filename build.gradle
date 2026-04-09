@@ -71,7 +71,7 @@ processResources {
 sourceSets {
 	main {
 		resources {
-			srcDirs = ["src/main/generated", "src/main/resources"]
+			srcDirs = ["src/main/resources", "src/main/generated"]
 		}
 	}
 }

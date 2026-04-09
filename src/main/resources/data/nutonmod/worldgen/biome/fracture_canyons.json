@@ -72,7 +72,14 @@
   "has_precipitation": false,
   "spawn_costs": {},
   "spawners": {
-    "ambient": [],
+    "ambient": [
+      {
+        "type": "nutonmod:energy_sprite",
+        "maxCount": 1,
+        "minCount": 1,
+        "weight": 2
+      }
+    ],
     "axolotls": [],
     "creature": [],
     "misc": [],
@@ -100,6 +107,12 @@
         "maxCount": 2,
         "minCount": 1,
         "weight": 28
+      },
+      {
+        "type": "nutonmod:void_crawler",
+        "maxCount": 3,
+        "minCount": 1,
+        "weight": 15
       }
     ],
     "underground_water_creature": [],

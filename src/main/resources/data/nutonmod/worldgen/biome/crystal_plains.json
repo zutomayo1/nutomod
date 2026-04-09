@@ -75,7 +75,14 @@
   "has_precipitation": false,
   "spawn_costs": {},
   "spawners": {
-    "ambient": [],
+    "ambient": [
+      {
+        "type": "nutonmod:energy_sprite",
+        "maxCount": 2,
+        "minCount": 1,
+        "weight": 3
+      }
+    ],
     "axolotls": [],
     "creature": [
       {
@@ -83,6 +90,12 @@
         "maxCount": 3,
         "minCount": 2,
         "weight": 6
+      },
+      {
+        "type": "nutonmod:crystal_snail",
+        "maxCount": 3,
+        "minCount": 1,
+        "weight": 11
       }
     ],
     "misc": [],

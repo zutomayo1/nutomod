@@ -18,6 +18,8 @@ import com.nutonmod.world.dimension.ModPortals;
 import com.nutonmod.world.feature.ModFeatures;
 import com.nutonmod.world.system.EnergyRealmPressureSystem;
 import com.nutonmod.world.system.EnergyRealmStormSystem;
+import com.nutonmod.world.system.EnergyWardenAggroSystem;
+import com.nutonmod.world.system.MobSpawnSystem;
 import com.nutonmod.world.system.PlayerEnergySystem;
 import com.nutonmod.world.system.SingularityArenaSystem;
 import com.nutonmod.world.system.StormArbiterArenaSystem;
@@ -27,6 +29,8 @@ import com.nutonmod.world.system.VoidArchonArenaSystem;
 import com.nutonmod.world.system.VoidWingsSystem;
 import com.nutonmod.world.system.WeaponEffectSystem;
 import net.fabricmc.api.ModInitializer;
+import net.fabricmc.fabric.api.event.player.AttackEntityCallback;
+import net.fabricmc.fabric.api.event.player.PlayerBlockBreakEvents;
 import net.fabricmc.fabric.api.networking.v1.PayloadTypeRegistry;
 import net.fabricmc.fabric.api.networking.v1.ServerPlayConnectionEvents;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
@@ -68,6 +72,7 @@ public class NutonMod implements ModInitializer {
         // ModWorldGeneration.generateModWorldGen();
         ModPortals.registerPortals();
         VoidWingsSystem.register();
+        MobSpawnSystem.register();
 
         StrippableBlockRegistry.register(ModBlocks.ENERGY_LOG, ModBlocks.STRIPPED_ENERGY_LOG);
         StrippableBlockRegistry.register(ModBlocks.ENERGY_WOOD, ModBlocks.STRIPPED_ENERGY_WOOD);
@@ -130,6 +135,22 @@ public class NutonMod implements ModInitializer {
             }
             if (StormArbiterArenaSystem.tryUseLightningRod(serverWorld, hitResult.getBlockPos(), player)) {
                 return ActionResult.SUCCESS;
+            }
+            return ActionResult.PASS;
+        });
+
+        PlayerBlockBreakEvents.AFTER.register((world, player, pos, state, blockEntity) -> {
+            if (world.isClient) {
+                return;
+            }
+            if (state.isOf(ModBlocks.ENERGY_ORE) || state.isOf(ModBlocks.DEEPSLATE_ENERGY_ORE)) {
+                EnergyWardenAggroSystem.markPlayer(player);
+            }
+        });
+
+        AttackEntityCallback.EVENT.register((player, world, hand, entity, hitResult) -> {
+            if (!world.isClient) {
+                EnergyWardenAggroSystem.markPlayer(player);
             }
             return ActionResult.PASS;
         });

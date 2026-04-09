@@ -6,9 +6,12 @@ import net.fabricmc.fabric.api.object.builder.v1.entity.FabricEntityTypeBuilder;
 import net.minecraft.entity.EntityDimensions;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SpawnGroup;
+import net.minecraft.entity.SpawnLocationTypes;
+import net.minecraft.entity.SpawnRestriction;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
+import net.minecraft.world.Heightmap;
 
 public class ModEntities {
 
@@ -84,6 +87,60 @@ public class ModEntities {
                     .trackedUpdateRate(10)
                     .build()
     );
+    public static final EntityType<EnergySpriteEntity> ENERGY_SPRITE = Registry.register(
+            Registries.ENTITY_TYPE,
+            Identifier.of(NutonMod.MOD_ID, "energy_sprite"),
+            FabricEntityTypeBuilder.create(SpawnGroup.AMBIENT, EnergySpriteEntity::new)
+                    .dimensions(EntityDimensions.changing(0.45F, 0.6F))
+                    .trackRangeBlocks(10)
+                    .trackedUpdateRate(2)
+                    .build()
+    );
+    public static final EntityType<CrystalSnailEntity> CRYSTAL_SNAIL = Registry.register(
+            Registries.ENTITY_TYPE,
+            Identifier.of(NutonMod.MOD_ID, "crystal_snail"),
+            FabricEntityTypeBuilder.create(SpawnGroup.CREATURE, CrystalSnailEntity::new)
+                    .dimensions(EntityDimensions.changing(0.8F, 0.65F))
+                    .trackRangeBlocks(10)
+                    .trackedUpdateRate(2)
+                    .build()
+    );
+    public static final EntityType<StormFinchEntity> STORM_FINCH = Registry.register(
+            Registries.ENTITY_TYPE,
+            Identifier.of(NutonMod.MOD_ID, "storm_finch"),
+            FabricEntityTypeBuilder.create(SpawnGroup.CREATURE, StormFinchEntity::new)
+                    .dimensions(EntityDimensions.changing(0.55F, 0.75F))
+                    .trackRangeBlocks(10)
+                    .trackedUpdateRate(2)
+                    .build()
+    );
+    public static final EntityType<EnergyWardenEntity> ENERGY_WARDEN = Registry.register(
+            Registries.ENTITY_TYPE,
+            Identifier.of(NutonMod.MOD_ID, "energy_warden"),
+            FabricEntityTypeBuilder.create(SpawnGroup.MONSTER, EnergyWardenEntity::new)
+                    .dimensions(EntityDimensions.changing(1.4F, 2.7F))
+                    .trackRangeBlocks(12)
+                    .trackedUpdateRate(2)
+                    .build()
+    );
+    public static final EntityType<VoidCrawlerEntity> VOID_CRAWLER = Registry.register(
+            Registries.ENTITY_TYPE,
+            Identifier.of(NutonMod.MOD_ID, "void_crawler"),
+            FabricEntityTypeBuilder.create(SpawnGroup.MONSTER, VoidCrawlerEntity::new)
+                    .dimensions(EntityDimensions.changing(1.0F, 0.7F))
+                    .trackRangeBlocks(10)
+                    .trackedUpdateRate(2)
+                    .build()
+    );
+    public static final EntityType<StormElementalEntity> STORM_ELEMENTAL = Registry.register(
+            Registries.ENTITY_TYPE,
+            Identifier.of(NutonMod.MOD_ID, "storm_elemental"),
+            FabricEntityTypeBuilder.create(SpawnGroup.MONSTER, StormElementalEntity::new)
+                    .dimensions(EntityDimensions.changing(0.9F, 1.8F))
+                    .trackRangeBlocks(12)
+                    .trackedUpdateRate(2)
+                    .build()
+    );
 
     public static void register() {
         NutonMod.LOGGER.info("Registering entities for {}", NutonMod.MOD_ID);
@@ -93,5 +150,13 @@ public class ModEntities {
         FabricDefaultAttributeRegistry.register(SINGULARITY, SingularityEntity.createMobAttributes());
         FabricDefaultAttributeRegistry.register(STORM_ARBITER, StormArbiterEntity.createMobAttributes());
         FabricDefaultAttributeRegistry.register(VOID_ARCHON, VoidArchonEntity.createMobAttributes());
+        FabricDefaultAttributeRegistry.register(ENERGY_SPRITE, EnergySpriteEntity.createMobAttributes());
+        FabricDefaultAttributeRegistry.register(CRYSTAL_SNAIL, CrystalSnailEntity.createMobAttributes());
+        FabricDefaultAttributeRegistry.register(STORM_FINCH, StormFinchEntity.createMobAttributes());
+        FabricDefaultAttributeRegistry.register(ENERGY_WARDEN, EnergyWardenEntity.createMobAttributes());
+        FabricDefaultAttributeRegistry.register(VOID_CRAWLER, VoidCrawlerEntity.createMobAttributes());
+        FabricDefaultAttributeRegistry.register(STORM_ELEMENTAL, StormElementalEntity.createMobAttributes());
+
+        SpawnRestriction.register(STORM_ELEMENTAL, SpawnLocationTypes.ON_GROUND, Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, StormElementalEntity::canSpawn);
     }
 }

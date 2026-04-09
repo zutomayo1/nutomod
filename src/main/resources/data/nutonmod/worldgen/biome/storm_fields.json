@@ -76,9 +76,23 @@
   "has_precipitation": true,
   "spawn_costs": {},
   "spawners": {
-    "ambient": [],
+    "ambient": [
+      {
+        "type": "nutonmod:energy_sprite",
+        "maxCount": 1,
+        "minCount": 1,
+        "weight": 2
+      }
+    ],
     "axolotls": [],
-    "creature": [],
+    "creature": [
+      {
+        "type": "nutonmod:storm_finch",
+        "maxCount": 3,
+        "minCount": 1,
+        "weight": 10
+      }
+    ],
     "misc": [],
     "monster": [
       {
@@ -104,6 +118,12 @@
         "maxCount": 4,
         "minCount": 1,
         "weight": 80
+      },
+      {
+        "type": "nutonmod:storm_elemental",
+        "maxCount": 2,
+        "minCount": 1,
+        "weight": 8
       }
     ],
     "underground_water_creature": [],
