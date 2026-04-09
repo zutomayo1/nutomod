@@ -30,6 +30,7 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
         addDrop(ModBlocks.ENERGY_BLOCK);
         addDrop(ModBlocks.ENERGY_CORE);
         addDrop(ModBlocks.STABILIZER_BEACON);
+        addDrop(ModBlocks.DIMENSIONAL_TUNER);
         addDrop(ModBlocks.ENERGY_ORE, oreDrops(ModBlocks.ENERGY_ORE, ModItems.RAW_ENERGY));
         addDrop(ModBlocks.DEEPSLATE_ENERGY_ORE, oreDrops(ModBlocks.DEEPSLATE_ENERGY_ORE, ModItems.RAW_ENERGY));
         addDrop(ModBlocks.ENERGY_FLOWER);

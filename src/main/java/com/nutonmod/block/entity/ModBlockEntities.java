@@ -12,6 +12,8 @@ public class ModBlockEntities {
     public static final BlockEntityType<BoxBlockEntity> BOX = create("box", BlockEntityType.Builder.create(BoxBlockEntity::new, ModBlocks.BOX));
     public static final BlockEntityType<PolishingMachineBlockEntity> POLISHING_MACHINE_BLOCK_ENTITY = create("polishing_machine_block_entity" ,
             BlockEntityType.Builder.create(PolishingMachineBlockEntity::new, ModBlocks.POLISHING_MACHINE));
+    public static final BlockEntityType<DimensionalTunerBlockEntity> DIMENSIONAL_TUNER_BLOCK_ENTITY = create("dimensional_tuner_block_entity",
+            BlockEntityType.Builder.create(DimensionalTunerBlockEntity::new, ModBlocks.DIMENSIONAL_TUNER));
     private static <T extends BlockEntity> BlockEntityType<T> create(String id, BlockEntityType.Builder<T> builder) {
         return Registry.register(Registries.BLOCK_ENTITY_TYPE, Identifier.of(NutonMod.MOD_ID, id), builder.build(null));
     }

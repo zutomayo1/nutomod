@@ -19,6 +19,7 @@ import com.nutonmod.world.feature.ModFeatures;
 import com.nutonmod.world.system.EnergyRealmPressureSystem;
 import com.nutonmod.world.system.EnergyRealmStormSystem;
 import com.nutonmod.world.system.EnergyWardenAggroSystem;
+import com.nutonmod.world.system.DimensionalTuneSystem;
 import com.nutonmod.world.system.MobSpawnSystem;
 import com.nutonmod.world.system.PlayerEnergySystem;
 import com.nutonmod.world.system.SingularityArenaSystem;
@@ -72,6 +73,7 @@ public class NutonMod implements ModInitializer {
         // ModWorldGeneration.generateModWorldGen();
         ModPortals.registerPortals();
         VoidWingsSystem.register();
+        DimensionalTuneSystem.register();
         MobSpawnSystem.register();
 
         StrippableBlockRegistry.register(ModBlocks.ENERGY_LOG, ModBlocks.STRIPPED_ENERGY_LOG);

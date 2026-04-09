@@ -5,6 +5,7 @@ import com.nutonmod.block.ModFluids;
 import com.nutonmod.block.entity.ModBlockEntities;
 import com.nutonmod.client.EnergyHudClientSystem;
 import com.nutonmod.client.StormWarningClientSystem;
+import com.nutonmod.client.DimensionalTuneTooltipClient;
 import com.nutonmod.client.render.BoxBlockEntityRenderer;
 import com.nutonmod.client.render.EndJudicatorSlashRenderer;
 import com.nutonmod.client.render.HatArmorRenderer;
@@ -25,6 +26,7 @@ import com.nutonmod.entity.VoidArchonRenderer;
 import com.nutonmod.item.ModItems;
 import com.nutonmod.network.EnergySyncPayload;
 import com.nutonmod.screen.ModScreenHandlers;
+import com.nutonmod.screen.DimensionalTunerScreen;
 import com.nutonmod.screen.PolishingMachineScreen;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
@@ -86,6 +88,8 @@ public class NutonModClient implements ClientModInitializer {
                 ));
         BlockRenderLayerMap.INSTANCE.putFluids(RenderLayer.getTranslucent(), ModFluids.STILL_ENERGY, ModFluids.FLOWING_ENERGY);
         HandledScreens.register(ModScreenHandlers.POLISHING_MACHINE_SCREEN_HANDLER, PolishingMachineScreen::new);
+        HandledScreens.register(ModScreenHandlers.DIMENSIONAL_TUNER_SCREEN_HANDLER, DimensionalTunerScreen::new);
+        DimensionalTuneTooltipClient.register();
         ClientTickEvents.END_CLIENT_TICK.register(client -> {
             StormWarningClientSystem.tick(client);
             EnergyHudClientSystem.tick(client);

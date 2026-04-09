@@ -96,6 +96,10 @@ public class ModBlocks {
             new PolishingMachine(AbstractBlock.Settings.copy(Blocks.STONE)
                     .luminance(state -> state.get(PolishingMachine.WORKING) ? 10 : 0))
     );
+    public static final Block DIMENSIONAL_TUNER = register("dimensional_tuner",
+            new DimensionalTunerBlock(AbstractBlock.Settings.copy(Blocks.STONE)
+                    .luminance(state -> state.get(DimensionalTunerBlock.WORKING) ? 12 : 2))
+    );
 
     public static final Block ENERGY_LOG = register("energy_log",
             new PillarBlock(AbstractBlock.Settings.copy(Blocks.OAK_LOG)));

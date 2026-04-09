@@ -61,6 +61,13 @@ public class ModModelsProvider extends FabricModelProvider {
                                         .put(VariantSettings.MODEL, Identifier.of("nutonmod", "block/polishing_machine"))))
         );
         blockStateModelGenerator.blockStateCollector.accept(
+                VariantsBlockStateSupplier.create(ModBlocks.DIMENSIONAL_TUNER)
+                        .coordinate(BlockStateVariantMap.create(com.nutonmod.block.custom.DimensionalTunerBlock.WORKING)
+                                .register(working -> BlockStateVariant.create()
+                                        .put(VariantSettings.MODEL, Identifier.of("nutonmod", "block/dimensional_tuner"))))
+        );
+        blockStateModelGenerator.registerParentedItemModel(ModBlocks.DIMENSIONAL_TUNER, Identifier.of("nutonmod", "block/dimensional_tuner"));
+        blockStateModelGenerator.blockStateCollector.accept(
                 VariantsBlockStateSupplier.create(ModBlocks.STABILIZER_BEACON)
                         .coordinate(BlockStateVariantMap.create(StabilizerBeaconBlock.ACTIVE)
                                 .register(false, BlockStateVariant.create()

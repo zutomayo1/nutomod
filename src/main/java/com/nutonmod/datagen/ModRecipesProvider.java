@@ -63,6 +63,18 @@ public class ModRecipesProvider extends FabricRecipeProvider {
                 .criterion(hasItem(ModItems.CORE_HEART), conditionsFromItem(ModItems.CORE_HEART))
                 .offerTo(recipeExporter, Identifier.of(NutonMod.MOD_ID, "annihilation_eye"));
 
+        ShapedRecipeJsonBuilder.create(RecipeCategory.REDSTONE, ModBlocks.DIMENSIONAL_TUNER)
+                .pattern("CAC")
+                .pattern("BEB")
+                .pattern("CDC")
+                .input('A', ModItems.CRYSTAL_MATRIX)
+                .input('B', ModItems.STORM_ALLOY)
+                .input('C', ModItems.ENERGY_INGOT)
+                .input('D', ModItems.VOID_FRAGMENT)
+                .input('E', ModBlocks.POLISHING_MACHINE)
+                .criterion(hasItem(ModItems.CRYSTAL_MATRIX), conditionsFromItem(ModItems.CRYSTAL_MATRIX))
+                .offerTo(recipeExporter, Identifier.of(NutonMod.MOD_ID, "dimensional_tuner"));
+
         // Energy wood line
         ShapelessRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, ModBlocks.ENERGY_PLANKS, 4)
                 .input(ModBlocks.ENERGY_LOG)

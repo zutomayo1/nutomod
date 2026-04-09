@@ -1,4 +1,4 @@
-// 1.21	2026-04-08T21:39:23.1709373	NutonMod/Recipes
+// 1.21	2026-04-09T20:03:16.5019518	NutonMod/Recipes
 7808073788e894ab858a82dab79ccbf02803af51 data\nutonmod\advancement\recipes\redstone\energy_button.json
 6ef4aa774ba14069c51e676c022eb0d13d085ed3 data\nutonmod\advancement\recipes\building_blocks\anthracite_block.json
 90edb7d6cf5cde8f9fd2f6ff9d2dda7f5896bbd6 data\nutonmod\advancement\recipes\redstone\energy_door.json
@@ -7,6 +7,7 @@
 52d413416b65878a5b8f25546a9f1dc3219ab6ae data\nutonmod\recipe\charcoal_from_smelting_stripped_energy_wood.json
 4da0d8fabd9f77917c9bf95e6e1dac258104c9b2 data\nutonmod\advancement\recipes\misc\energy_ingot_from_blasting_energy_ore.json
 4d6c37abbb06fb25a6752652d74e029929652cdf data\nutonmod\recipe\energy_block.json
+76e9b6787e56c98e7f5f064b600430d873b5a024 data\nutonmod\recipe\dimensional_tuner.json
 c04992f6026e8933223bf91ee1fd24ab7baa922f data\nutonmod\advancement\recipes\misc\charcoal_from_smelting_energy_log.json
 b99694fd5e5dd04ab6a3f8e184d96f1f720e98c6 data\nutonmod\advancement\recipes\building_blocks\energy_planks_from_energy_wood.json
 0b6e96efbb3128b029ab4e3e94debd38d2d112d7 data\nutonmod\recipe\anthracite_block.json
@@ -21,6 +22,7 @@ f4ab9da4e397e343c0faae63de936e4a489132e2 data\nutonmod\advancement\recipes\redst
 5ee539577d592c35dfd96899f05f36812567b343 data\nutonmod\recipe\energy_stairs.json
 e8899ee15b719881497d184e37fdafd3a2454ea1 data\nutonmod\recipe\energy_fence_gate.json
 baa54f7b4503a0e63b4c6bf306d3544b0040071e data\nutonmod\recipe\energy_ingot_from_smelting_energy_ore.json
+95887face8eb8670526b85b13b0453d501d20cd9 data\nutonmod\advancement\recipes\redstone\dimensional_tuner.json
 3f5103297aa78325e021a7c49f0cd086276eeac8 data\nutonmod\recipe\charcoal_from_smelting_stripped_energy_log.json
 32769015cb9533a5a73e6b8aab7e64eb303b0bcb data\nutonmod\recipe\energy_ingot_from_smelting_raw_energy.json
 692df4601c1ce82dd6edf20c66be8a93526c4199 data\nutonmod\recipe\energy_planks.json

@@ -242,6 +242,25 @@ public class ModENUSLanProvider extends FabricLanguageProvider {
         translationBuilder.add("gui.nutonmod.polishing_machine.status.ready", "Ready");
         translationBuilder.add("gui.nutonmod.polishing_machine.status.missing_material", "Missing Material");
         translationBuilder.add("gui.nutonmod.polishing_machine.status.output_full", "Output Full");
+        translationBuilder.add("block.nutonmod.dimensional_tuner", "Dimensional Tuner");
+        translationBuilder.add("item.nutonmod.dimensional_tuner", "Dimensional Tuner");
+        translationBuilder.add("container.dimensional_tuner", "Dimensional Tuner");
+        translationBuilder.add("gui.nutonmod.dimensional_tuner.button.start", "Tune");
+        translationBuilder.add("gui.nutonmod.dimensional_tuner.button.assault", "Assault");
+        translationBuilder.add("gui.nutonmod.dimensional_tuner.button.guard", "Guard");
+        translationBuilder.add("gui.nutonmod.dimensional_tuner.button.mobility", "Move");
+        translationBuilder.add("gui.nutonmod.dimensional_tuner.current_mode", "Mode: %s");
+        translationBuilder.add("gui.nutonmod.dimensional_tuner.current_status", "Status: %s");
+        translationBuilder.add("gui.nutonmod.dimensional_tuner.mode.assault", "Assault");
+        translationBuilder.add("gui.nutonmod.dimensional_tuner.mode.guard", "Guard");
+        translationBuilder.add("gui.nutonmod.dimensional_tuner.mode.mobility", "Mobility");
+        translationBuilder.add("gui.nutonmod.dimensional_tuner.status.idle", "Idle");
+        translationBuilder.add("gui.nutonmod.dimensional_tuner.status.ready", "Ready");
+        translationBuilder.add("gui.nutonmod.dimensional_tuner.status.running", "Tuning...");
+        translationBuilder.add("gui.nutonmod.dimensional_tuner.status.output_full", "Output Full");
+        translationBuilder.add("gui.nutonmod.dimensional_tuner.status.invalid_tool", "Insert 1 damageable tool");
+        translationBuilder.add("gui.nutonmod.dimensional_tuner.status.invalid_catalyst", "Wrong catalyst for mode");
+        translationBuilder.add("gui.nutonmod.dimensional_tuner.status.missing_energy", "Missing energy material");
 
         translationBuilder.add("block.nutonmod.energy_log", "Energy Log");
         translationBuilder.add("block.nutonmod.energy_wood", "Energy Wood");

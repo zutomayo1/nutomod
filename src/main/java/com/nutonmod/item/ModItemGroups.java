@@ -116,6 +116,7 @@ public class ModItemGroups {
                 entries.add(ModBlocks.STABILIZER_BEACON);
                 entries.add(ModBlocks.SANCTUM_GATE);
                 entries.add(ModBlocks.POLISHING_MACHINE);
+                entries.add(ModBlocks.DIMENSIONAL_TUNER);
                 entries.add(Items.LIGHTNING_ROD);
                 entries.add(ModBlocks.BOX.asItem());
 

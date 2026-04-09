@@ -242,6 +242,25 @@ public class ModZhCNLangProvider extends FabricLanguageProvider {
         b.add("gui.nutonmod.polishing_machine.status.ready", "\u53ef\u52a0\u5de5");
         b.add("gui.nutonmod.polishing_machine.status.missing_material", "\u7f3a\u5c11\u6750\u6599");
         b.add("gui.nutonmod.polishing_machine.status.output_full", "\u8f93\u51fa\u5df2\u6ee1");
+        b.add("block.nutonmod.dimensional_tuner", "\u7ef4\u5ea6\u8c03\u8c10\u5668");
+        b.add("item.nutonmod.dimensional_tuner", "\u7ef4\u5ea6\u8c03\u8c10\u5668");
+        b.add("container.dimensional_tuner", "\u7ef4\u5ea6\u8c03\u8c10\u5668");
+        b.add("gui.nutonmod.dimensional_tuner.button.start", "\u8c03\u8c10");
+        b.add("gui.nutonmod.dimensional_tuner.button.assault", "\u5f3a\u653b");
+        b.add("gui.nutonmod.dimensional_tuner.button.guard", "\u5b88\u62a4");
+        b.add("gui.nutonmod.dimensional_tuner.button.mobility", "\u673a\u52a8");
+        b.add("gui.nutonmod.dimensional_tuner.current_mode", "\u5f53\u524d\u6a21\u5f0f\uff1a%s");
+        b.add("gui.nutonmod.dimensional_tuner.current_status", "\u72b6\u6001\uff1a%s");
+        b.add("gui.nutonmod.dimensional_tuner.mode.assault", "\u5f3a\u653b");
+        b.add("gui.nutonmod.dimensional_tuner.mode.guard", "\u5b88\u62a4");
+        b.add("gui.nutonmod.dimensional_tuner.mode.mobility", "\u673a\u52a8");
+        b.add("gui.nutonmod.dimensional_tuner.status.idle", "\u5f85\u673a");
+        b.add("gui.nutonmod.dimensional_tuner.status.ready", "\u53ef\u542f\u52a8");
+        b.add("gui.nutonmod.dimensional_tuner.status.running", "\u8c03\u8c10\u4e2d...");
+        b.add("gui.nutonmod.dimensional_tuner.status.output_full", "\u8f93\u51fa\u680f\u5df2\u6ee1");
+        b.add("gui.nutonmod.dimensional_tuner.status.invalid_tool", "\u8bf7\u653e\u51651\u4ef6\u53ef\u8017\u635f\u5de5\u5177");
+        b.add("gui.nutonmod.dimensional_tuner.status.invalid_catalyst", "\u5f53\u524d\u6a21\u5f0f\u50ac\u5316\u5242\u4e0d\u5339\u914d");
+        b.add("gui.nutonmod.dimensional_tuner.status.missing_energy", "\u7f3a\u5c11\u80fd\u91cf\u6750\u6599");
 
         b.add("block.nutonmod.energy_log", "\u80fd\u91cf\u539f\u6728");
         b.add("block.nutonmod.energy_wood", "\u80fd\u91cf\u6728");
