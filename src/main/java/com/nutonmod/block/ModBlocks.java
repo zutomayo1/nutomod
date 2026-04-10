@@ -100,6 +100,9 @@ public class ModBlocks {
             new DimensionalTunerBlock(AbstractBlock.Settings.copy(Blocks.STONE)
                     .luminance(state -> state.get(DimensionalTunerBlock.WORKING) ? 12 : 2))
     );
+    public static final Block ENERGY_DISINTEGRATOR = register("energy_disintegrator",
+            new EnergyDisintegratorBlock(AbstractBlock.Settings.copy(Blocks.STONE).strength(4.0f, 8.0f).luminance(state -> 4))
+    );
 
     public static final Block ENERGY_LOG = register("energy_log",
             new PillarBlock(AbstractBlock.Settings.copy(Blocks.OAK_LOG)));

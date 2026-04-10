@@ -21,6 +21,10 @@
     },
     {
       "type": "patchouli:text",
+      "text": "Advanced workstations:$(li)$(item)Dimensional Tuner$(): tunes tools into temporary dimensional gear$(li)$(item)Energy Disintegrator$(): reverse-processes gear, boss drops, and tuned items back into progression resources"
+    },
+    {
+      "type": "patchouli:text",
       "text": "其他功能方块：$(li)$(item)箱子$()：27 格容器，支持比较器输出$(li)$(item)抛光机$()：双槽加工机框架$(li)still_energy $(item)$()：能量流体方块（与水/岩浆会结晶）"
     }
   ]

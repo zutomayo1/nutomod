@@ -2,6 +2,7 @@ package com.nutonmod.screen;
 
 import com.nutonmod.NutonMod;
 import com.nutonmod.data.DimensionalTunerData;
+import com.nutonmod.data.EnergyDisintegratorData;
 import com.nutonmod.data.PolishingMachineData;
 import net.fabricmc.fabric.api.screenhandler.v1.ExtendedScreenHandlerType;
 import net.minecraft.registry.Registries;
@@ -17,6 +18,9 @@ public class ModScreenHandlers {
     public static final ScreenHandlerType<DimensionalTunerScreenHandler> DIMENSIONAL_TUNER_SCREEN_HANDLER =
             Registry.register(Registries.SCREEN_HANDLER, Identifier.of(NutonMod.MOD_ID, "dimensional_tuner"),
                     new ExtendedScreenHandlerType<>(DimensionalTunerScreenHandler::new, DimensionalTunerData.CODEC));
+    public static final ScreenHandlerType<EnergyDisintegratorScreenHandler> ENERGY_DISINTEGRATOR_SCREEN_HANDLER =
+            Registry.register(Registries.SCREEN_HANDLER, Identifier.of(NutonMod.MOD_ID, "energy_disintegrator"),
+                    new ExtendedScreenHandlerType<>(EnergyDisintegratorScreenHandler::new, EnergyDisintegratorData.CODEC));
     public static void registerScreenHandlers() {
 
     }

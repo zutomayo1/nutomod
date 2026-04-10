@@ -49,6 +49,7 @@ public class ModItemGroups {
                 entries.add(ModItems.ANNIHILATION_CORE);
                 entries.add(ModItems.SINGULARITY_SHARD);
                 entries.add(ModItems.ENERGY_CRYSTAL);
+                entries.add(ModItems.TUNING_ESSENCE);
                 entries.add(ModItems.SPRITE_DUST);
                 entries.add(ModItems.CRYSTAL_SHARD);
                 entries.add(ModItems.SNAIL_SHELL);
@@ -117,6 +118,7 @@ public class ModItemGroups {
                 entries.add(ModBlocks.SANCTUM_GATE);
                 entries.add(ModBlocks.POLISHING_MACHINE);
                 entries.add(ModBlocks.DIMENSIONAL_TUNER);
+                entries.add(ModBlocks.ENERGY_DISINTEGRATOR);
                 entries.add(Items.LIGHTNING_ROD);
                 entries.add(ModBlocks.BOX.asItem());
 

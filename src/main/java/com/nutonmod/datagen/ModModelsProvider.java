@@ -66,7 +66,9 @@ public class ModModelsProvider extends FabricModelProvider {
                                 .register(working -> BlockStateVariant.create()
                                         .put(VariantSettings.MODEL, Identifier.of("nutonmod", "block/dimensional_tuner"))))
         );
+        blockStateModelGenerator.registerSimpleState(ModBlocks.ENERGY_DISINTEGRATOR);
         blockStateModelGenerator.registerParentedItemModel(ModBlocks.DIMENSIONAL_TUNER, Identifier.of("nutonmod", "block/dimensional_tuner"));
+        blockStateModelGenerator.registerParentedItemModel(ModBlocks.ENERGY_DISINTEGRATOR, Identifier.of("nutonmod", "block/energy_disintegrator"));
         blockStateModelGenerator.blockStateCollector.accept(
                 VariantsBlockStateSupplier.create(ModBlocks.STABILIZER_BEACON)
                         .coordinate(BlockStateVariantMap.create(StabilizerBeaconBlock.ACTIVE)
@@ -108,6 +110,7 @@ public class ModModelsProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.ANNIHILATION_CORE, Models.GENERATED);
         itemModelGenerator.register(ModItems.SINGULARITY_SHARD, Models.GENERATED);
         itemModelGenerator.register(ModItems.ENERGY_ESSENCE, Models.GENERATED);
+        itemModelGenerator.register(ModItems.TUNING_ESSENCE, Models.GENERATED);
         itemModelGenerator.register(ModItems.ENERGY_SWORD, Models.GENERATED);
         itemModelGenerator.register(ModItems.ENERGY_PICKAXE, Models.GENERATED);
         itemModelGenerator.register(ModItems.ENERGY_SHOVEL, Models.GENERATED);

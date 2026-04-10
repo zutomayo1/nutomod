@@ -64,11 +64,13 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
         getOrCreateTagBuilder(BlockTags.PICKAXE_MINEABLE)
                 .add(ModBlocks.STABILIZER_BEACON)
                 .add(ModBlocks.DIMENSIONAL_TUNER)
+                .add(ModBlocks.ENERGY_DISINTEGRATOR)
                 .add(ModBlocks.ENERGY_ORE)
                 .add(ModBlocks.DEEPSLATE_ENERGY_ORE);
         getOrCreateTagBuilder(BlockTags.NEEDS_STONE_TOOL)
                 .add(ModBlocks.STABILIZER_BEACON)
                 .add(ModBlocks.DIMENSIONAL_TUNER)
+                .add(ModBlocks.ENERGY_DISINTEGRATOR)
                 .add(ModBlocks.ENERGY_ORE)
                 .add(ModBlocks.DEEPSLATE_ENERGY_ORE);
 

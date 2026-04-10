@@ -57,6 +57,7 @@ public class ModItems {
     public static final Item SINGULARITY_SHARD = registerItem("singularity_shard", new Item(new Item.Settings().maxCount(64).rarity(Rarity.RARE)));
     public static final Item ENERGY_ESSENCE = registerItem("energy_essence", new Item(new Item.Settings().maxCount(64).rarity(Rarity.UNCOMMON)));
     public static final Item ENERGY_CRYSTAL = registerItem("energy_crystal", new Item(new Item.Settings().maxCount(64).rarity(Rarity.UNCOMMON)));
+    public static final Item TUNING_ESSENCE = registerItem("tuning_essence", new Item(new Item.Settings().maxCount(64).rarity(Rarity.RARE)));
     public static final Item SPRITE_DUST = registerItem("sprite_dust", new SpriteDustItem(new Item.Settings().maxCount(64).rarity(Rarity.UNCOMMON)));
     public static final Item CRYSTAL_SHARD = registerItem("crystal_shard", new Item(new Item.Settings().maxCount(64).rarity(Rarity.UNCOMMON)));
     public static final Item SNAIL_SHELL = registerItem("snail_shell", new Item(new Item.Settings().maxCount(64).rarity(Rarity.UNCOMMON)));

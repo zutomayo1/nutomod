@@ -27,6 +27,7 @@ import com.nutonmod.item.ModItems;
 import com.nutonmod.network.EnergySyncPayload;
 import com.nutonmod.screen.ModScreenHandlers;
 import com.nutonmod.screen.DimensionalTunerScreen;
+import com.nutonmod.screen.EnergyDisintegratorScreen;
 import com.nutonmod.screen.PolishingMachineScreen;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
@@ -89,6 +90,7 @@ public class NutonModClient implements ClientModInitializer {
         BlockRenderLayerMap.INSTANCE.putFluids(RenderLayer.getTranslucent(), ModFluids.STILL_ENERGY, ModFluids.FLOWING_ENERGY);
         HandledScreens.register(ModScreenHandlers.POLISHING_MACHINE_SCREEN_HANDLER, PolishingMachineScreen::new);
         HandledScreens.register(ModScreenHandlers.DIMENSIONAL_TUNER_SCREEN_HANDLER, DimensionalTunerScreen::new);
+        HandledScreens.register(ModScreenHandlers.ENERGY_DISINTEGRATOR_SCREEN_HANDLER, EnergyDisintegratorScreen::new);
         DimensionalTuneTooltipClient.register();
         ClientTickEvents.END_CLIENT_TICK.register(client -> {
             StormWarningClientSystem.tick(client);
