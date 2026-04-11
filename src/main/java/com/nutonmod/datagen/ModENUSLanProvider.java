@@ -229,6 +229,10 @@ public class ModENUSLanProvider extends FabricLanguageProvider {
         translationBuilder.add("sounds.nutonmod.void_calamity_charge_full", "Void Calamity Charge Full");
         translationBuilder.add("sounds.nutonmod.storm_scepter_cast", "Storm Scepter Cast");
         translationBuilder.add("sounds.nutonmod.storm_scepter_eye", "Storm Scepter Eye");
+        translationBuilder.add("sounds.nutonmod.storm_scepter_charge", "Storm Scepter Charge");
+        translationBuilder.add("sounds.nutonmod.storm_scepter_arc", "Storm Scepter Arc");
+        translationBuilder.add("sounds.nutonmod.storm_scepter_chain_impact", "Storm Scepter Chain Impact");
+        translationBuilder.add("sounds.nutonmod.storm_scepter_eye_pulse", "Storm Scepter Eye Pulse");
         translationBuilder.add("sounds.nutonmod.thunder_spear_throw", "Thunder Spear Throw");
         translationBuilder.add("sounds.nutonmod.thunder_spear_return", "Thunder Spear Return");
         translationBuilder.add("sounds.nutonmod.thunder_ripper_swing", "Thunder Ripper Swing");

@@ -37,6 +37,10 @@ public class ModSoundEvents {
     public static final SoundEvent VOID_CALAMITY_CHARGE_FULL = register("void_calamity_charge_full");
     public static final SoundEvent STORM_SCEPTER_CAST = register("storm_scepter_cast");
     public static final SoundEvent STORM_SCEPTER_EYE = register("storm_scepter_eye");
+    public static final SoundEvent STORM_SCEPTER_CHARGE = register("storm_scepter_charge");
+    public static final SoundEvent STORM_SCEPTER_ARC = register("storm_scepter_arc");
+    public static final SoundEvent STORM_SCEPTER_CHAIN_IMPACT = register("storm_scepter_chain_impact");
+    public static final SoundEvent STORM_SCEPTER_EYE_PULSE = register("storm_scepter_eye_pulse");
     public static final SoundEvent THUNDER_SPEAR_THROW = register("thunder_spear_throw");
     public static final SoundEvent THUNDER_SPEAR_RETURN = register("thunder_spear_return");
     public static final SoundEvent THUNDER_RIPPER_SWING = register("thunder_ripper_swing");

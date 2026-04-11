@@ -28,6 +28,16 @@ public final class ModFeatures {
             Identifier.of(NutonMod.MOD_ID, "sanctum_gate"),
             new SanctumGateFeature(DefaultFeatureConfig.CODEC)
     );
+    public static final Feature<DefaultFeatureConfig> STORM_MONUMENT_RUIN = Registry.register(
+            Registries.FEATURE,
+            Identifier.of(NutonMod.MOD_ID, "storm_monument_ruin"),
+            new StormMonumentRuinFeature(DefaultFeatureConfig.CODEC)
+    );
+    public static final Feature<DefaultFeatureConfig> RUINED_SHRINE = Registry.register(
+            Registries.FEATURE,
+            Identifier.of(NutonMod.MOD_ID, "ruined_shrine"),
+            new RuinedShrineFeature(DefaultFeatureConfig.CODEC)
+    );
 
     private ModFeatures() {
     }

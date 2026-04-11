@@ -32,7 +32,9 @@
     [
       "nutonmod:energy_altar_placed",
       "nutonmod:relay_tower_placed",
-      "nutonmod:sanctum_gate_placed"
+      "nutonmod:sanctum_gate_placed",
+      "nutonmod:storm_monument_ruin_placed",
+      "nutonmod:ruined_shrine_placed"
     ],
     [],
     [

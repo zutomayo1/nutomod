@@ -230,6 +230,10 @@ public class ModZhCNLangProvider extends FabricLanguageProvider {
         b.add("sounds.nutonmod.void_calamity_charge_full", "\u865a\u7a7a\u707e\u5384\u5145\u80fd\u6ee1\u5c42");
         b.add("sounds.nutonmod.storm_scepter_cast", "\u96f7\u66b4\u6743\u6756\u65bd\u6cd5");
         b.add("sounds.nutonmod.storm_scepter_eye", "\u96f7\u66b4\u6743\u6756\u98ce\u66b4\u4e4b\u773c");
+        b.add("sounds.nutonmod.storm_scepter_charge", "\u96f7\u66b4\u6743\u6756\u5145\u80fd");
+        b.add("sounds.nutonmod.storm_scepter_arc", "\u96f7\u66b4\u6743\u6756\u7535\u5f27");
+        b.add("sounds.nutonmod.storm_scepter_chain_impact", "\u96f7\u66b4\u6743\u6756\u8fde\u9501\u547d\u4e2d");
+        b.add("sounds.nutonmod.storm_scepter_eye_pulse", "\u96f7\u66b4\u6743\u6756\u98ce\u773c\u8109\u51b2");
         b.add("sounds.nutonmod.thunder_spear_throw", "\u96f7\u795e\u4e4b\u77db\u6295\u63b7");
         b.add("sounds.nutonmod.thunder_spear_return", "\u96f7\u795e\u4e4b\u77db\u56de\u5f52");
         b.add("sounds.nutonmod.thunder_ripper_swing", "\u96f7\u5149\u6495\u88c2\u8005\u6325\u51fb");

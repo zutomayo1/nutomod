@@ -161,6 +161,34 @@
       "nutonmod:storm_scepter_eye"
     ]
   },
+  "storm_scepter_charge": {
+    "subtitle": "sounds.nutonmod.storm_scepter_charge",
+    "sounds": [
+      "nutonmod:storm_arbiter_storm_cloud",
+      "nutonmod:storm_scepter_cast"
+    ]
+  },
+  "storm_scepter_arc": {
+    "subtitle": "sounds.nutonmod.storm_scepter_arc",
+    "sounds": [
+      "nutonmod:storm_arbiter_lightning_chain",
+      "nutonmod:storm_scepter_cast"
+    ]
+  },
+  "storm_scepter_chain_impact": {
+    "subtitle": "sounds.nutonmod.storm_scepter_chain_impact",
+    "sounds": [
+      "nutonmod:storm_arbiter_spear_throw",
+      "nutonmod:storm_arbiter_lightning_chain"
+    ]
+  },
+  "storm_scepter_eye_pulse": {
+    "subtitle": "sounds.nutonmod.storm_scepter_eye_pulse",
+    "sounds": [
+      "nutonmod:storm_arbiter_storm_cloud",
+      "nutonmod:storm_arbiter_thunderfall"
+    ]
+  },
   "thunder_spear_throw": {
     "subtitle": "sounds.nutonmod.thunder_spear_throw",
     "sounds": [
