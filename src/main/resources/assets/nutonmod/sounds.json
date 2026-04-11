@@ -173,6 +173,41 @@
       "nutonmod:thunder_spear_return"
     ]
   },
+  "thunder_ripper_swing": {
+    "subtitle": "sounds.nutonmod.thunder_ripper_swing",
+    "sounds": [
+      "nutonmod:thunder_spear_throw",
+      "nutonmod:storm_arbiter_spear_throw"
+    ]
+  },
+  "thunder_ripper_chain": {
+    "subtitle": "sounds.nutonmod.thunder_ripper_chain",
+    "sounds": [
+      "nutonmod:storm_arbiter_lightning_chain",
+      "nutonmod:thunder_spear_return"
+    ]
+  },
+  "thunder_ripper_dash": {
+    "subtitle": "sounds.nutonmod.thunder_ripper_dash",
+    "sounds": [
+      "nutonmod:storm_arbiter_thunderfall",
+      "nutonmod:storm_arbiter_storm_cloud"
+    ]
+  },
+  "thunder_ripper_trail": {
+    "subtitle": "sounds.nutonmod.thunder_ripper_trail",
+    "sounds": [
+      "nutonmod:storm_arbiter_storm_cloud",
+      "nutonmod:storm_arbiter_lightning_chain"
+    ]
+  },
+  "thunder_ripper_impact": {
+    "subtitle": "sounds.nutonmod.thunder_ripper_impact",
+    "sounds": [
+      "nutonmod:storm_arbiter_spear_throw",
+      "nutonmod:storm_arbiter_lightning_chain"
+    ]
+  },
   "music_disc_test": {
     "subtitle": "sounds.nutonmod.music_disc_test",
     "sounds": [

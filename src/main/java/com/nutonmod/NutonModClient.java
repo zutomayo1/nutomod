@@ -6,6 +6,7 @@ import com.nutonmod.block.entity.ModBlockEntities;
 import com.nutonmod.client.EnergyHudClientSystem;
 import com.nutonmod.client.StormWarningClientSystem;
 import com.nutonmod.client.DimensionalTuneTooltipClient;
+import com.nutonmod.client.ThunderRipperClientEffectSystem;
 import com.nutonmod.client.render.BoxBlockEntityRenderer;
 import com.nutonmod.client.render.EndJudicatorSlashRenderer;
 import com.nutonmod.client.render.HatArmorRenderer;
@@ -40,6 +41,7 @@ import net.fabricmc.fabric.api.client.rendering.v1.HudRenderCallback;
 import net.fabricmc.fabric.api.client.networking.v1.ClientPlayNetworking;
 import net.fabricmc.fabric.api.client.rendering.v1.LivingEntityFeatureRendererRegistrationCallback;
 import net.minecraft.client.gui.screen.ingame.HandledScreens;
+import net.minecraft.client.item.ModelPredicateProviderRegistry;
 import net.minecraft.client.render.block.entity.BlockEntityRendererFactories;
 import net.minecraft.client.render.entity.ArrowEntityRenderer;
 import net.minecraft.client.render.entity.PlayerEntityRenderer;
@@ -88,6 +90,20 @@ public class NutonModClient implements ClientModInitializer {
                         0xFFFFFFFF
                 ));
         BlockRenderLayerMap.INSTANCE.putFluids(RenderLayer.getTranslucent(), ModFluids.STILL_ENERGY, ModFluids.FLOWING_ENERGY);
+
+        // Bow pull animation predicates for Void Calamity.
+        ModelPredicateProviderRegistry.register(ModItems.VOID_CALAMITY, Identifier.of("pull"), (stack, world, entity, seed) -> {
+            if (entity == null) {
+                return 0.0F;
+            }
+            if (entity.getActiveItem() != stack) {
+                return 0.0F;
+            }
+            return (float) (stack.getMaxUseTime(entity) - entity.getItemUseTimeLeft()) / 20.0F;
+        });
+        ModelPredicateProviderRegistry.register(ModItems.VOID_CALAMITY, Identifier.of("pulling"), (stack, world, entity, seed) ->
+                entity != null && entity.isUsingItem() && entity.getActiveItem() == stack ? 1.0F : 0.0F);
+
         HandledScreens.register(ModScreenHandlers.POLISHING_MACHINE_SCREEN_HANDLER, PolishingMachineScreen::new);
         HandledScreens.register(ModScreenHandlers.DIMENSIONAL_TUNER_SCREEN_HANDLER, DimensionalTunerScreen::new);
         HandledScreens.register(ModScreenHandlers.ENERGY_DISINTEGRATOR_SCREEN_HANDLER, EnergyDisintegratorScreen::new);
@@ -95,6 +111,7 @@ public class NutonModClient implements ClientModInitializer {
         ClientTickEvents.END_CLIENT_TICK.register(client -> {
             StormWarningClientSystem.tick(client);
             EnergyHudClientSystem.tick(client);
+            ThunderRipperClientEffectSystem.tick(client);
         });
         HudRenderCallback.EVENT.register((drawContext, renderTickCounter) -> {
             StormWarningClientSystem.render(drawContext, 0.0F);

@@ -73,6 +73,7 @@ public class ModItemGroups {
                 // Weapons and combat tools
                 entries.add(ModItems.ANNIHILATION_BLADE);
                 entries.add(ModItems.THUNDER_SPEAR);
+                entries.add(ModItems.THUNDER_RIPPER);
                 entries.add(ModItems.VOID_CALAMITY);
                 entries.add(ModItems.STORM_SCEPTER);
                 entries.add(ModItems.END_JUDICATOR);

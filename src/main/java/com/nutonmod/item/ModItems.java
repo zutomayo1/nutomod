@@ -13,6 +13,7 @@ import com.nutonmod.item.custom.CrystalSnailCapsuleItem;
 import com.nutonmod.item.custom.StormScepterItem;
 import com.nutonmod.item.custom.StormCharmItem;
 import com.nutonmod.item.custom.ThunderSpearItem;
+import com.nutonmod.item.custom.ThunderRipperItem;
 import com.nutonmod.item.custom.VoidCalamityBowItem;
 import com.nutonmod.item.custom.EndJudicatorItem;
 import com.nutonmod.item.custom.EndTomeItem;
@@ -80,6 +81,9 @@ public class ModItems {
     public static final Item THUNDER_SPEAR = registerItem("thunder_spear", new ThunderSpearItem(ModToolMaterials.ENERGY_INGOT,
             new Item.Settings().maxCount(1).maxDamage(600).fireproof().rarity(Rarity.EPIC)
                     .attributeModifiers(SwordItem.createAttributeModifiers(ModToolMaterials.ENERGY_INGOT, 10, -2.2F))));
+    public static final Item THUNDER_RIPPER = registerItem("thunder_ripper", new ThunderRipperItem(ModToolMaterials.ENERGY_INGOT,
+            new Item.Settings().maxCount(1).maxDamage(1200).fireproof().rarity(Rarity.EPIC)
+                    .attributeModifiers(SwordItem.createAttributeModifiers(ModToolMaterials.ENERGY_INGOT, 13, -2.2F))));
     public static final Item VOID_CALAMITY = registerItem("void_calamity", new VoidCalamityBowItem(
             new Item.Settings().maxCount(1).maxDamage(1200).fireproof().rarity(Rarity.EPIC)));
     public static final Item STORM_SCEPTER = registerItem("storm_scepter", new StormScepterItem(

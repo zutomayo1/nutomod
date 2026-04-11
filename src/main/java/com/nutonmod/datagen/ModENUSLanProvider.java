@@ -85,6 +85,7 @@ public class ModENUSLanProvider extends FabricLanguageProvider {
         translationBuilder.add("item.nutonmod.lightning_essence", "Lightning Essence");
         translationBuilder.add("item.nutonmod.arbiter_trophy", "Arbiter Trophy");
         translationBuilder.add("item.nutonmod.thunder_spear", "Thunder Spear");
+        translationBuilder.add("item.nutonmod.thunder_ripper", "Thunder Ripper");
         translationBuilder.add("item.nutonmod.void_calamity", "Void Calamity");
         translationBuilder.add("item.nutonmod.storm_scepter", "Storm Scepter");
         translationBuilder.add("item.nutonmod.archon_mark", "Archon Mark");
@@ -99,6 +100,10 @@ public class ModENUSLanProvider extends FabricLanguageProvider {
         translationBuilder.add("tooltip.nutonmod.thunder_spear.line1", "Right click: throw and return lightning spear");
         translationBuilder.add("tooltip.nutonmod.thunder_spear.line2", "Impact: splash shock + short chain lightning");
         translationBuilder.add("tooltip.nutonmod.thunder_spear.line3", "On kill: grants short Strength");
+        translationBuilder.add("tooltip.nutonmod.thunder_ripper.line1", "Sweep: hit up to 3 enemies in 180 degrees");
+        translationBuilder.add("tooltip.nutonmod.thunder_ripper.line2", "30% chain lightning (50% in storms), 6 hearts chain hit");
+        translationBuilder.add("tooltip.nutonmod.thunder_ripper.line3", "Right click: 1.2s lightning spin, pull + multi-hit, ends with chain burst");
+        translationBuilder.add("tooltip.nutonmod.thunder_ripper.line4", "Storm: +30% attack speed, +chain chance, half skill cooldown");
         translationBuilder.add("tooltip.nutonmod.void_calamity.line1", "Bow with Void Charge and Annihilation Shot");
         translationBuilder.add("tooltip.nutonmod.void_calamity.line2", "Sneak + right click: consume 3 charges to create mini black hole");
         translationBuilder.add("tooltip.nutonmod.void_calamity.line3", "Kills grant charges (up to 5), arrows can truly pierce");
@@ -125,6 +130,8 @@ public class ModENUSLanProvider extends FabricLanguageProvider {
         translationBuilder.add("weapon.nutonmod.void_calamity.charge", "Void Charge: %s/%s");
         translationBuilder.add("weapon.nutonmod.storm_scepter.need_energy_cast", "Not enough energy: need 15");
         translationBuilder.add("weapon.nutonmod.storm_scepter.need_energy_eye", "Not enough energy: need 40");
+        translationBuilder.add("weapon.nutonmod.thunder_ripper.need_energy_hit", "Not enough energy: need 3");
+        translationBuilder.add("weapon.nutonmod.thunder_ripper.need_energy_skill", "Not enough energy: need 20");
         translationBuilder.add("block.nutonmod.energy_ore", "Energy Ore");
         translationBuilder.add("block.nutonmod.deepslate_energy_ore", "Deepslate Energy Ore");
 
@@ -224,6 +231,11 @@ public class ModENUSLanProvider extends FabricLanguageProvider {
         translationBuilder.add("sounds.nutonmod.storm_scepter_eye", "Storm Scepter Eye");
         translationBuilder.add("sounds.nutonmod.thunder_spear_throw", "Thunder Spear Throw");
         translationBuilder.add("sounds.nutonmod.thunder_spear_return", "Thunder Spear Return");
+        translationBuilder.add("sounds.nutonmod.thunder_ripper_swing", "Thunder Ripper Swing");
+        translationBuilder.add("sounds.nutonmod.thunder_ripper_chain", "Thunder Ripper Chain");
+        translationBuilder.add("sounds.nutonmod.thunder_ripper_dash", "Thunder Ripper Dash");
+        translationBuilder.add("sounds.nutonmod.thunder_ripper_trail", "Thunder Ripper Trail");
+        translationBuilder.add("sounds.nutonmod.thunder_ripper_impact", "Thunder Ripper Impact");
 
         translationBuilder.add("jukebox_song.nutonmod.test", "Test");
         translationBuilder.add("item.nutonmod.energy_bucket", "Energy Bucket");

@@ -86,6 +86,7 @@ public class ModZhCNLangProvider extends FabricLanguageProvider {
         b.add("item.nutonmod.lightning_essence", "\u96f7\u7535\u7cbe\u534e");
         b.add("item.nutonmod.arbiter_trophy", "\u4ef2\u88c1\u8005\u5956\u676f");
         b.add("item.nutonmod.thunder_spear", "\u96f7\u795e\u4e4b\u77db");
+        b.add("item.nutonmod.thunder_ripper", "\u96f7\u5149\u6495\u88c2\u8005");
         b.add("item.nutonmod.void_calamity", "\u865a\u7a7a\u707e\u5384");
         b.add("item.nutonmod.storm_scepter", "\u96f7\u66b4\u6743\u6756");
         b.add("item.nutonmod.archon_mark", "\u6267\u653f\u5b98\u5370\u8bb0");
@@ -100,6 +101,10 @@ public class ModZhCNLangProvider extends FabricLanguageProvider {
         b.add("tooltip.nutonmod.thunder_spear.line1", "\u53f3\u952e\uff1a\u6295\u63b7\u5e76\u56de\u5f52\u7684\u96f7\u77db");
         b.add("tooltip.nutonmod.thunder_spear.line2", "\u547d\u4e2d\uff1a\u8303\u56f4\u7535\u7206 + \u77ed\u94fe\u95ea\u7535");
         b.add("tooltip.nutonmod.thunder_spear.line3", "\u51fb\u6740\u76ee\u6807\u540e\u83b7\u5f975\u79d2\u529b\u91cf");
+        b.add("tooltip.nutonmod.thunder_ripper.line1", "\u6a2a\u626b\uff1a180\u5ea6\u8303\u56f4\u6700\u591a\u547d\u4e2d3\u4e2a\u76ee\u6807");
+        b.add("tooltip.nutonmod.thunder_ripper.line2", "\u8fde\u9501\u95ea\u7535\uff1a30%\u6982\u7387\uff08\u98ce\u66b4\u671f50%\uff09\uff0c\u989d\u59166\u5fc3\u4f24\u5bb3");
+        b.add("tooltip.nutonmod.thunder_ripper.line3", "\u53f3\u952e\uff1a1.2\u79d2\u95ea\u7535\u56de\u65cb\u65a9\uff0c\u5438\u9644\u5e76\u591a\u6bb5\u4f24\u5bb3\uff0c\u7ed3\u675f\u8fde\u9501\u7206\u53d1");
+        b.add("tooltip.nutonmod.thunder_ripper.line4", "\u98ce\u66b4\u5171\u9e23\uff1a\u653b\u901f+30%\uff0c\u8fde\u9501\u6982\u7387\u63d0\u5347\uff0c\u6280\u80fd\u51b7\u5374\u51cf\u534a");
         b.add("tooltip.nutonmod.void_calamity.line1", "\u5f13\u7cfb\uff1a\u865a\u7a7a\u5145\u80fd + \u6e6e\u706d\u5c04\u51fb");
         b.add("tooltip.nutonmod.void_calamity.line2", "\u6f5c\u884c+\u53f3\u952e\uff1a\u6d88\u80173\u5c42\u5145\u80fd\u751f\u6210\u5fae\u578b\u9ed1\u6d1e");
         b.add("tooltip.nutonmod.void_calamity.line3", "\u51fb\u6740\u589e\u5145\u80fd\uff08\u4e0a\u96505\u5c42\uff09\uff0c\u7bad\u77e2\u5177\u6709\u771f\u5b9e\u7a7f\u900f");
@@ -126,6 +131,8 @@ public class ModZhCNLangProvider extends FabricLanguageProvider {
         b.add("weapon.nutonmod.void_calamity.charge", "\u865a\u7a7a\u5145\u80fd\uff1a%s/%s");
         b.add("weapon.nutonmod.storm_scepter.need_energy_cast", "\u80fd\u91cf\u4e0d\u8db3\uff1a\u9700\u898115\u70b9");
         b.add("weapon.nutonmod.storm_scepter.need_energy_eye", "\u80fd\u91cf\u4e0d\u8db3\uff1a\u9700\u898140\u70b9");
+        b.add("weapon.nutonmod.thunder_ripper.need_energy_hit", "\u80fd\u91cf\u4e0d\u8db3\uff1a\u9700\u89813\u70b9");
+        b.add("weapon.nutonmod.thunder_ripper.need_energy_skill", "\u80fd\u91cf\u4e0d\u8db3\uff1a\u9700\u898120\u70b9");
         b.add("block.nutonmod.energy_ore", "\u80fd\u91cf\u77ff\u77f3");
         b.add("block.nutonmod.deepslate_energy_ore", "\u6df1\u677f\u5ca9\u80fd\u91cf\u77ff\u77f3");
 
@@ -225,6 +232,11 @@ public class ModZhCNLangProvider extends FabricLanguageProvider {
         b.add("sounds.nutonmod.storm_scepter_eye", "\u96f7\u66b4\u6743\u6756\u98ce\u66b4\u4e4b\u773c");
         b.add("sounds.nutonmod.thunder_spear_throw", "\u96f7\u795e\u4e4b\u77db\u6295\u63b7");
         b.add("sounds.nutonmod.thunder_spear_return", "\u96f7\u795e\u4e4b\u77db\u56de\u5f52");
+        b.add("sounds.nutonmod.thunder_ripper_swing", "\u96f7\u5149\u6495\u88c2\u8005\u6325\u51fb");
+        b.add("sounds.nutonmod.thunder_ripper_chain", "\u96f7\u5149\u6495\u88c2\u8005\u8fde\u9501\u95ea\u7535");
+        b.add("sounds.nutonmod.thunder_ripper_dash", "\u96f7\u5149\u6495\u88c2\u8005\u51b2\u523a");
+        b.add("sounds.nutonmod.thunder_ripper_trail", "\u96f7\u5149\u6495\u88c2\u8005\u96f7\u8f68");
+        b.add("sounds.nutonmod.thunder_ripper_impact", "\u96f7\u5149\u6495\u88c2\u8005\u51fb\u4e2d");
 
         b.add("jukebox_song.nutonmod.test", "\u6d4b\u8bd5");
         b.add("item.nutonmod.energy_bucket", "\u80fd\u91cf\u6876");

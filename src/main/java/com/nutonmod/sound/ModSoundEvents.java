@@ -8,7 +8,6 @@ import net.minecraft.registry.entry.RegistryEntry;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.util.Identifier;
-import org.apache.http.impl.cookie.PublicSuffixDomainFilter;
 
 public class ModSoundEvents {
     public static final SoundEvent PROSPECTOR_FOUND_ORE = register("prospector_found_ore");
@@ -40,6 +39,11 @@ public class ModSoundEvents {
     public static final SoundEvent STORM_SCEPTER_EYE = register("storm_scepter_eye");
     public static final SoundEvent THUNDER_SPEAR_THROW = register("thunder_spear_throw");
     public static final SoundEvent THUNDER_SPEAR_RETURN = register("thunder_spear_return");
+    public static final SoundEvent THUNDER_RIPPER_SWING = register("thunder_ripper_swing");
+    public static final SoundEvent THUNDER_RIPPER_CHAIN = register("thunder_ripper_chain");
+    public static final SoundEvent THUNDER_RIPPER_DASH = register("thunder_ripper_dash");
+    public static final SoundEvent THUNDER_RIPPER_TRAIL = register("thunder_ripper_trail");
+    public static final SoundEvent THUNDER_RIPPER_IMPACT = register("thunder_ripper_impact");
 
     public static final BlockSoundGroup ENERGY_BLOCK_SOUND_GROUP = new BlockSoundGroup(1.0f, 1.0f,
             ENERGY_BLOCK_BREAK,
