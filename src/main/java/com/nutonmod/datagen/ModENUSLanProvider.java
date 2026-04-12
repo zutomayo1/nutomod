@@ -319,6 +319,5 @@ public class ModENUSLanProvider extends FabricLanguageProvider {
         translationBuilder.add("block.nutonmod.potted_energy_flower", "Potted Energy Flower");
         translationBuilder.add("block.nutonmod.still_energy", "Still Energy");
         translationBuilder.add("biome.nutonmod.energy_biome", "Energy Biome");
-
     }
 }

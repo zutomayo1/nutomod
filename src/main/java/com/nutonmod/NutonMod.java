@@ -4,6 +4,7 @@ import com.nutonmod.block.ModBlocks;
 import com.nutonmod.block.ModFluids;
 import com.nutonmod.block.entity.ModBlockEntities;
 import com.nutonmod.command.StormArbiterDebugCommands;
+import com.nutonmod.config.ModConfig;
 import com.nutonmod.entity.ModEntities;
 import com.nutonmod.item.ModItemGroups;
 import com.nutonmod.item.ModItems;
@@ -40,8 +41,10 @@ import net.fabricmc.fabric.api.registry.FlammableBlockRegistry;
 import net.fabricmc.fabric.api.registry.FuelRegistry;
 import net.fabricmc.fabric.api.registry.StrippableBlockRegistry;
 import net.minecraft.block.Blocks;
+import net.minecraft.advancement.AdvancementEntry;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Identifier;
@@ -52,9 +55,38 @@ import vazkii.patchouli.api.PatchouliAPI;
 public class NutonMod implements ModInitializer {
     public static final String MOD_ID = "nutonmod";
     public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
+    private static final String GUIDE_TAG = "nutonmod_received_patchouli_guide";
+    private static final String[] MANUAL_UNLOCK_ADVANCEMENTS = {
+            "energy_realm/root",
+            "energy_realm/enter_realm",
+            "energy_realm/first_shard",
+            "energy_realm/alloy_smith",
+            "energy_realm/beacon_online",
+            "energy_realm/stabilized",
+            "energy_realm/core_heart",
+            "energy_realm/sanctum_access",
+            "energy_realm/sanctum_hunter",
+            "energy_realm/storm_surge",
+            "energy_realm/summon_singularity",
+            "energy_realm/defeat_singularity",
+            "energy_realm/defeat_storm_arbiter",
+            "energy_realm/defeat_void_archon",
+            "energy_realm/dimension_master",
+            "energy_realm/storm_master",
+            "energy_realm/singularity_master",
+            "energy_realm/no_damage",
+            "energy_realm/no_lightning_hit",
+            "energy_realm/perfect_archon",
+            "energy_realm/archon_slayer",
+            "energy_realm/encounter_storm_arbiter",
+            "energy_realm/encounter_void_archon",
+            "energy_realm/warden_down"
+    };
+    private static ModConfig CONFIG;
 
     @Override
     public void onInitialize() {
+        CONFIG = ModConfig.load();
         ModBlocks.registerModBlocks();
         ModItems.registerModItems();
         ModBlockEntities.registerModBlockEntities();
@@ -111,20 +143,21 @@ public class NutonMod implements ModInitializer {
         });
 
         ServerPlayConnectionEvents.JOIN.register((handler, sender, server) -> {
-            PlayerEntity player = handler.getPlayer();
+            ServerPlayerEntity player = handler.getPlayer();
             if (player == null || player.getWorld().isClient) {
                 return;
             }
 
-            final String tag = "nutonmod_received_patchouli_guide";
-            if (player.getCommandTags().contains(tag)) {
-                return;
+            if (!player.getCommandTags().contains(GUIDE_TAG)) {
+                ItemStack guide = PatchouliAPI.get().getBookStack(Identifier.of(MOD_ID, "energy_realm_guide"));
+                if (!guide.isEmpty()) {
+                    player.giveItemStack(guide);
+                    player.addCommandTag(GUIDE_TAG);
+                }
             }
 
-            ItemStack guide = PatchouliAPI.get().getBookStack(Identifier.of(MOD_ID, "energy_realm_guide"));
-            if (!guide.isEmpty()) {
-                player.giveItemStack(guide);
-                player.addCommandTag(tag);
+            if (CONFIG != null && CONFIG.manual_unlock_all) {
+                unlockManualAdvancements(player);
             }
         });
 
@@ -160,5 +193,25 @@ public class NutonMod implements ModInitializer {
         StormArbiterDebugCommands.register();
 
         LOGGER.info("Hello Fabric world!");
+    }
+
+    private static void unlockManualAdvancements(ServerPlayerEntity player) {
+        for (String path : MANUAL_UNLOCK_ADVANCEMENTS) {
+            AdvancementEntry advancement = player.getServer().getAdvancementLoader().get(Identifier.of(MOD_ID, path));
+            if (advancement == null) {
+                continue;
+            }
+            var progress = player.getAdvancementTracker().getProgress(advancement);
+            for (String criterion : progress.getUnobtainedCriteria()) {
+                player.getAdvancementTracker().grantCriterion(advancement, criterion);
+            }
+        }
+    }
+
+    public static ModConfig getConfig() {
+        if (CONFIG == null) {
+            CONFIG = ModConfig.load();
+        }
+        return CONFIG;
     }
 }

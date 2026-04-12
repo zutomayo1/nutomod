@@ -29,6 +29,9 @@
 		],
 		"rei_client": [
 			"com.nutonmod.compat.ModREIClientPlugins"
+		],
+		"modmenu": [
+			"com.nutonmod.client.config.NutonModModMenuIntegration"
 		]
 	},
 	"mixins": [
@@ -43,7 +46,8 @@
 		"customportalapi": "*"
 	},
 	"suggests": {
-		"patchouli": "*"
+		"patchouli": "*",
+		"modmenu": "*"
 	},
 	"custom": {
 		"fabric-api": {

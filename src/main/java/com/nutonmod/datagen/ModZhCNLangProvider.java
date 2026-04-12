@@ -325,7 +325,5 @@ public class ModZhCNLangProvider extends FabricLanguageProvider {
         b.add("biome.nutonmod.fracture_canyons", "\u88c2\u9699\u5ce1\u8c37");
         b.add("biome.nutonmod.core_wastes", "\u6838\u5fc3\u8352\u539f");
         b.add("itemGroup.nutonmod.nuton_group", "Nuton \u6a21\u7ec4");
-
-
     }
 }

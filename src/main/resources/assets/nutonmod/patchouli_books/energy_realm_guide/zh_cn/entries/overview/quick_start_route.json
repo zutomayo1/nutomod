@@ -1,25 +1,20 @@
 ﻿{
-  "name": "快速上手路线",
-  "category": "nutonmod:overview",
-  "icon": "nutonmod:core_stabilizer",
-  "read_by_default": true,
-  "sortnum": 0,
-  "pages": [
-    {
-      "type": "patchouli:text",
-      "text": "推荐主线：$(li)建门进维度$(li)刷祭坛拿 $(item)祭坛碎片$()$(li)做 $(item)核心稳定器$() 抗压$(li)刷风暴做 $(item)风暴合金$() / $(item)晶体矩阵$()$(li)做 $(item)圣域钥匙$() 与 $(item)稳定信标$()$(li)合成 $(item)核心之心$() 与 $(item)湮灭之眼$()$(li)在核心荒原召唤并击败奇点首领"
-    },
-    {
-      "type": "patchouli:crafting",
-      "recipe": "nutonmod:energy_realm_guide_book",
-      "text": "手册可再制作，方便多人服分发。"
-    },
-    {
-      "type": "patchouli:text",
-      "text": "入维度前清单：$(li)远程与近战各一套$(li)大量方块/食物$(li)至少 1 个 $(item)核心稳定器$()$(li)准备撤离路径（回传门或坐标）$(li)风暴期尽量配合 $(item)稳定信标$() 作战"
-    }
-  ]
+    "name":  "快速起步路线",
+    "category":  "nutonmod:getting_started_guide",
+    "icon":  "nutonmod:energy_ingot",
+    "sortnum":  2,
+    "pages":  [
+                  {
+                      "type":  "patchouli:spotlight",
+                      "item":  "nutonmod:energy_ingot",
+                      "title":  "核心要点",
+                      "text":  "本章用于建立全局认知与阅读顺序。"
+                  },
+                  {
+                      "type":  "patchouli:text",
+                      "title":  "实战说明",
+                      "text":  "先入门再推进，先稳定再提效。"
+                  }
+              ],
+    "advancement":  "nutonmod:energy_realm/root"
 }
-
-
-

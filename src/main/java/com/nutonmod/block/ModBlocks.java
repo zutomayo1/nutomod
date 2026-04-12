@@ -3,6 +3,7 @@ package com.nutonmod.block;
 import com.nutonmod.NutonMod;
 import com.nutonmod.block.custom.*;
 import com.nutonmod.sound.ModSoundEvents;
+import com.nutonmod.util.RegistryNamingRules;
 import com.nutonmod.world.tree.ModTreeGenerator;
 import net.minecraft.block.*;
 import net.minecraft.block.piston.PistonBehavior;
@@ -75,21 +76,15 @@ public class ModBlocks {
             new TrapdoorBlock(BlockSetType.OAK,AbstractBlock.Settings.copy(ENERGY_BLOCK)));
 
     //能量土豆作物
-    public static final Block ENERGY_POTATO_CROP = Registry.register(
-            Registries.BLOCK,
-            Identifier.of(NutonMod.MOD_ID, "energy_potato_crop"),
-            new EnergyPotatoCropBlock(AbstractBlock.Settings.copy(Blocks.POTATOES))
-    );
+    public static final Block ENERGY_POTATO_CROP = registerBlockOnly("energy_potato_crop",
+            new EnergyPotatoCropBlock(AbstractBlock.Settings.copy(Blocks.POTATOES)));
 
     //玉米作物
-    public static final Block CORN_CROP = Registry.register(Registries.BLOCK,Identifier.of(NutonMod.MOD_ID, "corn_crop"),
+    public static final Block CORN_CROP = registerBlockOnly("corn_crop",
             new CornCropBlock(AbstractBlock.Settings.copy(Blocks.WHEAT)));
 
-    public static final Block STILL_ENERGY = Registry.register(
-            Registries.BLOCK,
-            Identifier.of(NutonMod.MOD_ID, "still_energy"),
-            new EnergyFluidBlock(ModFluids.STILL_ENERGY, AbstractBlock.Settings.copy(Blocks.WATER).luminance(state -> 10))
-    );
+    public static final Block STILL_ENERGY = registerBlockOnly("still_energy",
+            new EnergyFluidBlock(ModFluids.STILL_ENERGY, AbstractBlock.Settings.copy(Blocks.WATER).luminance(state -> 10)));
 
     public static final Block BOX = register("box", new BoxBlock(AbstractBlock.Settings.copy(Blocks.CHEST)));
     public static final Block POLISHING_MACHINE = register("polishing_machine",
@@ -126,6 +121,7 @@ public class ModBlocks {
             new FlowerPotBlock(ENERGY_FLOWER, AbstractBlock.Settings.copy(Blocks.POTTED_DANDELION).nonOpaque()));
 
     private static <T extends Block> T register(String id, T block) {
+        RegistryNamingRules.validateBlockId(id);
         Identifier identifier = Identifier.of(NutonMod.MOD_ID, id);
         Registry.register(Registries.BLOCK, identifier, block);
         Registry.register(Registries.ITEM, identifier, new BlockItem(block, new Item.Settings()));
@@ -133,6 +129,7 @@ public class ModBlocks {
     }
 
     private static <T extends Block> T registerBlockOnly(String id, T block) {
+        RegistryNamingRules.validateBlockId(id);
         Identifier identifier = Identifier.of(NutonMod.MOD_ID, id);
         Registry.register(Registries.BLOCK, identifier, block);
         return block;

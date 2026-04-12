@@ -28,7 +28,7 @@ public class ModRecipesProvider extends FabricRecipeProvider {
         offerReversibleCompactingRecipes(
                 recipeExporter,
                 RecipeCategory.MISC,
-                ModItems.ENERGY_BLOCK,
+                ModBlocks.ENERGY_BLOCK,
                 RecipeCategory.BUILDING_BLOCKS,
                 ModBlocks.ENERGY_CORE
         );

@@ -1,24 +1,28 @@
 ﻿{
-  "name": "压力系统",
-  "category": "nutonmod:systems",
-  "icon": "nutonmod:core_stabilizer",
-  "read_by_default": true,
-  "sortnum": 0,
-  "pages": [
-    {
-      "type": "patchouli:text",
-      "text": "压力每 40 刻结算一次，仅在能量维度生效。压力上限 100。$(br2)群系基础增长：$(li)裂隙峡谷：+4$(li)风暴原野 / 核心荒原：+3$(li)其他：+2$(li)风暴期间额外 +1"
-    },
-    {
-      "type": "patchouli:text",
-      "text": "抗压方式：$(li)主/副手持有 $(item)核心稳定器$()：压力 -4$(li)穿全套能量装：压力 -4$(li)处于信标保护区：压力 -6（并清除多种负面）"
-    },
-    {
-      "type": "patchouli:text",
-      "text": "高压后果：$(li)基础：虚弱 + 挖掘疲劳$(li)压力 >=45：追加反胃$(li)压力 >=70：追加缓慢$(li)裂隙潜猎者命中会额外抬升压力"
-    }
-  ]
+    "name":  "压力系统详解",
+    "category":  "nutonmod:gameplay_mechanics",
+    "icon":  "nutonmod:core_stabilizer",
+    "sortnum":  1,
+    "pages":  [
+                  {
+                      "type":  "patchouli:spotlight",
+                      "item":  "nutonmod:core_stabilizer",
+                      "title":  "核心要点",
+                      "text":  "系统章节关注风险控制与网络化推进。"
+                  },
+                  {
+                      "type":  "patchouli:text",
+                      "title":  "实战说明",
+                      "text":  "规划事件流程，保持稳定通关优先。"
+                  },
+                  {
+                      "type":  "patchouli:relations",
+                      "text":  "相关章节：手册结构与推进路线。",
+                      "entries":  [
+                                      "nutonmod:overview/manual_structure",
+                                      "nutonmod:progression/tier_route"
+                                  ]
+                  }
+              ],
+    "advancement":  "nutonmod:energy_realm/stabilized"
 }
-
-
-

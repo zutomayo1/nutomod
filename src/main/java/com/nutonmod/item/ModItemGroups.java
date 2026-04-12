@@ -20,8 +20,8 @@ public class ModItemGroups {
         Identifier.of(NutonMod.MOD_ID, "nuton_group"),
         FabricItemGroup.builder()
             .displayName(Text.literal("\u00a7bNuton \u6a21\u7ec4"))
-            .icon(() -> ModItems.ENERGY_CORE != null
-                ? ModItems.ENERGY_CORE.getDefaultStack()
+            .icon(() -> ModBlocks.ENERGY_CORE != null
+                ? ModBlocks.ENERGY_CORE.asItem().getDefaultStack()
                 : new ItemStack(Items.DIAMOND))
             .entries((context, entries) -> {
                 // Guide
@@ -33,7 +33,7 @@ public class ModItemGroups {
                 }
 
                 // Core progression materials
-                entries.add(ModItems.ENERGY_CORE);
+                entries.add(ModBlocks.ENERGY_CORE);
                 entries.add(ModItems.ENERGY_INGOT);
                 entries.add(ModItems.RAW_ENERGY);
                 entries.add(ModItems.ENERGY_ESSENCE);

@@ -1,22 +1,28 @@
 ﻿{
-  "name": "精英战斗策略",
-  "category": "nutonmod:sanctum",
-  "icon": "nutonmod:energy_sword",
-  "sortnum": 1,
-  "pages": [
-    {
-      "type": "patchouli:text",
-      "text": "圣域精英属于强化型能量生物。优先拉扯站位并抓住爆发窗口。"
-    },
-    {
-      "type": "patchouli:text",
-      "text": "推荐配置：稳定器 + 治疗补给 + 高耐久近战武器 + 备用远程方案。"
-    },
-    {
-      "type": "patchouli:text",
-      "text": "目标是把精英奖励稳定转化为钥匙产能，然后推进更高阶圣域与终局链路。"
-    }
-  ]
+    "name":  "精英敌人处理",
+    "category":  "nutonmod:advanced_content",
+    "icon":  "nutonmod:energy_warden_spawn_egg",
+    "sortnum":  1,
+    "pages":  [
+                  {
+                      "type":  "patchouli:spotlight",
+                      "item":  "nutonmod:energy_warden_spawn_egg",
+                      "title":  "核心要点",
+                      "text":  "圣域与终局内容应以团队分工和阶段控制为主。"
+                  },
+                  {
+                      "type":  "patchouli:text",
+                      "title":  "实战说明",
+                      "text":  "优先确保稳定通关，再追求速刷效率。"
+                  },
+                  {
+                      "type":  "patchouli:relations",
+                      "text":  "相关章节：手册结构与推进路线。",
+                      "entries":  [
+                                      "nutonmod:overview/manual_structure",
+                                      "nutonmod:progression/tier_route"
+                                  ]
+                  }
+              ],
+    "advancement":  "nutonmod:energy_realm/sanctum_hunter"
 }
-
-

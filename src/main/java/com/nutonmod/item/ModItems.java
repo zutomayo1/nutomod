@@ -27,6 +27,7 @@ import com.nutonmod.item.custom.StormEssenceItem;
 import com.nutonmod.item.custom.StormCoreItem;
 import com.nutonmod.item.custom.CrystalHelmetItem;
 import com.nutonmod.sound.ModJukeBoxSongs;
+import com.nutonmod.util.RegistryNamingRules;
 import net.minecraft.component.type.FoodComponent;
 import net.minecraft.item.*;
 import net.minecraft.registry.Registries;
@@ -36,12 +37,6 @@ import net.minecraft.util.Rarity;
 import com.nutonmod.entity.ModEntities;
 
 public class ModItems {
-
-    // 基础物品 - 能量核心（用于放置的方块）
-    public static final Item ENERGY_CORE = registerBlockItem("energy_core", ModBlocks.ENERGY_CORE);
-    
-    // 基础物品 - 能量方块（用于放置的方块）
-    public static final Item ENERGY_BLOCK = registerBlockItem("energy_block", ModBlocks.ENERGY_BLOCK);
 
     //能量锭
     public static final Item ENERGY_INGOT = registerItem("energy_ingot", new Item(new Item.Settings()));
@@ -139,8 +134,6 @@ public class ModItems {
 
     public static final Item ANTHRACITE = registerItem("anthracite",
             new Item(new Item.Settings()));
-    public static final Item ANTHRACITE_BLOCK = registerBlockItem("anthracite_block",
-            ModBlocks.ANTHRACITE_BLOCK);
 
     public static final Item ENERGY_BEING_SPAWN_EGG = registerItem("energy_being_spawn_egg", 
         new SpawnEggItem(
@@ -256,17 +249,12 @@ public class ModItems {
 
 
     private static Item registerItem(String id, Item item) {
+        RegistryNamingRules.validateItemId(id);
         return Registry.register(Registries.ITEM, Identifier.of(NutonMod.MOD_ID, id), item);
-    }
-    
-    private static Item registerBlockItem(String id, net.minecraft.block.Block block) {
-        BlockItem item = new BlockItem(block, new Item.Settings());
-        Registry.register(Registries.ITEM, Identifier.of(NutonMod.MOD_ID, id), item);
-        return item;
     }
     
     public static void registerModItems() {
          NutonMod.LOGGER.info("Registering Mod Items for " + NutonMod.MOD_ID);
-         NutonMod.LOGGER.info("Registered: energy_core (block), energy_block (block), energy_sword, holy_helmet, holy_chestplate, holy_leggings, holy_boots, energy_being_spawn_egg");
+         NutonMod.LOGGER.info("Registered pure items (block items are registered in ModBlocks)");
     }
 }
