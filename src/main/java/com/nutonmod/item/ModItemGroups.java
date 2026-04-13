@@ -52,6 +52,7 @@ public class ModItemGroups {
                 entries.add(ModItems.TUNING_ESSENCE);
                 entries.add(ModItems.SPRITE_DUST);
                 entries.add(ModItems.CRYSTAL_SHARD);
+                entries.add(ModItems.TEMPORAL_SHARD);
                 entries.add(ModItems.SNAIL_SHELL);
                 entries.add(ModItems.CRYSTAL_SNAIL_CAPSULE);
                 entries.add(ModItems.STORM_FEATHER);
@@ -84,6 +85,7 @@ public class ModItemGroups {
                 entries.add(ModItems.ENERGY_HOE);
                 entries.add(ModItems.PROSPECTOR);
                 entries.add(ModItems.GROUND_SHAKER);
+                entries.add(ModItems.CHRONOREND_GLAIVE);
 
                 // Armor and wearable gear
                 entries.add(ModItems.HOLY_HELMET);

@@ -35,6 +35,7 @@ public class ModItems {
     public static final Item TUNING_ESSENCE = registerItem("tuning_essence", new Item(new Item.Settings().maxCount(64).rarity(Rarity.RARE)));
     public static final Item SPRITE_DUST = registerItem("sprite_dust", new SpriteDustItem(new Item.Settings().maxCount(64).rarity(Rarity.UNCOMMON)));
     public static final Item CRYSTAL_SHARD = registerItem("crystal_shard", new Item(new Item.Settings().maxCount(64).rarity(Rarity.UNCOMMON)));
+    public static final Item TEMPORAL_SHARD = registerItem("temporal_shard", new Item(new Item.Settings().maxCount(64).rarity(Rarity.RARE)));
     public static final Item SNAIL_SHELL = registerItem("snail_shell", new Item(new Item.Settings().maxCount(64).rarity(Rarity.UNCOMMON)));
     public static final Item CRYSTAL_SNAIL_CAPSULE = registerItem("crystal_snail_capsule", new CrystalSnailCapsuleItem(new Item.Settings().maxCount(16).rarity(Rarity.UNCOMMON)));
     public static final Item STORM_FEATHER = registerItem("storm_feather", new Item(new Item.Settings().maxCount(64).rarity(Rarity.UNCOMMON)));
@@ -51,6 +52,9 @@ public class ModItems {
     public static final Item GROUND_SHAKER = registerItem("ground_shaker", new GroundShakerItem(ModToolMaterials.ENERGY_INGOT,
             new Item.Settings().maxCount(1).maxDamage(1800).fireproof().rarity(Rarity.EPIC)
                     .attributeModifiers(SwordItem.createAttributeModifiers(ModToolMaterials.ENERGY_INGOT, 12, -3.1F))));
+    public static final Item CHRONOREND_GLAIVE = registerItem("chronorend_glaive", new ChronorendGlaiveItem(ModToolMaterials.ENERGY_INGOT,
+            new Item.Settings().maxCount(1).maxDamage(1400).fireproof().rarity(Rarity.EPIC)
+                    .attributeModifiers(SwordItem.createAttributeModifiers(ModToolMaterials.ENERGY_INGOT, 10, -2.8F))));
 
     public static final Item ARBITER_SIGIL = registerItem("arbiter_sigil", new Item(new Item.Settings().maxCount(16).rarity(Rarity.EPIC)));
     public static final Item THUNDERFORGED_CORE = registerItem("thunderforged_core", new Item(new Item.Settings().maxCount(16).rarity(Rarity.EPIC)));
