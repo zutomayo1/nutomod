@@ -87,6 +87,15 @@ public class ModEntities {
                     .trackedUpdateRate(10)
                     .build()
     );
+    public static final EntityType<StarPrisonBoltEntity> STAR_PRISON_BOLT = Registry.register(
+            Registries.ENTITY_TYPE,
+            Identifier.of(NutonMod.MOD_ID, "star_prison_bolt"),
+            FabricEntityTypeBuilder.<StarPrisonBoltEntity>create(SpawnGroup.MISC, StarPrisonBoltEntity::new)
+                    .dimensions(EntityDimensions.fixed(0.25F, 0.25F))
+                    .trackRangeBlocks(8)
+                    .trackedUpdateRate(10)
+                    .build()
+    );
     public static final EntityType<EnergySpriteEntity> ENERGY_SPRITE = Registry.register(
             Registries.ENTITY_TYPE,
             Identifier.of(NutonMod.MOD_ID, "energy_sprite"),

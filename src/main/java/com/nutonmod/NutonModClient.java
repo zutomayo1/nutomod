@@ -10,6 +10,7 @@ import com.nutonmod.client.ThunderRipperClientEffectSystem;
 import com.nutonmod.client.render.BoxBlockEntityRenderer;
 import com.nutonmod.client.render.EndJudicatorSlashRenderer;
 import com.nutonmod.client.render.HatArmorRenderer;
+import com.nutonmod.client.render.StarPrisonBoltRenderer;
 import com.nutonmod.client.render.ThunderSpearProjectileRenderer;
 import com.nutonmod.client.render.VoidWingsFeatureRenderer;
 import com.nutonmod.entity.EnergyBeingRenderer;
@@ -63,6 +64,7 @@ public class NutonModClient implements ClientModInitializer {
         EntityRendererRegistry.register(ModEntities.VOID_PIERCING_ARROW, ArrowEntityRenderer::new);
         EntityRendererRegistry.register(ModEntities.THUNDER_SPEAR_PROJECTILE, ThunderSpearProjectileRenderer::new);
         EntityRendererRegistry.register(ModEntities.END_JUDICATOR_SLASH, EndJudicatorSlashRenderer::new);
+        EntityRendererRegistry.register(ModEntities.STAR_PRISON_BOLT, StarPrisonBoltRenderer::new);
         EntityRendererRegistry.register(ModEntities.ENERGY_SPRITE, EnergySpriteRenderer::new);
         EntityRendererRegistry.register(ModEntities.CRYSTAL_SNAIL, CrystalSnailRenderer::new);
         EntityRendererRegistry.register(ModEntities.STORM_FINCH, StormFinchRenderer::new);
@@ -102,6 +104,17 @@ public class NutonModClient implements ClientModInitializer {
             return (float) (stack.getMaxUseTime(entity) - entity.getItemUseTimeLeft()) / 20.0F;
         });
         ModelPredicateProviderRegistry.register(ModItems.VOID_CALAMITY, Identifier.of("pulling"), (stack, world, entity, seed) ->
+                entity != null && entity.isUsingItem() && entity.getActiveItem() == stack ? 1.0F : 0.0F);
+        ModelPredicateProviderRegistry.register(ModItems.STORM_STAR_PRISON_REPEATER, Identifier.of("pull"), (stack, world, entity, seed) -> {
+            if (entity == null) {
+                return 0.0F;
+            }
+            if (entity.getActiveItem() != stack) {
+                return 0.0F;
+            }
+            return (float) (stack.getMaxUseTime(entity) - entity.getItemUseTimeLeft()) / 20.0F;
+        });
+        ModelPredicateProviderRegistry.register(ModItems.STORM_STAR_PRISON_REPEATER, Identifier.of("pulling"), (stack, world, entity, seed) ->
                 entity != null && entity.isUsingItem() && entity.getActiveItem() == stack ? 1.0F : 0.0F);
 
         HandledScreens.register(ModScreenHandlers.POLISHING_MACHINE_SCREEN_HANDLER, PolishingMachineScreen::new);
