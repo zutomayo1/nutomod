@@ -4,28 +4,7 @@ import com.nutonmod.ModArmorMaterials;
 import com.nutonmod.NutonMod;
 import com.nutonmod.block.ModBlocks;
 import com.nutonmod.block.ModFluids;
-import com.nutonmod.item.custom.EnergyAppleItem;
-import com.nutonmod.item.custom.EnergyPotatoItem;
-import com.nutonmod.item.custom.HatItem;
-import com.nutonmod.item.custom.Prospector;
-import com.nutonmod.item.custom.AnnihilationBladeItem;
-import com.nutonmod.item.custom.CrystalSnailCapsuleItem;
-import com.nutonmod.item.custom.StormScepterItem;
-import com.nutonmod.item.custom.StormCharmItem;
-import com.nutonmod.item.custom.ThunderSpearItem;
-import com.nutonmod.item.custom.ThunderRipperItem;
-import com.nutonmod.item.custom.VoidCalamityBowItem;
-import com.nutonmod.item.custom.EndJudicatorItem;
-import com.nutonmod.item.custom.EndTomeItem;
-import com.nutonmod.item.custom.VoidWingsItem;
-import com.nutonmod.item.custom.SpriteDustItem;
-import com.nutonmod.item.custom.StormSeedItem;
-import com.nutonmod.item.custom.WardenCoreItem;
-import com.nutonmod.item.custom.VoidSilkItem;
-import com.nutonmod.item.custom.VoidSlimeBallItem;
-import com.nutonmod.item.custom.StormEssenceItem;
-import com.nutonmod.item.custom.StormCoreItem;
-import com.nutonmod.item.custom.CrystalHelmetItem;
+import com.nutonmod.item.custom.*;
 import com.nutonmod.sound.ModJukeBoxSongs;
 import com.nutonmod.util.RegistryNamingRules;
 import net.minecraft.component.type.FoodComponent;
@@ -69,6 +48,10 @@ public class ModItems {
     public static final Item ANNIHILATION_BLADE = registerItem("annihilation_blade", new AnnihilationBladeItem(ModToolMaterials.ENERGY_INGOT,
             new Item.Settings().fireproof().rarity(Rarity.EPIC)
                     .attributeModifiers(SwordItem.createAttributeModifiers(ModToolMaterials.ENERGY_INGOT, 8, -2.3F))));
+    public static final Item GROUND_SHAKER = registerItem("ground_shaker", new GroundShakerItem(ModToolMaterials.ENERGY_INGOT,
+            new Item.Settings().maxCount(1).maxDamage(1800).fireproof().rarity(Rarity.EPIC)
+                    .attributeModifiers(SwordItem.createAttributeModifiers(ModToolMaterials.ENERGY_INGOT, 12, -3.1F))));
+
     public static final Item ARBITER_SIGIL = registerItem("arbiter_sigil", new Item(new Item.Settings().maxCount(16).rarity(Rarity.EPIC)));
     public static final Item THUNDERFORGED_CORE = registerItem("thunderforged_core", new Item(new Item.Settings().maxCount(16).rarity(Rarity.EPIC)));
     public static final Item LIGHTNING_ESSENCE = registerItem("lightning_essence", new Item(new Item.Settings().maxCount(64).rarity(Rarity.UNCOMMON)));

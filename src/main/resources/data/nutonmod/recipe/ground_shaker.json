@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "SES",
+    "EAE",
+    "SES"
+  ],
+  "key": {
+    "S": {
+      "item": "nutonmod:storm_alloy"
+    },
+    "E": {
+      "item": "nutonmod:energy_ingot"
+    },
+    "A": {
+      "item": "nutonmod:annihilation_core"
+    }
+  },
+  "result": {
+    "id": "nutonmod:ground_shaker",
+    "count": 1
+  }
+}

@@ -95,6 +95,11 @@ public class ModZhCNLangProvider extends FabricLanguageProvider {
         b.add("item.nutonmod.end_tome", "\u7ec8\u7109\u5b9d\u5178");
         b.add("item.nutonmod.void_wings", "\u865a\u7a7a\u4e4b\u7ffc");
         b.add("item.nutonmod.end_judicator", "\u7ec8\u7109\u88c1\u51b3\u8005");
+        b.add("item.nutonmod.ground_shaker", "裂地者");
+
+
+
+
         b.add("tooltip.nutonmod.annihilation_blade.line1", "\u4e3b\u52a8\uff1a\u53f3\u952e\u91ca\u653e\u6e6e\u706d\u65a9\u51fb");
         b.add("tooltip.nutonmod.annihilation_blade.line2", "\u88ab\u52a8\uff1a\u8fde\u51fb\u53e0\u5370\u8bb0\uff0c\u6ee1\u5c42\u89e6\u53d1\u5904\u51b3\u8109\u51b2");
         b.add("tooltip.nutonmod.annihilation_blade.line3", "\u51fb\u6740\u76ee\u6807\u540e\u56de\u590d\u751f\u547d");
@@ -114,6 +119,13 @@ public class ModZhCNLangProvider extends FabricLanguageProvider {
         b.add("tooltip.nutonmod.end_judicator.line1", "\u6f5c\u884c+\u53f3\u952e\uff1a\u5207\u6362\u5f62\u6001");
         b.add("tooltip.nutonmod.end_judicator.line2", "\u529b\u91cf\u5f62\u6001\uff1a\u8fd1\u8eab\u8303\u56f4\u91cd\u51fb");
         b.add("tooltip.nutonmod.end_judicator.line3", "\u654f\u6377\u5f62\u6001\uff1a\u8fdc\u8ddd\u865a\u7a7a\u65a9\u51fb");
+        b.add("tooltip.nutonmod.ground_shaker.line1", "普通攻击消耗 §e3 §7能量，§a30% §7概率击飞敌人");
+        b.add("tooltip.nutonmod.ground_shaker.line2", "§7右键消耗 §e30 §7能量，捶地造成范围伤害并击退（§e8 §7秒冷却）");
+        b.add("tooltip.nutonmod.ground_shaker.line3", "§8击杀敌人后恢复 §e15 §8能量并提升攻速");
+
+
+
+
         b.add("item.nutonmod.end_judicator.mode_power", "\u5df2\u5207\u6362\u81f3\u529b\u91cf\u5f62\u6001");
         b.add("item.nutonmod.end_judicator.mode_agile", "\u5df2\u5207\u6362\u81f3\u654f\u6377\u5f62\u6001");
         b.add("item.nutonmod.end_judicator.current_power", "\u5f53\u524d\u5f62\u6001\uff1a\u529b\u91cf");

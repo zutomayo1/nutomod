@@ -83,6 +83,7 @@ public class ModItemGroups {
                 entries.add(ModItems.ENERGY_SHOVEL);
                 entries.add(ModItems.ENERGY_HOE);
                 entries.add(ModItems.PROSPECTOR);
+                entries.add(ModItems.GROUND_SHAKER);
 
                 // Armor and wearable gear
                 entries.add(ModItems.HOLY_HELMET);

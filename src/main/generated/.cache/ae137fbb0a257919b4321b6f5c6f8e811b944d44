@@ -1,4 +1,4 @@
-// 1.21	2026-04-12T20:05:45.8866511	NutonMod/Tags for minecraft:item
+// 1.21	2026-04-12T22:45:01.469375	NutonMod/Tags for minecraft:item
 7bb728f45da1c09116b6ac9c5263443008670bde data\minecraft\tags\item\swords.json
 e32213eb2853c139330d185f3cd866fea674f2da data\minecraft\tags\item\head_armor.json
 d0ab2ae7a264d8fcd9fe86abeeb0a793f765ccbc data\minecraft\tags\item\leg_armor.json
@@ -7,5 +7,5 @@ d0ab2ae7a264d8fcd9fe86abeeb0a793f765ccbc data\minecraft\tags\item\leg_armor.json
 db62bc8b0e20116771892cce36b11cfb01db1721 data\minecraft\tags\item\raw_materials.json
 72f75cee99a4bacea7b7e72fdbd3f72414db2c94 data\minecraft\tags\item\trimmable_armor.json
 05fa383578ed14d56ed370c4ea64a56c6aee0367 data\minecraft\tags\item\foot_armor.json
-370dc09f498176d8de7a8160a14646cce69ec7f1 data\minecraft\tags\item\planks.json
 8624b03dd35c0fbb9170aadb8d3e79b27b01fcb7 data\minecraft\tags\item\creeper_drop_music_discs.json
+370dc09f498176d8de7a8160a14646cce69ec7f1 data\minecraft\tags\item\planks.json
