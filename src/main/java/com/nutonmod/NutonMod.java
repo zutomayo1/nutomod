@@ -9,6 +9,7 @@ import com.nutonmod.entity.ModEntities;
 import com.nutonmod.item.ModItemGroups;
 import com.nutonmod.item.ModItems;
 import com.nutonmod.network.EnergySyncPayload;
+import com.nutonmod.network.RiftCannonKickPayload;
 import com.nutonmod.recipe.ModRecipeTypes;
 import com.nutonmod.sound.ModSoundEvents;
 import com.nutonmod.util.ModCustomTrades;
@@ -100,6 +101,7 @@ public class NutonMod implements ModInitializer {
         ModFeatures.register();
         ModRecipeTypes.registerRecipeTypes();
         PayloadTypeRegistry.playS2C().register(EnergySyncPayload.ID, EnergySyncPayload.CODEC);
+        PayloadTypeRegistry.playS2C().register(RiftCannonKickPayload.ID, RiftCannonKickPayload.CODEC);
         // Worldgen features are already declared in biome JSON/datagen.
         // Disable runtime biome injections to avoid feature order cycles.
         // ModWorldGeneration.generateModWorldGen();

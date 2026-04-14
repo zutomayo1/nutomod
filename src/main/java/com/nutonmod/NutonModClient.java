@@ -4,6 +4,7 @@ import com.nutonmod.block.ModBlocks;
 import com.nutonmod.block.ModFluids;
 import com.nutonmod.block.entity.ModBlockEntities;
 import com.nutonmod.client.EnergyHudClientSystem;
+import com.nutonmod.client.RiftweaverCannonPostFxClient;
 import com.nutonmod.client.StormWarningClientSystem;
 import com.nutonmod.client.DimensionalTuneTooltipClient;
 import com.nutonmod.client.ThunderRipperClientEffectSystem;
@@ -12,6 +13,7 @@ import com.nutonmod.client.render.EndJudicatorSlashRenderer;
 import com.nutonmod.client.render.HatArmorRenderer;
 import com.nutonmod.client.render.StarPrisonBoltRenderer;
 import com.nutonmod.client.render.ThunderSpearProjectileRenderer;
+import com.nutonmod.client.render.VoidRiftSpikeRenderer;
 import com.nutonmod.client.render.VoidWingsFeatureRenderer;
 import com.nutonmod.entity.EnergyBeingRenderer;
 import com.nutonmod.entity.EnergySpriteRenderer;
@@ -27,6 +29,7 @@ import com.nutonmod.entity.VoidCrawlerRenderer;
 import com.nutonmod.entity.VoidArchonRenderer;
 import com.nutonmod.item.ModItems;
 import com.nutonmod.network.EnergySyncPayload;
+import com.nutonmod.network.RiftCannonKickPayload;
 import com.nutonmod.screen.ModScreenHandlers;
 import com.nutonmod.screen.DimensionalTunerScreen;
 import com.nutonmod.screen.EnergyDisintegratorScreen;
@@ -55,6 +58,8 @@ public class NutonModClient implements ClientModInitializer {
         ClientPlayNetworking.registerGlobalReceiver(EnergySyncPayload.ID, (payload, context) ->
                 context.client().execute(() ->
                         EnergyHudClientSystem.updateFromServer(payload.energy(), payload.maxEnergy(), payload.overloaded())));
+        ClientPlayNetworking.registerGlobalReceiver(RiftCannonKickPayload.ID, (payload, context) ->
+                context.client().execute(() -> RiftweaverCannonPostFxClient.trigger(payload.strength())));
 
         EntityRendererRegistry.register(ModEntities.ENERGY_BEING, EnergyBeingRenderer::new);
         EntityRendererRegistry.register(ModEntities.RIFT_STALKER, RiftStalkerRenderer::new);
@@ -65,6 +70,7 @@ public class NutonModClient implements ClientModInitializer {
         EntityRendererRegistry.register(ModEntities.THUNDER_SPEAR_PROJECTILE, ThunderSpearProjectileRenderer::new);
         EntityRendererRegistry.register(ModEntities.END_JUDICATOR_SLASH, EndJudicatorSlashRenderer::new);
         EntityRendererRegistry.register(ModEntities.STAR_PRISON_BOLT, StarPrisonBoltRenderer::new);
+        EntityRendererRegistry.register(ModEntities.VOID_RIFT_SPIKE_PROJECTILE, VoidRiftSpikeRenderer::new);
         EntityRendererRegistry.register(ModEntities.ENERGY_SPRITE, EnergySpriteRenderer::new);
         EntityRendererRegistry.register(ModEntities.CRYSTAL_SNAIL, CrystalSnailRenderer::new);
         EntityRendererRegistry.register(ModEntities.STORM_FINCH, StormFinchRenderer::new);
@@ -116,11 +122,23 @@ public class NutonModClient implements ClientModInitializer {
         });
         ModelPredicateProviderRegistry.register(ModItems.STORM_STAR_PRISON_REPEATER, Identifier.of("pulling"), (stack, world, entity, seed) ->
                 entity != null && entity.isUsingItem() && entity.getActiveItem() == stack ? 1.0F : 0.0F);
+        ModelPredicateProviderRegistry.register(ModItems.VOID_RIFTWEAVER_CANNON, Identifier.of("pull"), (stack, world, entity, seed) -> {
+            if (entity == null) {
+                return 0.0F;
+            }
+            if (entity.getActiveItem() != stack) {
+                return 0.0F;
+            }
+            return (float) (stack.getMaxUseTime(entity) - entity.getItemUseTimeLeft()) / 20.0F;
+        });
+        ModelPredicateProviderRegistry.register(ModItems.VOID_RIFTWEAVER_CANNON, Identifier.of("pulling"), (stack, world, entity, seed) ->
+                entity != null && entity.isUsingItem() && entity.getActiveItem() == stack ? 1.0F : 0.0F);
 
         HandledScreens.register(ModScreenHandlers.POLISHING_MACHINE_SCREEN_HANDLER, PolishingMachineScreen::new);
         HandledScreens.register(ModScreenHandlers.DIMENSIONAL_TUNER_SCREEN_HANDLER, DimensionalTunerScreen::new);
         HandledScreens.register(ModScreenHandlers.ENERGY_DISINTEGRATOR_SCREEN_HANDLER, EnergyDisintegratorScreen::new);
         DimensionalTuneTooltipClient.register();
+        RiftweaverCannonPostFxClient.register();
         ClientTickEvents.END_CLIENT_TICK.register(client -> {
             StormWarningClientSystem.tick(client);
             EnergyHudClientSystem.tick(client);

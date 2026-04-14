@@ -37,6 +37,9 @@ public class ModItems {
     public static final Item CRYSTAL_SHARD = registerItem("crystal_shard", new Item(new Item.Settings().maxCount(64).rarity(Rarity.UNCOMMON)));
     public static final Item TEMPORAL_SHARD = registerItem("temporal_shard", new Item(new Item.Settings().maxCount(64).rarity(Rarity.RARE)));
     public static final Item STAR_PRISON_BOLT = registerItem("star_prison_bolt", new Item(new Item.Settings().maxCount(64).rarity(Rarity.UNCOMMON)));
+    public static final Item STAR_PRISON_BOLT_GLOW = registerItem("star_prison_bolt_glow", new Item(new Item.Settings().maxCount(64).rarity(Rarity.UNCOMMON)));
+    public static final Item VOID_RIFT_SPIKE = registerItem("void_rift_spike", new Item(new Item.Settings().maxCount(64).rarity(Rarity.UNCOMMON)));
+    public static final Item VOID_RIFT_SPIKE_GLOW = registerItem("void_rift_spike_glow", new Item(new Item.Settings().maxCount(64).rarity(Rarity.UNCOMMON)));
     public static final Item SNAIL_SHELL = registerItem("snail_shell", new Item(new Item.Settings().maxCount(64).rarity(Rarity.UNCOMMON)));
     public static final Item CRYSTAL_SNAIL_CAPSULE = registerItem("crystal_snail_capsule", new CrystalSnailCapsuleItem(new Item.Settings().maxCount(16).rarity(Rarity.UNCOMMON)));
     public static final Item STORM_FEATHER = registerItem("storm_feather", new Item(new Item.Settings().maxCount(64).rarity(Rarity.UNCOMMON)));
@@ -73,6 +76,8 @@ public class ModItems {
             new Item.Settings().maxCount(1).maxDamage(800).fireproof().rarity(Rarity.EPIC)));
     public static final Item STORM_STAR_PRISON_REPEATER = registerItem("storm_star_prison_repeater", new StormStarPrisonRepeaterItem(
             new Item.Settings().maxCount(1).maxDamage(1600).fireproof().rarity(Rarity.EPIC)));
+    public static final Item VOID_RIFTWEAVER_CANNON = registerItem("void_riftweaver_cannon", new VoidRiftweaverCannonItem(
+            new Item.Settings().maxCount(1).maxDamage(1800).fireproof().rarity(Rarity.EPIC)));
     public static final Item ARCHON_MARK = registerItem("archon_mark", new Item(new Item.Settings().maxCount(16).rarity(Rarity.EPIC)));
     public static final Item END_HEART = registerItem("end_heart", new Item(new Item.Settings().maxCount(8).rarity(Rarity.EPIC)));
     public static final Item VOID_FRAGMENT = registerItem("void_fragment", new Item(new Item.Settings().maxCount(64).rarity(Rarity.RARE)));

@@ -96,6 +96,15 @@ public class ModEntities {
                     .trackedUpdateRate(10)
                     .build()
     );
+    public static final EntityType<VoidRiftSpikeEntity> VOID_RIFT_SPIKE_PROJECTILE = Registry.register(
+            Registries.ENTITY_TYPE,
+            Identifier.of(NutonMod.MOD_ID, "void_rift_spike_projectile"),
+            FabricEntityTypeBuilder.<VoidRiftSpikeEntity>create(SpawnGroup.MISC, VoidRiftSpikeEntity::new)
+                    .dimensions(EntityDimensions.fixed(0.25F, 0.25F))
+                    .trackRangeBlocks(8)
+                    .trackedUpdateRate(10)
+                    .build()
+    );
     public static final EntityType<EnergySpriteEntity> ENERGY_SPRITE = Registry.register(
             Registries.ENTITY_TYPE,
             Identifier.of(NutonMod.MOD_ID, "energy_sprite"),

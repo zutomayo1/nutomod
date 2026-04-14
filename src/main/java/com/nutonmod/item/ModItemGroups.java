@@ -54,6 +54,7 @@ public class ModItemGroups {
                 entries.add(ModItems.CRYSTAL_SHARD);
                 entries.add(ModItems.TEMPORAL_SHARD);
                 entries.add(ModItems.STAR_PRISON_BOLT);
+                entries.add(ModItems.VOID_RIFT_SPIKE);
                 entries.add(ModItems.SNAIL_SHELL);
                 entries.add(ModItems.CRYSTAL_SNAIL_CAPSULE);
                 entries.add(ModItems.STORM_FEATHER);
@@ -79,6 +80,7 @@ public class ModItemGroups {
                 entries.add(ModItems.VOID_CALAMITY);
                 entries.add(ModItems.STORM_SCEPTER);
                 entries.add(ModItems.STORM_STAR_PRISON_REPEATER);
+                entries.add(ModItems.VOID_RIFTWEAVER_CANNON);
                 entries.add(ModItems.END_JUDICATOR);
                 entries.add(ModItems.ENERGY_SWORD);
                 entries.add(ModItems.ENERGY_PICKAXE);
