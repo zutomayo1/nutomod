@@ -7,7 +7,6 @@ import com.nutonmod.block.ModFluids;
 import com.nutonmod.item.custom.*;
 import com.nutonmod.sound.ModJukeBoxSongs;
 import com.nutonmod.util.RegistryNamingRules;
-import net.minecraft.component.type.FoodComponent;
 import net.minecraft.item.*;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
