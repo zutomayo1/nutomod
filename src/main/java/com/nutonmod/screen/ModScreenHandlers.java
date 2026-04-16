@@ -4,6 +4,7 @@ import com.nutonmod.NutonMod;
 import com.nutonmod.data.DimensionalTunerData;
 import com.nutonmod.data.EnergyDisintegratorData;
 import com.nutonmod.data.PolishingMachineData;
+import com.nutonmod.data.VoidResonanceBoxData;
 import net.fabricmc.fabric.api.screenhandler.v1.ExtendedScreenHandlerType;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
@@ -21,6 +22,9 @@ public class ModScreenHandlers {
     public static final ScreenHandlerType<EnergyDisintegratorScreenHandler> ENERGY_DISINTEGRATOR_SCREEN_HANDLER =
             Registry.register(Registries.SCREEN_HANDLER, Identifier.of(NutonMod.MOD_ID, "energy_disintegrator"),
                     new ExtendedScreenHandlerType<>(EnergyDisintegratorScreenHandler::new, EnergyDisintegratorData.CODEC));
+    public static final ScreenHandlerType<VoidResonanceBoxScreenHandler> VOID_RESONANCE_BOX_SCREEN_HANDLER =
+            Registry.register(Registries.SCREEN_HANDLER, Identifier.of(NutonMod.MOD_ID, "void_resonance_box"),
+                    new ExtendedScreenHandlerType<>(VoidResonanceBoxScreenHandler::new, VoidResonanceBoxData.CODEC));
     public static void registerScreenHandlers() {
 
     }

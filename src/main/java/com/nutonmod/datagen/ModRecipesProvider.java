@@ -11,7 +11,6 @@ import net.minecraft.data.server.recipe.ShapedRecipeJsonBuilder;
 import net.minecraft.data.server.recipe.ShapelessRecipeJsonBuilder;
 import net.minecraft.item.Items;
 import net.minecraft.recipe.Ingredient;
-import net.minecraft.recipe.RecipeSerializer;
 import net.minecraft.recipe.book.RecipeCategory;
 import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.util.Identifier;
@@ -25,21 +24,8 @@ public class ModRecipesProvider extends FabricRecipeProvider {
 
     @Override
     public void generate(RecipeExporter recipeExporter) {
-        offerReversibleCompactingRecipes(
-                recipeExporter,
-                RecipeCategory.MISC,
-                ModBlocks.ENERGY_BLOCK,
-                RecipeCategory.BUILDING_BLOCKS,
-                ModBlocks.ENERGY_CORE
-        );
-
-        offerReversibleCompactingRecipes(
-                recipeExporter,
-                RecipeCategory.MISC,
-                ModItems.ANTHRACITE,
-                RecipeCategory.BUILDING_BLOCKS,
-                ModBlocks.ANTHRACITE_BLOCK
-        );
+        offerReversibleCompactingRecipes(recipeExporter, RecipeCategory.MISC, ModBlocks.ENERGY_BLOCK, RecipeCategory.BUILDING_BLOCKS, ModBlocks.ENERGY_CORE);
+        offerReversibleCompactingRecipes(recipeExporter, RecipeCategory.MISC, ModItems.ANTHRACITE, RecipeCategory.BUILDING_BLOCKS, ModBlocks.ANTHRACITE_BLOCK);
 
         ShapedRecipeJsonBuilder.create(RecipeCategory.REDSTONE, ModBlocks.STABILIZER_BEACON)
                 .pattern(" A ")
@@ -85,6 +71,26 @@ public class ModRecipesProvider extends FabricRecipeProvider {
                 .input('I', Items.NETHERITE_INGOT)
                 .criterion(hasItem(ModItems.CORE_HEART), conditionsFromItem(ModItems.CORE_HEART))
                 .offerTo(recipeExporter, Identifier.of(NutonMod.MOD_ID, "energy_disintegrator"));
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.REDSTONE, ModBlocks.VOID_RESONANCE_BOX)
+                .pattern("VSV")
+                .pattern("ECE")
+                .pattern("VSV")
+                .input('V', ModItems.VOID_FRAGMENT)
+                .input('S', ModItems.STORM_CORE)
+                .input('E', ModItems.ENERGY_INGOT)
+                .input('C', ModItems.CORE_STABILIZER)
+                .criterion(hasItem(ModItems.VOID_FRAGMENT), conditionsFromItem(ModItems.VOID_FRAGMENT))
+                .offerTo(recipeExporter, Identifier.of(NutonMod.MOD_ID, "void_resonance_box"));
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.VOID_FRAGMENT)
+                .pattern("SSS")
+                .pattern("SVS")
+                .pattern("SSS")
+                .input('S', ModItems.STORM_FRAGMENT)
+                .input('V', ModItems.ENERGY_CRYSTAL)
+                .criterion(hasItem(ModItems.STORM_FRAGMENT), conditionsFromItem(ModItems.STORM_FRAGMENT))
+                .offerTo(recipeExporter, Identifier.of(NutonMod.MOD_ID, "void_fragment_from_resonance"));
 
         // Energy wood line
         ShapelessRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, ModBlocks.ENERGY_PLANKS, 4)

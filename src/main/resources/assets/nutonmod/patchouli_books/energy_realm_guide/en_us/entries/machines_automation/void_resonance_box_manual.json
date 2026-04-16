@@ -1,0 +1,30 @@
+{
+  "name": "Void Resonance Box",
+  "category": "nutonmod:machines_automation",
+  "icon": "nutonmod:void_resonance_box",
+  "sortnum": 12,
+  "pages": [
+    {
+      "title": "Role",
+      "type": "patchouli:text",
+      "text": "The Void Resonance Box is a processing block for void fragments and resonance materials. It keeps crafting, status feedback, and output handling in one place."
+    },
+    {
+      "title": "How It Works",
+      "type": "patchouli:text",
+      "text": "Insert the input item and catalyst, and the machine will automatically resolve the recipe and begin processing. If the output slot can accept more, it keeps producing results; otherwise it pauses and reports its current state."
+    },
+    {
+      "title": "Recipe Notes",
+      "type": "patchouli:spotlight",
+      "item": "nutonmod:void_resonance_box",
+      "text": "Recipes are maintained through data generation, which makes balancing and future updates much easier. When the material set changes, you only need to update the generated data."
+    },
+    {
+      "title": "Layout Advice",
+      "type": "patchouli:text",
+      "text": "For a machine like this, a clear UI matters most: separate input, catalyst, output, and status areas so players can tell the machine state at a glance."
+    }
+  ],
+  "advancement": "nutonmod:energy_realm/stabilized"
+}

@@ -5,12 +5,10 @@ import com.nutonmod.block.ModBlocks;
 import com.nutonmod.block.custom.CornCropBlock;
 import com.nutonmod.block.custom.PolishingMachine;
 import com.nutonmod.block.custom.StabilizerBeaconBlock;
+import com.nutonmod.block.custom.VoidResonanceBox;
 import com.nutonmod.item.ModItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.Blocks;
 import net.minecraft.block.CropBlock;
 import net.minecraft.data.client.*;
 import net.minecraft.data.family.BlockFamily;
@@ -25,33 +23,24 @@ public class ModModelsProvider extends FabricModelProvider {
     public void generateBlockStateModels(BlockStateModelGenerator blockStateModelGenerator) {
         ModBlockFamilies.getBlockFamilies()
                 .filter(BlockFamily::shouldGenerateModels)
-                .forEach(blockFamily -> 
-                    blockStateModelGenerator.registerCubeAllModelTexturePool(blockFamily.getBaseBlock())
-                        .family(blockFamily));
-
+                .forEach(blockFamily -> blockStateModelGenerator.registerCubeAllModelTexturePool(blockFamily.getBaseBlock()).family(blockFamily));
 
         blockStateModelGenerator.blockStateCollector.accept(
                 VariantsBlockStateSupplier.create(ModBlocks.ENERGY_POTATO_CROP)
                         .coordinate(BlockStateVariantMap.create(CropBlock.AGE)
-                        .register(stage -> BlockStateVariant.create()
-                                .put(VariantSettings.MODEL, blockStateModelGenerator.createSubModel(
-                                        ModBlocks.ENERGY_POTATO_CROP, "_stage" + stage, Models.CROSS, TextureMap::cross)
-                                )
-                        )
-            )
+                                .register(stage -> BlockStateVariant.create()
+                                        .put(VariantSettings.MODEL, blockStateModelGenerator.createSubModel(
+                                                ModBlocks.ENERGY_POTATO_CROP, "_stage" + stage, Models.CROSS, TextureMap::cross))))
         );
-        
-        // 玉米作物模型
+
         blockStateModelGenerator.blockStateCollector.accept(
                 VariantsBlockStateSupplier.create(ModBlocks.CORN_CROP)
                         .coordinate(BlockStateVariantMap.create(CornCropBlock.AGE)
-                        .register(stage -> BlockStateVariant.create()
-                                .put(VariantSettings.MODEL, blockStateModelGenerator.createSubModel(
-                                        ModBlocks.CORN_CROP, "_stage" + stage, Models.CROSS, TextureMap::cross)
-                                )
-                        )
-            )
+                                .register(stage -> BlockStateVariant.create()
+                                        .put(VariantSettings.MODEL, blockStateModelGenerator.createSubModel(
+                                                ModBlocks.CORN_CROP, "_stage" + stage, Models.CROSS, TextureMap::cross))))
         );
+
         blockStateModelGenerator.registerSimpleState(ModBlocks.STILL_ENERGY);
         blockStateModelGenerator.registerSimpleState(ModBlocks.BOX);
         blockStateModelGenerator.blockStateCollector.accept(
@@ -72,11 +61,16 @@ public class ModModelsProvider extends FabricModelProvider {
         blockStateModelGenerator.blockStateCollector.accept(
                 VariantsBlockStateSupplier.create(ModBlocks.STABILIZER_BEACON)
                         .coordinate(BlockStateVariantMap.create(StabilizerBeaconBlock.ACTIVE)
-                                .register(false, BlockStateVariant.create()
-                                        .put(VariantSettings.MODEL, Identifier.of("nutonmod", "block/stabilizer_beacon_off")))
-                                .register(true, BlockStateVariant.create()
-                                        .put(VariantSettings.MODEL, Identifier.of("nutonmod", "block/stabilizer_beacon_on"))))
+                                .register(false, BlockStateVariant.create().put(VariantSettings.MODEL, Identifier.of("nutonmod", "block/stabilizer_beacon_off")))
+                                .register(true, BlockStateVariant.create().put(VariantSettings.MODEL, Identifier.of("nutonmod", "block/stabilizer_beacon_on"))))
         );
+        blockStateModelGenerator.blockStateCollector.accept(
+                VariantsBlockStateSupplier.create(ModBlocks.VOID_RESONANCE_BOX)
+                        .coordinate(BlockStateVariantMap.create(VoidResonanceBox.WORKING)
+                                .register(false, BlockStateVariant.create().put(VariantSettings.MODEL, Identifier.of("nutonmod", "block/void_resonance_box")))
+                                .register(true, BlockStateVariant.create().put(VariantSettings.MODEL, Identifier.of("nutonmod", "block/void_resonance_box_active"))))
+        );
+        blockStateModelGenerator.registerParentedItemModel(ModBlocks.VOID_RESONANCE_BOX, Identifier.of("nutonmod", "block/void_resonance_box"));
 
         blockStateModelGenerator.registerLog(ModBlocks.ENERGY_LOG).log(ModBlocks.ENERGY_LOG).wood(ModBlocks.ENERGY_WOOD);
         blockStateModelGenerator.registerLog(ModBlocks.STRIPPED_ENERGY_LOG).log(ModBlocks.STRIPPED_ENERGY_LOG).wood(ModBlocks.STRIPPED_ENERGY_WOOD);
@@ -85,11 +79,7 @@ public class ModModelsProvider extends FabricModelProvider {
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.ENERGY_PLANKS);
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.ENERGY_LEAVES);
         blockStateModelGenerator.registerTintableCross(ModBlocks.ENERGY_SAPLING, BlockStateModelGenerator.TintType.NOT_TINTED);
-        blockStateModelGenerator.registerFlowerPotPlant(
-                ModBlocks.ENERGY_FLOWER,
-                ModBlocks.POTTED_ENERGY_FLOWER,
-                BlockStateModelGenerator.TintType.NOT_TINTED
-        );
+        blockStateModelGenerator.registerFlowerPotPlant(ModBlocks.ENERGY_FLOWER, ModBlocks.POTTED_ENERGY_FLOWER, BlockStateModelGenerator.TintType.NOT_TINTED);
     }
 
     @Override
@@ -125,8 +115,5 @@ public class ModModelsProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.ENERGY_BUCKET, Models.GENERATED);
 
         itemModelGenerator.register(ModItems.ENERGY_HORSE_ARMOR, Models.GENERATED);
-
-
-
     }
 }

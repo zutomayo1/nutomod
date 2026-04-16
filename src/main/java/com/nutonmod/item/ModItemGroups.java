@@ -127,6 +127,7 @@ public class ModItemGroups {
                 entries.add(ModBlocks.POLISHING_MACHINE);
                 entries.add(ModBlocks.DIMENSIONAL_TUNER);
                 entries.add(ModBlocks.ENERGY_DISINTEGRATOR);
+                entries.add(ModBlocks.VOID_RESONANCE_BOX);
                 entries.add(Items.LIGHTNING_ROD);
                 entries.add(ModBlocks.BOX.asItem());
 

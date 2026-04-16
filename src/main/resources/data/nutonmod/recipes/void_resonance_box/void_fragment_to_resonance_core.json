@@ -1,0 +1,15 @@
+{
+  "type": "nutonmod:void_resonance",
+  "input": {
+    "item": "nutonmod:void_fragment"
+  },
+  "catalyst": {
+    "item": "nutonmod:core_stabilizer"
+  },
+  "result": {
+    "id": "nutonmod:void_resonance_core",
+    "Count": 1,
+    "components": {}
+  },
+  "time": 200
+}

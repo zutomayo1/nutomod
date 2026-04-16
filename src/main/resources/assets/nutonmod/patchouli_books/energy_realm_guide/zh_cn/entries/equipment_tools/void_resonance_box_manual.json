@@ -1,0 +1,30 @@
+{
+  "name": "虚空谐振匣",
+  "category": "nutonmod:machines_automation",
+  "icon": "nutonmod:void_resonance_box",
+  "sortnum": 12,
+  "pages": [
+    {
+      "title": "功能定位",
+      "type": "patchouli:text",
+      "text": "虚空谐振匣是一台用于处理虚空碎片与谐振材料的功能方块。它的目标不是堆叠复杂度，而是把材料加工、状态提示与产出管理集中在同一个界面里。"
+    },
+    {
+      "title": "使用方式",
+      "type": "patchouli:text",
+      "text": "放入输入物与催化剂后，机器会自动判定配方并开始运行。输出栏会在结果可堆叠时继续接收产物；若输出栏已满，机器会停止并提示当前状态。"
+    },
+    {
+      "title": "配方提示",
+      "type": "patchouli:spotlight",
+      "item": "nutonmod:void_resonance_box",
+      "text": "合成配方已由数据生成维护，便于后续统一调整。若你更新了材料体系，只需同步数据生成即可，无需手写整套静态配方。"
+    },
+    {
+      "title": "设计建议",
+      "type": "patchouli:text",
+      "text": "这类机器最适合做成高识别度界面：输入区、催化区、输出区和状态区分开，玩家一眼就能看懂当前是否可加工。"
+    }
+  ],
+  "advancement": "nutonmod:energy_realm/stabilized"
+}

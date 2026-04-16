@@ -331,5 +331,11 @@ public class ModENUSLanProvider extends FabricLanguageProvider {
         translationBuilder.add("block.nutonmod.potted_energy_flower", "Potted Energy Flower");
         translationBuilder.add("block.nutonmod.still_energy", "Still Energy");
         translationBuilder.add("biome.nutonmod.energy_biome", "Energy Biome");
+        translationBuilder.add("block.nutonmod.void_resonance_box", "Void Resonance Box");
+        translationBuilder.add("container.nutonmod.void_resonance_box", "Void Resonance Box");
+        translationBuilder.add("gui.nutonmod.void_resonance_box.status.ready", "Status: Ready to Resonance");
+        translationBuilder.add("gui.nutonmod.void_resonance_box.status.output_full", "Status: Output Full");
+        translationBuilder.add("gui.nutonmod.void_resonance_box.status.missing_catalyst", "Status: Missing Catalyst");
+        translationBuilder.add("gui.nutonmod.void_resonance_box.status.missing_material", "Status: Missing Material");
     }
 }

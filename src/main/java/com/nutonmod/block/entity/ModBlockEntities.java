@@ -16,6 +16,8 @@ public class ModBlockEntities {
             BlockEntityType.Builder.create(DimensionalTunerBlockEntity::new, ModBlocks.DIMENSIONAL_TUNER));
     public static final BlockEntityType<EnergyDisintegratorBlockEntity> ENERGY_DISINTEGRATOR_BLOCK_ENTITY = create("energy_disintegrator_block_entity",
             BlockEntityType.Builder.create(EnergyDisintegratorBlockEntity::new, ModBlocks.ENERGY_DISINTEGRATOR));
+    public static final BlockEntityType<VoidResonanceBoxBlockEntity> VOID_RESONANCE_BOX_BLOCK_ENTITY = create("void_resonance_box_block_entity",
+            BlockEntityType.Builder.create(VoidResonanceBoxBlockEntity::new, ModBlocks.VOID_RESONANCE_BOX));
     private static <T extends BlockEntity> BlockEntityType<T> create(String id, BlockEntityType.Builder<T> builder) {
         return Registry.register(Registries.BLOCK_ENTITY_TYPE, Identifier.of(NutonMod.MOD_ID, id), builder.build(null));
     }

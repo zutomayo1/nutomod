@@ -337,5 +337,12 @@ public class ModZhCNLangProvider extends FabricLanguageProvider {
         b.add("biome.nutonmod.fracture_canyons", "\u88c2\u9699\u5ce1\u8c37");
         b.add("biome.nutonmod.core_wastes", "\u6838\u5fc3\u8352\u539f");
         b.add("itemGroup.nutonmod.nuton_group", "Nuton \u6a21\u7ec4");
+
+        b.add("block.nutonmod.void_resonance_box", "虚空谐振匣");
+        b.add("container.nutonmod.void_resonance_box", "虚空谐振匣");
+        b.add("gui.nutonmod.void_resonance_box.status.ready", "状态：可谐振");
+        b.add("gui.nutonmod.void_resonance_box.status.output_full", "状态：输出已满");
+        b.add("gui.nutonmod.void_resonance_box.status.missing_catalyst", "状态：缺少催化剂");
+        b.add("gui.nutonmod.void_resonance_box.status.missing_material", "状态：缺少材料");
     }
 }

@@ -119,6 +119,10 @@ public class ModBlocks {
                     AbstractBlock.Settings.copy(Blocks.DANDELION).nonOpaque().noCollision().breakInstantly()));
     public static final Block POTTED_ENERGY_FLOWER = registerBlockOnly("potted_energy_flower",
             new FlowerPotBlock(ENERGY_FLOWER, AbstractBlock.Settings.copy(Blocks.POTTED_DANDELION).nonOpaque()));
+    public static final Block VOID_RESONANCE_BOX = register("void_resonance_box",
+            new VoidResonanceBox(AbstractBlock.Settings.copy(Blocks.STONE)
+                    .strength(4.5f, 10.0f)
+                    .luminance(state -> state.get(VoidResonanceBox.WORKING) ? 12 : 2)));
 
     private static <T extends Block> T register(String id, T block) {
         RegistryNamingRules.validateBlockId(id);
@@ -137,6 +141,6 @@ public class ModBlocks {
     
     public static void registerModBlocks() {
         NutonMod.LOGGER.info("Registering Mod Blocks for " + NutonMod.MOD_ID);
-        NutonMod.LOGGER.info("Registered: energy_core (可激活方块), energy_block, anthracite_block");
+        NutonMod.LOGGER.info("Registered: energy_core (可激活方块), energy_block, anthracite_block, void_resonance_box");
     }
 }
