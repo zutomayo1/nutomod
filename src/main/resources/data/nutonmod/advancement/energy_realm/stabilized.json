@@ -4,8 +4,8 @@
     "icon": {
       "id": "nutonmod:core_stabilizer"
     },
-    "title": "稳定化",
-    "description": "制作核心稳定器来抵抗维度侵蚀",
+    "title": "稳定器",
+    "description": "制作核心稳定器来抵抗维度渗蚀",
     "frame": "goal",
     "show_toast": true,
     "announce_to_chat": true,

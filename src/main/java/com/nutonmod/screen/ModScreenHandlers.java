@@ -4,6 +4,7 @@ import com.nutonmod.NutonMod;
 import com.nutonmod.data.DimensionalTunerData;
 import com.nutonmod.data.EnergyDisintegratorData;
 import com.nutonmod.data.PolishingMachineData;
+import com.nutonmod.data.StabilizerBeaconData;
 import com.nutonmod.data.VoidResonanceBoxData;
 import net.fabricmc.fabric.api.screenhandler.v1.ExtendedScreenHandlerType;
 import net.minecraft.registry.Registries;
@@ -25,6 +26,9 @@ public class ModScreenHandlers {
     public static final ScreenHandlerType<VoidResonanceBoxScreenHandler> VOID_RESONANCE_BOX_SCREEN_HANDLER =
             Registry.register(Registries.SCREEN_HANDLER, Identifier.of(NutonMod.MOD_ID, "void_resonance_box"),
                     new ExtendedScreenHandlerType<>(VoidResonanceBoxScreenHandler::new, VoidResonanceBoxData.CODEC));
+    public static final ScreenHandlerType<StabilizerBeaconScreenHandler> STABILIZER_BEACON_SCREEN_HANDLER =
+            Registry.register(Registries.SCREEN_HANDLER, Identifier.of(NutonMod.MOD_ID, "stabilizer_beacon"),
+                    new ExtendedScreenHandlerType<>(StabilizerBeaconScreenHandler::new, StabilizerBeaconData.CODEC));
     public static void registerScreenHandlers() {
 
     }

@@ -30,11 +30,7 @@ import com.nutonmod.entity.VoidArchonRenderer;
 import com.nutonmod.item.ModItems;
 import com.nutonmod.network.EnergySyncPayload;
 import com.nutonmod.network.RiftCannonKickPayload;
-import com.nutonmod.screen.ModScreenHandlers;
-import com.nutonmod.screen.DimensionalTunerScreen;
-import com.nutonmod.screen.EnergyDisintegratorScreen;
-import com.nutonmod.screen.PolishingMachineScreen;
-import com.nutonmod.screen.VoidResonanceBoxScreen;
+import com.nutonmod.screen.*;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
@@ -139,6 +135,7 @@ public class NutonModClient implements ClientModInitializer {
         HandledScreens.register(ModScreenHandlers.DIMENSIONAL_TUNER_SCREEN_HANDLER, DimensionalTunerScreen::new);
         HandledScreens.register(ModScreenHandlers.ENERGY_DISINTEGRATOR_SCREEN_HANDLER, EnergyDisintegratorScreen::new);
         HandledScreens.register(ModScreenHandlers.VOID_RESONANCE_BOX_SCREEN_HANDLER, VoidResonanceBoxScreen::new);
+        HandledScreens.register(ModScreenHandlers.STABILIZER_BEACON_SCREEN_HANDLER, StabilizerBeaconScreen::new);
         DimensionalTuneTooltipClient.register();
         RiftweaverCannonPostFxClient.register();
         ClientTickEvents.END_CLIENT_TICK.register(client -> {

@@ -344,5 +344,20 @@ public class ModZhCNLangProvider extends FabricLanguageProvider {
         b.add("gui.nutonmod.void_resonance_box.status.output_full", "状态：输出已满");
         b.add("gui.nutonmod.void_resonance_box.status.missing_catalyst", "状态：缺少催化剂");
         b.add("gui.nutonmod.void_resonance_box.status.missing_material", "状态：缺少材料");
+
+        b.add("container.nutonmod.stabilizer_beacon", "稳定信标");
+        b.add("message.nutonmod.stabilizer_beacon.only_in_realm", "只能在能量维度使用");
+        b.add("message.nutonmod.stabilizer_beacon.offline", "稳定信标已关闭");
+        b.add("message.nutonmod.stabilizer_beacon.need_fuel", "需要祭坛碎片 x%s");
+        b.add("message.nutonmod.stabilizer_beacon.online", "稳定信标已激活：持续 %s 秒，保护半径 %s 格");
+        b.add("gui.nutonmod.stabilizer_beacon.status.0", "状态：离线");
+        b.add("gui.nutonmod.stabilizer_beacon.status.1", "状态：待机");
+        b.add("gui.nutonmod.stabilizer_beacon.status.2", "状态：运行中");
+        b.add("gui.nutonmod.stabilizer_beacon.remaining", "剩余时间：%s 秒");
+        b.add("gui.nutonmod.stabilizer_beacon.radius", "保护半径：%s 格");
+        b.add("gui.nutonmod.stabilizer_beacon.storm", "风暴倍率：x%s");
+        b.add("gui.nutonmod.stabilizer_beacon.hint.0", "提示：右键可激活或关闭");
+        b.add("gui.nutonmod.stabilizer_beacon.hint.1", "提示：当前受风暴影响，持续时间减半");
+        b.add("gui.nutonmod.stabilizer_beacon","稳定信标");
     }
 }

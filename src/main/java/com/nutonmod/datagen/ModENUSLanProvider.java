@@ -1,5 +1,6 @@
 package com.nutonmod.datagen;
 
+import me.shedaniel.rei.impl.client.gui.widget.favorites.trash.TrashWidget;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricLanguageProvider;
 import net.minecraft.registry.RegistryWrapper;
@@ -40,6 +41,7 @@ public class ModENUSLanProvider extends FabricLanguageProvider {
         translationBuilder.add("block.nutonmod.energy_button", "Energy Button");
         translationBuilder.add("block.nutonmod.energy_pressure_plate", "Energy Pressure Plate");
         translationBuilder.add("block.nutonmod.stabilizer_beacon", "Stabilizer Beacon");
+        translationBuilder.add("container.nutonmod.stabilizer_beacon", "Stabilizer Beacon");
         translationBuilder.add("block.nutonmod.energy_fence", "Energy Fence");
         translationBuilder.add("block.nutonmod.energy_fence_gate", "Energy Fence Gate");
         translationBuilder.add("block.nutonmod.energy_wall", "Energy Wall");
@@ -54,7 +56,7 @@ public class ModENUSLanProvider extends FabricLanguageProvider {
         translationBuilder.add("item.nutonmod.energy_ingot", "Energy Ingot");
         translationBuilder.add("item.nutonmod.raw_energy", "Raw Energy");
         translationBuilder.add("item.nutonmod.altar_shard", "Altar Shard");
-        translationBuilder.add("item.nutonmod.core_stabilizer", "Core Stabilizer");
+        translationBuilder.add("item.nutonmod.core_bilizer", "Core Stabilizer");
         translationBuilder.add("item.nutonmod.storm_fragment", "Storm Fragment");
         translationBuilder.add("item.nutonmod.storm_alloy", "Storm Alloy");
         translationBuilder.add("item.nutonmod.crystal_matrix", "Crystal Matrix");
@@ -97,10 +99,6 @@ public class ModENUSLanProvider extends FabricLanguageProvider {
         translationBuilder.add("item.nutonmod.ground_shaker", "Ground Shaker");
 
 
-
-
-
-
         translationBuilder.add("tooltip.nutonmod.annihilation_blade.line1", "Active: Right click releases Annihilation Slash");
         translationBuilder.add("tooltip.nutonmod.annihilation_blade.line2", "Passive: hits stack marks, max stacks trigger execute pulse");
         translationBuilder.add("tooltip.nutonmod.annihilation_blade.line3", "On kill: restores health");
@@ -120,9 +118,9 @@ public class ModENUSLanProvider extends FabricLanguageProvider {
         translationBuilder.add("tooltip.nutonmod.end_judicator.line1", "Sneak + right click: switch form");
         translationBuilder.add("tooltip.nutonmod.end_judicator.line2", "Power Form: close-range annihilation blast");
         translationBuilder.add("tooltip.nutonmod.end_judicator.line3", "Agile Form: long-range void slash");
-        translationBuilder.add("tooltip.nutonmod.ground_shaker.line1","§7Normal attack costs §e3 §7energy, §a30% §7chance to launch enemies");
-        translationBuilder.add("tooltip.nutonmod.ground_shaker.line2","§7Right-click costs §e30 §7energy, slams ground for AoE damage and knockback (§e8s §7cooldown)");
-        translationBuilder.add("tooltip.nutonmod.ground_shaker.line3","§8Killing restores §e15 §8energy and grants Haste");
+        translationBuilder.add("tooltip.nutonmod.ground_shaker.line1", "§7Normal attack costs §e3 §7energy, §a30% §7chance to launch enemies");
+        translationBuilder.add("tooltip.nutonmod.ground_shaker.line2", "§7Right-click costs §e30 §7energy, slams ground for AoE damage and knockback (§e8s §7cooldown)");
+        translationBuilder.add("tooltip.nutonmod.ground_shaker.line3", "§8Killing restores §e15 §8energy and grants Haste");
 
 
         translationBuilder.add("item.nutonmod.end_judicator.mode_power", "Switched to Power Form");
@@ -337,5 +335,9 @@ public class ModENUSLanProvider extends FabricLanguageProvider {
         translationBuilder.add("gui.nutonmod.void_resonance_box.status.output_full", "Status: Output Full");
         translationBuilder.add("gui.nutonmod.void_resonance_box.status.missing_catalyst", "Status: Missing Catalyst");
         translationBuilder.add("gui.nutonmod.void_resonance_box.status.missing_material", "Status: Missing Material");
+
+        translationBuilder.add("gui.nutonmod.stabilizer_beacon", "Stabilizer Beacon");
+
     }
+
 }
