@@ -38,3 +38,11 @@ hs_err_*.log
 replay_*.log
 *.hprof
 *.jfr
+
+# local scratch / extracted assets
+tmp/
+**/DungeonsArise-*-release/
+**/PhilipsRuins-*-Fabric/
+
+# editor backup files
+*~
